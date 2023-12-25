@@ -1,6 +1,6 @@
 import sys
-import os
-import json 
+#import os
+#import json 
 import yaml
 
 # Import QtWidgets, QtCore
@@ -12,13 +12,13 @@ from ui.ui_configuration import Ui_Form
 
 ##
 # QtWidgets.QWidget serve per customizzare
-class Configuration(QtWidgets.QWidget, Ui_Form):    
+class EggsConfiguration(QtWidgets.QWidget, Ui_Form):    
     def __init__ (self):
         super().__init__() # inizializza
 
         self.setupUi(self) # mandatory
 
-        with open('eggs.yaml', 'r') as file:
+        with open('/etc/penguins-eggs.d/eggs.yaml', 'r') as file:
             eggs = yaml.safe_load(file)
 
         self.lineEditSnapshotDir.setText(eggs["snapshot_dir"])
@@ -27,13 +27,28 @@ class Configuration(QtWidgets.QWidget, Ui_Form):
         self.lineEditUserOpt.setText(eggs['user_opt'])
         self.lineEditUserOptPasswd.setText(eggs['user_opt_passwd'])
         self.lineEditRootPasswd.setText(eggs['root_passwd'])
-        self.checkBoxMakeMd5sum.setEnabled(eggs['make_md5sum'])
+        self.checkBoxMakeMd5sum.setEnabled(True) 
+        self.checkBoxMakeMd5sum.setChecked(eggs['make_md5sum'])
 
+        self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.rejected.connect(self.reject)
+        
         self.show()
+
+    ##
+    #
+    def accept(self):
+        print('Accept')
+
+    ##
+    #
+    def reject(self):
+        print('Reject')
+            
+        
+        
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-
-    win = Configuration() # ricorda ()
-
-    sys.exit(app.exec()) # ricorda ()
+    win = EggsConfiguration()
+    sys.exit(app.exec())

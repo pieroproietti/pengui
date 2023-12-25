@@ -1,4 +1,4 @@
-version: 9.6.22
+version: 9.6.22 
 snapshot_dir: /home/eggs/
 snapshot_prefix: egg-of_debian-bookworm-
 snapshot_excludes: /etc/penguins-eggs.d/exclude.list

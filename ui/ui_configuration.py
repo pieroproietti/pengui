@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'configurationAPYMgD.ui'
+## Form generated from reading UI file 'configurationKTYFum.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -15,8 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QGridLayout, QLabel,
-    QLineEdit, QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QAbstractButton, QApplication, QCheckBox, QDialogButtonBox,
+    QGridLayout, QLabel, QLineEdit, QSizePolicy,
+    QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -94,6 +95,10 @@ class Ui_Form(object):
 
         self.gridLayout.addWidget(self.checkBoxMakeMd5sum, 6, 1, 1, 1)
 
+        self.buttonBox = QDialogButtonBox(Form)
+        self.buttonBox.setObjectName(u"buttonBox")
+        self.buttonBox.setGeometry(QRect(230, 270, 166, 24))
+        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
 
         self.retranslateUi(Form)
 
