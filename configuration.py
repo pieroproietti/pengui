@@ -1,5 +1,7 @@
 import sys
 import os
+import json 
+import yaml
 
 # Import QtWidgets, QtCore
 from PySide6 import QtCore, QtWidgets
@@ -7,7 +9,6 @@ from PySide6.QtWidgets import QPushButton
 
 # Questo è l'import cruciale
 from ui.ui_configuration import Ui_Form
-
 
 ##
 # QtWidgets.QWidget serve per customizzare
@@ -17,24 +18,16 @@ class Configuration(QtWidgets.QWidget, Ui_Form):
 
         self.setupUi(self) # mandatory
 
-        if (self.lineEditSnapshotDir == ''):
-            self.lineEditSnapshotDir.setText('/home/eggs')
+        with open('eggs.yaml', 'r') as file:
+            eggs = yaml.safe_load(file)
 
-        if self.lineEditSnapshotPrefix.text == '':           
-            self.lineEditSnapshotPrefix.setText('egg-of_debian-bookworm-')
-
-        if self.lineEditUserOpt.text == '':
-            self.lineEditUserOpt.setText('live')
-
-        if self.lineEditUserOptPasswd.text == '':
-            self.lineEditUserOptPasswd.setText('evolution')
-            
-        if self.lineEditSnapshotBasename.text == '':
-            self.lineEditSnapshotBasename.setText('colibri')
-
-
-        if self.lineEditRootPasswd.text == '':
-            self.lineEditRootPasswd.setText('evolution')
+        self.lineEditSnapshotDir.setText(eggs["snapshot_dir"])
+        self.lineEditSnapshotPrefix.setText(eggs['snapshot_prefix'])
+        self.lineEditSnapshotBasename.setText(eggs['snapshot_basename'])
+        self.lineEditUserOpt.setText(eggs['user_opt'])
+        self.lineEditUserOptPasswd.setText(eggs['user_opt_passwd'])
+        self.lineEditRootPasswd.setText(eggs['root_passwd'])
+        self.checkBoxMakeMd5sum.setEnabled(eggs['make_md5sum'])
 
         self.show()
 

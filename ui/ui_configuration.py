@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'configurationClpGiW.ui'
+## Form generated from reading UI file 'configurationAPYMgD.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -15,8 +15,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QLineEdit,
-    QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QGridLayout, QLabel,
+    QLineEdit, QSizePolicy, QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -25,7 +25,7 @@ class Ui_Form(object):
         Form.resize(400, 300)
         self.layoutWidget = QWidget(Form)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(20, 20, 284, 192))
+        self.layoutWidget.setGeometry(QRect(20, 20, 381, 198))
         self.gridLayout = QGridLayout(self.layoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -89,10 +89,10 @@ class Ui_Form(object):
 
         self.gridLayout.addWidget(self.lineEditRootPasswd, 5, 1, 1, 1)
 
-        self.label_make_md5sum = QLabel(self.layoutWidget)
-        self.label_make_md5sum.setObjectName(u"label_make_md5sum")
+        self.checkBoxMakeMd5sum = QCheckBox(self.layoutWidget)
+        self.checkBoxMakeMd5sum.setObjectName(u"checkBoxMakeMd5sum")
 
-        self.gridLayout.addWidget(self.label_make_md5sum, 6, 0, 1, 1)
+        self.gridLayout.addWidget(self.checkBoxMakeMd5sum, 6, 1, 1, 1)
 
 
         self.retranslateUi(Form)
@@ -108,6 +108,6 @@ class Ui_Form(object):
         self.label_user_opt.setText(QCoreApplication.translate("Form", u"user_opt", None))
         self.label_user_opt_passwd.setText(QCoreApplication.translate("Form", u"user_opt_passwd", None))
         self.label_root_passwd.setText(QCoreApplication.translate("Form", u"root_passwd", None))
-        self.label_make_md5sum.setText(QCoreApplication.translate("Form", u"make_md5sum", None))
+        self.checkBoxMakeMd5sum.setText(QCoreApplication.translate("Form", u"make_md5sum", None))
     # retranslateUi
 
