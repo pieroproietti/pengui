@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>284</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_snapshot_dir">
+      <property name="text">
+       <string>snapshot_dir</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="lineEditSnapshotDir"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_snashot_prefix">
+      <property name="text">
+       <string>snapshot_prefix</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEditSnapshotPrefix"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_snapshot_basename">
+      <property name="text">
+       <string>snapshot_basename</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="lineEditSnapshotBasename"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_user_opt">
+      <property name="text">
+       <string>user_opt</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="lineEditUserOpt"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_user_opt_passwd">
+      <property name="text">
+       <string>user_opt_passwd</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="lineEditUserOptPasswd"/>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_root_passwd">
+      <property name="text">
+       <string>root_passwd</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLineEdit" name="lineEditRootPasswd"/>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_make_md5sum">
+      <property name="text">
+       <string>make_md5sum</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
