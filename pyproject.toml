@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "pengui"
+version = "0.1.0"
+description = "Penguins' eggs GUI"
+authors = ["Piero Proietti <piero.proietti@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

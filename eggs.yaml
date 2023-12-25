@@ -1,0 +1,21 @@
+version: 9.6.22
+snapshot_dir: /home/eggs/
+snapshot_prefix: egg-of_debian-bookworm-
+snapshot_excludes: /etc/penguins-eggs.d/exclude.list
+snapshot_basename: colibri
+user_opt: live
+user_opt_passwd: evolution
+root_passwd: evolution
+theme: eggs
+force_installer: true
+make_efi: true
+make_md5sum: false
+make_isohybrid: true
+compression: fast
+ssh_pass: true
+timezone: America/New_York
+locales_default: it_IT.UTF-8
+locales:
+  - it_IT.UTF-8
+  - en_US.UTF-8
+pmount_fixed: false
