@@ -5,6 +5,8 @@ import os
 from PySide6 import QtCore, QtWidgets
 from PySide6.QtWidgets import QPushButton
 
+from eggs_configuration import Ui_Form
+
 # Questo è l'import cruciale
 from ui.ui_mainwindow import Ui_MainWindow
 
@@ -38,7 +40,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.action_Skel.triggered.connect(self.Skel)
         self.action_Yolk.triggered.connect(self.Yolk)
         
-        #self.setCentralWidget(b)
+        self.form = Ui_Form
 
         # in init prima di show, inizializziamo tutto
         self.show()
@@ -54,7 +56,8 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     #
     @QtCore.Slot()
     def configure(self):
-        print ("Configure")
+        self.form.show()
+        #print ("Configure")
 
 
     ##
