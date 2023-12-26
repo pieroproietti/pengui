@@ -17,6 +17,14 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.setupUi(self) # mandatory
 
+        self.setWindowTitle = "penGUI"
+
+        # check root
+        if os.geteuid() != 0:
+            button = QPushButton("You MUST be root!")
+            button.clicked.connect(self.exit)
+            self.setCentralWidget(button)
+
         # Signals are emitted by objects 
         self.action_About.triggered.connect(self.about)
         self.action_Configure.triggered.connect(self.configure)
@@ -24,6 +32,12 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.action_Kill.triggered.connect(self.kill)
         self.action_Produce.triggered.connect(self.produce)
 
+        # Tools
+        self.action_Clean.triggered.connect(self.clean)
+        self.action_PPA.triggered.connect(self.Ppa)
+        self.action_Skel.triggered.connect(self.Skel)
+        self.action_Yolk.triggered.connect(self.Yolk)
+        
         #self.setCentralWidget(b)
 
         # in init prima di show, inizializziamo tutto
@@ -61,6 +75,30 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     @QtCore.Slot()
     def produce(self):
         print ("Produce")
+
+    ##
+    #
+    @QtCore.Slot()
+    def clean(self):
+        print ("Clean")
+
+    ##
+    #
+    @QtCore.Slot()
+    def Ppa(self):
+        print ("PPA")
+
+    ##
+    #
+    @QtCore.Slot()
+    def Skel(self):
+        print ("Skel")
+
+    ##
+    #
+    @QtCore.Slot()
+    def Yolk(self):
+        print ("Yolk")
 
 
 if __name__ == "__main__":

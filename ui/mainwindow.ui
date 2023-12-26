@@ -43,8 +43,18 @@
     </property>
     <addaction name="action_About"/>
    </widget>
+   <widget class="QMenu" name="menu_Tools">
+    <property name="title">
+     <string>&amp;Tools</string>
+    </property>
+    <addaction name="action_Clean"/>
+    <addaction name="action_PPA"/>
+    <addaction name="action_Skel"/>
+    <addaction name="action_Yolk"/>
+   </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_Edit"/>
+   <addaction name="menu_Tools"/>
    <addaction name="menu_Help"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -71,6 +81,26 @@
   <action name="action_About">
    <property name="text">
     <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="action_Skel">
+   <property name="text">
+    <string>&amp;Skel</string>
+   </property>
+  </action>
+  <action name="action_Clean">
+   <property name="text">
+    <string>&amp;Clean</string>
+   </property>
+  </action>
+  <action name="action_PPA">
+   <property name="text">
+    <string>&amp;PPA</string>
+   </property>
+  </action>
+  <action name="action_Yolk">
+   <property name="text">
+    <string>&amp;Yolk</string>
    </property>
   </action>
  </widget>
