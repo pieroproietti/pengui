@@ -1,0 +1,1 @@
+sudo code $1 --user-data-dir='"'"'/root/.config/Code - OSS/'"'"' --no-sandbox
