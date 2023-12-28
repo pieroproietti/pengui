@@ -1,9 +1,11 @@
+#!/bin/python
 import sys
 import os
 import subprocess
 
-from PySide6 import *
-from PySide6.QtWidgets import *
+from PySide6 import QtCore
+from PySide6.QtCore import QProcess, Slot
+from PySide6.QtWidgets import QMainWindow, QApplication, QPushButton
 
 from terminal import Terminal
 from eggs_configuration import EggsConfiguration
@@ -53,8 +55,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.action_Yolk.triggered.connect(self.Yolk)
 
         #self.setCentralWidget(Terminal())
-        self.setCentralWidget(EggsConfiguration())
-        EggsConfiguration.hide(self)
+        #self.setCentralWidget(EggsConfiguration())
+        #EggsConfiguration.hide(self)
 
         # in init prima di show, inizializziamo tutto
         self.show()
@@ -103,15 +105,20 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         #result=subprocess.run(['/usr/bin/eggs', 'kill', '--nointeractive'], stdout=subprocess.PIPE)
         #print(result.stdout.decode())
 
-    ##
-    #
-    @QtCore.Slot()
+    @Slot()
     def produce(self):
-        try:
-            subprocess.run(['/usr/bin/eggs', 'produce'], check=True)
-        except subprocess.CalledProcessError as e:
-            print(f'Command {e.cmd} failed with error {e.returncode}')
-        print ("Produce end")
+        terminal_process = QProcess()
+        terminal_program = "/usr/bin/x-terminal-emulator"  
+        command = "/usr/bin/eggs produce"
+
+        terminal_process.start(terminal_program, [command])
+
+        if terminal_process.waitForStarted():
+            terminal_process.waitForFinished(-1)
+            output = terminal_process.readAllStandardOutput().data().decode()
+            print(output)
+        else:
+            print("Failed to open the terminal.")
 
     ##
     #
@@ -155,7 +162,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
 
 if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
+    app = QApplication(sys.argv)
 
     win = MyMainWindow() # ricorda ()
 
