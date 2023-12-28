@@ -1,19 +1,16 @@
+from PySide6 import QtCore, QtWidgets
+from PySide6.QtWidgets import *
+
+# import ui section
+from ui.ui_eggs_configuration import Ui_Dialog
+
 import sys
 import os
 import yaml
-import subprocess
-
-# Import QtWidgets, QtCore
-from PySide6 import QtCore, QtWidgets
-from PySide6.QtWidgets import QPushButton
-
-# Questo è l'import cruciale
-from ui.ui_configuration import Ui_Form
 
 ##
-# QtWidgets.QWidget serve per customizzare
-class EggsConfiguration(QtWidgets.QWidget, Ui_Form):    
-
+#
+class EggsConfiguration(Ui_Dialog, QDialog):    
 
     def __init__ (self):
         super().__init__() # inizializza
@@ -43,8 +40,11 @@ class EggsConfiguration(QtWidgets.QWidget, Ui_Form):
         self.lineEditSnapshotPrefix.setText(eggs['snapshot_prefix'])
         self.lineEditSnapshotBasename.setText(eggs['snapshot_basename'])
         self.lineEditUserOpt.setText(eggs['user_opt'])
+
         self.lineEditUserOptPasswd.setText(eggs['user_opt_passwd'])
         self.lineEditRootPasswd.setText(eggs['root_passwd'])
+        self.checkBoxMakeIsohybrid.setEnabled(False)
+        self.checkBoxMakeIsohybrid.setChecked(eggs['make_isohybrid'])
         self.checkBoxMakeMd5sum.setEnabled(True) 
         self.checkBoxMakeMd5sum.setChecked(eggs['make_md5sum'])
 
@@ -69,10 +69,13 @@ class EggsConfiguration(QtWidgets.QWidget, Ui_Form):
         eggs['user_opt_passwd']=self.lineEditUserOptPasswd.text()
         eggs['root_passwd']=self.lineEditRootPasswd.text()
 
-        eggs['make_md5sum']=self.checkBoxMakeMd5sum.checkState
+        eggs['make_isohybrid']=self.checkBoxMakeIsohybrid.isChecked()
+        eggs['make_md5sum']=self.checkBoxMakeMd5sum.isChecked()
 
         with open(self.file_eggs, 'w') as object_file:
             yaml.dump(eggs, object_file)
+
+        #self.emit(self.close_me)
 
         print('Accept')
 

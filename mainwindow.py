@@ -2,19 +2,18 @@ import sys
 import os
 import subprocess
 
-# Import QtWidgets, QtCore
-from PySide6 import QtCore, QtWidgets
-from PySide6.QtWidgets import QPushButton
+from PySide6 import *
+from PySide6.QtWidgets import *
 
-from eggs_configuration import Ui_Form
+from terminal import Terminal
+from eggs_configuration import EggsConfiguration
 
 # Questo è l'import cruciale
 from ui.ui_mainwindow import Ui_MainWindow
 
-
 ##
 # QtWidgets.QWidget serve per customizzare
-class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):    
+class MyMainWindow(Ui_MainWindow, QMainWindow):    
     def __init__ (self):
         super().__init__() # inizializza
 
@@ -52,8 +51,10 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.action_PPA.triggered.connect(self.Ppa)
         self.action_Skel.triggered.connect(self.Skel)
         self.action_Yolk.triggered.connect(self.Yolk)
-        
-        self.form = Ui_Form
+
+        #self.setCentralWidget(Terminal())
+        self.setCentralWidget(EggsConfiguration())
+        EggsConfiguration.hide(self)
 
         # in init prima di show, inizializziamo tutto
         self.show()
@@ -68,8 +69,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     #
     @QtCore.Slot()
     def configure(self):
-        # visualizza form
-        pass
+        EggsConfiguration.show(self)
         
     ##
     #
@@ -82,11 +82,24 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     #
     @QtCore.Slot()
     def kill(self):
-        try:
-            subprocess.run(['/usr/bin/eggs', 'kill'], check=True)
-        except subprocess.CalledProcessError as e:
-            print(f'Command {e.cmd} failed with error {e.returncode}')
+        #try:
+        #    subprocess.run(['/usr/bin/eggs', 'kill'], check=True)
+        #except subprocess.CalledProcessError as e:
+        #    print(f'Command {e.cmd} failed with error {e.returncode}')
 
+        # https://stackoverflow.com/questions/803265/getting-realtime-output-using-subprocess
+        cmd=['/usr/bin/eggs', 'kill',]
+        process = subprocess.run(
+            cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        )
+
+        while True:
+            out = process.stdout.read(1)
+            if out == '' and process.poll() != None:
+                break
+            if out != '':
+                sys.stdout.write(out)
+                sys.stdout.flush()
         #result=subprocess.run(['/usr/bin/eggs', 'kill', '--nointeractive'], stdout=subprocess.PIPE)
         #print(result.stdout.decode())
 
@@ -135,6 +148,10 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     @QtCore.Slot()
     def Yolk(self):
         print ("Yolk")
+
+
+    ########################################################
+    ###############    eggs_configuration    ###############
 
 
 if __name__ == "__main__":

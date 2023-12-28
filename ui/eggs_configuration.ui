@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <author>Piero Proietti</author>
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,23 +11,41 @@
     <height>300</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>300</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="accessibleDescription">
+   <string notr="true"/>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>381</width>
-     <height>198</height>
+     <x>0</x>
+     <y>10</y>
+     <width>400</width>
+     <height>241</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <widget class="QLabel" name="label_snapshot_dir">
       <property name="text">
-       <string>snapshot_dir</string>
+       <string>Nest</string>
       </property>
      </widget>
     </item>
@@ -37,7 +55,7 @@
     <item row="1" column="0">
      <widget class="QLabel" name="label_snashot_prefix">
       <property name="text">
-       <string>snapshot_prefix</string>
+       <string>Prefix</string>
       </property>
      </widget>
     </item>
@@ -47,7 +65,7 @@
     <item row="2" column="0">
      <widget class="QLabel" name="label_snapshot_basename">
       <property name="text">
-       <string>snapshot_basename</string>
+       <string>Basename</string>
       </property>
      </widget>
     </item>
@@ -57,7 +75,7 @@
     <item row="3" column="0">
      <widget class="QLabel" name="label_user_opt">
       <property name="text">
-       <string>user_opt</string>
+       <string>Live user name</string>
       </property>
      </widget>
     </item>
@@ -67,27 +85,42 @@
     <item row="4" column="0">
      <widget class="QLabel" name="label_user_opt_passwd">
       <property name="text">
-       <string>user_opt_passwd</string>
+       <string>Live user password</string>
       </property>
      </widget>
     </item>
     <item row="4" column="1">
-     <widget class="QLineEdit" name="lineEditUserOptPasswd"/>
+     <widget class="QLineEdit" name="lineEditUserOptPasswd">
+      <property name="echoMode">
+       <enum>QLineEdit::PasswordEchoOnEdit</enum>
+      </property>
+     </widget>
     </item>
     <item row="5" column="0">
      <widget class="QLabel" name="label_root_passwd">
       <property name="text">
-       <string>root_passwd</string>
+       <string>Live root password</string>
       </property>
      </widget>
     </item>
     <item row="5" column="1">
-     <widget class="QLineEdit" name="lineEditRootPasswd"/>
+     <widget class="QLineEdit" name="lineEditRootPasswd">
+      <property name="echoMode">
+       <enum>QLineEdit::PasswordEchoOnEdit</enum>
+      </property>
+     </widget>
     </item>
     <item row="6" column="1">
      <widget class="QCheckBox" name="checkBoxMakeMd5sum">
       <property name="text">
-       <string>make_md5sum</string>
+       <string>md5sum</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QCheckBox" name="checkBoxMakeIsohybrid">
+      <property name="text">
+       <string>isohybrid</string>
       </property>
      </widget>
     </item>
