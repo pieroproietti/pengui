@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'produceeONuyQ.ui'
+## Form generated from reading UI file 'produceKEIBXz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -129,6 +129,9 @@ class Ui_DialogProduce(object):
 
         self.gridLayout.addWidget(self.comboBoxCompression, 4, 1, 1, 2)
 
+        self.pushButtonGenerate = QPushButton(DialogProduce)
+        self.pushButtonGenerate.setObjectName(u"pushButtonGenerate")
+        self.pushButtonGenerate.setGeometry(QRect(110, 390, 431, 31))
 
         self.retranslateUi(DialogProduce)
         self.buttonBox.accepted.connect(DialogProduce.accept)
@@ -152,5 +155,6 @@ class Ui_DialogProduce(object):
         self.checkBoxScript.setText(QCoreApplication.translate("DialogProduce", u"Script", None))
         self.checkBoxUnsecure.setText(QCoreApplication.translate("DialogProduce", u"Unsecure", None))
         self.checkBoxUnsecure_2.setText(QCoreApplication.translate("DialogProduce", u"Yolk", None))
+        self.pushButtonGenerate.setText(QCoreApplication.translate("DialogProduce", u"generate", None))
     # retranslateUi
 

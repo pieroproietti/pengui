@@ -31,6 +31,8 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         self.checkBoxCryptedClone.stateChanged.connect(self.crypted_clone)
         self.checkBoxScript.stateChanged.connect(self.script)
 
+        self.pushButtonGenerate.clicked.connect(self.generate)
+
         # recupero i themi da .wardrobe/vendors/
         if os.geteuid() == 0:
             path_themes='/home/' + os.getenv('SUDO_USER')
@@ -50,6 +52,12 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
 
         self.show()
 
+    def generate(self):
+        command='eggs produce '
+        if (self.comboBoxAddons.currentText !=''):
+            command += '--addons ' + self.comboBoxAddons.currentText()
+
+        self.lineEditCommand.setText(command)
 
     ##
     # azzerra cryptedClone, script e setta unsecure
