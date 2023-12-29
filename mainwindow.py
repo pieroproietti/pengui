@@ -7,6 +7,7 @@ from PySide6 import QtCore
 from PySide6.QtCore import QProcess, Slot
 from PySide6.QtWidgets import QMainWindow, QApplication, QPushButton
 
+from produce import Produce
 from terminal import Terminal
 from eggs_configuration import EggsConfiguration
 
@@ -56,7 +57,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         #self.setCentralWidget(Terminal())
         #self.setCentralWidget(EggsConfiguration())
-        #EggsConfiguration.hide(self)
+        #self.setCentralWidget(Produce())
+
 
         # in init prima di show, inizializziamo tutto
         self.show()
@@ -107,18 +109,19 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
     @Slot()
     def produce(self):
-        terminal_process = QProcess()
-        terminal_program = "/usr/bin/x-terminal-emulator"  
-        command = "/usr/bin/eggs produce"
+        self.setCentralWidget(Produce())
+        #terminal_process = QProcess()
+        #terminal_program = "/usr/bin/x-terminal-emulator"  
+        #command = "/usr/bin/eggs produce"
 
-        terminal_process.start(terminal_program, [command])
+        #terminal_process.start(terminal_program, [command])
 
-        if terminal_process.waitForStarted():
-            terminal_process.waitForFinished(-1)
-            output = terminal_process.readAllStandardOutput().data().decode()
-            print(output)
-        else:
-            print("Failed to open the terminal.")
+        #if terminal_process.waitForStarted():
+            #terminal_process.waitForFinished(-1)
+            #output = terminal_process.readAllStandardOutput().data().decode()
+            #print(output)
+        #else:
+            #print("Failed to open the terminal.")
 
     ##
     #
