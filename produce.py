@@ -27,14 +27,22 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         self.comboBoxFilters.addItems(['', 'custom', 'homes', 'usr'])
         self.comboBoxCompression.addItems(['fast', 'standard', 'max'])
 
+        self.checkBoxClone.stateChanged.connect(self.clone)
+        self.checkBoxCryptedClone.stateChanged.connect(self.crypted_clone)
+        self.checkBoxScript.stateChanged.connect(self.script)
+
         # recupero i themi da .wardrobe/vendors/
         if os.geteuid() == 0:
-            path='/home/' + os.getenv('SUDO_USER')
+            path_themes='/home/' + os.getenv('SUDO_USER')
         else:
-            path='/home/' + os.getenv('USER')
+            path_themes='/home/' + os.getenv('USER')
 
-        dirs_themes= os.listdir(path +'/.wardrobe/vendors/')
-        sorted_themes=sorted(dirs_themes)
+        if os.path.exists(path_themes):
+            found_themes= os.listdir(path_themes +'/.wardrobe/vendors/')
+        else:
+            found_themes=["To get theme, execute: eggs wardobe get"]
+
+        sorted_themes=sorted(found_themes)
         themes=['eggs']
         themes.extend(sorted_themes)
 
@@ -42,6 +50,30 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
 
         self.show()
 
+
+    ##
+    # azzerra cryptedClone, script e setta unsecure
+    def clone(self):
+        if self.checkBoxClone.checkState():
+            self.checkBoxCryptedClone.setChecked(False)
+            self.checkBoxScript.setChecked(False)
+            self.checkBoxUnsecure.setChecked(True)
+
+    ##
+    # azzerra clone, script e setta unsecure
+    def crypted_clone(self):
+        if self.checkBoxCryptedClone.checkState():
+            self.checkBoxClone.setChecked(False)
+            self.checkBoxScript.setChecked(False)
+            self.checkBoxUnsecure.setChecked(True)
+
+    ##
+    # azzerra clone e cryptedClone
+    def script(self):
+        if self.checkBoxScript.checkState():
+            self.checkBoxClone.setChecked(False)
+            self.checkBoxCryptedClone.setChecked(False)
+           
 
     ##
     #
