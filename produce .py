@@ -1,0 +1,17 @@
+--addons
+--basename
+--clone
+--cryptedclone
+--filters
+--help
+--max
+--noicons
+--nointeractive
+--prefix
+--release
+--script
+--standard
+--theme
+--unsecure
+--verbose
+--yolk

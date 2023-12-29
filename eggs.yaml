@@ -1,21 +1,21 @@
-version: 9.6.22 
-snapshot_dir: /home/eggs/
-snapshot_prefix: egg-of_debian-bookworm-
-snapshot_excludes: /etc/penguins-eggs.d/exclude.list
+compression: fast
+force_installer: true
+initrd_img: /boot/initrd.img-6.1.0-16-amd64
+machine_id: b70589a6d5594a8e86ded1437a7fc7d9
+make_efi: true
+make_isohybrid: true
+make_md5sum: false
+pmount_fixed: false
+root_passwd: evolution
 snapshot_basename: colibri
+snapshot_dir: /home/eggs/
+snapshot_excludes: /etc/penguins-eggs.d/exclude.list
+snapshot_mnt: /home/eggs/.mnt/
+snapshot_prefix: egg-of_debian-bookworm-
+ssh_pass: false
+theme: eggs
+timezone: Europe/Rome
 user_opt: live
 user_opt_passwd: evolution
-root_passwd: evolution
-theme: eggs
-force_installer: true
-make_efi: true
-make_md5sum: false
-make_isohybrid: true
-compression: fast
-ssh_pass: true
-timezone: America/New_York
-locales_default: it_IT.UTF-8
-locales:
-  - it_IT.UTF-8
-  - en_US.UTF-8
-pmount_fixed: false
+version: 9.6.24
+vmlinuz: /boot/vmlinuz-6.1.0-16-amd64
