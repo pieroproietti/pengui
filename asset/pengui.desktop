@@ -1,10 +1,10 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Categories=GNOME;GTK;Utility;
-Comment=PenGUI Penguins' eggs assistant
+Comment=penGUI take cure about the eggs!
 Encoding=UTF-8
 Exec=/opt/pengui/pengui
 GenericName=Penguins' eggs
 Icon=pengui
-Name=PenGUI
+Name=penGUI
 Type=Application
