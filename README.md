@@ -27,7 +27,7 @@ Perhaps will be better to [fork](https://github.com/pieroproietti/pengui/fork) t
 # venv
 Just run `./bin/create_venv and` and follow the instructions.
 
-# future plan, not yet used
+# future plan
 
 ## poetry
 I will like to manage the package with `poetry`, perhaps simply for love of poetry!
