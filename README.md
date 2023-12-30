@@ -1,4 +1,6 @@
-# Pyside6
+# penGUI take cure of eggs
+
+## Pyside6
 I'm using PySide6 to build the program.
 
 ## prerequisites (Debian bookworm)
@@ -11,11 +13,9 @@ It seem we need for QT following packages:
 `sudo apt install libxcb-cursor0 libpython3.11` 
 
 # venv
-Just run `./bin/create_venv and` follow the instructions.
+Just run `./bin/create_venv and` follow the instructions for install packages.
 
-At this point just: `pip install pyside6` and we are ready to go
-
-# Follow notes are not implemented
+# Following notes are not yet implemented
 
 ## poetry
 I will like to manage the package with `poetry`, perhaps simply for poetry!
@@ -24,4 +24,7 @@ I will like to manage the package with `poetry`, perhaps simply for poetry!
 * `pipx ensurepath`
 * `pipx install poetry`
 * `poetry completions bash >> ~/.bash_completion`
+
+## pydantic
+I come from typescript and love to declare variables and get help from editors. Probably pydantic will offer something.
 
