@@ -1,7 +1,7 @@
 # penGUI
 
 
-**penGUI take cure of eggs!**
+## **penGUI take cure of eggs!**
 ![](https://github.com/pieroproietti/penguins-eggs/blob/master/assets/eggs.png)
 
 
