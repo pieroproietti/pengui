@@ -1,9 +1,14 @@
-# penGUI take cure of eggs
+# penGUI
 
-## Pyside6
-I'm using PySide6 to build the program.
+penGUI take cure of eggs! 
 
-## prerequisites (Debian bookworm)
+penGUI makes it easy for you to learn eggs commands, once you learn them you will probably use it less, but a GUI for penguins-eggs was needed and now there is.
+
+I'm using python 3.11.2 and PySide6 to build the program.
+
+## Prerequisites (Debian bookworm)
+
+Just installed this packages:
 
 `sudo apt install build-essential`
 
