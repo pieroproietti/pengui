@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "pengui"
 version = "0.1.0"
-description = "Penguins' eggs GUI"
+description = "penGUI take cure of eggs!"
 authors = ["Piero Proietti <piero.proietti@gmail.com>"]
 license = "MIT"
 readme = "README.md"

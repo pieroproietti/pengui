@@ -1,6 +1,6 @@
 # penGUI
 
-penGUI take cure of eggs! 
+**penGUI take cure of eggs!**
 
 penGUI makes it easy for you to learn eggs commands, once you learn them you will probably use it less, but a GUI for penguins-eggs was needed and now there is.
 
@@ -14,7 +14,7 @@ I'm using Debian bookworm, just installed this packages to my [colibri](https://
 
 `sudo apt install python3-full python-is-python3`
 
-It seem we need for QT following packages: 
+It seem we need for QT following packages too: 
 `sudo apt install libxcb-cursor0 libpython3.11` 
 
 # source
@@ -30,7 +30,7 @@ Just run `./bin/create_venv and` and follow the instructions.
 # future plan, not yet used
 
 ## poetry
-I will like to manage the package with `poetry`, perhaps simply for poetry!
+I will like to manage the package with `poetry`, perhaps simply for love of poetry!
 
 * `sudo apt install pipx`
 * `pipx ensurepath`
@@ -39,4 +39,3 @@ I will like to manage the package with `poetry`, perhaps simply for poetry!
 
 ## pydantic
 I come from typescript and love to declare variables and get help from editors. Probably pydantic will offer something.
-
