@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainwindowhfjsWO.ui'
+## Form generated from reading UI file 'penGUIUdxFcX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -18,12 +18,16 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QTransform)
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMenu, QMenuBar,
     QSizePolicy, QStatusBar, QWidget)
+import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(800, 600)
+        icon = QIcon()
+        icon.addFile(u":/eggs/icons/eggs.png", QSize(), QIcon.Normal, QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         self.action_Produce = QAction(MainWindow)
         self.action_Produce.setObjectName(u"action_Produce")
         self.action_Kill = QAction(MainWindow)

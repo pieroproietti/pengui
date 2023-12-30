@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/eggs/icons/eggs.png</normaloff>:/eggs/icons/eggs.png</iconset>
+  </property>
   <property name="locale">
    <locale language="English" country="UnitedStates"/>
   </property>
@@ -53,6 +57,9 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Command to run</string>
+   </property>
    <property name="text">
     <string>Command</string>
    </property>
@@ -76,125 +83,12 @@
      <height>71</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>run or copy ib ckuobiard the generated command</string>
+   </property>
    <property name="text">
     <string>run/copy</string>
    </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>621</width>
-     <height>314</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="1" colspan="2">
-     <widget class="QComboBox" name="comboBoxFilters"/>
-    </item>
-    <item row="0" column="1" colspan="2">
-     <widget class="QComboBox" name="comboBoxAddons"/>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="labelPrefix">
-      <property name="toolTip">
-       <string>Imposes a prefix to the name of the created ISO image, default is egg-of_ ID and Codename, for example: egg-of_debian-bookworm-</string>
-      </property>
-      <property name="text">
-       <string>Prefix</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QCheckBox" name="checkBoxClone">
-      <property name="text">
-       <string>Clone</string>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="0">
-     <widget class="QCheckBox" name="checkBoxYolk">
-      <property name="text">
-       <string>Yolk</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="labelTheme">
-      <property name="text">
-       <string>Theme</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="0" colspan="2">
-     <widget class="QCheckBox" name="checkBoxCryptedClone">
-      <property name="text">
-       <string>Crypted Clone</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEditPrefix"/>
-    </item>
-    <item row="5" column="1" colspan="2">
-     <widget class="QComboBox" name="comboBoxTheme"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="labelBasename">
-      <property name="text">
-       <string>Basename</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="labelFilters">
-      <property name="text">
-       <string>Filters</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1" colspan="2">
-     <widget class="QComboBox" name="comboBoxCompression"/>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="labelCompression">
-      <property name="text">
-       <string>Compression</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEditBasename"/>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="labelAddons">
-      <property name="toolTip">
-       <string>configures the addon and creates a link to the selected one on the desktop</string>
-      </property>
-      <property name="text">
-       <string>Addons</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="0">
-     <widget class="QCheckBox" name="checkBoxScript">
-      <property name="text">
-       <string>Script</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="0">
-     <widget class="QCheckBox" name="checkBoxUnsecure">
-      <property name="text">
-       <string>Unsecure</string>
-      </property>
-      <property name="tristate">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-   </layout>
   </widget>
   <widget class="QPushButton" name="pushButtonGenerate">
    <property name="geometry">
@@ -205,12 +99,184 @@
      <height>31</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>generate the command</string>
+   </property>
    <property name="text">
     <string>generate</string>
    </property>
   </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>21</y>
+     <width>591</width>
+     <height>314</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelAddons">
+      <property name="toolTip">
+       <string>configures the addon and creates a link to the selected one on the desktop</string>
+      </property>
+      <property name="text">
+       <string>Addons</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="comboBoxAddons">
+      <property name="toolTip">
+       <string>Select addons to insert</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QCheckBox" name="checkBoxPrefix">
+      <property name="toolTip">
+       <string>Prefix eg: egg-of_DISTRONAME-CODENAME-</string>
+      </property>
+      <property name="text">
+       <string>Prefix</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEditPrefix">
+      <property name="toolTip">
+       <string>prefix</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QCheckBox" name="checkBoxBasename">
+      <property name="toolTip">
+       <string>Basename (usually hostname)</string>
+      </property>
+      <property name="text">
+       <string>Basename</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="lineEditBasename">
+      <property name="toolTip">
+       <string>basename</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="labelFilters">
+      <property name="toolTip">
+       <string>Filters are used to remove private or unnecessary information from the image, you can decide whether to use them or not</string>
+      </property>
+      <property name="text">
+       <string>Filters</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QComboBox" name="comboBoxFilters">
+      <property name="toolTip">
+       <string>Select firler to use</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="labelCompression">
+      <property name="toolTip">
+       <string>You can choose from three types of compression: fast (default), standart and max</string>
+      </property>
+      <property name="text">
+       <string>Compression</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QComboBox" name="comboBoxCompression">
+      <property name="toolTip">
+       <string>Select compression</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="labelTheme">
+      <property name="toolTip">
+       <string>Select the desired theme. To download themes: eggs wardrobe get</string>
+      </property>
+      <property name="text">
+       <string>Theme</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QComboBox" name="comboBoxTheme">
+      <property name="toolTip">
+       <string>Select theme</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QCheckBox" name="checkBoxClone">
+      <property name="toolTip">
+       <string>Performs a complete clone of the system by also copying users and their data</string>
+      </property>
+      <property name="text">
+       <string>Clone</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QCheckBox" name="checkBoxCryptedClone">
+      <property name="toolTip">
+       <string>Performs a complete clone of the system by also copying the users and their data that will be encrypted in a LUKS volume inside the ISO </string>
+      </property>
+      <property name="text">
+       <string>Crypted Clone</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QCheckBox" name="checkBoxScript">
+      <property name="toolTip">
+       <string>It only creates the scripts necessary to create the ISO, but does not create it.</string>
+      </property>
+      <property name="text">
+       <string>Script</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QCheckBox" name="checkBoxUnsecure">
+      <property name="toolTip">
+       <string>Selecting unsecure will also copy the data in /root to the ISO</string>
+      </property>
+      <property name="text">
+       <string>Unsecure</string>
+      </property>
+      <property name="tristate">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QCheckBox" name="checkBoxYolk">
+      <property name="toolTip">
+       <string>Generates or regenerates a local repository /var/local/yolk to allow installation even in the absence of the Internet.</string>
+      </property>
+      <property name="text">
+       <string>Yolk</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

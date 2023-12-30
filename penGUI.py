@@ -12,7 +12,7 @@ from terminal import Terminal
 from eggs_configuration import EggsConfiguration
 
 # Questo è l'import cruciale
-from ui.ui_mainwindow import Ui_MainWindow
+from ui.ui_penGUI import Ui_MainWindow
 
 ##
 # QtWidgets.QWidget serve per customizzare

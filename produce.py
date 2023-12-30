@@ -3,7 +3,7 @@ import os
 import yaml
 
 from PySide6 import QtCore, QtWidgets
-from PySide6.QtWidgets import QPushButton, QVBoxLayout
+from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication
 
 from ui.ui_produce import Ui_DialogProduce
 
@@ -21,11 +21,17 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         with open('/etc/penguins-eggs.d/eggs.yaml', 'r') as file:
             eggs = yaml.safe_load(file)
 
-        self.lineEditBasename.setText(eggs['snapshot_basename'])
         self.lineEditPrefix.setText(eggs['snapshot_prefix'])
+        self.lineEditBasename.setText(eggs['snapshot_basename'])
         self.comboBoxAddons.addItems(['', 'adapt', 'ichoice', 'pve', 'rsupport'])
         self.comboBoxFilters.addItems(['', 'custom', 'homes', 'usr'])
         self.comboBoxCompression.addItems(['fast', 'standard', 'max'])
+
+        self.lineEditBasename.setEnabled(False)
+        self.lineEditPrefix.setEnabled(False)
+        
+        self.checkBoxBasename.stateChanged.connect(self.basename)
+        self.checkBoxPrefix.stateChanged.connect(self.prefix)
 
         self.checkBoxClone.stateChanged.connect(self.clone)
         self.checkBoxCryptedClone.stateChanged.connect(self.crypted_clone)
@@ -55,15 +61,60 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
 
     def generate(self):
         command='eggs produce '
-        if (self.comboBoxAddons.currentText !=''):
+        if (self.comboBoxAddons.currentText() !=''):
             command += '--addons ' + self.comboBoxAddons.currentText()
 
+        if self.checkBoxPrefix.isChecked():
+            command += ' --prefix ' + self.lineEditPrefix.text()
+
+        if self.checkBoxBasename.isChecked():
+            command += ' --basename ' + self.lineEditBasename.text()
+
+        if (self.comboBoxFilters.currentText() !=''):
+            command += '--filters ' + self.comboBoxFilters.currentText()
+
+        if self.checkBoxClone.isChecked():
+            command += ' --clone'
+
+        if self.checkBoxCryptedClone.isChecked():
+            command += ' --cryptedclone'
+
+        if self.checkBoxCryptedClone.isChecked():
+            command += ' --cryptedclone'
+
+        if self.checkBoxScript.isChecked():
+            command += ' --script'
+
+        if self.checkBoxUnsecure.isChecked():
+            command += ' --unsecure'
+
+        if self.checkBoxYolk.isChecked():
+            command += ' --yolk'
+
         self.lineEditCommand.setText(command)
+
+
+    ##
+    #
+    def basename(self):
+        if self.checkBoxBasename.isChecked():
+            self.lineEditBasename.setEnabled(True)
+        else:
+            self.lineEditBasename.setEnabled(False)
+
+    ##
+    #
+    def prefix(self):
+        if self.checkBoxPrefix.isChecked():
+            self.lineEditPrefix.setEnabled(True)
+        else:
+            self.lineEditPrefix.setEnabled(False)
+
 
     ##
     # azzerra cryptedClone, script e setta unsecure
     def clone(self):
-        if self.checkBoxClone.checkState():
+        if self.checkBoxClone.isChecked():
             self.checkBoxCryptedClone.setChecked(False)
             self.checkBoxScript.setChecked(False)
             #self.checkBoxUnsecure.setChecked(True)
@@ -71,7 +122,7 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
     ##
     # azzerra clone, script e setta unsecure
     def crypted_clone(self):
-        if self.checkBoxCryptedClone.checkState():
+        if self.checkBoxCryptedClone.isChecked():
             self.checkBoxClone.setChecked(False)
             self.checkBoxScript.setChecked(False)
             #self.checkBoxUnsecure.setChecked(True)
@@ -79,7 +130,7 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
     ##
     # azzerra clone e cryptedClone
     def script(self):
-        if self.checkBoxScript.checkState():
+        if self.checkBoxScript.isChecked():
             self.checkBoxClone.setChecked(False)
             self.checkBoxCryptedClone.setChecked(False)
 
@@ -105,3 +156,13 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
     @QtCore.Slot()
     def reject(self):
         print('Reject')
+
+
+##
+# development
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+
+    win = Produce() # ricorda ()
+
+    sys.exit(app.exec()) # ricorda ()

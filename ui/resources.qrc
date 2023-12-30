@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="eggs">
+    <file>icons/krill.svg</file>
+    <file>icons/eggs.png</file>
+  </qresource>
+</RCC>
