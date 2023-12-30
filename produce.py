@@ -4,6 +4,7 @@ import yaml
 
 from PySide6 import QtCore, QtWidgets
 from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication
+from PySide6.QtGui import QClipboard
 
 from ui.ui_produce import Ui_DialogProduce
 
@@ -17,7 +18,9 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
 
         self.setWindowTitle = "Produce"
 
-        # UI
+        QApplication.clipboard().dataChanged.connect(self.onClipboardChanged)
+
+        # load eggs.yaml
         with open('/etc/penguins-eggs.d/eggs.yaml', 'r') as file:
             eggs = yaml.safe_load(file)
 
@@ -27,18 +30,21 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         self.comboBoxFilters.addItems(['', 'custom', 'homes', 'usr'])
         self.comboBoxCompression.addItems(['fast', 'standard', 'max'])
 
+        # disable and fill basename and prefix
         self.lineEditBasename.setEnabled(False)
         self.lineEditPrefix.setEnabled(False)
-        
+
+        # checkox connect
         self.checkBoxBasename.stateChanged.connect(self.basename)
         self.checkBoxPrefix.stateChanged.connect(self.prefix)
-
         self.checkBoxClone.stateChanged.connect(self.clone)
         self.checkBoxCryptedClone.stateChanged.connect(self.crypted_clone)
         self.checkBoxScript.stateChanged.connect(self.script)
         self.checkBoxUnsecure.stateChanged.connect(self.unsecure)
 
+        # buttons connect
         self.pushButtonGenerate.clicked.connect(self.generate)
+        self.pushButtonRun.clicked.connect(self.run)
 
         # recupero i themi da .wardrobe/vendors/
         if os.geteuid() == 0:
@@ -59,6 +65,10 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
 
         self.show()
 
+    def onClipboardChanged(self):
+        text = QApplication.clipboard().text()
+        print(text)
+
     def generate(self):
         command='eggs produce '
         if (self.comboBoxAddons.currentText() !=''):
@@ -72,6 +82,9 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
 
         if (self.comboBoxFilters.currentText() !=''):
             command += '--filters ' + self.comboBoxFilters.currentText()
+
+        if (self.comboBoxCompression.currentText() !=''):
+            command += ' --'+ self.comboBoxCompression.currentText()
 
         if self.checkBoxClone.isChecked():
             command += ' --clone'
@@ -93,6 +106,9 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
 
         self.lineEditCommand.setText(command)
 
+    ##
+    def run(self):
+        QApplication.clipboard().setText(self.lineEditCommand.text())
 
     ##
     #
@@ -117,7 +133,7 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         if self.checkBoxClone.isChecked():
             self.checkBoxCryptedClone.setChecked(False)
             self.checkBoxScript.setChecked(False)
-            #self.checkBoxUnsecure.setChecked(True)
+            
 
     ##
     # azzerra clone, script e setta unsecure
@@ -125,7 +141,6 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         if self.checkBoxCryptedClone.isChecked():
             self.checkBoxClone.setChecked(False)
             self.checkBoxScript.setChecked(False)
-            #self.checkBoxUnsecure.setChecked(True)
 
     ##
     # azzerra clone e cryptedClone
@@ -137,11 +152,7 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
     ##
     # azzerra clone e cryptedClone
     def unsecure(self):
-        print("Unsecure")
-        if self.checkBoxUnsecure.checkState():
-            print("Checked")
-        else:
-            print("Unchecked")
+        if not self.checkBoxUnsecure.isChecked():
             self.checkBoxClone.setChecked(False)
             self.checkBoxCryptedClone.setChecked(False)
 
