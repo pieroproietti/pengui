@@ -1,13 +1,17 @@
-# requirements.txt
+# Packaging 
+
+I'm just looking to package for Debian. 
+
+## requirements.txt
 `pip freeze > requirements.txt`
 
-# PyInstaller
+## PyInstaller
 
 `pyinstaller --windowed pengui.py`
 
 will buil inside your folder two new folders `dist` and `build`.
 
-# fpm
+## fpm
 First install ruby
 
 `sudo apt install ruby`
@@ -21,9 +25,9 @@ add path in .bashrc
 now fpm is ready:
 `fpm --version`
 
-# Create package
-I chosen for now to install pengui under /opt.
+## Create package
+I chosen to install pengui under /opt/pengui. and build a short script under `bin`. All the necessary complementes, a pengui.desktop file and a pengui.png ico are under `asset`
 
-## Create directory scructure and package
-I made a simple script `create-package-pengui` under bin.
+To create the package just run `bin/create-package-pengui`
 
+NOTE: create-package will remove the dirs build, dist and package create during the buid, leaving jis a simple `pengui.deb` file.
