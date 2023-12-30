@@ -22,7 +22,7 @@ This is the repository of pengui, to get this sources just:
 
 `git clone https://github.com/pieroproietti/pengui`
 
-Perhaps will be better to fork the repository before of that, so you will be able to create [Pull Request](https://github.com/pieroproietti/pengui/pulls) and follow the project.
+Perhaps will be better to [fork](https://github.com/pieroproietti/pengui/fork) the repository before of that, so you will be able to create [Pull Request](https://github.com/pieroproietti/pengui/pulls) and follow the project.
 
 # venv
 Just run `./bin/create_venv and` and follow the instructions.
