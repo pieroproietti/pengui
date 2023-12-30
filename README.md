@@ -1,7 +1,9 @@
 # penGUI
 
+
 **penGUI take cure of eggs!**
-===
+![](https://github.com/pieroproietti/penguins-eggs/blob/master/assets/eggs.png)
+
 
 penGUI makes it easy for you to learn eggs commands, once you learn them you will probably use it less, but a GUI for penguins-eggs was needed and now there is.
 
