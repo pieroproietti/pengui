@@ -17,12 +17,12 @@ I'm using Debian bookworm, just installed this packages to my [colibri](https://
 It seem we need for QT following packages too: 
 `sudo apt install libxcb-cursor0 libpython3.11` 
 
-# source
-This is the repository of pengui, to get this source just: 
+# sources
+This is the repository of pengui, to get this sources just: 
 
 `git clone https://github.com/pieroproietti/pengui`
 
-Perhaps, will be better to fork the source before.
+Perhaps will be better to fork the repository before of that, so you will be able tocreate Pull Request and follow the project.
 
 # venv
 Just run `./bin/create_venv and` and follow the instructions.
