@@ -6,9 +6,9 @@ penGUI makes it easy for you to learn eggs commands, once you learn them you wil
 
 I'm using python 3.11.2 and PySide6 to build the program.
 
-## Prerequisites (Debian bookworm)
+## Prerequisites
 
-Just installed this packages:
+I'm using Debian bookworm, just installed this packages to my [colibri](https://sourceforge.net/projects/penguins-eggs/files/ISOS/debian/bookworm/arm64/):
 
 `sudo apt install build-essential`
 
@@ -17,10 +17,17 @@ Just installed this packages:
 It seem we need for QT following packages: 
 `sudo apt install libxcb-cursor0 libpython3.11` 
 
-# venv
-Just run `./bin/create_venv and` follow the instructions for install packages.
+# source
+This is the repository of pengui, to get this source just: 
 
-# Following notes are not yet implemented
+`git clone https://github.com/pieroproietti/pengui`
+
+Perhaps, will be better to fork the source before.
+
+# venv
+Just run `./bin/create_venv and` and follow the instructions.
+
+# future plan, not yet used
 
 ## poetry
 I will like to manage the package with `poetry`, perhaps simply for poetry!
