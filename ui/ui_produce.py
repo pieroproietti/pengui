@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'produceKEIBXz.ui'
+## Form generated from reading UI file 'producePyLDsh.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -24,6 +24,9 @@ class Ui_DialogProduce(object):
         if not DialogProduce.objectName():
             DialogProduce.setObjectName(u"DialogProduce")
         DialogProduce.resize(640, 480)
+        DialogProduce.setMinimumSize(QSize(640, 480))
+        DialogProduce.setMaximumSize(QSize(640, 480))
+        DialogProduce.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.buttonBox = QDialogButtonBox(DialogProduce)
         self.buttonBox.setObjectName(u"buttonBox")
         self.buttonBox.setGeometry(QRect(10, 440, 621, 32))
@@ -109,10 +112,10 @@ class Ui_DialogProduce(object):
 
         self.gridLayout.addWidget(self.checkBoxUnsecure, 9, 0, 1, 1)
 
-        self.checkBoxUnsecure_2 = QCheckBox(self.layoutWidget)
-        self.checkBoxUnsecure_2.setObjectName(u"checkBoxUnsecure_2")
+        self.checkBoxYolk = QCheckBox(self.layoutWidget)
+        self.checkBoxYolk.setObjectName(u"checkBoxYolk")
 
-        self.gridLayout.addWidget(self.checkBoxUnsecure_2, 10, 0, 1, 1)
+        self.gridLayout.addWidget(self.checkBoxYolk, 10, 0, 1, 1)
 
         self.comboBoxAddons = QComboBox(self.layoutWidget)
         self.comboBoxAddons.setObjectName(u"comboBoxAddons")
@@ -154,7 +157,7 @@ class Ui_DialogProduce(object):
         self.checkBoxCryptedClone.setText(QCoreApplication.translate("DialogProduce", u"Crypted Clone", None))
         self.checkBoxScript.setText(QCoreApplication.translate("DialogProduce", u"Script", None))
         self.checkBoxUnsecure.setText(QCoreApplication.translate("DialogProduce", u"Unsecure", None))
-        self.checkBoxUnsecure_2.setText(QCoreApplication.translate("DialogProduce", u"Yolk", None))
+        self.checkBoxYolk.setText(QCoreApplication.translate("DialogProduce", u"Yolk", None))
         self.pushButtonGenerate.setText(QCoreApplication.translate("DialogProduce", u"generate", None))
     # retranslateUi
 

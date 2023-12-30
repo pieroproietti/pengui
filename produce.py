@@ -30,6 +30,7 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         self.checkBoxClone.stateChanged.connect(self.clone)
         self.checkBoxCryptedClone.stateChanged.connect(self.crypted_clone)
         self.checkBoxScript.stateChanged.connect(self.script)
+        self.checkBoxUnsecure.stateChanged.connect(self.unsecure)
 
         self.pushButtonGenerate.clicked.connect(self.generate)
 
@@ -65,7 +66,7 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         if self.checkBoxClone.checkState():
             self.checkBoxCryptedClone.setChecked(False)
             self.checkBoxScript.setChecked(False)
-            self.checkBoxUnsecure.setChecked(True)
+            #self.checkBoxUnsecure.setChecked(True)
 
     ##
     # azzerra clone, script e setta unsecure
@@ -73,7 +74,7 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         if self.checkBoxCryptedClone.checkState():
             self.checkBoxClone.setChecked(False)
             self.checkBoxScript.setChecked(False)
-            self.checkBoxUnsecure.setChecked(True)
+            #self.checkBoxUnsecure.setChecked(True)
 
     ##
     # azzerra clone e cryptedClone
@@ -81,7 +82,17 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         if self.checkBoxScript.checkState():
             self.checkBoxClone.setChecked(False)
             self.checkBoxCryptedClone.setChecked(False)
-           
+
+    ##
+    # azzerra clone e cryptedClone
+    def unsecure(self):
+        print("Unsecure")
+        if self.checkBoxUnsecure.checkState():
+            print("Checked")
+        else:
+            print("Unchecked")
+            self.checkBoxClone.setChecked(False)
+            self.checkBoxCryptedClone.setChecked(False)
 
     ##
     #
