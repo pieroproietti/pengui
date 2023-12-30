@@ -70,9 +70,9 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         print(text)
 
     def generate(self):
-        command='eggs produce '
+        command='sudo eggs produce'
         if (self.comboBoxAddons.currentText() !=''):
-            command += '--addons ' + self.comboBoxAddons.currentText()
+            command += ' --addons ' + self.comboBoxAddons.currentText()
 
         if self.checkBoxPrefix.isChecked():
             command += ' --prefix ' + self.lineEditPrefix.text()
@@ -81,7 +81,7 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
             command += ' --basename ' + self.lineEditBasename.text()
 
         if (self.comboBoxFilters.currentText() !=''):
-            command += '--filters ' + self.comboBoxFilters.currentText()
+            command += ' --filters ' + self.comboBoxFilters.currentText()
 
         if (self.comboBoxCompression.currentText() !=''):
             command += ' --'+ self.comboBoxCompression.currentText()

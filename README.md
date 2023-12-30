@@ -11,14 +11,14 @@ It seem we need for QT following packages:
 `sudo apt install libxcb-cursor0 libpython3.11` 
 
 # venv
-Just run ./create_venv and follow the instructions.
+Just run `./bin/create_venv and` follow the instructions.
 
 At this point just: `pip install pyside6` and we are ready to go
 
-# Follow noter are not implemented
+# Follow notes are not implemented
 
 ## poetry
-Vorrei gestire il progetto con poetry, forse semplicemente con poesia!
+I will like to manage the package with `poetry`, perhaps simply for poetry!
 
 * `sudo apt install pipx`
 * `pipx ensurepath`
