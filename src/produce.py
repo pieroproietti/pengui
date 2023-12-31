@@ -3,7 +3,7 @@ import os
 import yaml
 
 from PySide6 import QtCore, QtWidgets
-from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication
+from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBox
 from PySide6.QtGui import QClipboard
 
 from ui.ui_produce import Ui_DialogProduce
@@ -111,7 +111,26 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
 
     ##
     def run(self):
-        QApplication.clipboard().setText(self.lineEditCommand.text())
+        command=self.lineEditCommand.text()
+        if os.geteuid() != 0:
+            QApplication.clipboard().setText(command)
+            msgBox = QMessageBox(self)
+            msgBox.setText("command was copied on your clipboard")
+            msgBox.exec()
+        else:
+            self.Terminal(command)            
+
+    ##
+    #
+    def Terminal(self, command):
+        if os.geteuid() != 0:
+            command='sudo ' + command
+        process = QProcess(self)
+        process.setProgram("/usr/bin/x-terminal-emulator")
+
+        process.setArguments(["-e", command])
+        process.start()
+        print(command)
 
     ##
     #

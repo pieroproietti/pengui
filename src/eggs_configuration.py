@@ -7,6 +7,7 @@ from ui.ui_eggs_configuration import Ui_Dialog
 import sys
 import os
 import yaml
+import subprocess 
 
 ##
 #
@@ -25,13 +26,14 @@ class EggsConfiguration(Ui_Dialog, QDialog):
 
         self.file_eggs='/etc/penguins-eggs.d/eggs.yaml'
         if os.path.exists('/etc/penguins-eggs.d'):
-            if not os.path.isfile(self.file_eggs):
-                os.popen('cp asset/eggs.yaml /etc/penguins-eggs.d/') 
-        else:
-            os.mkdir('/etc/penguins-eggs.d')    
-            os.popen('cp eggs.yaml /etc/penguins-eggs.d/') 
+            try:
+                subprocess.run(['/usr/bin/eggs', 'dad', '--default'], check=True)
+            except subprocess.CalledProcessError as e:
+                print(f'Command {e.cmd} failed with error {e.returncode}')
 
-        print('file_eggs:' + self.file_eggs)
+        if not os.path.isfile(self.file_eggs):
+            os.popen('cp assets/eggs.yaml /etc/penguins-eggs.d/') 
+        
         with open('/etc/penguins-eggs.d/eggs.yaml', 'r') as file:
             eggs = yaml.safe_load(file)
 
@@ -74,9 +76,6 @@ class EggsConfiguration(Ui_Dialog, QDialog):
         with open(self.file_eggs, 'w') as object_file:
             yaml.dump(eggs, object_file)
 
-        #self.emit(self.close_me)
-
-        print('Accept')
 
     ##
     #

@@ -25,7 +25,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         # check root
         if os.geteuid() != 0:
-            button = QPushButton("You MUST be root!")
+            button = QPushButton("You MUST be root to configure eggs!")
             button.clicked.connect(self.exit)
             self.setCentralWidget(button)
 
@@ -39,7 +39,6 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
                     subprocess.run(['/usr/bin/eggs', 'dad', '--default'], check=True)
                 except subprocess.CalledProcessError as e:
                     print(f'Command {e.cmd} failed with error {e.returncode}')
-                print('eggs dad --default')
                       
         # Signals are emitted by objects 
         self.action_About.triggered.connect(self.about)
