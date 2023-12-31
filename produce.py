@@ -86,6 +86,9 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         if (self.comboBoxCompression.currentText() !=''):
             command += ' --'+ self.comboBoxCompression.currentText()
 
+        if (self.comboBoxTheme.currentText() !=''):
+            command += ' --theme ' + self.comboBoxTheme.currentText()
+
         if self.checkBoxClone.isChecked():
             command += ' --clone'
 

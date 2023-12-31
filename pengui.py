@@ -5,10 +5,9 @@ import subprocess
 
 from PySide6 import QtCore
 from PySide6.QtCore import QProcess, Slot
-from PySide6.QtWidgets import QMainWindow, QApplication, QPushButton
+from PySide6.QtWidgets import QMainWindow, QApplication, QPushButton, QMessageBox
 
 from produce import Produce
-from terminal import Terminal
 from eggs_configuration import EggsConfiguration
 
 # Questo è l'import cruciale
@@ -56,9 +55,6 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.action_Yolk.triggered.connect(self.Yolk)
 
         #self.setCentralWidget(Terminal())
-        #self.setCentralWidget(EggsConfiguration())
-        #self.setCentralWidget(Produce())
-
 
         # in init prima di show, inizializziamo tutto
         self.show()
@@ -67,101 +63,68 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @QtCore.Slot()
     def about(self):
-        print ("About")
+        msgBox = QMessageBox(self)
+        msgBox.setText("penGUI take cure about eggs!")
+        msgBox.exec()
 
     ##
     #
     @QtCore.Slot()
     def configure(self):
-        EggsConfiguration.show(self)
+        self.setCentralWidget(EggsConfiguration())
         
     ##
     #
     @QtCore.Slot()
     def exit(self):
-        print ("Exit")
-        quit()
+        sys.exit()
 
     ##
     #
     @QtCore.Slot()
     def kill(self):
-        #try:
-        #    subprocess.run(['/usr/bin/eggs', 'kill'], check=True)
-        #except subprocess.CalledProcessError as e:
-        #    print(f'Command {e.cmd} failed with error {e.returncode}')
-
-        # https://stackoverflow.com/questions/803265/getting-realtime-output-using-subprocess
-        cmd=['/usr/bin/eggs', 'kill',]
-        process = subprocess.run(
-            cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-        )
-
-        while True:
-            out = process.stdout.read(1)
-            if out == '' and process.poll() != None:
-                break
-            if out != '':
-                sys.stdout.write(out)
-                sys.stdout.flush()
-        #result=subprocess.run(['/usr/bin/eggs', 'kill', '--nointeractive'], stdout=subprocess.PIPE)
-        #print(result.stdout.decode())
-
+        self.Terminal('eggs kill')
+        
     @Slot()
     def produce(self):
         self.setCentralWidget(Produce())
-        #terminal_process = QProcess()
-        #terminal_program = "/usr/bin/x-terminal-emulator"  
-        #command = "/usr/bin/eggs produce"
-
-        #terminal_process.start(terminal_program, [command])
-
-        #if terminal_process.waitForStarted():
-            #terminal_process.waitForFinished(-1)
-            #output = terminal_process.readAllStandardOutput().data().decode()
-            #print(output)
-        #else:
-            #print("Failed to open the terminal.")
 
     ##
     #
     @QtCore.Slot()
     def clean(self):
-        try:
-            subprocess.run(['/usr/bin/eggs', 'tools', 'clean'], check=True)
-        except subprocess.CalledProcessError as e:
-            print(f'Command {e.cmd} failed with error {e.returncode}')
-        print ("Clean end")
+        self.Terminal('eggs tools clean')
 
     ##
     #
     @QtCore.Slot()
     def Ppa(self):
-        try:
-            subprocess.run(['/usr/bin/eggs', 'tools', 'ppa'], check=True)
-        except subprocess.CalledProcessError as e:
-            print(f'Command {e.cmd} failed with error {e.returncode}')
-        print ("PPA end")
-
+        self.Terminal('eggs tools ppa')
+    
     ##
     #
     @QtCore.Slot()
     def Skel(self):
-        try:
-            subprocess.run(['/usr/bin/eggs', 'tools', 'skel'], check=True)
-        except subprocess.CalledProcessError as e:
-            print(f'Command {e.cmd} failed with error {e.returncode}')
-        print ("Skel end")
+        self.Terminal('eggs tools skel')
 
     ##
     #
     @QtCore.Slot()
     def Yolk(self):
-        print ("Yolk")
+        self.Terminal('eggs tools yolk')
 
+    ##
+    #
+    def Terminal(self, command):
+        if os.geteuid() != 0:
+            command='sudo ' + command
+        process = QProcess(self)
+        process.setProgram("/usr/bin/x-terminal-emulator")
 
-    ########################################################
-    ###############    eggs_configuration    ###############
+        process.setArguments(["-e", command])
+        process.start()
+        print(command)
+
 
 
 if __name__ == "__main__":
