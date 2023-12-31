@@ -4,18 +4,18 @@ import os
 import subprocess
 
 from PySide6 import QtCore
-from PySide6.QtCore import QProcess, Slot
+from PySide6.QtCore import Slot
 from PySide6.QtWidgets import QMainWindow, QApplication, QPushButton, QMessageBox
 
 from produce import Produce
 from eggs_configuration import EggsConfiguration
 from terminal import Terminal
 
-# Questo è l'import cruciale
+# import from ui
 from ui.ui_penGUI import Ui_MainWindow
 
 ##
-# QtWidgets.QWidget serve per customizzare
+# 
 class MyMainWindow(Ui_MainWindow, QMainWindow):    
     def __init__ (self):
         super().__init__() # inizializza
@@ -53,8 +53,6 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.action_PPA.triggered.connect(self.Ppa)
         self.action_Skel.triggered.connect(self.Skel)
         self.action_Yolk.triggered.connect(self.Yolk)
-
-        #self.setCentralWidget(Terminal())
 
         # in init prima di show, inizializziamo tutto
         self.show()
@@ -113,11 +111,9 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     def Yolk(self):
         Terminal.execute(self, 'eggs tools yolk')
 
-
-
+##
+# real main
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-
-    win = MyMainWindow() # ricorda ()
-
-    sys.exit(app.exec()) # ricorda ()
+    win = MyMainWindow()
+    sys.exit(app.exec())
