@@ -9,6 +9,7 @@ from PySide6.QtWidgets import QMainWindow, QApplication, QPushButton, QMessageBo
 
 from produce import Produce
 from eggs_configuration import EggsConfiguration
+from terminal import Terminal
 
 # Questo è l'import cruciale
 from ui.ui_penGUI import Ui_MainWindow
@@ -82,7 +83,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @QtCore.Slot()
     def kill(self):
-        self.Terminal('eggs kill')
+        Terminal.execute(self, 'eggs kill')
         
     @Slot()
     def produce(self):
@@ -92,37 +93,25 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @QtCore.Slot()
     def clean(self):
-        self.Terminal('eggs tools clean')
+        Terminal.execute(self, 'eggs tools clean')
 
     ##
     #
     @QtCore.Slot()
     def Ppa(self):
-        self.Terminal('eggs tools ppa')
+        Terminal.execute(self, 'eggs tools ppa')
     
     ##
     #
     @QtCore.Slot()
     def Skel(self):
-        self.Terminal('eggs tools skel')
+        Terminal.execute(self, 'eggs tools skel')
 
     ##
     #
     @QtCore.Slot()
     def Yolk(self):
-        self.Terminal('eggs tools yolk')
-
-    ##
-    #
-    def Terminal(self, command):
-        if os.geteuid() != 0:
-            command='sudo ' + command
-        process = QProcess(self)
-        process.setProgram("/usr/bin/x-terminal-emulator")
-
-        process.setArguments(["-e", command])
-        process.start()
-        print(command)
+        Terminal.execute(self, 'eggs tools yolk')
 
 
 

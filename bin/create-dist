@@ -1,1 +1,1 @@
-pyside6-deploy -c src/pysidedeploy.spec
+pyside6-deploy -c src/pysidedeploy.spec -v

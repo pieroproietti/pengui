@@ -7,6 +7,7 @@ from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBo
 from PySide6.QtGui import QClipboard
 
 from ui.ui_produce import Ui_DialogProduce
+from terminal import Terminal
 
 ##
 #
@@ -55,7 +56,7 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         if os.path.exists(path_themes):
             found_themes= os.listdir(path_themes +'/.wardrobe/vendors/')
         else:
-            found_themes=["To get theme, execute: eggs wardobe get"]
+            found_themes=["eggs wardobe get to get penguins-wardrobe"]
 
         sorted_themes=sorted(found_themes)
         themes=['eggs']
@@ -67,7 +68,7 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
 
     def onClipboardChanged(self):
         text = QApplication.clipboard().text()
-        print(text)
+
 
     def generate(self):
         command='sudo eggs produce'
@@ -84,10 +85,12 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
             command += ' --filters ' + self.comboBoxFilters.currentText()
 
         if (self.comboBoxCompression.currentText() !=''):
-            command += ' --'+ self.comboBoxCompression.currentText()
+            if (self.comboBoxCompression.currentText() !='fast'):
+                command += ' --'+ self.comboBoxCompression.currentText()
 
         if (self.comboBoxTheme.currentText() !=''):
-            command += ' --theme ' + self.comboBoxTheme.currentText()
+            if (self.comboBoxTheme.currentText() !='eggs'):
+                command += ' --theme ' + self.comboBoxTheme.currentText()
 
         if self.checkBoxClone.isChecked():
             command += ' --clone'
@@ -118,19 +121,7 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
             msgBox.setText("command was copied on your clipboard")
             msgBox.exec()
         else:
-            self.Terminal(command)            
-
-    ##
-    #
-    def Terminal(self, command):
-        if os.geteuid() != 0:
-            command='sudo ' + command
-        process = QProcess(self)
-        process.setProgram("/usr/bin/x-terminal-emulator")
-
-        process.setArguments(["-e", command])
-        process.start()
-        print(command)
+            Terminal.execute(self, command)            
 
     ##
     #
