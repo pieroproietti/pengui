@@ -1,0 +1,3 @@
+cd src
+pyside6-deploy penguin.py
+cd ..
