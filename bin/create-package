@@ -1,16 +1,18 @@
 echo "penGUI take cure about the eggs"
-rm pengui.deb
-rm dist package -rf
-mkdir -p package/opt/pengui
-mkdir -p package/usr/share/applications
-mkdir -p package/usr/share/icons
-mkdir -p package/usr/bin
-cp asset/pengui.png package/usr/share/icons/
-cp asset/pengui.desktop package/usr/share/applications
-cp -r src/pengui.bin package/opt/pengui
-find package/opt/pengui -type f -exec chmod 644 -- {} +
-find package/opt/pengui -type d -exec chmod 755 -- {} +
-find package/usr/share -type f -exec chmod 644 -- {} +
-chmod +x package/opt/pengui/pengui.bin
-fpm -C package -s dir -t deb -n "pengui" -v 0.1.0 -p pengui.deb
-rm package -rf
+# clean
+rm pengui.deb debian structure -rf
+# create fakeroot scructure
+mkdir -p fakeroot/opt/pengui
+mkdir -p fakeroot/usr/share/applications
+mkdir -p fakeroot/usr/share/icons
+mkdir -p fakeroot/usr/bin
+# copy files in fakeroot
+cp assets/pengui.png fakeroot/usr/share/icons/
+cp assets/pengui.desktop fakeroot/usr/share/applications
+cp -r src/pengui.bin fakeroot/opt/pengui
+find fakeroot/opt/pengui -type f -exec chmod 644 -- {} +
+find fakeroot/opt/pengui -type d -exec chmod 755 -- {} +
+find fakeroot/usr/share -type f -exec chmod 644 -- {} +
+chmod +x fakeroot/opt/pengui/pengui.bin
+fpm -C fakeroot -s dir -t deb -n "pengui" -v 0.1.0 -p pengui.deb
+rm fakeroot -rf

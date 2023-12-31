@@ -19,15 +19,14 @@ class EggsConfiguration(Ui_Dialog, QDialog):
 
         # check root
         if os.geteuid() != 0:
-            button = QPushButton("You MUST be root!")
+            button = QPushButton("You need to be root, to configure eggs")
             button.clicked.connect(self.exit)
-            #self.setCentralWidget(button)
-            #sys.exit(0)
+            self.setCentralWidget(button)
 
         self.file_eggs='/etc/penguins-eggs.d/eggs.yaml'
         if os.path.exists('/etc/penguins-eggs.d'):
             if not os.path.isfile(self.file_eggs):
-                os.popen('cp eggs.yaml /etc/penguins-eggs.d/') 
+                os.popen('cp asset/eggs.yaml /etc/penguins-eggs.d/') 
         else:
             os.mkdir('/etc/penguins-eggs.d')    
             os.popen('cp eggs.yaml /etc/penguins-eggs.d/') 
