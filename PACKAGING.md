@@ -2,14 +2,19 @@
 
 I'm just looking to package for Debian. 
 
+on Debian for pyside6-deploy we ned to install:
+`sudo apt install python3-dev`
+
 ## requirements.txt
 `pip freeze > requirements.txt`
 
-## PyInstaller
+## pyside6-deploy
+will generate a single pengui.bin file on `dist`, just:
+```
+cd src
+pyside6-deploy penguin.py
+```
 
-`pyinstaller --windowed pengui.py`
-
-will buil inside your folder two new folders `dist` and `build`.
 
 ## fpm
 First install ruby

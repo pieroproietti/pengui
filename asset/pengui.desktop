@@ -3,7 +3,7 @@
 Categories=GNOME;GTK;Utility;
 Comment=penGUI take cure about the eggs!
 Encoding=UTF-8
-Exec=/opt/pengui/pengui
+Exec=/opt/pengui/pengui.bin
 GenericName=Penguins' eggs
 Icon=pengui
 Name=penGUI
