@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'eggs_configurationfKfQlN.ui'
+## Form generated from reading UI file 'configgAceLc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -19,18 +19,18 @@ from PySide6.QtWidgets import (QAbstractButton, QApplication, QCheckBox, QDialog
     QDialogButtonBox, QGridLayout, QLabel, QLineEdit,
     QSizePolicy, QWidget)
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        if not Dialog.objectName():
-            Dialog.setObjectName(u"Dialog")
-        Dialog.resize(400, 300)
-        Dialog.setMinimumSize(QSize(400, 300))
-        Dialog.setMaximumSize(QSize(400, 300))
+class Ui_DialogConfig(object):
+    def setupUi(self, DialogConfig):
+        if not DialogConfig.objectName():
+            DialogConfig.setObjectName(u"DialogConfig")
+        DialogConfig.resize(400, 300)
+        DialogConfig.setMinimumSize(QSize(400, 300))
+        DialogConfig.setMaximumSize(QSize(400, 300))
 #if QT_CONFIG(accessibility)
-        Dialog.setAccessibleDescription(u"")
+        DialogConfig.setAccessibleDescription(u"")
 #endif // QT_CONFIG(accessibility)
-        Dialog.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.layoutWidget = QWidget(Dialog)
+        DialogConfig.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
+        self.layoutWidget = QWidget(DialogConfig)
         self.layoutWidget.setObjectName(u"layoutWidget")
         self.layoutWidget.setGeometry(QRect(0, 10, 400, 241))
         self.gridLayout = QGridLayout(self.layoutWidget)
@@ -108,25 +108,25 @@ class Ui_Dialog(object):
 
         self.gridLayout.addWidget(self.checkBoxMakeIsohybrid, 6, 0, 1, 1)
 
-        self.buttonBox = QDialogButtonBox(Dialog)
+        self.buttonBox = QDialogButtonBox(DialogConfig)
         self.buttonBox.setObjectName(u"buttonBox")
         self.buttonBox.setGeometry(QRect(230, 270, 166, 24))
         self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
 
-        self.retranslateUi(Dialog)
+        self.retranslateUi(DialogConfig)
 
-        QMetaObject.connectSlotsByName(Dialog)
+        QMetaObject.connectSlotsByName(DialogConfig)
     # setupUi
 
-    def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Form", None))
-        self.label_snapshot_dir.setText(QCoreApplication.translate("Dialog", u"Nest", None))
-        self.label_snashot_prefix.setText(QCoreApplication.translate("Dialog", u"Prefix", None))
-        self.label_snapshot_basename.setText(QCoreApplication.translate("Dialog", u"Basename", None))
-        self.label_user_opt.setText(QCoreApplication.translate("Dialog", u"Live user name", None))
-        self.label_user_opt_passwd.setText(QCoreApplication.translate("Dialog", u"Live user password", None))
-        self.label_root_passwd.setText(QCoreApplication.translate("Dialog", u"Live root password", None))
-        self.checkBoxMakeMd5sum.setText(QCoreApplication.translate("Dialog", u"md5sum", None))
-        self.checkBoxMakeIsohybrid.setText(QCoreApplication.translate("Dialog", u"isohybrid", None))
+    def retranslateUi(self, DialogConfig):
+        DialogConfig.setWindowTitle(QCoreApplication.translate("DialogConfig", u"Form", None))
+        self.label_snapshot_dir.setText(QCoreApplication.translate("DialogConfig", u"Nest", None))
+        self.label_snashot_prefix.setText(QCoreApplication.translate("DialogConfig", u"Prefix", None))
+        self.label_snapshot_basename.setText(QCoreApplication.translate("DialogConfig", u"Basename", None))
+        self.label_user_opt.setText(QCoreApplication.translate("DialogConfig", u"Live user name", None))
+        self.label_user_opt_passwd.setText(QCoreApplication.translate("DialogConfig", u"Live user password", None))
+        self.label_root_passwd.setText(QCoreApplication.translate("DialogConfig", u"Live root password", None))
+        self.checkBoxMakeMd5sum.setText(QCoreApplication.translate("DialogConfig", u"md5sum", None))
+        self.checkBoxMakeIsohybrid.setText(QCoreApplication.translate("DialogConfig", u"isohybrid", None))
     # retranslateUi
 

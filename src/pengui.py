@@ -16,8 +16,9 @@ from PySide6.QtWidgets import (
 )
 
 from produce import Produce
-from eggs_configuration import EggsConfiguration
+from config import Config
 from terminal import Terminal
+from utilies import U
 
 # import from ui
 from ui.ui_pengui import Ui_MainWindow
@@ -32,42 +33,45 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         self.setWindowTitle = "penGUI"
 
+        # toolbar
         toolbar = QToolBar("My main toolbar")
         self.addToolBar(toolbar)
-
+        ## configure
         tb_configure_action = QAction("Configure", self)
         tb_configure_action.setToolTip("Configure eggs")
         tb_configure_action.triggered.connect(self.configure)
         toolbar.addAction(tb_configure_action)
-
+        ## produce
         tb_produce_action = QAction("Produce", self)
         tb_produce_action.setToolTip("Produce a new ISO")
         tb_produce_action.triggered.connect(self.produce)
         toolbar.addAction(tb_produce_action)
-
+        ## kill
         tb_kill_action = QAction("Kill", self)
         tb_kill_action.setToolTip("Kill generated ISOs")
         tb_kill_action.triggered.connect(self.kill)
         toolbar.addAction(tb_kill_action)
-
+        ## exit
         tb_quit_action = QAction("Exit", self)
         tb_quit_action.setToolTip("Exit from penGUI")
         tb_quit_action.triggered.connect(self.exit)
         toolbar.addAction(tb_quit_action)
 
+        # statusBar
         self.setStatusBar(QStatusBar(self))
+
         # check root
         if os.geteuid() != 0:
             button = QPushButton("You MUST be root to configure eggs!")
             button.clicked.connect(self.exit)
             self.setCentralWidget(button)
 
-        # check /etc/penguins-eggs.d/eggs.yaml
+        # check exists /etc/penguins-eggs.d/eggs.yaml
         file_eggs='/etc/penguins-eggs.d/eggs.yaml'
         dirname_eggs=os.path.dirname(file_eggs)
-        if not os.path.exists(dirname_eggs):
+        if not U.conf_exists():
             Terminal.execute('eggs dad --default')
-            if not os.path.exists('/etc/penguins-eggs.d'):
+            if not U.eggs_yaml_exists():
                 msgBox = QMessageBox(self)
                 msgBox.setText("You must to install penguins-eggs, before to configure it")
                 msgBox.exec()
@@ -107,7 +111,9 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @QtCore.Slot()
     def configure(self):
-        self.setCentralWidget(EggsConfiguration())
+        dialog_config=Config()
+        dialog_config.exec()
+        #self.setCentralWidget()
         
     ##
     #
@@ -123,7 +129,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         
     @Slot()
     def produce(self):
-        self.setCentralWidget(Produce())
+        dialog_produce = Produce()
+        dialog_produce.exec()
 
     ## tools
     @QtCore.Slot()

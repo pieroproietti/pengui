@@ -8,13 +8,14 @@ from PySide6.QtGui import QClipboard
 
 from ui.ui_produce import Ui_DialogProduce
 from terminal import Terminal
+from utilies import U
+
 
 ##
 #
 class Produce(QtWidgets.QWidget, Ui_DialogProduce):
     def __init__ (self):
         super().__init__()
-
         self.setupUi(self) # mandatory
 
         self.setWindowTitle = "Produce"
@@ -22,13 +23,13 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         QApplication.clipboard().dataChanged.connect(self.onClipboardChanged)
 
         # load eggs.yaml 
-        if not os.path.exists('/etc/penguins-eggs.d'):
+        if not U.conf_exists():
             msgBox = QMessageBox(self)
             msgBox.setText("Can't find /etc/penguins-eggs.d/eggs.yaml")
             msgBox.exec()
             quit()
 
-        with open('/etc/penguins-eggs.d/eggs.yaml', 'r') as file:
+        with open(U.conf_path+'/eggs.yaml', 'r') as file:
             eggs = yaml.safe_load(file)
 
         self.lineEditPrefix.setText(eggs['snapshot_prefix'])
@@ -179,13 +180,14 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
     #
     @QtCore.Slot()
     def accept(self):
-        pass
+        self.close()
 
     ##
     #
     @QtCore.Slot()
     def reject(self):
-        print('Reject')
+        self.close()
+
 
 
 ##

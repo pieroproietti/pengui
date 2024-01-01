@@ -4,31 +4,31 @@ from PySide6.QtWidgets import *
 from terminal import Terminal
 
 # import ui section
-from ui.ui_eggs_configuration import Ui_Dialog
+from ui.ui_config import Ui_DialogConfig
 
 import sys
 import os
 import yaml
 import subprocess 
+from  utilies import U
 
 ##
 #
-class EggsConfiguration(Ui_Dialog, QDialog):    
+class Config(Ui_DialogConfig, QDialog):    
 
     def __init__ (self):
         super().__init__() # inizializza
-
         self.setupUi(self) # mandatory
 
-        self.file_eggs='/etc/penguins-eggs.d/eggs.yaml'
-        if not os.path.isfile(self.file_eggs):
+        self.eggs_yaml_path=U.conf_path+'/eggs.yaml'
+        if not os.path.isfile(self.eggs_yaml_path):
             msgBox = QMessageBox(self)
             msgBox.setText("Can't find /etc/penguins-eggs.d/eggs.yaml")
             msgBox.exec()
             quit()
         
         # now we read eggs.yaml
-        with open('/etc/penguins-eggs.d/eggs.yaml', 'r') as file:
+        with open(self.eggs_yaml_path, 'r') as file:
             eggs = yaml.safe_load(file)
 
         self.lineEditSnapshotDir.setText(eggs["snapshot_dir"])
@@ -57,7 +57,7 @@ class EggsConfiguration(Ui_Dialog, QDialog):
             msgBox.setText("use: sudo pengui to can save on /etc/penguins-eggs.d/eggs.yaml")
             msgBox.exec()
         else:
-            with open(self.file_eggs, 'r') as file:
+            with open(self.eggs_yaml_path, 'r') as file:
                 eggs = yaml.safe_load(file)
 
             eggs["snapshot_dir"]=self.lineEditSnapshotDir.text()
@@ -71,9 +71,11 @@ class EggsConfiguration(Ui_Dialog, QDialog):
             eggs['make_isohybrid']=self.checkBoxMakeIsohybrid.isChecked()
             eggs['make_md5sum']=self.checkBoxMakeMd5sum.isChecked()
 
-            with open(self.file_eggs, 'w') as object_file:
+            with open(self.eggs_yaml_path, 'w') as object_file:
                 yaml.dump(eggs, object_file)
+
+        self.close()
 
     @QtCore.Slot()
     def reject(self):
-        pass # close-me
+        self.close()
