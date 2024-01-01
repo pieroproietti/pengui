@@ -1,6 +1,9 @@
-# Packaging 
+## **penGUI take cure of eggs!**
+![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.png?raw=true)
 
-I'm just looking to package for Debian. 
+# PACKAGING
+
+I'm just looking to package for Debian, for now.
 
 on Debian for pyside6-deploy we ned to install:
 `sudo apt install python3-dev`
