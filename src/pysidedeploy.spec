@@ -5,7 +5,7 @@ title = pengui
 # of input_file
 project_dir = .
 # source file path
-input_file = pengui.py
+input_file = src/pengui.py
 # directory where exec is stored
 exec_directory = .
 # path to .pyproject project file
