@@ -1,11 +1,20 @@
 # penGUI
 
-
 ## **penGUI take cure of eggs!**
 ![](https://github.com/pieroproietti/penguins-eggs/blob/master/assets/eggs.png)
 
+**Notice:** pengui is not yet a finished software, it is still in embryo and is deciding how
+ to grow, however the form produces might come in handy for someone. 
 
-penGUI makes it easy for you to learn eggs commands, once you learn them you will probably use it less, but a GUI for penguins-eggs was needed and now there is.
+You can simply install it with `dpkg -i pengui-0.1.0-1.deb` and start it with `sudo pengui` or from the desktop link. 
+
+The icon is that of penguins-eggs, I hope some graphic designer will take the trouble to design another one, for those who would like to participate in the project entering currently is easy, the project has just started.
+
+To check the avabzamentof the project status refer to the [CHANGELOG](./CHANGELOG.md).
+
+# pengui
+
+pengui makes it easy for you to learn eggs commands, once you learn them you will probably use it less, but a GUI for penguins-eggs was needed and now there is.
 
 I'm using python 3.11.2 and PySide6 to build the program.
 
