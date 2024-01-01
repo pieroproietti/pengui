@@ -1,1 +1,1 @@
-pyside6-rcc ui/resources.qrc -o resources_rc.py
+pyside6-rcc src/ui/resources.qrc -o src/resources_rc.py

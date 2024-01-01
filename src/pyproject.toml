@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pengui"
-version = "0.1.0"
+version = "0.1.1"
 description = "penGUI take cure of eggs!"
 authors = ["Piero Proietti <piero.proietti@gmail.com>"]
 license = "MIT"
