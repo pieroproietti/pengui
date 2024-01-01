@@ -8,7 +8,7 @@ I tried - same time ago - to use electron, but at last eventually I decided to t
 
 # Versions
 
-## pengui-0.0.3
+## pengui-0.1.3
 * a bit dirthy work, but now dialogs act as dialogs.
 * fixed problems using root without wardrobe
 
