@@ -8,7 +8,8 @@ I tried - same time ago - to use electron, but at last eventually I decided to t
 
 # Versions
 
-## pengui-0.1.1
+## pengui-0.1.0-2
+* added working skeleton toolbar and statusbar;
 
 2024 January, 1
 
