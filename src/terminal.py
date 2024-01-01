@@ -9,7 +9,8 @@ class Terminal(QProcess):
     def execute(self, command):
         print("command:" + command)
         if os.geteuid() != 0:
-            command='sudo ' + command
+            if command !='eggs wardrobe get':
+                command='sudo ' + command
 
         # process start
         process = QProcess(self)

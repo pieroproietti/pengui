@@ -56,9 +56,19 @@
     <addaction name="action_Skel"/>
     <addaction name="action_Yolk"/>
    </widget>
+   <widget class="QMenu" name="menuWardrobe">
+    <property name="title">
+     <string>&amp;Wardrobe</string>
+    </property>
+    <addaction name="actionGet"/>
+    <addaction name="actionList"/>
+    <addaction name="actionShow"/>
+    <addaction name="actionWear"/>
+   </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_Edit"/>
    <addaction name="menu_Tools"/>
+   <addaction name="menuWardrobe"/>
    <addaction name="menu_Help"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -105,6 +115,26 @@
   <action name="action_Yolk">
    <property name="text">
     <string>&amp;Yolk</string>
+   </property>
+  </action>
+  <action name="actionGet">
+   <property name="text">
+    <string>&amp;Get</string>
+   </property>
+  </action>
+  <action name="actionList">
+   <property name="text">
+    <string>&amp;List</string>
+   </property>
+  </action>
+  <action name="actionShow">
+   <property name="text">
+    <string>&amp;Show</string>
+   </property>
+  </action>
+  <action name="actionWear">
+   <property name="text">
+    <string>&amp;Wear</string>
    </property>
   </action>
  </widget>

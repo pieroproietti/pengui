@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'penGUIUdxFcX.ui'
+## Form generated from reading UI file 'penguiZRWuKt.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -46,6 +46,14 @@ class Ui_MainWindow(object):
         self.action_PPA.setObjectName(u"action_PPA")
         self.action_Yolk = QAction(MainWindow)
         self.action_Yolk.setObjectName(u"action_Yolk")
+        self.actionGet = QAction(MainWindow)
+        self.actionGet.setObjectName(u"actionGet")
+        self.actionList = QAction(MainWindow)
+        self.actionList.setObjectName(u"actionList")
+        self.actionShow = QAction(MainWindow)
+        self.actionShow.setObjectName(u"actionShow")
+        self.actionWear = QAction(MainWindow)
+        self.actionWear.setObjectName(u"actionWear")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
@@ -60,6 +68,8 @@ class Ui_MainWindow(object):
         self.menu_Help.setObjectName(u"menu_Help")
         self.menu_Tools = QMenu(self.menubar)
         self.menu_Tools.setObjectName(u"menu_Tools")
+        self.menuWardrobe = QMenu(self.menubar)
+        self.menuWardrobe.setObjectName(u"menuWardrobe")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -68,6 +78,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menu_File.menuAction())
         self.menubar.addAction(self.menu_Edit.menuAction())
         self.menubar.addAction(self.menu_Tools.menuAction())
+        self.menubar.addAction(self.menuWardrobe.menuAction())
         self.menubar.addAction(self.menu_Help.menuAction())
         self.menu_File.addAction(self.action_Produce)
         self.menu_File.addAction(self.action_Kill)
@@ -78,6 +89,10 @@ class Ui_MainWindow(object):
         self.menu_Tools.addAction(self.action_PPA)
         self.menu_Tools.addAction(self.action_Skel)
         self.menu_Tools.addAction(self.action_Yolk)
+        self.menuWardrobe.addAction(self.actionGet)
+        self.menuWardrobe.addAction(self.actionList)
+        self.menuWardrobe.addAction(self.actionShow)
+        self.menuWardrobe.addAction(self.actionWear)
 
         self.retranslateUi(MainWindow)
 
@@ -95,9 +110,14 @@ class Ui_MainWindow(object):
         self.action_Clean.setText(QCoreApplication.translate("MainWindow", u"&Clean", None))
         self.action_PPA.setText(QCoreApplication.translate("MainWindow", u"&PPA", None))
         self.action_Yolk.setText(QCoreApplication.translate("MainWindow", u"&Yolk", None))
+        self.actionGet.setText(QCoreApplication.translate("MainWindow", u"&Get", None))
+        self.actionList.setText(QCoreApplication.translate("MainWindow", u"&List", None))
+        self.actionShow.setText(QCoreApplication.translate("MainWindow", u"&Show", None))
+        self.actionWear.setText(QCoreApplication.translate("MainWindow", u"&Wear", None))
         self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"&File", None))
         self.menu_Edit.setTitle(QCoreApplication.translate("MainWindow", u"&Edit", None))
         self.menu_Help.setTitle(QCoreApplication.translate("MainWindow", u"&Help", None))
         self.menu_Tools.setTitle(QCoreApplication.translate("MainWindow", u"&Tools", None))
+        self.menuWardrobe.setTitle(QCoreApplication.translate("MainWindow", u"&Wardrobe", None))
     # retranslateUi
 

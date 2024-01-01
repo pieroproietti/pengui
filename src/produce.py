@@ -21,7 +21,13 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
 
         QApplication.clipboard().dataChanged.connect(self.onClipboardChanged)
 
-        # load eggs.yaml
+        # load eggs.yaml 
+        if not os.path.exists('/etc/penguins-eggs.d'):
+            msgBox = QMessageBox(self)
+            msgBox.setText("Can't find /etc/penguins-eggs.d/eggs.yaml")
+            msgBox.exec()
+            quit()
+
         with open('/etc/penguins-eggs.d/eggs.yaml', 'r') as file:
             eggs = yaml.safe_load(file)
 
@@ -51,14 +57,14 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         if os.geteuid() == 0:
             path_themes='/home/' + os.getenv('SUDO_USER')
         else:
-            path_themes='/home/' + os.getenv('USER')
+            path_themes='/home/' + os.getenv('USER') + '/.wardrobe'
 
         if os.path.exists(path_themes):
-            found_themes= os.listdir(path_themes +'/.wardrobe/vendors/')
+            found_themes= os.listdir(path_themes +'/vendors/')
+            sorted_themes=sorted(found_themes)
         else:
-            found_themes=["eggs wardobe get to get penguins-wardrobe"]
-
-        sorted_themes=sorted(found_themes)
+            sorted_themes=[]
+        
         themes=['eggs']
         themes.extend(sorted_themes)
 

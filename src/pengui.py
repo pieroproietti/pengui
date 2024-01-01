@@ -12,7 +12,7 @@ from eggs_configuration import EggsConfiguration
 from terminal import Terminal
 
 # import from ui
-from ui.ui_penGUI import Ui_MainWindow
+from ui.ui_pengui import Ui_MainWindow
 
 ##
 # 
@@ -33,13 +33,13 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         # check /etc/penguins-eggs.d/eggs.yaml
         file_eggs='/etc/penguins-eggs.d/eggs.yaml'
         dirname_eggs=os.path.dirname(file_eggs)
-        # basename_eggs=os.path.basename(file_eggs)
-        if os.path.exists(dirname_eggs):
-            if not os.path.isfile(file_eggs):
-                try:
-                    subprocess.run(['/usr/bin/eggs', 'dad', '--default'], check=True)
-                except subprocess.CalledProcessError as e:
-                    print(f'Command {e.cmd} failed with error {e.returncode}')
+        if not os.path.exists(dirname_eggs):
+            Terminal.execute('eggs dad --default')
+            if not os.path.exists('/etc/penguins-eggs.d'):
+                msgBox = QMessageBox(self)
+                msgBox.setText("You must to install penguins-eggs, before to configure it")
+                msgBox.exec()
+                self.exit()
                       
         # Signals are emitted by objects 
         self.action_About.triggered.connect(self.about)
@@ -49,10 +49,16 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.action_Produce.triggered.connect(self.produce)
 
         # Tools
-        self.action_Clean.triggered.connect(self.clean)
-        self.action_PPA.triggered.connect(self.Ppa)
-        self.action_Skel.triggered.connect(self.Skel)
-        self.action_Yolk.triggered.connect(self.Yolk)
+        self.action_Clean.triggered.connect(self.tools_clean)
+        self.action_PPA.triggered.connect(self.tools_ppa)
+        self.action_Skel.triggered.connect(self.tools_skel)
+        self.action_Yolk.triggered.connect(self.tools_yolk)
+
+        # Wardrobe
+        self.actionGet.triggered.connect(self.wardrobe_get)
+        self.actionList.triggered.connect(self.wardrobe_list)
+        self.actionShow.triggered.connect(self.wardrobe_show)
+        self.actionWear.triggered.connect(self.wardrobe_wear)
 
         # in init prima di show, inizializziamo tutto
         self.show()
@@ -87,29 +93,45 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     def produce(self):
         self.setCentralWidget(Produce())
 
-    ##
-    #
+    ## tools
     @QtCore.Slot()
-    def clean(self):
+    def tools_clean(self):
         Terminal.execute(self, 'eggs tools clean')
 
     ##
     #
     @QtCore.Slot()
-    def Ppa(self):
+    def tools_ppa(self):
         Terminal.execute(self, 'eggs tools ppa')
     
     ##
     #
     @QtCore.Slot()
-    def Skel(self):
+    def tools_skel(self):
         Terminal.execute(self, 'eggs tools skel')
 
     ##
     #
     @QtCore.Slot()
-    def Yolk(self):
+    def tools_yolk(self):
         Terminal.execute(self, 'eggs tools yolk')
+
+    ## wardrobe
+    @QtCore.Slot()
+    def wardrobe_get(self):
+        Terminal.execute(self, 'eggs wardrobe get')
+
+    @QtCore.Slot()
+    def wardrobe_list(self):
+        Terminal.execute(self, 'eggs wardrobe list')
+
+    @QtCore.Slot()
+    def wardrobe_show(self):
+        Terminal.execute(self, 'eggs wardrobe show')
+
+    @QtCore.Slot()
+    def wardrobe_wear(self):
+        Terminal.execute(self, 'eggs wardrobe wear')
 
 ##
 # real main

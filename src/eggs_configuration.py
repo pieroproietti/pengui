@@ -1,6 +1,8 @@
 from PySide6 import QtCore, QtWidgets
 from PySide6.QtWidgets import *
 
+from terminal import Terminal
+
 # import ui section
 from ui.ui_eggs_configuration import Ui_Dialog
 
@@ -19,15 +21,13 @@ class EggsConfiguration(Ui_Dialog, QDialog):
         self.setupUi(self) # mandatory
 
         self.file_eggs='/etc/penguins-eggs.d/eggs.yaml'
-        if os.path.exists('/etc/penguins-eggs.d'):
-            try:
-                subprocess.run(['/usr/bin/eggs', 'dad', '--default'], check=True)
-            except subprocess.CalledProcessError as e:
-                print(f'Command {e.cmd} failed with error {e.returncode}')
-
         if not os.path.isfile(self.file_eggs):
-            os.popen('cp assets/eggs.yaml /etc/penguins-eggs.d/') 
+            msgBox = QMessageBox(self)
+            msgBox.setText("Can't find /etc/penguins-eggs.d/eggs.yaml")
+            msgBox.exec()
+            quit()
         
+        # now we read eggs.yaml
         with open('/etc/penguins-eggs.d/eggs.yaml', 'r') as file:
             eggs = yaml.safe_load(file)
 
