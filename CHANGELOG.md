@@ -4,7 +4,7 @@
 ## State
 This project started near the end of the 2023, due my necessity to improve my ability with python and learn about GUI.
 
-I tried - same time ago - to use electron, but at last eventually, partly for work reasons, I decided to try it again in python, and I am seeing good results in terms of lightness and practicality of development.
+I tried - same time ago - to use electron, but at last eventually - partly for work reasons - I decided to try it again in python, and I am seeing good results in terms of lightness and practicality of development.
 
 # Versions
 
