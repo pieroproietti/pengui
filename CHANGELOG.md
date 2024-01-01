@@ -1,11 +1,10 @@
-# penGUI
-
-penGUI take cure of eggs!
+## **penGUI take cure of eggs!**
+![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.png?raw=true)
 
 ## start
 This project started near the end of the year, due my necessity to improve my ability with python and learn about GUI.
 
-I tried - same time ago - to use electron, but at last I'm seeng python have again possibility, more than I wait and the results are light. 
+I tried - same time ago - to use electron, but at last eventually, partly for work reasons, I decided to try it again in python, and I am seeing good results in terms of lightness and practicality of development.
 
 # penguin-0.1.1
 
