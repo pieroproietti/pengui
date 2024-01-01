@@ -10,6 +10,7 @@ I tried - same time ago - to use electron, but at last eventually I decided to t
 
 ## pengui-0.1.0-3
 * a bit dirthy work, but now dialogs act as dialogs.
+* fixed problems using root without wardrobe
 
 ## pengui-0.1.0-2
 * added working skeleton toolbar and statusbar;
