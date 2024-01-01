@@ -15,13 +15,14 @@ I tried - same time ago - to use electron, but at last eventually I decided to t
 ## pengui-0.1.0-1
 * I started to release the package as Debian package, building as pengui.bin using `pyside6-deploy`, then adding a fakeroot and icon, pengui.desktop and a symbolic link, finally creating Debian package with `fpm`;
 * Dialogs produce and eggs_configuration are working now.
+* starting to count versions of pengui.
 
-I was not able to open terminal until I changed  x-terminal-emulator configuration. pengui calls `x-terminal-emulator` to open a terminal window. You can change your configuration with the command:
+**Note**: I was not able to open terminal until I changed  x-terminal-emulator configuration. pengui calls `x-terminal-emulator` to open a terminal window. You can change your configuration with the command:
 
 `sudo update-alternatives --config x-terminal-emulator`
 
 On my development machine, I normally use `xfce4-terminal`.
-* starting to count versions of pengui.
+
 
 2023, Decembre 31
 
