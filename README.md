@@ -24,7 +24,7 @@ pengui makes it easy for you to learn eggs commands, once you learn them you wil
 
 I'm using python 3.11.2 and PySide6 to build the program.
 
-## Prerequisites
+## Development prerequisites
 
 I'm using Debian bookworm, just installed this packages to my [colibri](https://sourceforge.net/projects/penguins-eggs/files/ISOS/debian/bookworm/arm64/):
 
