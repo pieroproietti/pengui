@@ -13,8 +13,8 @@ I tried - same time ago - to use electron, but at last eventually I decided to t
 2024 January, 1
 
 ## pengui-0.1.0-1
-* I started to release the package as Debian package, building as pengui.bin using `pysoide6-deploy`, then adding a fakeroot and icon, pengui.desktop and link, finally creating Debian package with `fpm``;
-* Dialogs produce and eggs_configuration are working too.
+* I started to release the package as Debian package, building as pengui.bin using `pyside6-deploy`, then adding a fakeroot and icon, pengui.desktop and a symbolic link, finally creating Debian package with `fpm`;
+* Dialogs produce and eggs_configuration are working now.
 
 I was not able to open terminal until I changed  x-terminal-emulator configuration. pengui calls `x-terminal-emulator` to open a terminal window, you can change your configuration with the command:
 
@@ -26,7 +26,7 @@ On my development machine, I normally use `xfce4-terminal`.
 2023, Decembre 31
 
 ## pengui.bin
-At the moment just the dialog produce is implemented and connected to the penGUI, I have another two widget: eggs_configuration, already working and terminal to invent again.
+At the moment just the dialog produce is implemented and connected to the pengui, I have another two widget: eggs_configuration, already working and terminal to invent again.
 
 With produce, just select File ->Produce, you can compose the command in a GUI, then copy and paste the result in a terminal.
 
