@@ -16,6 +16,8 @@ pengui calls x-terminal-emulator to open a terminal window, you can varial your 
 
 `sudo update-alternatives --config x-terminal-emulator`
 
+On my development machine, I normally use `xfce4-terminal`.
+
 # pengui
 
 pengui makes it easy for you to learn eggs commands, once you learn them you will probably use it less, but a GUI for penguins-eggs was needed and now there is.
