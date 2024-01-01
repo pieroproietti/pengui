@@ -14,5 +14,5 @@ find fakeroot/opt/pengui -type f -exec chmod 644 -- {} +
 find fakeroot/opt/pengui -type d -exec chmod 755 -- {} +
 find fakeroot/usr/share -type f -exec chmod 644 -- {} +
 chmod +x fakeroot/opt/pengui/pengui.bin
-fpm -C fakeroot -s dir -t deb -n "pengui" -v 0.1.0 -p pengui.deb
+fpm -C fakeroot -s dir -t deb -n "pengui" -v 0.1.1 -p pengui-0.1.1.deb
 rm fakeroot -rf
