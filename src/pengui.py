@@ -3,9 +3,17 @@ import sys
 import os
 import subprocess
 
+from PySide6.QtGui import QAction, QIcon
 from PySide6 import QtCore
 from PySide6.QtCore import Slot
-from PySide6.QtWidgets import QMainWindow, QApplication, QPushButton, QMessageBox
+from PySide6.QtWidgets import (
+    QMainWindow, 
+    QApplication, 
+    QPushButton, 
+    QMessageBox, 
+    QToolBar, 
+    QStatusBar
+)
 
 from produce import Produce
 from eggs_configuration import EggsConfiguration
@@ -24,6 +32,30 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         self.setWindowTitle = "penGUI"
 
+        toolbar = QToolBar("My main toolbar")
+        self.addToolBar(toolbar)
+
+        tb_configure_action = QAction("Configure", self)
+        tb_configure_action.setToolTip("Configure eggs")
+        tb_configure_action.triggered.connect(self.configure)
+        toolbar.addAction(tb_configure_action)
+
+        tb_produce_action = QAction("Produce", self)
+        tb_produce_action.setToolTip("Produce a new ISO")
+        tb_produce_action.triggered.connect(self.produce)
+        toolbar.addAction(tb_produce_action)
+
+        tb_kill_action = QAction("Kill", self)
+        tb_kill_action.setToolTip("Kill generated ISOs")
+        tb_kill_action.triggered.connect(self.kill)
+        toolbar.addAction(tb_kill_action)
+
+        tb_quit_action = QAction("Exit", self)
+        tb_quit_action.setToolTip("Exit from penGUI")
+        tb_quit_action.triggered.connect(self.exit)
+        toolbar.addAction(tb_quit_action)
+
+        self.setStatusBar(QStatusBar(self))
         # check root
         if os.geteuid() != 0:
             button = QPushButton("You MUST be root to configure eggs!")
