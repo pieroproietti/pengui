@@ -1,7 +1,7 @@
 # penGUI
 
 ## **penGUI take cure of eggs!**
-![](https://github.com/pieroproietti/penguins-eggs/blob/master/assets/eggs.png)
+![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.png?raw=true)
 
 **Notice:** pengui is not yet a finished software, it is still in embryo and is deciding how
  to grow, however the form produces might come in handy for someone. 
@@ -10,7 +10,7 @@ You can simply install it with `dpkg -i pengui-0.1.0-1.deb` and start it with `s
 
 The icon is that of penguins-eggs, I hope some graphic designer will take the trouble to design another one, for those who would like to participate in the project entering currently is easy, the project has just started.
 
-To check the avabzamentof the project status refer to the [CHANGELOG](./CHANGELOG.md).
+To check the progress of the project status refer to the [CHANGELOG](https://github.com/pieroproietti/pengui/blob/main/CHANGELOG.md).
 
 # pengui
 
