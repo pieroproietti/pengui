@@ -9,6 +9,8 @@ mkdir -p fakeroot/usr/bin
 # copy files in fakeroot
 cp assets/pengui.png fakeroot/usr/share/icons/
 cp assets/pengui.desktop fakeroot/usr/share/applications
+# here we are copying the link
+cp -P assets/pengui.link fakeroot/usr/bin/pengui 
 cp -r pengui.bin fakeroot/opt/pengui
 find fakeroot/opt/pengui -type f -exec chmod 644 -- {} +
 find fakeroot/opt/pengui -type d -exec chmod 755 -- {} +
