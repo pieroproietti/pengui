@@ -32,7 +32,8 @@ wheel_pyside =
 # path to shiboken wheel
 wheel_shiboken = 
 # plugins to be copied to libs folder of the packaged application. comma separated
-plugins = platforms_qtforandroid
+#plugins = platforms_qtforandroid
+plugions = 
 
 [nuitka]
 # (str) specify any extra nuitka arguments
@@ -43,7 +44,7 @@ extra_args = --quiet --noinclude-qt-translations=True
 # build mode
 # possible options = [release, debug]
 # release creates an aab, while debug creates an apk
-mode = debug
+mode = release
 # contrains path to pyside6 and shiboken6 recipe dir
 recipe_dir = 
 # path to extra qt android jars to be loaded by the application

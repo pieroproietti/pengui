@@ -8,16 +8,16 @@ I tried - same time ago - to use electron, but at last eventually I decided to t
 
 # Versions
 
-## pengui-0.1.0-3
+## pengui-0.3
 * a bit dirthy work, but now dialogs act as dialogs.
 * fixed problems using root without wardrobe
 
-## pengui-0.1.0-2
+## pengui-0.1.2
 * added working skeleton toolbar and statusbar;
 
 2024 January, 1
 
-## pengui-0.1.0-1
+## pengui-0.1.1
 * I started to release the package as Debian package, building as pengui.bin using `pyside6-deploy`, then adding a fakeroot and icon, pengui.desktop and a symbolic link, finally creating Debian package with `fpm`;
 * Dialogs produce and eggs_configuration are working now.
 * starting to count versions of pengui.
