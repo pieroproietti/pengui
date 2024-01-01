@@ -60,11 +60,12 @@ class Produce(QtWidgets.QWidget, Ui_DialogProduce):
         else:
             path_themes='/home/' + os.getenv('USER') + '/.wardrobe'
 
+        sorted_themes=[]
         if os.path.exists(path_themes):
-            found_themes= os.listdir(path_themes +'/vendors/')
-            sorted_themes=sorted(found_themes)
-        else:
-            sorted_themes=[]
+            path_vendors=path_themes+'/vendors'
+            if os.path.exists(path_vendors):    
+                found_themes= os.listdir(path_vendors)
+                sorted_themes=sorted(found_themes)
         
         themes=['eggs']
         themes.extend(sorted_themes)
