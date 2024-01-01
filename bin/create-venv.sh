@@ -4,5 +4,5 @@ python3 -m venv venv_${VENV}
 echo "insert:"
 echo "source venv_${VENV}/bin/activate"
 echo "pip install pyside6 pyyaml"   # QT6 development
-echo "pip install wheel shiboken"      # nuitka
+echo "pip install wheel"            # nuitka shiboken?
 echo "NOTE: deactive to exit venv"
