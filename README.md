@@ -18,6 +18,12 @@ pengui calls x-terminal-emulator to open a terminal window, you can varial your 
 
 On my development machine, I normally use `xfce4-terminal`.
 
+## dbus-x11
+Since we are going to open a terminal as root, using sudo, we need to have the `dbus-x11` package installed. So, before using the program, install it:
+
+`sudo apt install dbus-x11`
+
+
 # pengui
 
 pengui makes it easy for you to learn eggs commands, once you learn them you will probably use it less, but a GUI for penguins-eggs was needed and now there is.
