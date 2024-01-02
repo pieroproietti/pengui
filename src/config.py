@@ -16,8 +16,8 @@ from  utilies import U
 #
 class Config(Ui_DialogConfig, QDialog):    
 
-    def __init__ (self):
-        super().__init__() # inizializza
+    def __init__(self, parent=None):
+        super().__init__(parent) # parent
         self.setupUi(self) # mandatory
 
         self.eggs_yaml_path=U.conf_path+'/eggs.yaml'
@@ -74,8 +74,8 @@ class Config(Ui_DialogConfig, QDialog):
             with open(self.eggs_yaml_path, 'w') as object_file:
                 yaml.dump(eggs, object_file)
 
-        self.close()
+        Config.close()
 
     @QtCore.Slot()
     def reject(self):
-        self.close()
+        Config.close()

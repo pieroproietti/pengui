@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'configgAceLc.ui'
+## Form generated from reading UI file 'configASRxNW.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -23,9 +23,9 @@ class Ui_DialogConfig(object):
     def setupUi(self, DialogConfig):
         if not DialogConfig.objectName():
             DialogConfig.setObjectName(u"DialogConfig")
-        DialogConfig.resize(400, 300)
-        DialogConfig.setMinimumSize(QSize(400, 300))
-        DialogConfig.setMaximumSize(QSize(400, 300))
+        DialogConfig.resize(640, 480)
+        DialogConfig.setMinimumSize(QSize(640, 480))
+        DialogConfig.setMaximumSize(QSize(640, 480))
 #if QT_CONFIG(accessibility)
         DialogConfig.setAccessibleDescription(u"")
 #endif // QT_CONFIG(accessibility)

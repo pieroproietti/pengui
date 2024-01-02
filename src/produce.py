@@ -2,8 +2,8 @@ import sys
 import os
 import yaml
 
-from PySide6 import QtCore, QtWidgets
-from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBox
+from PySide6 import QtCore
+from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBox, QDialog
 from PySide6.QtGui import QClipboard
 
 from ui.ui_produce import Ui_DialogProduce
@@ -13,12 +13,10 @@ from utilies import U
 
 ##
 #
-class Produce(QtWidgets.QWidget, Ui_DialogProduce):
-    def __init__ (self):
-        super().__init__()
+class Produce(Ui_DialogProduce, QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent) # parent
         self.setupUi(self) # mandatory
-
-        self.setWindowTitle = "Produce"
 
         QApplication.clipboard().dataChanged.connect(self.onClipboardChanged)
 

@@ -111,7 +111,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @QtCore.Slot()
     def configure(self):
-        dialog_config=Config()
+        dialog_config=Config(self)
+        dialog_config.setWindowTitle("Configuration")
         dialog_config.exec()
         #self.setCentralWidget()
         
@@ -129,7 +130,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         
     @Slot()
     def produce(self):
-        dialog_produce = Produce()
+        dialog_produce = Produce(self)
+        dialog_produce.setWindowTitle("Produce")
         dialog_produce.exec()
 
     ## tools
