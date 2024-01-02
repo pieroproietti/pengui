@@ -21,8 +21,8 @@ On my development machine, I normally use `xfce4-terminal`.
 ## dbus-x11
 Since we are going to open a terminal as root, using sudo, we need to have the `dbus-x11` package installed. So, before using the program, install it:
 
-`sudo apt install dbus-x11`
-
+`sudo apt-get install dbus-x11`
+'sudo service dbus restart'
 
 # pengui
 
