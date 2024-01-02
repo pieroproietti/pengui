@@ -175,25 +175,6 @@ class Produce(Ui_DialogProduce, QDialog):
             self.checkBoxClone.setChecked(False)
             self.checkBoxCryptedClone.setChecked(False)
 
-    ##
-    #
     @QtCore.Slot()
-    def accept(self):
+    def close_me(self):
         self.close()
-
-    ##
-    #
-    @QtCore.Slot()
-    def reject(self):
-        self.close()
-
-
-
-##
-# development
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-
-    win = Produce() # ricorda ()
-
-    sys.exit(app.exec()) # ricorda ()

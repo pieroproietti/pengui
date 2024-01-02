@@ -32,111 +32,213 @@
   <property name="locale">
    <locale language="English" country="UnitedStates"/>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>10</y>
-     <width>400</width>
-     <height>241</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_snapshot_dir">
-      <property name="text">
-       <string>Nest</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="lineEditSnapshotDir"/>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_snashot_prefix">
-      <property name="text">
-       <string>Prefix</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="lineEditSnapshotPrefix"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_snapshot_basename">
-      <property name="text">
-       <string>Basename</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="lineEditSnapshotBasename"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="label_user_opt">
-      <property name="text">
-       <string>Live user name</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QLineEdit" name="lineEditUserOpt"/>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="label_user_opt_passwd">
-      <property name="text">
-       <string>Live user password</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QLineEdit" name="lineEditUserOptPasswd">
-      <property name="echoMode">
-       <enum>QLineEdit::PasswordEchoOnEdit</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="label_root_passwd">
-      <property name="text">
-       <string>Live root password</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QLineEdit" name="lineEditRootPasswd">
-      <property name="echoMode">
-       <enum>QLineEdit::PasswordEchoOnEdit</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QCheckBox" name="checkBoxMakeMd5sum">
-      <property name="text">
-       <string>md5sum</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QCheckBox" name="checkBoxMakeIsohybrid">
-      <property name="text">
-       <string>isohybrid</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>270</y>
-     <width>166</width>
+     <x>440</x>
+     <y>440</y>
+     <width>171</width>
      <height>24</height>
     </rect>
    </property>
    <property name="standardButtons">
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonSave">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>230</y>
+     <width>83</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonDiscard">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>230</y>
+     <width>83</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Discard</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxMakeIsohybrid">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>220</y>
+     <width>85</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>isohybrid</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_user_opt">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>118</y>
+     <width>100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Live user name</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_snapshot_basename">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>84</y>
+     <width>69</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Basename</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_user_opt_passwd">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>152</y>
+     <width>125</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Live user password</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_snapshot_dir">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>16</y>
+     <width>30</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nest</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditRootPasswd">
+   <property name="geometry">
+    <rect>
+     <x>132</x>
+     <y>186</y>
+     <width>491</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::PasswordEchoOnEdit</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditUserOpt">
+   <property name="geometry">
+    <rect>
+     <x>132</x>
+     <y>118</y>
+     <width>491</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxMakeMd5sum">
+   <property name="geometry">
+    <rect>
+     <x>132</x>
+     <y>220</y>
+     <width>82</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>md5sum</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditSnapshotPrefix">
+   <property name="geometry">
+    <rect>
+     <x>132</x>
+     <y>50</y>
+     <width>491</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditUserOptPasswd">
+   <property name="geometry">
+    <rect>
+     <x>132</x>
+     <y>152</y>
+     <width>491</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::PasswordEchoOnEdit</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditSnapshotBasename">
+   <property name="geometry">
+    <rect>
+     <x>132</x>
+     <y>84</y>
+     <width>491</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditSnapshotDir">
+   <property name="geometry">
+    <rect>
+     <x>132</x>
+     <y>16</y>
+     <width>491</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_root_passwd">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>186</y>
+     <width>123</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Live root password</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_snashot_prefix">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>50</y>
+     <width>37</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Prefix</string>
    </property>
   </widget>
  </widget>

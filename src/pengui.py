@@ -130,9 +130,15 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         
     @Slot()
     def produce(self):
-        dialog_produce = Produce(self)
-        dialog_produce.setWindowTitle("Produce")
-        dialog_produce.exec()
+        dialog = Produce(self)
+        dialog.setWindowTitle("Produce")
+        answer=dialog.exec()
+        print(answer)
+        if answer== dialog.accept:
+            print("produce") 
+        
+        if answer ==dialog.reject:
+            print("non produce")
 
     ## tools
     @QtCore.Slot()

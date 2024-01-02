@@ -43,15 +43,18 @@ class Config(Ui_DialogConfig, QDialog):
         self.checkBoxMakeMd5sum.setEnabled(True) 
         self.checkBoxMakeMd5sum.setChecked(eggs['make_md5sum'])
 
-        self.buttonBox.accepted.connect(self.accept)
-        self.buttonBox.rejected.connect(self.reject)
+        self.pushButtonSave.clicked.connect(self.save)
+        #self.pushButtonDiscard.clicked.connect(self.reject)
+
+        self.buttonBox.accepted.connect(self.close_me)
+        self.buttonBox.rejected.connect(self.close_me)
         
         self.show()
 
     ##
     #
     @QtCore.Slot()
-    def accept(self):
+    def save(self):
         if os.geteuid() != 0:
             msgBox = QMessageBox(self)
             msgBox.setText("use: sudo pengui to can save on /etc/penguins-eggs.d/eggs.yaml")
@@ -74,8 +77,6 @@ class Config(Ui_DialogConfig, QDialog):
             with open(self.eggs_yaml_path, 'w') as object_file:
                 yaml.dump(eggs, object_file)
 
-        Config.close()
-
     @QtCore.Slot()
-    def reject(self):
-        Config.close()
+    def close_me(self):
+        self.close()
