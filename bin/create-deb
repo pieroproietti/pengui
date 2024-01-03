@@ -12,9 +12,10 @@ mkdir -p fakeroot/usr/share/applications
 mkdir -p fakeroot/usr/share/icons
 mkdir -p fakeroot/usr/bin
 # copy files in fakeroot
-cp assets/pengui.png fakeroot/usr/share/icons/
+cp assets/pengui.svg fakeroot/usr/share/icons/
 cp assets/pengui.desktop fakeroot/usr/share/applications
 # here we are copying the link
+rm pengui-*.deb
 cp -P assets/pengui.link fakeroot/usr/bin/pengui 
 cp -r pengui.bin fakeroot/opt/pengui
 find fakeroot/opt/pengui -type f -exec chmod 644 -- {} +
@@ -22,4 +23,5 @@ find fakeroot/opt/pengui -type d -exec chmod 755 -- {} +
 find fakeroot/usr/share -type f -exec chmod 644 -- {} +
 chmod +x fakeroot/opt/pengui/pengui.bin
 fpm -C fakeroot -s dir -t deb -n "pengui" -v ${VERSION} -p ${PENGUI_VERSION}.deb
+mv pengui.bin pengui-${VERSION}.bin
 rm fakeroot -rf

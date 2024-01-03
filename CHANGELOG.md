@@ -8,6 +8,10 @@ I tried - same time ago - to use electron, but at last eventually I decided to t
 
 # Versions
 
+## pengui-0.1.6
+* changed main icon;
+* added dialog config tools;
+
 ## pengui-0.1.5
 * improved dialogs, added help
 
