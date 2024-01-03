@@ -2,5 +2,6 @@
   <qresource prefix="eggs">
     <file>icons/krill.svg</file>
     <file>icons/eggs.png</file>
+    <file>icons/pengui.svg</file>
   </qresource>
 </RCC>
