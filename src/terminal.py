@@ -14,9 +14,8 @@ class Terminal(QProcess):
         # process start
         process = QProcess(self)
         process.setProgram("/usr/bin/x-terminal-emulator")
-        # can not run without dbus-launch, so we need:
-        # sudo apt-get install dbus-x11
-        # sudo service dbus restart
+        #command=command+"| echo \"command: " + command + " wait 5 sec\"| sleep 5"
+        print ("command: " + command)
         process.setArguments(["-e", command])
         process.start()
 

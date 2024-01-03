@@ -26,6 +26,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="toolTip">
+   <string/>
+  </property>
   <property name="accessibleDescription">
    <string notr="true"/>
   </property>
@@ -48,27 +51,27 @@
   <widget class="QPushButton" name="pushButtonSave">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>440</x>
      <y>230</y>
-     <width>83</width>
+     <width>171</width>
      <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>Save</string>
+    <string>&amp;Save</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButtonDiscard">
    <property name="geometry">
     <rect>
-     <x>430</x>
+     <x>350</x>
      <y>230</y>
      <width>83</width>
      <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>Discard</string>
+    <string>&amp;Discard</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="checkBoxMakeIsohybrid">
@@ -79,6 +82,9 @@
      <width>85</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>Create isohybrid ISO image</string>
    </property>
    <property name="text">
     <string>isohybrid</string>
@@ -93,6 +99,9 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Live user name for live system/ISO image</string>
+   </property>
    <property name="text">
     <string>Live user name</string>
    </property>
@@ -105,6 +114,9 @@
      <width>69</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>volid of the ISO image</string>
    </property>
    <property name="text">
     <string>Basename</string>
@@ -119,6 +131,9 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Live user password for live system/ISO image</string>
+   </property>
    <property name="text">
     <string>Live user password</string>
    </property>
@@ -131,6 +146,9 @@
      <width>30</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>The place were we make eggs, usually /home/eggs</string>
    </property>
    <property name="text">
     <string>Nest</string>
@@ -145,6 +163,9 @@
      <height>23</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>root password for live system/ISO image</string>
+   </property>
    <property name="echoMode">
     <enum>QLineEdit::PasswordEchoOnEdit</enum>
    </property>
@@ -158,6 +179,9 @@
      <height>23</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Live user name for live system/ISO image</string>
+   </property>
   </widget>
   <widget class="QCheckBox" name="checkBoxMakeMd5sum">
    <property name="geometry">
@@ -167,6 +191,9 @@
      <width>82</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>Create MD5/SHA256 Checksum of the live ISO</string>
    </property>
    <property name="text">
     <string>md5sum</string>
@@ -181,6 +208,9 @@
      <height>23</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Prefix to be used with basenage to get ISO image filename</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="lineEditUserOptPasswd">
    <property name="geometry">
@@ -190,6 +220,9 @@
      <width>491</width>
      <height>23</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>Live user password for live system/ISO image</string>
    </property>
    <property name="echoMode">
     <enum>QLineEdit::PasswordEchoOnEdit</enum>
@@ -204,6 +237,9 @@
      <height>23</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>volid of the ISO image</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="lineEditSnapshotDir">
    <property name="geometry">
@@ -214,6 +250,9 @@
      <height>23</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>The place were we make eggs, usually /home/eggs</string>
+   </property>
   </widget>
   <widget class="QLabel" name="label_root_passwd">
    <property name="geometry">
@@ -223,6 +262,9 @@
      <width>123</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>root password for live system/ISO image</string>
    </property>
    <property name="text">
     <string>Live root password</string>
@@ -237,8 +279,24 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Prefix to be used with basenage to get ISO image filename</string>
+   </property>
    <property name="text">
     <string>Prefix</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonHelp">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>230</y>
+     <width>83</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;Help</string>
    </property>
   </widget>
  </widget>

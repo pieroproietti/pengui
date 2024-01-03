@@ -2,6 +2,8 @@ import sys
 import os
 import yaml
 
+import webbrowser
+
 from PySide6 import QtCore
 from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBox, QDialog
 from PySide6.QtGui import QClipboard
@@ -51,6 +53,7 @@ class Produce(Ui_DialogProduce, QDialog):
         # buttons connect
         self.pushButtonGenerate.clicked.connect(self.generate)
         self.pushButtonRun.clicked.connect(self.run)
+        self.pushButtonHelp.clicked.connect(self.help)
 
         # recupero i themi da .wardrobe/vendors/
         if os.geteuid() == 0:
@@ -77,7 +80,7 @@ class Produce(Ui_DialogProduce, QDialog):
 
 
     def generate(self):
-        command='sudo eggs produce'
+        command='eggs produce'
         if (self.comboBoxAddons.currentText() !=''):
             command += ' --addons ' + self.comboBoxAddons.currentText()
 
@@ -121,13 +124,10 @@ class Produce(Ui_DialogProduce, QDialog):
     ##
     def run(self):
         command=self.lineEditCommand.text()
-        if os.geteuid() != 0:
-            QApplication.clipboard().setText(command)
-            msgBox = QMessageBox(self)
-            msgBox.setText("command was copied on your clipboard")
-            msgBox.exec()
-        else:
-            Terminal.execute(self, command)            
+        Terminal.execute(self, command)            
+
+    def help(self):
+        webbrowser.open('https://github.com/pieroproietti/penguins-eggs#eggs-produce')
 
     ##
     #

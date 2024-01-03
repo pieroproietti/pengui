@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'produceaLaqSJ.ui'
+## Form generated from reading UI file 'produceEvWsXM.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -41,105 +41,108 @@ class Ui_DialogProduce(object):
         self.label.setGeometry(QRect(30, 360, 81, 16))
         self.lineEditCommand = QLineEdit(DialogProduce)
         self.lineEditCommand.setObjectName(u"lineEditCommand")
-        self.lineEditCommand.setGeometry(QRect(110, 360, 411, 23))
+        self.lineEditCommand.setGeometry(QRect(110, 360, 521, 23))
         self.pushButtonRun = QPushButton(DialogProduce)
         self.pushButtonRun.setObjectName(u"pushButtonRun")
-        self.pushButtonRun.setGeometry(QRect(550, 350, 83, 71))
+        self.pushButtonRun.setGeometry(QRect(300, 390, 151, 71))
         self.pushButtonGenerate = QPushButton(DialogProduce)
         self.pushButtonGenerate.setObjectName(u"pushButtonGenerate")
-        self.pushButtonGenerate.setGeometry(QRect(110, 390, 431, 31))
-        self.widget = QWidget(DialogProduce)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(10, 21, 591, 314))
-        self.gridLayout = QGridLayout(self.widget)
+        self.pushButtonGenerate.setGeometry(QRect(160, 390, 131, 71))
+        self.layoutWidget = QWidget(DialogProduce)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(10, 21, 591, 314))
+        self.gridLayout = QGridLayout(self.layoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.labelAddons = QLabel(self.widget)
+        self.labelAddons = QLabel(self.layoutWidget)
         self.labelAddons.setObjectName(u"labelAddons")
 
         self.gridLayout.addWidget(self.labelAddons, 0, 0, 1, 1)
 
-        self.comboBoxAddons = QComboBox(self.widget)
+        self.comboBoxAddons = QComboBox(self.layoutWidget)
         self.comboBoxAddons.setObjectName(u"comboBoxAddons")
 
         self.gridLayout.addWidget(self.comboBoxAddons, 0, 1, 1, 1)
 
-        self.checkBoxPrefix = QCheckBox(self.widget)
+        self.checkBoxPrefix = QCheckBox(self.layoutWidget)
         self.checkBoxPrefix.setObjectName(u"checkBoxPrefix")
 
         self.gridLayout.addWidget(self.checkBoxPrefix, 1, 0, 1, 1)
 
-        self.lineEditPrefix = QLineEdit(self.widget)
+        self.lineEditPrefix = QLineEdit(self.layoutWidget)
         self.lineEditPrefix.setObjectName(u"lineEditPrefix")
 
         self.gridLayout.addWidget(self.lineEditPrefix, 1, 1, 1, 1)
 
-        self.checkBoxBasename = QCheckBox(self.widget)
+        self.checkBoxBasename = QCheckBox(self.layoutWidget)
         self.checkBoxBasename.setObjectName(u"checkBoxBasename")
 
         self.gridLayout.addWidget(self.checkBoxBasename, 2, 0, 1, 1)
 
-        self.lineEditBasename = QLineEdit(self.widget)
+        self.lineEditBasename = QLineEdit(self.layoutWidget)
         self.lineEditBasename.setObjectName(u"lineEditBasename")
 
         self.gridLayout.addWidget(self.lineEditBasename, 2, 1, 1, 1)
 
-        self.labelFilters = QLabel(self.widget)
+        self.labelFilters = QLabel(self.layoutWidget)
         self.labelFilters.setObjectName(u"labelFilters")
 
         self.gridLayout.addWidget(self.labelFilters, 3, 0, 1, 1)
 
-        self.comboBoxFilters = QComboBox(self.widget)
+        self.comboBoxFilters = QComboBox(self.layoutWidget)
         self.comboBoxFilters.setObjectName(u"comboBoxFilters")
 
         self.gridLayout.addWidget(self.comboBoxFilters, 3, 1, 1, 1)
 
-        self.labelCompression = QLabel(self.widget)
+        self.labelCompression = QLabel(self.layoutWidget)
         self.labelCompression.setObjectName(u"labelCompression")
 
         self.gridLayout.addWidget(self.labelCompression, 4, 0, 1, 1)
 
-        self.comboBoxCompression = QComboBox(self.widget)
+        self.comboBoxCompression = QComboBox(self.layoutWidget)
         self.comboBoxCompression.setObjectName(u"comboBoxCompression")
 
         self.gridLayout.addWidget(self.comboBoxCompression, 4, 1, 1, 1)
 
-        self.labelTheme = QLabel(self.widget)
+        self.labelTheme = QLabel(self.layoutWidget)
         self.labelTheme.setObjectName(u"labelTheme")
 
         self.gridLayout.addWidget(self.labelTheme, 5, 0, 1, 1)
 
-        self.comboBoxTheme = QComboBox(self.widget)
+        self.comboBoxTheme = QComboBox(self.layoutWidget)
         self.comboBoxTheme.setObjectName(u"comboBoxTheme")
 
         self.gridLayout.addWidget(self.comboBoxTheme, 5, 1, 1, 1)
 
-        self.checkBoxClone = QCheckBox(self.widget)
+        self.checkBoxClone = QCheckBox(self.layoutWidget)
         self.checkBoxClone.setObjectName(u"checkBoxClone")
 
         self.gridLayout.addWidget(self.checkBoxClone, 6, 0, 1, 1)
 
-        self.checkBoxCryptedClone = QCheckBox(self.widget)
+        self.checkBoxCryptedClone = QCheckBox(self.layoutWidget)
         self.checkBoxCryptedClone.setObjectName(u"checkBoxCryptedClone")
 
         self.gridLayout.addWidget(self.checkBoxCryptedClone, 7, 0, 1, 1)
 
-        self.checkBoxScript = QCheckBox(self.widget)
+        self.checkBoxScript = QCheckBox(self.layoutWidget)
         self.checkBoxScript.setObjectName(u"checkBoxScript")
 
         self.gridLayout.addWidget(self.checkBoxScript, 8, 0, 1, 1)
 
-        self.checkBoxUnsecure = QCheckBox(self.widget)
+        self.checkBoxUnsecure = QCheckBox(self.layoutWidget)
         self.checkBoxUnsecure.setObjectName(u"checkBoxUnsecure")
         self.checkBoxUnsecure.setTristate(False)
 
         self.gridLayout.addWidget(self.checkBoxUnsecure, 9, 0, 1, 1)
 
-        self.checkBoxYolk = QCheckBox(self.widget)
+        self.checkBoxYolk = QCheckBox(self.layoutWidget)
         self.checkBoxYolk.setObjectName(u"checkBoxYolk")
 
         self.gridLayout.addWidget(self.checkBoxYolk, 10, 0, 1, 1)
 
+        self.pushButtonHelp = QPushButton(DialogProduce)
+        self.pushButtonHelp.setObjectName(u"pushButtonHelp")
+        self.pushButtonHelp.setGeometry(QRect(10, 390, 141, 71))
 
         self.retranslateUi(DialogProduce)
         self.buttonBox.accepted.connect(DialogProduce.accept)
@@ -157,11 +160,11 @@ class Ui_DialogProduce(object):
 #if QT_CONFIG(tooltip)
         self.pushButtonRun.setToolTip(QCoreApplication.translate("DialogProduce", u"run or copy ib ckuobiard the generated command", None))
 #endif // QT_CONFIG(tooltip)
-        self.pushButtonRun.setText(QCoreApplication.translate("DialogProduce", u"run/copy", None))
+        self.pushButtonRun.setText(QCoreApplication.translate("DialogProduce", u"&Run", None))
 #if QT_CONFIG(tooltip)
         self.pushButtonGenerate.setToolTip(QCoreApplication.translate("DialogProduce", u"generate the command", None))
 #endif // QT_CONFIG(tooltip)
-        self.pushButtonGenerate.setText(QCoreApplication.translate("DialogProduce", u"generate", None))
+        self.pushButtonGenerate.setText(QCoreApplication.translate("DialogProduce", u"&Generate", None))
 #if QT_CONFIG(tooltip)
         self.labelAddons.setToolTip(QCoreApplication.translate("DialogProduce", u"configures the addon and creates a link to the selected one on the desktop", None))
 #endif // QT_CONFIG(tooltip)
@@ -224,5 +227,9 @@ class Ui_DialogProduce(object):
         self.checkBoxYolk.setToolTip(QCoreApplication.translate("DialogProduce", u"Generates or regenerates a local repository /var/local/yolk to allow installation even in the absence of the Internet.", None))
 #endif // QT_CONFIG(tooltip)
         self.checkBoxYolk.setText(QCoreApplication.translate("DialogProduce", u"Yolk", None))
+#if QT_CONFIG(tooltip)
+        self.pushButtonHelp.setToolTip(QCoreApplication.translate("DialogProduce", u"run or copy ib ckuobiard the generated command", None))
+#endif // QT_CONFIG(tooltip)
+        self.pushButtonHelp.setText(QCoreApplication.translate("DialogProduce", u"&Help", None))
     # retranslateUi
 

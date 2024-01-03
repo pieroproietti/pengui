@@ -7,6 +7,10 @@ This project started near the end of the 2023, due my necessity to improve my ab
 I tried - same time ago - to use electron, but at last eventually I decided to try it again in python, and I am seeing good results in terms of lightness and practicality of development.
 
 # Versions
+
+## pengui-0.1.5
+* improved dialogs, added help
+
 ## pengui-0.1.4
 * dialogs open now in the center of the mainwindow;
 * a lot of temps to see for terminal but improductive.

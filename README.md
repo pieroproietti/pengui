@@ -2,9 +2,11 @@
 ![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.png?raw=true)
 
 **Notice:** pengui is not yet a finished software, it is still in embryo and is deciding how
- to grow, however the form produces might come in handy for someone. 
+ to grow, however is starting to be usefull to get configuration and produce. 
 
-You can simply install it with `dpkg -i pengui-0.1.0-1.deb` and start it with `sudo pengui` or from the desktop link. 
+ You can run all the eggs commands menu, on the toolbar we have just the most used: Dad, Produce and kill.
+
+You can simply install it with `dpkg -i pengui-0.1.x.deb` and start it with `sudo pengui` or from the desktop link. 
 
 The icon is that of penguins-eggs, I hope some graphic designer will take the trouble to design another one, for those who would like to participate in the project entering currently is easy, the project has just started.
 

@@ -45,6 +45,11 @@
     <property name="title">
      <string>&amp;Help</string>
     </property>
+    <addaction name="actionUsersGuide"/>
+    <addaction name="actionBlog"/>
+    <addaction name="separator"/>
+    <addaction name="actionRepository"/>
+    <addaction name="actionTelegram"/>
     <addaction name="action_About"/>
    </widget>
    <widget class="QMenu" name="menu_Tools">
@@ -135,6 +140,26 @@
   <action name="actionWear">
    <property name="text">
     <string>&amp;Wear</string>
+   </property>
+  </action>
+  <action name="actionRepository">
+   <property name="text">
+    <string>&amp;Repository</string>
+   </property>
+  </action>
+  <action name="actionBlog">
+   <property name="text">
+    <string>&amp;Blog</string>
+   </property>
+  </action>
+  <action name="actionUsersGuide">
+   <property name="text">
+    <string>&amp;Users' guide</string>
+   </property>
+  </action>
+  <action name="actionTelegram">
+   <property name="text">
+    <string>&amp;Telegram</string>
    </property>
   </action>
  </widget>

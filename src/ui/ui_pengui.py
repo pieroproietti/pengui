@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'penguiZRWuKt.ui'
+## Form generated from reading UI file 'penguiFykgNE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -54,6 +54,14 @@ class Ui_MainWindow(object):
         self.actionShow.setObjectName(u"actionShow")
         self.actionWear = QAction(MainWindow)
         self.actionWear.setObjectName(u"actionWear")
+        self.actionRepository = QAction(MainWindow)
+        self.actionRepository.setObjectName(u"actionRepository")
+        self.actionBlog = QAction(MainWindow)
+        self.actionBlog.setObjectName(u"actionBlog")
+        self.actionUsersGuide = QAction(MainWindow)
+        self.actionUsersGuide.setObjectName(u"actionUsersGuide")
+        self.actionTelegram = QAction(MainWindow)
+        self.actionTelegram.setObjectName(u"actionTelegram")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
@@ -84,6 +92,11 @@ class Ui_MainWindow(object):
         self.menu_File.addAction(self.action_Kill)
         self.menu_File.addAction(self.action_Exit)
         self.menu_Edit.addAction(self.action_Configure)
+        self.menu_Help.addAction(self.actionUsersGuide)
+        self.menu_Help.addAction(self.actionBlog)
+        self.menu_Help.addSeparator()
+        self.menu_Help.addAction(self.actionRepository)
+        self.menu_Help.addAction(self.actionTelegram)
         self.menu_Help.addAction(self.action_About)
         self.menu_Tools.addAction(self.action_Clean)
         self.menu_Tools.addAction(self.action_PPA)
@@ -114,6 +127,10 @@ class Ui_MainWindow(object):
         self.actionList.setText(QCoreApplication.translate("MainWindow", u"&List", None))
         self.actionShow.setText(QCoreApplication.translate("MainWindow", u"&Show", None))
         self.actionWear.setText(QCoreApplication.translate("MainWindow", u"&Wear", None))
+        self.actionRepository.setText(QCoreApplication.translate("MainWindow", u"&Repository", None))
+        self.actionBlog.setText(QCoreApplication.translate("MainWindow", u"&Blog", None))
+        self.actionUsersGuide.setText(QCoreApplication.translate("MainWindow", u"&Users' guide", None))
+        self.actionTelegram.setText(QCoreApplication.translate("MainWindow", u"&Telegram", None))
         self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"&File", None))
         self.menu_Edit.setTitle(QCoreApplication.translate("MainWindow", u"&Edit", None))
         self.menu_Help.setTitle(QCoreApplication.translate("MainWindow", u"&Help", None))

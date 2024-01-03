@@ -1,7 +1,7 @@
 #!/bin/python
 import sys
 import os
-import subprocess
+import webbrowser
 
 from PySide6.QtGui import QAction, QIcon
 from PySide6 import QtCore
@@ -12,7 +12,12 @@ from PySide6.QtWidgets import (
     QPushButton, 
     QMessageBox, 
     QToolBar, 
-    QStatusBar
+    QStatusBar,
+    # Dialog
+    QDialog,
+    QDialogButtonBox,
+    QVBoxLayout,
+    QLabel
 )
 
 from produce import Produce
@@ -33,12 +38,16 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         self.setWindowTitle = "penGUI"
 
+        button = QPushButton("README")
+        button.clicked.connect(self.read_me)
+        self.setCentralWidget(button)
+
         # toolbar
         toolbar = QToolBar("My main toolbar")
         self.addToolBar(toolbar)
         ## configure
-        tb_configure_action = QAction("Configure", self)
-        tb_configure_action.setToolTip("Configure eggs")
+        tb_configure_action = QAction("Dad", self)
+        tb_configure_action.setToolTip("Dad configure eggs")
         tb_configure_action.triggered.connect(self.configure)
         toolbar.addAction(tb_configure_action)
         ## produce
@@ -51,20 +60,9 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         tb_kill_action.setToolTip("Kill generated ISOs")
         tb_kill_action.triggered.connect(self.kill)
         toolbar.addAction(tb_kill_action)
-        ## exit
-        tb_quit_action = QAction("Exit", self)
-        tb_quit_action.setToolTip("Exit from penGUI")
-        tb_quit_action.triggered.connect(self.exit)
-        toolbar.addAction(tb_quit_action)
 
         # statusBar
         self.setStatusBar(QStatusBar(self))
-
-        # check root
-        if os.geteuid() != 0:
-            button = QPushButton("You MUST be root to configure eggs!")
-            button.clicked.connect(self.exit)
-            self.setCentralWidget(button)
 
         # check exists /etc/penguins-eggs.d/eggs.yaml
         file_eggs='/etc/penguins-eggs.d/eggs.yaml'
@@ -96,6 +94,11 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.actionShow.triggered.connect(self.wardrobe_show)
         self.actionWear.triggered.connect(self.wardrobe_wear)
 
+        self.actionUsersGuide.triggered.connect(self.help_users_guide)
+        self.actionBlog.triggered.connect(self.help_blog)
+        self.actionRepository.triggered.connect(self.help_repository)
+        self.actionTelegram.triggered.connect(self.help_telegram)
+
         # in init prima di show, inizializziamo tutto
         self.show()
 
@@ -110,9 +113,15 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     ##
     #
     @QtCore.Slot()
+    def read_me(self):
+        webbrowser.open('https://github.com/pieroproietti/pengui?tab=readme-ov-file#pengui-take-cure-of-eggs')
+
+    ##
+    #
+    @QtCore.Slot()
     def configure(self):
         dialog_config=Config(self)
-        dialog_config.setWindowTitle("Configuration")
+        dialog_config.setWindowTitle("Dad")
         dialog_config.exec()
         #self.setCentralWidget()
         
@@ -179,6 +188,21 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     @QtCore.Slot()
     def wardrobe_wear(self):
         Terminal.execute(self, 'eggs wardrobe wear')
+
+    def help(self):
+        webbrowser.open('https://penguins-eggs.net/docs/Tutorial/eggs-users-guide')
+
+    def help_users_guide(self):
+        webbrowser.open('https://penguins-eggs.net/docs/Tutorial/eggs-users-guide')
+
+    def help_blog(self):
+        webbrowser.open('https://penguins-eggs.net')
+
+    def help_repository(self):
+        webbrowser.open('https://github.com/pieroproietti/penguins-eggs')
+
+    def help_telegram(self):
+        webbrowser.open('https://t.me/penguins_eggs')
 
 ##
 # real main
