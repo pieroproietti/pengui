@@ -9,10 +9,10 @@ rm pengui.deb debian structure -rf
 # create fakeroot scructure
 mkdir -p fakeroot/opt/pengui
 mkdir -p fakeroot/usr/share/applications
-mkdir -p fakeroot/usr/share/icons
+mkdir -p fakeroot/usr/share/icons/hicolor/scalable/apps/
 mkdir -p fakeroot/usr/bin
 # copy files in fakeroot
-cp assets/pengui.svg fakeroot/usr/share/icons/
+cp assets/pengui.svg fakeroot/usr/share/icons/hicolor/scalable/apps/
 cp assets/pengui.desktop fakeroot/usr/share/applications
 # here we are copying the link
 rm pengui-*.deb

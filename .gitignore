@@ -1,7 +1,7 @@
 venv*/*
 package
 *.deb
-pengui.bin
+pengui*.bin
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

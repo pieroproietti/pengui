@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="eggs">
+    <file>icons/dad.svg</file>
+    <file>icons/egg.svg</file>
+    <file>icons/kill.svg</file>
     <file>icons/krill.svg</file>
     <file>icons/eggs.png</file>
     <file>icons/pengui.svg</file>

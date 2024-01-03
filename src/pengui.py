@@ -3,7 +3,7 @@ import sys
 import os
 import webbrowser
 
-from PySide6.QtGui import QAction, QIcon
+from PySide6.QtGui import QAction, QIcon, QPixmap
 from PySide6 import QtCore
 from PySide6.QtCore import Slot
 from PySide6.QtWidgets import (
@@ -26,6 +26,9 @@ from config_tools import Config_Tools
 from terminal import Terminal
 from utilies import U
 
+import resources_rc 
+
+
 # import from ui
 from ui.ui_pengui import Ui_MainWindow
 
@@ -36,7 +39,6 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         super().__init__() # inizializza
 
         self.setupUi(self) # mandatory
-
         self.setWindowTitle = "penGUI"
 
         button = QPushButton("README")
@@ -45,22 +47,30 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         # toolbar
         toolbar = QToolBar("My main toolbar")
-        self.addToolBar(toolbar)
+
         ## configure
-        tb_configure_action = QAction("Dad", self)
-        tb_configure_action.setToolTip("Dad configure eggs")
-        tb_configure_action.triggered.connect(self.configure)
-        toolbar.addAction(tb_configure_action)
+        dad_icon = QIcon(QPixmap(":/icons/dad.svg"))
+        dad_action = QAction("Dad", self)
+        dad_action.setToolTip("Dad configure eggs")
+        dad_action.triggered.connect(self.configure)
+        #toolbar.addAction(dad_icon, dad_action)
+        toolbar.addAction(dad_action)
         ## produce
-        tb_produce_action = QAction("Produce", self)
-        tb_produce_action.setToolTip("Produce a new ISO")
-        tb_produce_action.triggered.connect(self.produce)
-        toolbar.addAction(tb_produce_action)
+        produce_action = QAction("Produce", self)
+        produce_action.setToolTip("Produce a new ISO")
+        produce_action.triggered.connect(self.produce)
+        produce_icon = QIcon(QPixmap(":/icons/produce.svg"))
+        #toolbar.addAction(produce_icon, produce_action)
+        toolbar.addAction(produce_action)
         ## kill
-        tb_kill_action = QAction("Kill", self)
-        tb_kill_action.setToolTip("Kill generated ISOs")
-        tb_kill_action.triggered.connect(self.kill)
-        toolbar.addAction(tb_kill_action)
+        kill_action = QAction("Kill", self)
+        kill_action.setToolTip("Kill generated ISOs")
+        kill_action.triggered.connect(self.kill)
+        kill_icon = QIcon(QPixmap(":/icons/kill.svg"))
+        #toolbar.addAction(kill_icon, kill_action)
+        toolbar.addAction(kill_action)
+
+        self.addToolBar(toolbar)
 
         # statusBar
         self.setStatusBar(QStatusBar(self))
