@@ -40,6 +40,7 @@
      <string>&amp;Edit</string>
     </property>
     <addaction name="action_Configure"/>
+    <addaction name="actionConfigureTools"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -160,6 +161,11 @@
   <action name="actionTelegram">
    <property name="text">
     <string>&amp;Telegram</string>
+   </property>
+  </action>
+  <action name="actionConfigureTools">
+   <property name="text">
+    <string>Configure &amp;Tools</string>
    </property>
   </action>
  </widget>

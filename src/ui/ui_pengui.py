@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'penguiFykgNE.ui'
+## Form generated from reading UI file 'penguihDuEeF.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -62,6 +62,8 @@ class Ui_MainWindow(object):
         self.actionUsersGuide.setObjectName(u"actionUsersGuide")
         self.actionTelegram = QAction(MainWindow)
         self.actionTelegram.setObjectName(u"actionTelegram")
+        self.actionConfigureTools = QAction(MainWindow)
+        self.actionConfigureTools.setObjectName(u"actionConfigureTools")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
@@ -92,6 +94,7 @@ class Ui_MainWindow(object):
         self.menu_File.addAction(self.action_Kill)
         self.menu_File.addAction(self.action_Exit)
         self.menu_Edit.addAction(self.action_Configure)
+        self.menu_Edit.addAction(self.actionConfigureTools)
         self.menu_Help.addAction(self.actionUsersGuide)
         self.menu_Help.addAction(self.actionBlog)
         self.menu_Help.addSeparator()
@@ -131,6 +134,7 @@ class Ui_MainWindow(object):
         self.actionBlog.setText(QCoreApplication.translate("MainWindow", u"&Blog", None))
         self.actionUsersGuide.setText(QCoreApplication.translate("MainWindow", u"&Users' guide", None))
         self.actionTelegram.setText(QCoreApplication.translate("MainWindow", u"&Telegram", None))
+        self.actionConfigureTools.setText(QCoreApplication.translate("MainWindow", u"Configure &Tools", None))
         self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"&File", None))
         self.menu_Edit.setTitle(QCoreApplication.translate("MainWindow", u"&Edit", None))
         self.menu_Help.setTitle(QCoreApplication.translate("MainWindow", u"&Help", None))

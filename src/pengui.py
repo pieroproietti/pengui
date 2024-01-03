@@ -22,6 +22,7 @@ from PySide6.QtWidgets import (
 
 from produce import Produce
 from config import Config
+from config_tools import Config_Tools
 from terminal import Terminal
 from utilies import U
 
@@ -78,6 +79,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         # Signals are emitted by objects 
         self.action_About.triggered.connect(self.about)
         self.action_Configure.triggered.connect(self.configure)
+        self.actionConfigureTools.triggered.connect(self.configure_tools)
         self.action_Exit.triggered.connect(self.exit)
         self.action_Kill.triggered.connect(self.kill)
         self.action_Produce.triggered.connect(self.produce)
@@ -124,7 +126,13 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         dialog_config.setWindowTitle("Dad")
         dialog_config.exec()
         #self.setCentralWidget()
-        
+
+    @QtCore.Slot()
+    def configure_tools(self):
+        dialog=Config_Tools(self)
+        dialog.setWindowTitle("Config tools")
+        dialog.exec()
+
     ##
     #
     @QtCore.Slot()
