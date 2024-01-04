@@ -1,11 +1,11 @@
 #!/bin/bash
-source assets/version
+source bin/version
 #VERSION come from version
 PENGUI_NAME="pengui"
 PENGUI_VERSION=${PENGUI_NAME}-${VERSION}
 echo "penGUI take cure about the eggs"
 # clean
-rm pengui.deb debian structure -rf
+rm pengui-*.deb pengui-*.bin fakeroot -rf
 # create fakeroot scructure
 mkdir -p fakeroot/opt/pengui
 mkdir -p fakeroot/usr/share/applications
@@ -15,7 +15,6 @@ mkdir -p fakeroot/usr/bin
 cp assets/pengui.svg fakeroot/usr/share/icons/hicolor/scalable/apps/
 cp assets/pengui.desktop fakeroot/usr/share/applications
 # here we are copying the link
-rm pengui-*.deb
 cp -P assets/pengui.link fakeroot/usr/bin/pengui 
 cp -r pengui.bin fakeroot/opt/pengui
 find fakeroot/opt/pengui -type f -exec chmod 644 -- {} +
@@ -23,5 +22,5 @@ find fakeroot/opt/pengui -type d -exec chmod 755 -- {} +
 find fakeroot/usr/share -type f -exec chmod 644 -- {} +
 chmod +x fakeroot/opt/pengui/pengui.bin
 fpm -C fakeroot -s dir -t deb -n "pengui" -v ${VERSION} -p ${PENGUI_VERSION}.deb
-mv pengui.bin pengui-${VERSION}.bin
+cp pengui.bin pengui-${VERSION}.bin
 rm fakeroot -rf
