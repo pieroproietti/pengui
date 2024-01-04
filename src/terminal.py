@@ -10,8 +10,6 @@ import subprocess
 class Terminal(QProcess):
 
     def execute(self, command):
-        title=command
-
         sudo = False
         if os.geteuid() != 0:
             if (command !='eggs wardrobe get' and 
@@ -20,7 +18,7 @@ class Terminal(QProcess):
                 command='sudo ' + command
                 sudo = True
 
-        msgBox = QMessageBox()
+        msgBox = QMessageBox(self)
         msgBox.setStandardButtons(QMessageBox.Cancel|QMessageBox.Apply)
         msgBox.setText("PenGUI will open a terminal and run:\n\n" + command + "\n")
         ret=msgBox.exec()

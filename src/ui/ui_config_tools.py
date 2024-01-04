@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'config_toolsJaevlU.ui'
+## Form generated from reading UI file 'config_toolsQzBiqC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -38,78 +38,78 @@ class Ui_Dialog(object):
         self.pushButtonSave = QPushButton(Dialog)
         self.pushButtonSave.setObjectName(u"pushButtonSave")
         self.pushButtonSave.setGeometry(QRect(552, 270, 80, 61))
-        self.widget = QWidget(Dialog)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(10, 31, 333, 199))
-        self.gridLayout = QGridLayout(self.widget)
+        self.layoutWidget = QWidget(Dialog)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(10, 31, 621, 199))
+        self.gridLayout = QGridLayout(self.layoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.labelLocalPathIso = QLabel(self.widget)
+        self.labelLocalPathIso = QLabel(self.layoutWidget)
         self.labelLocalPathIso.setObjectName(u"labelLocalPathIso")
 
         self.gridLayout.addWidget(self.labelLocalPathIso, 0, 0, 1, 1)
 
-        self.lineEditLocalPathIso = QLineEdit(self.widget)
+        self.lineEditLocalPathIso = QLineEdit(self.layoutWidget)
         self.lineEditLocalPathIso.setObjectName(u"lineEditLocalPathIso")
 
         self.gridLayout.addWidget(self.lineEditLocalPathIso, 0, 2, 1, 1)
 
-        self.labelLocalPathDeb = QLabel(self.widget)
+        self.labelLocalPathDeb = QLabel(self.layoutWidget)
         self.labelLocalPathDeb.setObjectName(u"labelLocalPathDeb")
 
         self.gridLayout.addWidget(self.labelLocalPathDeb, 1, 0, 1, 1)
 
-        self.lineEditLocalPathDeb = QLineEdit(self.widget)
+        self.lineEditLocalPathDeb = QLineEdit(self.layoutWidget)
         self.lineEditLocalPathDeb.setObjectName(u"lineEditLocalPathDeb")
 
         self.gridLayout.addWidget(self.lineEditLocalPathDeb, 1, 2, 1, 1)
 
-        self.labelRemoteHost = QLabel(self.widget)
+        self.labelRemoteHost = QLabel(self.layoutWidget)
         self.labelRemoteHost.setObjectName(u"labelRemoteHost")
 
         self.gridLayout.addWidget(self.labelRemoteHost, 2, 0, 1, 1)
 
-        self.lineEditRemoteHost = QLineEdit(self.widget)
+        self.lineEditRemoteHost = QLineEdit(self.layoutWidget)
         self.lineEditRemoteHost.setObjectName(u"lineEditRemoteHost")
 
         self.gridLayout.addWidget(self.lineEditRemoteHost, 2, 2, 1, 1)
 
-        self.labelRemoteUser = QLabel(self.widget)
+        self.labelRemoteUser = QLabel(self.layoutWidget)
         self.labelRemoteUser.setObjectName(u"labelRemoteUser")
 
         self.gridLayout.addWidget(self.labelRemoteUser, 3, 0, 1, 1)
 
-        self.lineEditRemoteUser = QLineEdit(self.widget)
+        self.lineEditRemoteUser = QLineEdit(self.layoutWidget)
         self.lineEditRemoteUser.setObjectName(u"lineEditRemoteUser")
 
         self.gridLayout.addWidget(self.lineEditRemoteUser, 3, 2, 1, 1)
 
-        self.labelRemotePathIso = QLabel(self.widget)
+        self.labelRemotePathIso = QLabel(self.layoutWidget)
         self.labelRemotePathIso.setObjectName(u"labelRemotePathIso")
 
         self.gridLayout.addWidget(self.labelRemotePathIso, 4, 0, 1, 1)
 
-        self.lineEditRemotePathIso = QLineEdit(self.widget)
+        self.lineEditRemotePathIso = QLineEdit(self.layoutWidget)
         self.lineEditRemotePathIso.setObjectName(u"lineEditRemotePathIso")
 
         self.gridLayout.addWidget(self.lineEditRemotePathIso, 4, 2, 1, 1)
 
-        self.labelRemotePathDeb = QLabel(self.widget)
+        self.labelRemotePathDeb = QLabel(self.layoutWidget)
         self.labelRemotePathDeb.setObjectName(u"labelRemotePathDeb")
 
         self.gridLayout.addWidget(self.labelRemotePathDeb, 5, 0, 1, 2)
 
-        self.lineEditRemotePathDeb = QLineEdit(self.widget)
+        self.lineEditRemotePathDeb = QLineEdit(self.layoutWidget)
         self.lineEditRemotePathDeb.setObjectName(u"lineEditRemotePathDeb")
 
         self.gridLayout.addWidget(self.lineEditRemotePathDeb, 5, 2, 1, 1)
 
-        self.labelFilterDeb = QLabel(self.widget)
+        self.labelFilterDeb = QLabel(self.layoutWidget)
         self.labelFilterDeb.setObjectName(u"labelFilterDeb")
 
         self.gridLayout.addWidget(self.labelFilterDeb, 6, 0, 1, 1)
 
-        self.lineEditFilterDeb = QLineEdit(self.widget)
+        self.lineEditFilterDeb = QLineEdit(self.layoutWidget)
         self.lineEditFilterDeb.setObjectName(u"lineEditFilterDeb")
 
         self.gridLayout.addWidget(self.lineEditFilterDeb, 6, 1, 1, 2)
