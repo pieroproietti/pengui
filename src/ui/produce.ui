@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
-    <normaloff>:/pengui/produce</normaloff>:/pengui/produce</iconset>
+    <normaloff>:/pengui/icons/pengui.svg</normaloff>:/pengui/icons/pengui.svg</iconset>
   </property>
   <property name="locale">
    <locale language="English" country="UnitedStates"/>

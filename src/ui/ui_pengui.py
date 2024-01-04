@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'penguiCYBdYY.ui'
+## Form generated from reading UI file 'penguiQJnMEY.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(800, 600)
         icon = QIcon()
-        icon.addFile(u":/pengui/pengui", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/pengui/icons/pengui.svg", QSize(), QIcon.Normal, QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.action_Produce = QAction(MainWindow)
         self.action_Produce.setObjectName(u"action_Produce")

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'produceONBbwt.ui'
+## Form generated from reading UI file 'produceKEJAMb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -29,7 +29,7 @@ class Ui_DialogProduce(object):
         DialogProduce.setMinimumSize(QSize(640, 480))
         DialogProduce.setMaximumSize(QSize(640, 480))
         icon = QIcon()
-        icon.addFile(u":/pengui/produce", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/pengui/icons/pengui.svg", QSize(), QIcon.Normal, QIcon.Off)
         DialogProduce.setWindowIcon(icon)
         DialogProduce.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.buttonBox = QDialogButtonBox(DialogProduce)

@@ -28,7 +28,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
-    <normaloff>:/pengui/dad</normaloff>:/pengui/dad</iconset>
+    <normaloff>:/pengui/icons/pengui.svg</normaloff>:/pengui/icons/pengui.svg</iconset>
   </property>
   <property name="toolTip">
    <string/>

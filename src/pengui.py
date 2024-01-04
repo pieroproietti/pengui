@@ -74,6 +74,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         # statusBar
         self.setStatusBar(QStatusBar(self))
+        self.statusBar().showMessage('Ready', 5000)
 
         # check exists /etc/penguins-eggs.d/eggs.yaml
         file_eggs='/etc/penguins-eggs.d/eggs.yaml'
@@ -135,13 +136,14 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         dialog_config=Config(self)
         dialog_config.setWindowTitle("Dad")
         dialog_config.exec()
-        #self.setCentralWidget()
+        self.statusBar().showMessage('dad', 5000)
 
     @QtCore.Slot()
     def configure_tools(self):
         dialog=Config_Tools(self)
         dialog.setWindowTitle("Config tools")
         dialog.exec()
+        self.statusBar().showMessage('tools configuration', 5000)
 
     ##
     #
@@ -154,6 +156,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     @QtCore.Slot()
     def kill(self):
         Terminal.execute(self, 'eggs kill')
+        self.statusBar().showMessage('kill', 5000)
         
     @Slot()
     def produce(self):
@@ -167,60 +170,77 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         if answer ==dialog.reject:
             print("non produce")
 
+        self.statusBar().showMessage('produce', 5000)
+
+
     ## tools
     @QtCore.Slot()
     def tools_clean(self):
         Terminal.execute(self, 'eggs tools clean')
+        self.statusBar().showMessage('cleaning cache, logs, etc', 5000)
+
 
     ##
     #
     @QtCore.Slot()
     def tools_ppa(self):
         Terminal.execute(self, 'eggs tools ppa')
+        self.statusBar().showMessage('adding penguins-eggs-ppa to yours /etc/apt/sources.list.d', 5000)
     
     ##
     #
     @QtCore.Slot()
     def tools_skel(self):
         Terminal.execute(self, 'eggs tools skel')
+        self.statusBar().showMessage('copyng your home configuration to /etc/skel', 5000)
 
     ##
     #
     @QtCore.Slot()
     def tools_yolk(self):
         Terminal.execute(self, 'eggs tools yolk')
+        self.statusBar().showMessage('creating a local repository /var/local/yolk', 5000)
 
     ## wardrobe
     @QtCore.Slot()
     def wardrobe_get(self):
         Terminal.execute(self, 'eggs wardrobe get')
+        self.statusBar().showMessage('gettina a copy of wardrobe on ~/.wardrobe', 5000)
 
     @QtCore.Slot()
     def wardrobe_list(self):
         Terminal.execute(self, 'eggs wardrobe list')
+        self.statusBar().showMessage('listing wardrobe contents', 5000)
 
     @QtCore.Slot()
     def wardrobe_show(self):
         Terminal.execute(self, 'eggs wardrobe show')
+        self.statusBar().showMessage('show wardrpve content', 5000)
 
     @QtCore.Slot()
     def wardrobe_wear(self):
         Terminal.execute(self, 'eggs wardrobe wear')
+        self.statusBar().showMessage('wardrobe wear', 5000)
 
     def help(self):
         webbrowser.open('https://penguins-eggs.net/docs/Tutorial/eggs-users-guide')
+        self.statusBar().showMessage('help', 5000)
 
     def help_users_guide(self):
         webbrowser.open('https://penguins-eggs.net/docs/Tutorial/eggs-users-guide')
+        self.statusBar().showMessage('help user', 5000)
 
     def help_blog(self):
         webbrowser.open('https://penguins-eggs.net')
+        self.statusBar().showMessage('help blog', 5000)
 
     def help_repository(self):
         webbrowser.open('https://github.com/pieroproietti/penguins-eggs')
+        self.statusBar().showMessage('repository', 5000)
 
     def help_telegram(self):
         webbrowser.open('https://t.me/penguins_eggs')
+        self.statusBar().showMessage('help telegram', 5000)
 
 ##
 # real main
