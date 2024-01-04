@@ -4,9 +4,9 @@
 **Notice:** pengui is not yet a finished software, it is still in embryo and is deciding how
  to grow, however is starting to be usefull to get configuration and produce. 
 
- You can run all the eggs commands from the menu; on the toolbar we have just the most used: Dad, Produce and kill.
+ You can run all the eggs commands from the menu; on the toolbar we have just the most used: `dad`, `produce` and `kill`.
 
-You can simply install penGUI with `dpkg -i pengui-0.2.x.deb` and start from the terminal giving: `pengui` as normal user, or from the the desktop link. 
+You can download [penGUI](https://sourceforge.net/projects/penguins-eggs/files/penGUI/) and install it with `dpkg -i pengui-0.2.x.deb` and start from the terminal giving: `pengui` as normal user or from the the usual desktop link. 
 
 The icon is changed now, I still a penguin from [wikipedia](https://en.wikipedia.org/wiki/File:Penguin_icon.svg#filelinks), the icon was created from user FormalDude: thanks a lot! I like it very much, and I think can adopt this nice penguin, we need same others icons too and I home some graphic designer will take the trouble to design a custom icon, I'm not able.
 
