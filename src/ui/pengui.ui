@@ -95,7 +95,7 @@
   </action>
   <action name="action_Configure">
    <property name="text">
-    <string>&amp;Configure</string>
+    <string>&amp;eggs,yaml</string>
    </property>
   </action>
   <action name="action_About">
@@ -165,7 +165,7 @@
   </action>
   <action name="actionConfigureTools">
    <property name="text">
-    <string>Configure &amp;Tools</string>
+    <string>&amp;tools.yaml</string>
    </property>
   </action>
  </widget>
