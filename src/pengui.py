@@ -29,8 +29,6 @@ from utilies import U
 
 import resources_rc
 
-
-
 # import from ui
 from ui.ui_pengui import Ui_MainWindow
 
@@ -76,17 +74,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.setStatusBar(QStatusBar(self))
         self.statusBar().showMessage('Ready', 5000)
 
-        # check exists /etc/penguins-eggs.d/eggs.yaml
-        file_eggs='/etc/penguins-eggs.d/eggs.yaml'
-        dirname_eggs=os.path.dirname(file_eggs)
-        if not U.conf_exists():
-            Terminal.execute('eggs dad --default')
-            if not U.eggs_yaml_exists():
-                msgBox = QMessageBox(self)
-                msgBox.setText("You must to install penguins-eggs, before to configure it")
-                msgBox.exec()
-                self.exit()
-                      
+
         # Signals are emitted by objects 
         self.action_About.triggered.connect(self.about)
         self.action_Configure.triggered.connect(self.configure)
@@ -114,7 +102,24 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         # in init prima di show, inizializziamo tutto
         self.show()
-
+        if not U.package_is_installed("eggs"):
+            msgBox = QMessageBox()
+            msgBox.setText("You must install penguins-eggs, before to continue.")
+            msgBox.setInformativeText("""download it from https://sourceforge.net/projects/penguins-eggs/files/DEBS/and install with dkkg -i eggs-9.6.24.deb""")
+            msgBox.setStandardButtons(QMessageBox.Cancel)
+            msgBox.exec()
+        
+        # check exists /etc/penguins-eggs.d/eggs.yaml
+        file_eggs='/etc/penguins-eggs.d/eggs.yaml'
+        dirname_eggs=os.path.dirname(file_eggs)
+        if not U.conf_exists():
+            Terminal('eggs dad --default')
+            if not U.eggs_yaml_exists():
+                msgBox = QMessageBox(self)
+                msgBox.setText("I was unable to reconfigure eggs, the process ends")
+                msgBox.exec()
+                self.exit()
+                      
     ##
     #
     @QtCore.Slot()
@@ -122,12 +127,15 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         msgBox = QMessageBox(self)
         msgBox.setText("penGUI take cure about eggs!")
         msgBox.exec()
+        self.statusBar().showMessage('dad', 5000)
+
 
     ##
     #
     @QtCore.Slot()
     def read_me(self):
         webbrowser.open('https://github.com/pieroproietti/pengui?tab=readme-ov-file#pengui-take-cure-of-eggs')
+        self.statusBar().showMessage('read me', 5000)
 
     ##
     #
