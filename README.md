@@ -8,7 +8,7 @@
 
 You can simply install penGUI with `dpkg -i pengui-0.2.x.deb` and start from the terminal giving: `pengui` as normal user, or from the the desktop link. 
 
-The icon is changed now, I still a penguin from wikipedia, I hope some graphic designer will take the trouble to design a custom icon, I'm not able.
+The icon is changed now, I still a penguin from [wikipedia](https://en.wikipedia.org/wiki/File:Penguin_icon.svg#filelinks), the icon was created from user FormalDude: thanks a lot! I like it very much, and I think can adopt this nice penguin, we need same others icons too and I home some graphic designer will take the trouble to design a custom icon, I'm not able.
 
 To check the progress of the project status refer to the [CHANGELOG](https://github.com/pieroproietti/pengui/blob/main/CHANGELOG.md), things are changing speedly actually, and penGUI can be considered usable.
 
@@ -26,14 +26,14 @@ Since we are going to open a terminal as root, using sudo, we need to have the `
 `sudo apt-get install dbus-x11`
 'sudo service dbus restart'
 
-# pengui
+# penGUI
 
-pengui makes it easy for you to learn eggs commands, once you learn them you will probably use it less, but a GUI for penguins-eggs was needed and now there is.
+penGUI makes it easy for you to learn eggs commands, once you learn them you will probably use it less, but a GUI for penguins-eggs was needed and now there is.
 
 I'm using python 3.11.2 and PySide6 to build the program.
 
-## Install pengui
-pengui is not yet included pm penguins-eggs-ppa, so dowload it from the [penguins-eggs page on sourceforge](https://sourceforge.net/projects/penguins-eggs/files/pengui/) andi install it with `sudo dpkg -i pengui-0.1.x-x.deb`
+## Install penGUI
+penGUI is not yet included pm penguins-eggs-ppa, so download it from the [penguins-eggs page on sourceforge](https://sourceforge.net/projects/penguins-eggs/files/pengui/) andi install it with `sudo dpkg -i pengui-0.2.x.deb`
 
 ## Development prerequisites
 
