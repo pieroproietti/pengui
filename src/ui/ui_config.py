@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'configEwSyPc.ui'
+## Form generated from reading UI file 'configDemSGp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -26,6 +26,9 @@ class Ui_DialogConfig(object):
         DialogConfig.resize(640, 480)
         DialogConfig.setMinimumSize(QSize(640, 480))
         DialogConfig.setMaximumSize(QSize(640, 480))
+        icon = QIcon()
+        icon.addFile(u"icons/dad.svg", QSize(), QIcon.Normal, QIcon.Off)
+        DialogConfig.setWindowIcon(icon)
 #if QT_CONFIG(accessibility)
         DialogConfig.setAccessibleDescription(u"")
 #endif // QT_CONFIG(accessibility)

@@ -26,6 +26,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icons/dad.svg</normaloff>icons/dad.svg</iconset>
+  </property>
   <property name="toolTip">
    <string/>
   </property>

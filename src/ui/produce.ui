@@ -26,8 +26,8 @@
    <string>Dialog</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
-    <normaloff>:/eggs/icons/eggs.png</normaloff>:/eggs/icons/eggs.png</iconset>
+   <iconset>
+    <normaloff>icons/produce.svg</normaloff>icons/produce.svg</iconset>
   </property>
   <property name="locale">
    <locale language="English" country="UnitedStates"/>
@@ -106,16 +106,32 @@
     <string>&amp;Generate</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QPushButton" name="pushButtonHelp">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>21</y>
-     <width>591</width>
+     <y>390</y>
+     <width>141</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>run or copy ib ckuobiard the generated command</string>
+   </property>
+   <property name="text">
+    <string>&amp;Help</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>22</y>
+     <width>611</width>
      <height>314</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
+   <layout class="QFormLayout" name="formLayout">
     <item row="0" column="0">
      <widget class="QLabel" name="labelAddons">
       <property name="toolTip">
@@ -170,7 +186,7 @@
     <item row="3" column="0">
      <widget class="QLabel" name="labelFilters">
       <property name="toolTip">
-       <string>Filters are used to remove private or unnecessary information from the image, you can decide whether to use them or not</string>
+       <string>Filters are used to remove private or unnecessaries informations from the image, note exclude.list.template is always applied</string>
       </property>
       <property name="text">
        <string>Filters</string>
@@ -178,11 +194,38 @@
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QComboBox" name="comboBoxFilters">
-      <property name="toolTip">
-       <string>Select firler to use</string>
-      </property>
-     </widget>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="checkBoxCustom">
+        <property name="toolTip">
+         <string>Add exclude.list.custom to the /etc/penguins-eggs.d/exclude.list</string>
+        </property>
+        <property name="text">
+         <string>custom</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="checkBoxHomes">
+        <property name="toolTip">
+         <string>Add exclude.list.homes to the /etc/penguins-eggs.d/exclude.list</string>
+        </property>
+        <property name="text">
+         <string>homes</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QCheckBox" name="checkBoxUsr">
+        <property name="toolTip">
+         <string>Add exclude.list.usr to the /etc/penguins-eggs.d/exclude.list</string>
+        </property>
+        <property name="text">
+         <string>usr</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item row="4" column="0">
      <widget class="QLabel" name="labelCompression">
@@ -272,22 +315,6 @@
      </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QPushButton" name="pushButtonHelp">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>390</y>
-     <width>141</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>run or copy ib ckuobiard the generated command</string>
-   </property>
-   <property name="text">
-    <string>&amp;Help</string>
-   </property>
   </widget>
  </widget>
  <resources>

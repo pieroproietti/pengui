@@ -3,6 +3,7 @@ import sys
 import os
 import webbrowser
 
+from PySide6 import QtGui
 from PySide6.QtGui import QAction, QIcon, QPixmap
 from PySide6 import QtCore
 from PySide6.QtCore import Slot
@@ -46,28 +47,25 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.setCentralWidget(button)
 
         # toolbar
-        toolbar = QToolBar("My main toolbar")
+        toolbar = QToolBar()
 
         ## configure
-        dad_icon = QIcon(QPixmap(":/icons/dad.svg"))
-        dad_action = QAction("Dad", self)
+        dad_icon = QtGui.QIcon(QtGui.QPixmap(":/icons/dad.svg"))
+        dad_action = QAction(dad_icon , "", self)
         dad_action.setToolTip("Dad configure eggs")
         dad_action.triggered.connect(self.configure)
-        #toolbar.addAction(dad_icon, dad_action)
         toolbar.addAction(dad_action)
         ## produce
-        produce_action = QAction("Produce", self)
+        produce_icon = QIcon(QPixmap(":/icons/produce.svg"))
+        produce_action = QAction(produce_icon, "", self)
         produce_action.setToolTip("Produce a new ISO")
         produce_action.triggered.connect(self.produce)
-        produce_icon = QIcon(QPixmap(":/icons/produce.svg"))
-        #toolbar.addAction(produce_icon, produce_action)
         toolbar.addAction(produce_action)
         ## kill
-        kill_action = QAction("Kill", self)
+        kill_icon = QIcon(QPixmap(":/icons/kill.svg"))
+        kill_action = QAction(kill_icon, "", self)
         kill_action.setToolTip("Kill generated ISOs")
         kill_action.triggered.connect(self.kill)
-        kill_icon = QIcon(QPixmap(":/icons/kill.svg"))
-        #toolbar.addAction(kill_icon, kill_action)
         toolbar.addAction(kill_action)
 
         self.addToolBar(toolbar)

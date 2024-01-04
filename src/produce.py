@@ -35,7 +35,10 @@ class Produce(Ui_DialogProduce, QDialog):
         self.lineEditPrefix.setText(eggs['snapshot_prefix'])
         self.lineEditBasename.setText(eggs['snapshot_basename'])
         self.comboBoxAddons.addItems(['', 'adapt', 'ichoice', 'pve', 'rsupport'])
-        self.comboBoxFilters.addItems(['', 'custom', 'homes', 'usr'])
+        #self.comboBoxFilters.addItems(['', 'custom', 'homes', 'usr'])
+        #self.checkBoxCustom.setEnabled(False)
+        #self.checkBoxHomes.setEnabled(False)
+        #self.checkBoxUsr.setEnabled(False)
         self.comboBoxCompression.addItems(['fast', 'standard', 'max'])
 
         # disable and fill basename and prefix
@@ -90,8 +93,18 @@ class Produce(Ui_DialogProduce, QDialog):
         if self.checkBoxBasename.isChecked():
             command += ' --basename ' + self.lineEditBasename.text()
 
-        if (self.comboBoxFilters.currentText() !=''):
-            command += ' --filters ' + self.comboBoxFilters.currentText()
+        filters_applied=''
+        if self.checkBoxCustom.isChecked():
+            filters_applied+= "custom "
+
+        if self.checkBoxHomes.isChecked():
+            filters_applied+= "homes "
+
+        if self.checkBoxUsr.isChecked():
+            filters_applied+= "usr "
+
+        if filters_applied!="":
+            command += ' --filters ' + filters_applied
 
         if (self.comboBoxCompression.currentText() !=''):
             if (self.comboBoxCompression.currentText() !='fast'):
