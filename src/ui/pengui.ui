@@ -31,8 +31,18 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
+    <widget class="QMenu" name="menuCalamares">
+     <property name="title">
+      <string>&amp;Calamares</string>
+     </property>
+     <addaction name="actionCalamaresInstall"/>
+     <addaction name="actionCalamaresRemove"/>
+    </widget>
+    <addaction name="menuCalamares"/>
     <addaction name="action_Produce"/>
     <addaction name="action_Kill"/>
+    <addaction name="actionStatus"/>
+    <addaction name="actionCUckoo"/>
     <addaction name="action_Exit"/>
    </widget>
    <widget class="QMenu" name="menu_Edit">
@@ -166,6 +176,26 @@
   <action name="actionConfigureTools">
    <property name="text">
     <string>&amp;tools.yaml</string>
+   </property>
+  </action>
+  <action name="actionCUckoo">
+   <property name="text">
+    <string>C&amp;uckoo</string>
+   </property>
+  </action>
+  <action name="actionStatus">
+   <property name="text">
+    <string>&amp;Status</string>
+   </property>
+  </action>
+  <action name="actionCalamaresInstall">
+   <property name="text">
+    <string>Install</string>
+   </property>
+  </action>
+  <action name="actionCalamaresRemove">
+   <property name="text">
+    <string>Remove</string>
    </property>
   </action>
  </widget>

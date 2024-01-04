@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'penguigFvVTN.ui'
+## Form generated from reading UI file 'penguiTJucgp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -64,6 +64,14 @@ class Ui_MainWindow(object):
         self.actionTelegram.setObjectName(u"actionTelegram")
         self.actionConfigureTools = QAction(MainWindow)
         self.actionConfigureTools.setObjectName(u"actionConfigureTools")
+        self.actionCUckoo = QAction(MainWindow)
+        self.actionCUckoo.setObjectName(u"actionCUckoo")
+        self.actionStatus = QAction(MainWindow)
+        self.actionStatus.setObjectName(u"actionStatus")
+        self.actionCalamaresInstall = QAction(MainWindow)
+        self.actionCalamaresInstall.setObjectName(u"actionCalamaresInstall")
+        self.actionCalamaresRemove = QAction(MainWindow)
+        self.actionCalamaresRemove.setObjectName(u"actionCalamaresRemove")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
@@ -72,6 +80,8 @@ class Ui_MainWindow(object):
         self.menubar.setGeometry(QRect(0, 0, 800, 21))
         self.menu_File = QMenu(self.menubar)
         self.menu_File.setObjectName(u"menu_File")
+        self.menuCalamares = QMenu(self.menu_File)
+        self.menuCalamares.setObjectName(u"menuCalamares")
         self.menu_Edit = QMenu(self.menubar)
         self.menu_Edit.setObjectName(u"menu_Edit")
         self.menu_Help = QMenu(self.menubar)
@@ -90,9 +100,14 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menu_Tools.menuAction())
         self.menubar.addAction(self.menuWardrobe.menuAction())
         self.menubar.addAction(self.menu_Help.menuAction())
+        self.menu_File.addAction(self.menuCalamares.menuAction())
         self.menu_File.addAction(self.action_Produce)
         self.menu_File.addAction(self.action_Kill)
+        self.menu_File.addAction(self.actionStatus)
+        self.menu_File.addAction(self.actionCUckoo)
         self.menu_File.addAction(self.action_Exit)
+        self.menuCalamares.addAction(self.actionCalamaresInstall)
+        self.menuCalamares.addAction(self.actionCalamaresRemove)
         self.menu_Edit.addAction(self.action_Configure)
         self.menu_Edit.addAction(self.actionConfigureTools)
         self.menu_Help.addAction(self.actionUsersGuide)
@@ -135,7 +150,12 @@ class Ui_MainWindow(object):
         self.actionUsersGuide.setText(QCoreApplication.translate("MainWindow", u"&Users' guide", None))
         self.actionTelegram.setText(QCoreApplication.translate("MainWindow", u"&Telegram", None))
         self.actionConfigureTools.setText(QCoreApplication.translate("MainWindow", u"&tools.yaml", None))
+        self.actionCUckoo.setText(QCoreApplication.translate("MainWindow", u"C&uckoo", None))
+        self.actionStatus.setText(QCoreApplication.translate("MainWindow", u"&Status", None))
+        self.actionCalamaresInstall.setText(QCoreApplication.translate("MainWindow", u"Install", None))
+        self.actionCalamaresRemove.setText(QCoreApplication.translate("MainWindow", u"Remove", None))
         self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"&File", None))
+        self.menuCalamares.setTitle(QCoreApplication.translate("MainWindow", u"&Calamares", None))
         self.menu_Edit.setTitle(QCoreApplication.translate("MainWindow", u"&Edit", None))
         self.menu_Help.setTitle(QCoreApplication.translate("MainWindow", u"&Help", None))
         self.menu_Tools.setTitle(QCoreApplication.translate("MainWindow", u"&Tools", None))

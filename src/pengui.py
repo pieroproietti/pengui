@@ -80,14 +80,19 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.setStatusBar(QStatusBar(self))
         self.statusBar().showMessage('Ready', 5000)
 
+        # File
+        self.actionCalamaresInstall.triggered.connect(self.calamares_install)
+        self.actionCalamaresRemove.triggered.connect(self.calamares_remove)
+        self.action_Produce.triggered.connect(self.produce)
+        self.action_Kill.triggered.connect(self.kill)
+        self.actionStatus.triggered.connect(self.status)
+        #self.actionCUckoo.triggered.connect(self.cuckoo)
+        self.actionCUckoo.setDisabled(True)
+        self.action_Exit.triggered.connect(self.exit)
 
-        # Signals are emitted by objects 
-        self.action_About.triggered.connect(self.about)
+        # Edif
         self.action_Configure.triggered.connect(self.configure)
         self.actionConfigureTools.triggered.connect(self.configure_tools)
-        self.action_Exit.triggered.connect(self.exit)
-        self.action_Kill.triggered.connect(self.kill)
-        self.action_Produce.triggered.connect(self.produce)
 
         # Tools
         self.action_Clean.triggered.connect(self.tools_clean)
@@ -101,6 +106,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.actionShow.triggered.connect(self.wardrobe_show)
         self.actionWear.triggered.connect(self.wardrobe_wear)
 
+        # Help
+        self.action_About.triggered.connect(self.about)
         self.actionUsersGuide.triggered.connect(self.help_users_guide)
         self.actionBlog.triggered.connect(self.help_blog)
         self.actionRepository.triggered.connect(self.help_repository)
@@ -188,6 +195,35 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
             print("non produce")
 
         self.statusBar().showMessage('produce', 5000)
+
+    ##
+    #
+    @Slot()
+    def calamares_install(self):
+        Terminal.execute(self, 'eggs calamares --install')
+        self.statusBar().showMessage('calamares --install', 5000)
+
+    ##
+    #
+    @Slot()
+    def calamares_remove(self):
+        Terminal.execute(self, 'eggs calamares --remove')
+        self.statusBar().showMessage('calamares --remove', 5000)
+
+    ##
+    #
+    @Slot()
+    def status(self):
+        Terminal.execute(self, 'eggs status')
+        self.statusBar().showMessage('status', 5000)
+
+    ##
+    #
+    @Slot()
+    def cuckoo(self):
+        Terminal.execute(self, 'eggs cuckoo')
+        self.statusBar().showMessage('cuckoo', 5000)
+
 
 
     ## tools
