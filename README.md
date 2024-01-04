@@ -9,28 +9,18 @@ The icon is changed now, I still a penguin from [wikipedia](https://en.wikipedia
 
 To check the progress of the project status refer to the [CHANGELOG](https://github.com/pieroproietti/pengui/blob/main/CHANGELOG.md), things are changing speedly actually, and penGUI can be considered usable.
 
-
 ## x-terminal-emulator
-pengui calls x-terminal-emulator to open a terminal window, you can varial your configuration with the command:
+penGUI calls `x-terminal-emulator` to open a terminal window, you can change your configuration with the command:
 
 `sudo update-alternatives --config x-terminal-emulator`
 
-On my development machine, I normally use `xfce4-terminal`.
-
-## dbus-x11
-Since we are going to open a terminal as root, using sudo, we need to have the `dbus-x11` package installed. So, before using the program, install it:
-
-`sudo apt-get install dbus-x11`
-'sudo service dbus restart'
+On my development machine, I feelme confortable with `xfce4-terminal`.
 
 # penGUI
 
 penGUI makes it easy for you to learn eggs commands, once you learn them you will probably use it less, but a GUI for penguins-eggs was needed and now there is.
 
 I'm using python 3.11.2 and PySide6 to build the program.
-
-## Install penGUI
-penGUI is not yet included pm penguins-eggs-ppa, so download it from the [penguins-eggs page on sourceforge](https://sourceforge.net/projects/penguins-eggs/files/pengui/) andi install it with `sudo dpkg -i pengui-0.2.x.deb`
 
 ## Development prerequisites
 
