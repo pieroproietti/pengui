@@ -1,16 +1,16 @@
 ## **penGUI take cure of eggs!**
-![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.png?raw=true)
+![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.svg?raw=true)
 
 **Notice:** pengui is not yet a finished software, it is still in embryo and is deciding how
  to grow, however is starting to be usefull to get configuration and produce. 
 
- You can run all the eggs commands menu, on the toolbar we have just the most used: Dad, Produce and kill.
+ You can run all the eggs commands from the menu; on the toolbar we have just the most used: Dad, Produce and kill.
 
-You can simply install it with `dpkg -i pengui-0.1.x.deb` and start it with `sudo pengui` or from the desktop link. 
+You can simply install penGUI with `dpkg -i pengui-0.2.x.deb` and start from the terminal giving: `pengui` as normal user, or from the the desktop link. 
 
-The icon is that of penguins-eggs, I hope some graphic designer will take the trouble to design another one, for those who would like to participate in the project entering currently is easy, the project has just started.
+The icon is changed now, I still a penguin from wikipedia, I hope some graphic designer will take the trouble to design a custom icon, I'm not able.
 
-To check the progress of the project status refer to the [CHANGELOG](https://github.com/pieroproietti/pengui/blob/main/CHANGELOG.md).
+To check the progress of the project status refer to the [CHANGELOG](https://github.com/pieroproietti/pengui/blob/main/CHANGELOG.md), things are changing speedly actually, and penGUI can be considered usable.
 
 
 ## x-terminal-emulator
