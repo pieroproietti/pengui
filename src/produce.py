@@ -35,10 +35,6 @@ class Produce(Ui_DialogProduce, QDialog):
         self.lineEditPrefix.setText(eggs['snapshot_prefix'])
         self.lineEditBasename.setText(eggs['snapshot_basename'])
         self.comboBoxAddons.addItems(['', 'adapt', 'ichoice', 'pve', 'rsupport'])
-        #self.comboBoxFilters.addItems(['', 'custom', 'homes', 'usr'])
-        #self.checkBoxCustom.setEnabled(False)
-        #self.checkBoxHomes.setEnabled(False)
-        #self.checkBoxUsr.setEnabled(False)
         self.comboBoxCompression.addItems(['fast', 'standard', 'max'])
 
         # disable and fill basename and prefix
@@ -137,7 +133,13 @@ class Produce(Ui_DialogProduce, QDialog):
     ##
     def run(self):
         command=self.lineEditCommand.text()
-        Terminal.execute(self, command)            
+        if command.strip!='':
+            Terminal.execute(self, command)
+        else:
+            msgBox = QMessageBox(self)
+            msgBox.setText("You must generate the command before, plase click on generate button")
+            msgBox.exec()
+
 
     def help(self):
         webbrowser.open('https://github.com/pieroproietti/penguins-eggs#eggs-produce')

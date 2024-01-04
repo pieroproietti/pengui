@@ -7,6 +7,17 @@ This project started near the end of the 2023, due my necessity to improve my ab
 I tried - same time ago - to use electron, but at last eventually I decided to try it again in python, and I am seeing good results in terms of lightness and practicality of development.
 
 # Versions
+## pengui-0.1.9
+* penGUI now is used always with normal user, no root:
+* before to open a Terminal, penGUI will show a message box, to accept or nome.
+
+I chose to configure pengui for exclusive use as a normal user, because it gives me problems with the terminal call and wardrobe commands.
+
+## pengui-0.1.8
+* check presence of eggs at start and suggest installation of it;
+* added some advices on status bar:
+* a lot of tempts with terminal, unproductive for now.
+
 ## pengui-0.1.7
 * replaced names with isons in toolbar:
 * replaced comboBox with checkBox to select filters;

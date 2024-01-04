@@ -38,6 +38,12 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     def __init__ (self):
         super().__init__() # inizializza
 
+        # don't use as root
+        # I choose that becouse of Terminal
+        if os.geteuid() == 0:
+            print("Please use penGUI as regular user")
+            sys.exit(0)
+
         self.setupUi(self) # mandatory
         self.setWindowTitle = "penGUI"
 
@@ -103,11 +109,14 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         # in init prima di show, inizializziamo tutto
         self.show()
         if not U.package_is_installed("eggs"):
-            msgBox = QMessageBox()
-            msgBox.setText("You must install penguins-eggs, before to continue.")
-            msgBox.setInformativeText("""download it from https://sourceforge.net/projects/penguins-eggs/files/DEBS/and install with dkkg -i eggs-9.6.24.deb""")
-            msgBox.setStandardButtons(QMessageBox.Cancel)
-            msgBox.exec()
+            msgBox = QMessageBox(self)
+            msgBox.setText("You MUST install penguins-eggs, before to continue.")
+            msgBox.setInformativeText("""Download it, then install with sudo dpkg -i eggs-9.6.xx.deb""")
+            msgBox.setStandardButtons(QMessageBox.Ok|QMessageBox.Help)
+            ret=msgBox.exec()
+            if ret == QMessageBox.Help:
+                webbrowser.open('https://sourceforge.net/projects/penguins-eggs/files/DEBS/')
+
         
         # check exists /etc/penguins-eggs.d/eggs.yaml
         file_eggs='/etc/penguins-eggs.d/eggs.yaml'
@@ -119,7 +128,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
                 msgBox.setText("I was unable to reconfigure eggs, the process ends")
                 msgBox.exec()
                 self.exit()
-                      
+
     ##
     #
     @QtCore.Slot()

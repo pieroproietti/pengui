@@ -46,10 +46,6 @@ class U():
         print(installed)
         return installed
     
-    def package_install(package="eggs")->bool:
-        subprocess.run(["/usr/bin/sudo", "apt" ,"install", package])
-        return True
-
 # develop 
 if __name__ == "__main__":
     U.package_install("eggs")
