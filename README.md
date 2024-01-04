@@ -1,10 +1,7 @@
 ## **penGUI take cure of eggs!**
 ![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.png?raw=true)
 
-**Notice:** pengui is not yet a finished software, it is still in embryo and is deciding how
- to grow, however is starting to be usefull to get configuration and produce. 
-
- You can run all the eggs commands from the menu; on the toolbar we have just the most used: `dad`, `produce` and `kill`.
+**Notice:** penGUI is not yet a finished software, it is still in embryo and is deciding how to grow. However, it is already useful for both experts and novices to set up eggs and also to get-at a glance-a complete picture. You can find and run all the eggs commands from the menu; on the toolbar we have just the most used commands: `dad`, `produce` and `kill`.
 
 You can download [penGUI](https://sourceforge.net/projects/penguins-eggs/files/penGUI/) and install it with `dpkg -i pengui-0.2.x.deb` and start from the terminal giving: `pengui` as normal user or from the the usual desktop link. 
 
