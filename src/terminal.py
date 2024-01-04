@@ -22,7 +22,7 @@ class Terminal(QProcess):
 
         msgBox = QMessageBox()
         msgBox.setStandardButtons(QMessageBox.Cancel|QMessageBox.Apply)
-        msgBox.setText("PenGUI will open a terminal and run: " + command)
+        msgBox.setText("PenGUI will open a terminal and run:\n\n" + command + "\n")
         ret=msgBox.exec()
         if ret == QMessageBox.Apply:
             # Run the command in the terminal
