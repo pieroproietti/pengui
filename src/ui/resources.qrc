@@ -1,10 +1,11 @@
 <RCC>
-  <qresource prefix="eggs">
+  <qresource prefix="pengui">
+    <file>icons/produce.svg</file>
     <file>icons/dad.svg</file>
     <file>icons/egg.svg</file>
+    <file>icons/eggs.png</file>
     <file>icons/kill.svg</file>
     <file>icons/krill.svg</file>
-    <file>icons/eggs.png</file>
     <file>icons/pengui.svg</file>
   </qresource>
 </RCC>

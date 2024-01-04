@@ -26,8 +26,8 @@
    <string>Dialog</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>icons/produce.svg</normaloff>icons/produce.svg</iconset>
+   <iconset resource="resources.qrc">
+    <normaloff>:/pengui/produce</normaloff>:/pengui/produce</iconset>
   </property>
   <property name="locale">
    <locale language="English" country="UnitedStates"/>

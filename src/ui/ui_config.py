@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'configDemSGp.ui'
+## Form generated from reading UI file 'configUTMkPI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -18,6 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractButton, QApplication, QCheckBox, QDialog,
     QDialogButtonBox, QLabel, QLineEdit, QPushButton,
     QSizePolicy, QWidget)
+import resources_rc
 
 class Ui_DialogConfig(object):
     def setupUi(self, DialogConfig):
@@ -27,7 +28,7 @@ class Ui_DialogConfig(object):
         DialogConfig.setMinimumSize(QSize(640, 480))
         DialogConfig.setMaximumSize(QSize(640, 480))
         icon = QIcon()
-        icon.addFile(u"icons/dad.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/pengui/dad", QSize(), QIcon.Normal, QIcon.Off)
         DialogConfig.setWindowIcon(icon)
 #if QT_CONFIG(accessibility)
         DialogConfig.setAccessibleDescription(u"")

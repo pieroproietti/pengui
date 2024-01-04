@@ -7,6 +7,9 @@ This project started near the end of the 2023, due my necessity to improve my ab
 I tried - same time ago - to use electron, but at last eventually I decided to try it again in python, and I am seeing good results in terms of lightness and practicality of development.
 
 # Versions
+## pengui-0.1.7
+* replaced names with isons in toolbar:
+* replaced comboBox with checkBox to select filters;
 
 ## pengui-0.1.6
 * changed main icon;

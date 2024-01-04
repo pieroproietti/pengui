@@ -27,8 +27,8 @@
    <string>Form</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>icons/dad.svg</normaloff>icons/dad.svg</iconset>
+   <iconset resource="resources.qrc">
+    <normaloff>:/pengui/dad</normaloff>:/pengui/dad</iconset>
   </property>
   <property name="toolTip">
    <string/>
@@ -304,6 +304,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
