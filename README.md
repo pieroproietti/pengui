@@ -1,5 +1,5 @@
 ## **penGUI take cure of eggs!**
-![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.svg?raw=true)
+![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.png?raw=true)
 
 **Notice:** pengui is not yet a finished software, it is still in embryo and is deciding how
  to grow, however is starting to be usefull to get configuration and produce. 

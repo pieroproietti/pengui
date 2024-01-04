@@ -1,5 +1,5 @@
 ## **penGUI take cure of eggs!**
-![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.svg?raw=true)
+![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.png?raw=true)
 
 # PACKAGING
 

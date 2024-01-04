@@ -1,5 +1,5 @@
 ## **penGUI take cure of eggs!**
-![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.svg?raw=true)
+![icon](https://github.com/pieroproietti/pengui/blob/main/assets/pengui.png?raw=true)
 
 # CHANGELOG
 This project started near the end of the 2023, due my necessity to improve my ability with python and learn about GUI.
