@@ -19,6 +19,8 @@ On my development machine, I feelme confortable with `xfce4-terminal`.
 # penGUI
 penGUI makes it easier to learn Eggs commands; once you learn them, you will probably use it less, but a GUI for penguins-eggs was needed and is now there.
 
+![icon](https://github.com/pieroproietti/pengui/blob/main/assets/penGUI.png?raw=true)
+
 ## Development prerequisites
 For penGUI development I am using python 3.11.2 and PySide6 on a common Debian bookworm, in my case the classic [colibri](https://sourceforge.net/projects/penguins-eggs/files/ISOS/debian/bookworm/amd64/). 
 
