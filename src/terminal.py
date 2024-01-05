@@ -13,7 +13,7 @@ class Terminal(QProcess):
         sudo = False
         if os.geteuid() != 0:
             if (command !='eggs mom' and
-                command !='eggs show' and
+                command !='eggs status' and
                 command !='eggs wardrobe get' and 
                 command !='eggs wardrobe list' and
                 command !='eggs wardrobe show'):

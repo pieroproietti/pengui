@@ -7,6 +7,8 @@ This project started near the end of the 2023, due my necessity to improve my ab
 I tried - same time ago - to use electron, but at last eventually I decided to try it again in python, and I am seeing good results in terms of lightness and practicality of development.
 
 # Versions
+## pengui-0.2.3
+* status, wardrobe get, wardrobe list and wardrobe show work with normal users;
 
 ## pengui-0.2.2
 * added menu for commands: calamares --install, calamares --remove, status and cuckoo (disabled);
