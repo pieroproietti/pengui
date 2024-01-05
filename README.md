@@ -20,13 +20,16 @@ On my development machine, I feelme confortable with `xfce4-terminal`.
 penGUI makes it easier to learn Eggs commands; once you learn them, you will probably use it less, but a GUI for penguins-eggs was needed and is now there.
 
 ## Development prerequisites
-For penGUI development I am using python 3.11.2 and PySide6 on a common Debian bookworm, in my case the classic [colibri](https://sourceforge.net/projects/penguins-eggs/files/ISOS/debian/bookworm/amd64/))
+For penGUI development I am using python 3.11.2 and PySide6 on a common Debian bookworm, in my case the classic [colibri](https://sourceforge.net/projects/penguins-eggs/files/ISOS/debian/bookworm/amd64/). 
+
+I added only the following packages:
 
 `sudo apt install build-essential`
 
 `sudo apt install python3-full python-is-python3`
 
-It seem we need for QT following packages too: 
+For pyside6 to work properly, I also installed:
+
 `sudo apt install libxcb-cursor0 libpython3.11` 
 
 # sources
@@ -34,7 +37,7 @@ This is the repository of pengui, to get this sources just:
 
 `git clone https://github.com/pieroproietti/pengui`
 
-Perhaps will be better to [fork](https://github.com/pieroproietti/pengui/fork) the repository before of that, so you will be able to create [Pull Request](https://github.com/pieroproietti/pengui/pulls) and follow the project.
+It is recommended, however to create yourself a [fork](https://github.com/pieroproietti/pengui/fork) of the repository, so that you can manage the project yourself and possibly create [some Pull Requests](https://github.com/pieroproietti/pengui/pulls).
 
 # venv
 Just run `./bin/create_venv and` and follow the instructions.

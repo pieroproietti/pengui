@@ -19,6 +19,8 @@ cd src
 pyside6-deploy penguin.py
 ```
 
+I create a simple script: `bin/create-bin` you can run it directly from the root of the project.
+
 ## fpm
 First install ruby
 
@@ -34,8 +36,8 @@ now fpm is ready:
 `fpm --version`
 
 ## Create package
-I chosen to install pengui under /opt/pengui. and build a short script under `bin`. All the necessary complementes: a `pengui.desktop` file and a `pengui.png` icon are under `asset`.
+I chosen to install pengui under `/opt/pengui`. and build a short script under `bin/create-deb`. All the necessary complementes: a `pengui.desktop` file and a `pengui.png` icon are under `assets`, the version is on `bin/version`.
 
-To create the package just run `bin/create-package-pengui`
+To create the package just run `bin/create-deb`
 
-NOTE: create-package will remove the dirs package create during the buid, leaving just a simple `pengui.deb` on the root.
+NOTE: create-deb will remove the dirs package create during the buid, leaving just a simple `pengui-x.x.x.deb` on the root and copying `pengui.bin` `
