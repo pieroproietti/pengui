@@ -9,7 +9,7 @@ I tried - same time ago - to use electron, but at last eventually I decided to t
 # Versions
 
 ## pengui-0.2.2
-* added menu and commands: calamares --install, calamares --remove, status and cuckoo (disabled);
+* added menu for commands: calamares --install, calamares --remove, status and cuckoo (disabled);
 * fixed icon, finally!!!
 
 ## pengui-0.1.9

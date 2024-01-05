@@ -40,4 +40,5 @@ I chosen to install pengui under `/opt/pengui`. and build a short script under `
 
 To create the package just run `bin/create-deb`
 
-NOTE: create-deb will remove the dirs package create during the buid, leaving just a simple `pengui-x.x.x.deb` on the root and copying `pengui.bin` `
+NOTE: create-deb will remove the dirs package create during the buid, leaving just a simple `pengui-x.x.x.deb` on the root and copying `pengui.bin` to `pengui-x.x.x.bin`.
+
