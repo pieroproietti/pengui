@@ -60,5 +60,5 @@ modules =
 local_libs = plugins_platforms_qtforandroid
 # architecture of deployed platform
 # possible values = ["aarch64", "armv7a", "i686", "x86_64"]
-arch = ["aarch64", "x86_64"]
+arch = ["i686"]
 

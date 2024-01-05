@@ -45,7 +45,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
             sys.exit(0)
 
         self.setupUi(self) # mandatory
-        self.setWindowTitle = "penGUI"
+        
+        self.setWindowTitle('penGUI') 
 
         button = QPushButton("README")
         button.clicked.connect(self.read_me)
@@ -113,6 +114,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.actionRepository.triggered.connect(self.help_repository)
         self.actionTelegram.triggered.connect(self.help_telegram)
 
+        
         # in init prima di show, inizializziamo tutto
         self.show()
         if not U.package_is_installed("eggs"):
