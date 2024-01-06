@@ -67,8 +67,15 @@
     <property name="title">
      <string>&amp;Tools</string>
     </property>
+    <widget class="QMenu" name="menuPPA">
+     <property name="title">
+      <string>&amp;PPA</string>
+     </property>
+     <addaction name="actionIPpaInstall"/>
+     <addaction name="actionPpaRemove"/>
+    </widget>
     <addaction name="action_Clean"/>
-    <addaction name="action_PPA"/>
+    <addaction name="menuPPA"/>
     <addaction name="action_Skel"/>
     <addaction name="action_Yolk"/>
    </widget>
@@ -121,11 +128,6 @@
   <action name="action_Clean">
    <property name="text">
     <string>&amp;Clean</string>
-   </property>
-  </action>
-  <action name="action_PPA">
-   <property name="text">
-    <string>&amp;PPA</string>
    </property>
   </action>
   <action name="action_Yolk">
@@ -194,6 +196,16 @@
    </property>
   </action>
   <action name="actionCalamaresRemove">
+   <property name="text">
+    <string>Remove</string>
+   </property>
+  </action>
+  <action name="actionIPpaInstall">
+   <property name="text">
+    <string>Install</string>
+   </property>
+  </action>
+  <action name="actionPpaRemove">
    <property name="text">
     <string>Remove</string>
    </property>

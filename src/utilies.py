@@ -8,7 +8,7 @@ class U():
     conf_path='/etc/penguins-eggs.d'
     
     ##
-    # eggs is installed
+    # eggs conf exists
     def conf_exists() -> bool:
         exists=False
         if os.path.exists(U.conf_path):
@@ -25,12 +25,21 @@ class U():
         
         return exists
 
-
     ##
     # /etc/penguins-eggs.d/tools.yaml
     def tools_yaml_exists(self)->bool:
         exists=False
         if os.path.exists(U.conf_path+'/tools.yaml'):
+            exists=True
+        
+        return exists
+
+    ##
+    # wardrobe exists
+    def wardrobe_exists() -> bool:
+        exists=False
+        wardrobe_path=os.path.expanduser('~')+"/.wardrobe"
+        if os.path.exists(wardrobe_path):
             exists=True
         
         return exists
@@ -48,4 +57,5 @@ class U():
     
 # develop 
 if __name__ == "__main__":
-    U.package_install("eggs")
+    pass
+

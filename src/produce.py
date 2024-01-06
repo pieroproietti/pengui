@@ -80,7 +80,7 @@ class Produce(Ui_DialogProduce, QDialog):
 
     def generate(self):
         command='eggs produce'
-        if (self.comboBoxAddons.currentText() !=''):
+        if (self.comboBoxAddons!=''):
             command += ' --addons ' + self.comboBoxAddons.currentText()
 
         if self.checkBoxPrefix.isChecked():

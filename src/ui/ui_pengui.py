@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'penguiTJucgp.ui'
+## Form generated from reading UI file 'penguiHFrdQJ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -42,8 +42,6 @@ class Ui_MainWindow(object):
         self.action_Skel.setObjectName(u"action_Skel")
         self.action_Clean = QAction(MainWindow)
         self.action_Clean.setObjectName(u"action_Clean")
-        self.action_PPA = QAction(MainWindow)
-        self.action_PPA.setObjectName(u"action_PPA")
         self.action_Yolk = QAction(MainWindow)
         self.action_Yolk.setObjectName(u"action_Yolk")
         self.actionGet = QAction(MainWindow)
@@ -72,6 +70,10 @@ class Ui_MainWindow(object):
         self.actionCalamaresInstall.setObjectName(u"actionCalamaresInstall")
         self.actionCalamaresRemove = QAction(MainWindow)
         self.actionCalamaresRemove.setObjectName(u"actionCalamaresRemove")
+        self.actionIPpaInstall = QAction(MainWindow)
+        self.actionIPpaInstall.setObjectName(u"actionIPpaInstall")
+        self.actionPpaRemove = QAction(MainWindow)
+        self.actionPpaRemove.setObjectName(u"actionPpaRemove")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
@@ -88,6 +90,8 @@ class Ui_MainWindow(object):
         self.menu_Help.setObjectName(u"menu_Help")
         self.menu_Tools = QMenu(self.menubar)
         self.menu_Tools.setObjectName(u"menu_Tools")
+        self.menuPPA = QMenu(self.menu_Tools)
+        self.menuPPA.setObjectName(u"menuPPA")
         self.menuWardrobe = QMenu(self.menubar)
         self.menuWardrobe.setObjectName(u"menuWardrobe")
         MainWindow.setMenuBar(self.menubar)
@@ -117,9 +121,11 @@ class Ui_MainWindow(object):
         self.menu_Help.addAction(self.actionTelegram)
         self.menu_Help.addAction(self.action_About)
         self.menu_Tools.addAction(self.action_Clean)
-        self.menu_Tools.addAction(self.action_PPA)
+        self.menu_Tools.addAction(self.menuPPA.menuAction())
         self.menu_Tools.addAction(self.action_Skel)
         self.menu_Tools.addAction(self.action_Yolk)
+        self.menuPPA.addAction(self.actionIPpaInstall)
+        self.menuPPA.addAction(self.actionPpaRemove)
         self.menuWardrobe.addAction(self.actionGet)
         self.menuWardrobe.addAction(self.actionList)
         self.menuWardrobe.addAction(self.actionShow)
@@ -139,7 +145,6 @@ class Ui_MainWindow(object):
         self.action_About.setText(QCoreApplication.translate("MainWindow", u"&About", None))
         self.action_Skel.setText(QCoreApplication.translate("MainWindow", u"&Skel", None))
         self.action_Clean.setText(QCoreApplication.translate("MainWindow", u"&Clean", None))
-        self.action_PPA.setText(QCoreApplication.translate("MainWindow", u"&PPA", None))
         self.action_Yolk.setText(QCoreApplication.translate("MainWindow", u"&Yolk", None))
         self.actionGet.setText(QCoreApplication.translate("MainWindow", u"&Get", None))
         self.actionList.setText(QCoreApplication.translate("MainWindow", u"&List", None))
@@ -154,11 +159,14 @@ class Ui_MainWindow(object):
         self.actionStatus.setText(QCoreApplication.translate("MainWindow", u"&Status", None))
         self.actionCalamaresInstall.setText(QCoreApplication.translate("MainWindow", u"Install", None))
         self.actionCalamaresRemove.setText(QCoreApplication.translate("MainWindow", u"Remove", None))
+        self.actionIPpaInstall.setText(QCoreApplication.translate("MainWindow", u"Install", None))
+        self.actionPpaRemove.setText(QCoreApplication.translate("MainWindow", u"Remove", None))
         self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"&File", None))
         self.menuCalamares.setTitle(QCoreApplication.translate("MainWindow", u"&Calamares", None))
         self.menu_Edit.setTitle(QCoreApplication.translate("MainWindow", u"&Edit", None))
         self.menu_Help.setTitle(QCoreApplication.translate("MainWindow", u"&Help", None))
         self.menu_Tools.setTitle(QCoreApplication.translate("MainWindow", u"&Tools", None))
+        self.menuPPA.setTitle(QCoreApplication.translate("MainWindow", u"&PPA", None))
         self.menuWardrobe.setTitle(QCoreApplication.translate("MainWindow", u"&Wardrobe", None))
     # retranslateUi
 

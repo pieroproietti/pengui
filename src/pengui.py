@@ -24,6 +24,7 @@ from PySide6.QtWidgets import (
 from produce import Produce
 from config import Config
 from config_tools import Config_Tools
+from wardrobe_show import WardrobeShow
 from terminal import Terminal
 from utilies import U
 
@@ -97,7 +98,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         # Tools
         self.action_Clean.triggered.connect(self.tools_clean)
-        self.action_PPA.triggered.connect(self.tools_ppa)
+        self.actionIPpaInstall.triggered.connect(self.tools_ppa_install)
+        self.actionPpaRemove.triggered.connect(self.tools_ppa_remove)
         self.action_Skel.triggered.connect(self.tools_skel)
         self.action_Yolk.triggered.connect(self.tools_yolk)
 
@@ -238,10 +240,16 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     ##
     #
     @QtCore.Slot()
-    def tools_ppa(self):
-        Terminal.execute(self, 'eggs tools ppa')
+    def tools_ppa_install(self):
+        Terminal.execute(self, 'eggs tools ppa --install')
         self.statusBar().showMessage('adding penguins-eggs-ppa to yours /etc/apt/sources.list.d', 5000)
     
+    ##
+    #
+    @QtCore.Slot()
+    def tools_ppa_remove(self):
+        Terminal.execute(self, 'eggs tools ppa --remove')
+        self.statusBar().showMessage('removing penguins-eggs-ppa form yours /etc/apt/sources.list.d', 5000)
     ##
     #
     @QtCore.Slot()
@@ -260,7 +268,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     @QtCore.Slot()
     def wardrobe_get(self):
         Terminal.execute(self, 'eggs wardrobe get')
-        self.statusBar().showMessage('gettina a copy of wardrobe on ~/.wardrobe', 5000)
+        self.statusBar().showMessage('get a copy of wardrobe on ~/.wardrobe', 5000)
 
     @QtCore.Slot()
     def wardrobe_list(self):
@@ -269,8 +277,10 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
     @QtCore.Slot()
     def wardrobe_show(self):
-        Terminal.execute(self, 'eggs wardrobe show')
-        self.statusBar().showMessage('show wardrpve content', 5000)
+        dialog = WardrobeShow(self)
+        dialog.setWindowTitle("wardrobe show")
+        answer=dialog.exec()
+        self.statusBar().showMessage('show wardrobe', 5000)
 
     @QtCore.Slot()
     def wardrobe_wear(self):
