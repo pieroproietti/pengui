@@ -22,9 +22,9 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
 
         if not U.wardrobe_exists():
             msgBox = QMessageBox(self)
-            msgBox.setText(".wardrobe does not exist in your home, use: eggs wardrobe get")
+            msgBox.setText("Import wardrobe before.\nUse:\n\neggs wardrobe get\n")
             msgBox.exec()
-            return
+            sys.exit()
         
         # recupero i costumes da .wardrobe/costumes/
         path_costumes=os.path.expanduser('~')+"/.wardrobe/costumes"
@@ -45,8 +45,8 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
     ##
     #    
     def show(self):
-        Terminal.execute(self, 'eggs wardrobe show ' + self.comboBoxCostumes.currentText())
-
+        command='eggs wardrobe show ' + self.comboBoxCostumes.currentText()
+        Terminal.execute(self,command)
 
 
 

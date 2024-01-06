@@ -279,8 +279,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     def wardrobe_show(self):
         dialog = WardrobeShow(self)
         dialog.setWindowTitle("wardrobe show")
-        answer=dialog.exec()
-        self.statusBar().showMessage('show wardrobe', 5000)
+        dialog.exec()
+        self.statusBar().showMessage('wardrobe show', 5000)
 
     @QtCore.Slot()
     def wardrobe_wear(self):
