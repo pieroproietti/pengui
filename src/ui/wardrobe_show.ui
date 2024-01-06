@@ -29,7 +29,7 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QLabel" name="labelCostume">
+  <widget class="QLabel" name="labelCostumes">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -38,8 +38,11 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Costumes</string>
+   </property>
    <property name="text">
-    <string>costume:</string>
+    <string>Costumes:</string>
    </property>
   </widget>
   <widget class="QComboBox" name="comboBoxCostumes">
@@ -51,6 +54,9 @@
      <height>24</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Select the costume to wear</string>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButtonShow">
    <property name="geometry">
@@ -60,6 +66,9 @@
      <width>131</width>
      <height>71</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>show costume yaml</string>
    </property>
    <property name="text">
     <string>Show</string>
@@ -74,8 +83,11 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>distros</string>
+   </property>
    <property name="text">
-    <string>Distro</string>
+    <string>Distros:</string>
    </property>
   </widget>
   <widget class="QComboBox" name="comboBoxDistros">
@@ -86,6 +98,9 @@
      <width>461</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>select distribution </string>
    </property>
   </widget>
  </widget>

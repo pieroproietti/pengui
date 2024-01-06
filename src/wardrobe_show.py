@@ -52,17 +52,17 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
     def show(self):
         file_path=filename=self.path_costumes + '/' + self.comboBoxCostumes.currentText() + '/'
         file_name=self.comboBoxDistros.currentText()+ '.yml'
-        filename=file_path + file_name
+        filename=file_path+file_name
         print(filename)
         if os.path.isfile(filename):
-            dialog=TextEditor(self)
+            dialog=TextEditor()
             dialog.setWindowTitle(filename)
             dialog.setFilename(filename)
-            dialog.open()
+            dialog.openFilename()
             dialog.exec()
         else:
             msgBox = QMessageBox(self)
-            msgBox.setText("there is no version for " + self.comboBoxCostumes.currentText())
+            msgBox.setText("There is no version for " + self.comboBoxCostumes.currentText())
             msgBox.exec()
 
 

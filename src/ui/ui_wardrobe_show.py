@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'wardrobe_showoIKGri.ui'
+## Form generated from reading UI file 'wardrobe_showMfhoqk.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -29,9 +29,9 @@ class Ui_DialogWardrobeShow(object):
         self.buttonBox.setGeometry(QRect(10, 440, 621, 32))
         self.buttonBox.setOrientation(Qt.Horizontal)
         self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
-        self.labelCostume = QLabel(DialogWardrobeShow)
-        self.labelCostume.setObjectName(u"labelCostume")
-        self.labelCostume.setGeometry(QRect(20, 30, 101, 16))
+        self.labelCostumes = QLabel(DialogWardrobeShow)
+        self.labelCostumes.setObjectName(u"labelCostumes")
+        self.labelCostumes.setGeometry(QRect(20, 30, 101, 16))
         self.comboBoxCostumes = QComboBox(DialogWardrobeShow)
         self.comboBoxCostumes.setObjectName(u"comboBoxCostumes")
         self.comboBoxCostumes.setGeometry(QRect(150, 30, 461, 24))
@@ -54,8 +54,23 @@ class Ui_DialogWardrobeShow(object):
 
     def retranslateUi(self, DialogWardrobeShow):
         DialogWardrobeShow.setWindowTitle(QCoreApplication.translate("DialogWardrobeShow", u"Dialog", None))
-        self.labelCostume.setText(QCoreApplication.translate("DialogWardrobeShow", u"costume:", None))
+#if QT_CONFIG(tooltip)
+        self.labelCostumes.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"Costumes", None))
+#endif // QT_CONFIG(tooltip)
+        self.labelCostumes.setText(QCoreApplication.translate("DialogWardrobeShow", u"Costumes:", None))
+#if QT_CONFIG(tooltip)
+        self.comboBoxCostumes.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"Select the costume to wear", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.pushButtonShow.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"show costume yaml", None))
+#endif // QT_CONFIG(tooltip)
         self.pushButtonShow.setText(QCoreApplication.translate("DialogWardrobeShow", u"Show", None))
-        self.labelDistro.setText(QCoreApplication.translate("DialogWardrobeShow", u"Distro", None))
+#if QT_CONFIG(tooltip)
+        self.labelDistro.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"distros", None))
+#endif // QT_CONFIG(tooltip)
+        self.labelDistro.setText(QCoreApplication.translate("DialogWardrobeShow", u"Distros:", None))
+#if QT_CONFIG(tooltip)
+        self.comboBoxDistros.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"select distribution ", None))
+#endif // QT_CONFIG(tooltip)
     # retranslateUi
 
