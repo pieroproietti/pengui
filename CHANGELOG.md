@@ -8,6 +8,8 @@ I tried - same time ago - to use electron, but at last eventually I decided to t
 
 # Versions
 
+## pengui-0.2.5
+* wardrobe shon now have a text viewer
 
 ## pengui-0.2.4
 * added tools-ppa-install, tools-ppa-remove;

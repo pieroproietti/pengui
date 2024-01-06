@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'wardrobe_showisKuwf.ui'
+## Form generated from reading UI file 'wardrobe_showoIKGri.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -37,7 +37,13 @@ class Ui_DialogWardrobeShow(object):
         self.comboBoxCostumes.setGeometry(QRect(150, 30, 461, 24))
         self.pushButtonShow = QPushButton(DialogWardrobeShow)
         self.pushButtonShow.setObjectName(u"pushButtonShow")
-        self.pushButtonShow.setGeometry(QRect(470, 100, 131, 71))
+        self.pushButtonShow.setGeometry(QRect(480, 120, 131, 71))
+        self.labelDistro = QLabel(DialogWardrobeShow)
+        self.labelDistro.setObjectName(u"labelDistro")
+        self.labelDistro.setGeometry(QRect(20, 70, 101, 16))
+        self.comboBoxDistros = QComboBox(DialogWardrobeShow)
+        self.comboBoxDistros.setObjectName(u"comboBoxDistros")
+        self.comboBoxDistros.setGeometry(QRect(150, 70, 461, 24))
 
         self.retranslateUi(DialogWardrobeShow)
         self.buttonBox.accepted.connect(DialogWardrobeShow.accept)
@@ -50,5 +56,6 @@ class Ui_DialogWardrobeShow(object):
         DialogWardrobeShow.setWindowTitle(QCoreApplication.translate("DialogWardrobeShow", u"Dialog", None))
         self.labelCostume.setText(QCoreApplication.translate("DialogWardrobeShow", u"costume:", None))
         self.pushButtonShow.setText(QCoreApplication.translate("DialogWardrobeShow", u"Show", None))
+        self.labelDistro.setText(QCoreApplication.translate("DialogWardrobeShow", u"Distro", None))
     # retranslateUi
 

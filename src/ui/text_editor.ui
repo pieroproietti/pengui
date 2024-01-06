@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DialogWardrobeShow</class>
- <widget class="QDialog" name="DialogWardrobeShow">
+ <class>DialogTextEditor</class>
+ <widget class="QDialog" name="DialogTextEditor">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -29,62 +29,13 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QLabel" name="labelCostume">
+  <widget class="QPlainTextEdit" name="plainTextEdit">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>30</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>costume:</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBoxCostumes">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>30</y>
-     <width>461</width>
-     <height>24</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonShow">
-   <property name="geometry">
-    <rect>
-     <x>480</x>
-     <y>120</y>
-     <width>131</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Show</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="labelDistro">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>70</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Distro</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBoxDistros">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>70</y>
-     <width>461</width>
-     <height>24</height>
+     <x>10</x>
+     <y>20</y>
+     <width>621</width>
+     <height>401</height>
     </rect>
    </property>
   </widget>
@@ -94,7 +45,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>DialogWardrobeShow</receiver>
+   <receiver>DialogTextEditor</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -110,7 +61,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>DialogWardrobeShow</receiver>
+   <receiver>DialogTextEditor</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
