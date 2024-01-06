@@ -24,7 +24,7 @@ from PySide6.QtWidgets import (
 from produce import Produce
 from config import Config
 from config_tools import Config_Tools
-from wardrobe_show import WardrobeShow
+#from wardrobe_show import WardrobeShow
 from terminal import Terminal
 from utilies import U
 
@@ -287,22 +287,27 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         Terminal.execute(self, 'eggs wardrobe wear')
         self.statusBar().showMessage('wardrobe wear', 5000)
 
+    @QtCore.Slot()
     def help(self):
         webbrowser.open('https://penguins-eggs.net/docs/Tutorial/eggs-users-guide')
         self.statusBar().showMessage('help', 5000)
 
+    @QtCore.Slot()
     def help_users_guide(self):
         webbrowser.open('https://penguins-eggs.net/docs/Tutorial/eggs-users-guide')
         self.statusBar().showMessage('help user', 5000)
 
+    @QtCore.Slot()
     def help_blog(self):
         webbrowser.open('https://penguins-eggs.net')
         self.statusBar().showMessage('help blog', 5000)
 
+    @QtCore.Slot()
     def help_repository(self):
         webbrowser.open('https://github.com/pieroproietti/penguins-eggs')
         self.statusBar().showMessage('repository', 5000)
 
+    @QtCore.Slot()
     def help_telegram(self):
         webbrowser.open('https://t.me/penguins_eggs')
         self.statusBar().showMessage('help telegram', 5000)

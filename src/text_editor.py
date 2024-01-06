@@ -21,6 +21,7 @@ class TextEditor(Ui_DialogTextEditor, QDialog):
     def setFilename(self, filename=""):
         self.filename=filename
 
+    #
     def openFilename(self, filename=""):
         if filename!='':
             self.filename=filename

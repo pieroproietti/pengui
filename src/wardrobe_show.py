@@ -1,18 +1,14 @@
 import sys
 import os
-import yaml
-
-import webbrowser
 
 from PySide6 import QtCore
 from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBox, QDialog
 from PySide6.QtGui import QClipboard
 
-from ui.ui_wardrobe_show import Ui_DialogWardrobeShow
-from terminal import Terminal
 from utilies import U
-
 from text_editor import TextEditor
+
+from ui.ui_wardrobe_show import Ui_DialogWardrobeShow
 
 ##
 #
@@ -44,12 +40,12 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
         self.comboBoxCostumes.addItems(costumes)
         distros=['arch', 'debian', 'ubuntu']
         self.comboBoxDistros.addItems(distros)
-        self.pushButtonShow.clicked.connect(self.show)
+        self.pushButtonShow.clicked.connect(self.costume_show)
 
 
     ##
-    #    
-    def show(self):
+    @QtCore.Slot()
+    def costume_show(self):
         file_path=filename=self.path_costumes + '/' + self.comboBoxCostumes.currentText() + '/'
         file_name=self.comboBoxDistros.currentText()+ '.yml'
         filename=file_path+file_name
@@ -64,10 +60,3 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
             msgBox = QMessageBox(self)
             msgBox.setText("There is no version for " + self.comboBoxCostumes.currentText())
             msgBox.exec()
-
-
-        #command='eggs wardrobe show ' + self.comboBoxCostumes.currentText()
-        #Terminal.execute(self,command)
-
-
-
