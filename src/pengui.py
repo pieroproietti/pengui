@@ -98,7 +98,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         # Tools
         self.action_Clean.triggered.connect(self.tools_clean)
-        self.actionIPpaInstall.triggered.connect(self.tools_ppa_install)
+        self.actionIPpaAdd.triggered.connect(self.tools_ppa_add)
         self.actionPpaRemove.triggered.connect(self.tools_ppa_remove)
         self.action_Skel.triggered.connect(self.tools_skel)
         self.action_Yolk.triggered.connect(self.tools_yolk)
@@ -240,8 +240,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     ##
     #
     @QtCore.Slot()
-    def tools_ppa_install(self):
-        Terminal.execute(self, 'eggs tools ppa --install')
+    def tools_ppa_add(self):
+        Terminal.execute(self, 'eggs tools ppa --add')
         self.statusBar().showMessage('adding penguins-eggs-ppa to yours /etc/apt/sources.list.d', 5000)
     
     ##

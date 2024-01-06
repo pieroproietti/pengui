@@ -71,7 +71,7 @@
      <property name="title">
       <string>&amp;PPA</string>
      </property>
-     <addaction name="actionIPpaInstall"/>
+     <addaction name="actionIPpaAdd"/>
      <addaction name="actionPpaRemove"/>
     </widget>
     <addaction name="action_Clean"/>
@@ -200,14 +200,14 @@
     <string>Remove</string>
    </property>
   </action>
-  <action name="actionIPpaInstall">
+  <action name="actionIPpaAdd">
    <property name="text">
-    <string>Install</string>
+    <string>&amp;Add</string>
    </property>
   </action>
   <action name="actionPpaRemove">
    <property name="text">
-    <string>Remove</string>
+    <string>&amp;Remove</string>
    </property>
   </action>
  </widget>

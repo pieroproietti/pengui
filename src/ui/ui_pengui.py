@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'penguiHFrdQJ.ui'
+## Form generated from reading UI file 'penguiPbPCXf.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -70,8 +70,8 @@ class Ui_MainWindow(object):
         self.actionCalamaresInstall.setObjectName(u"actionCalamaresInstall")
         self.actionCalamaresRemove = QAction(MainWindow)
         self.actionCalamaresRemove.setObjectName(u"actionCalamaresRemove")
-        self.actionIPpaInstall = QAction(MainWindow)
-        self.actionIPpaInstall.setObjectName(u"actionIPpaInstall")
+        self.actionIPpaAdd = QAction(MainWindow)
+        self.actionIPpaAdd.setObjectName(u"actionIPpaAdd")
         self.actionPpaRemove = QAction(MainWindow)
         self.actionPpaRemove.setObjectName(u"actionPpaRemove")
         self.centralwidget = QWidget(MainWindow)
@@ -124,7 +124,7 @@ class Ui_MainWindow(object):
         self.menu_Tools.addAction(self.menuPPA.menuAction())
         self.menu_Tools.addAction(self.action_Skel)
         self.menu_Tools.addAction(self.action_Yolk)
-        self.menuPPA.addAction(self.actionIPpaInstall)
+        self.menuPPA.addAction(self.actionIPpaAdd)
         self.menuPPA.addAction(self.actionPpaRemove)
         self.menuWardrobe.addAction(self.actionGet)
         self.menuWardrobe.addAction(self.actionList)
@@ -159,8 +159,8 @@ class Ui_MainWindow(object):
         self.actionStatus.setText(QCoreApplication.translate("MainWindow", u"&Status", None))
         self.actionCalamaresInstall.setText(QCoreApplication.translate("MainWindow", u"Install", None))
         self.actionCalamaresRemove.setText(QCoreApplication.translate("MainWindow", u"Remove", None))
-        self.actionIPpaInstall.setText(QCoreApplication.translate("MainWindow", u"Install", None))
-        self.actionPpaRemove.setText(QCoreApplication.translate("MainWindow", u"Remove", None))
+        self.actionIPpaAdd.setText(QCoreApplication.translate("MainWindow", u"&Add", None))
+        self.actionPpaRemove.setText(QCoreApplication.translate("MainWindow", u"&Remove", None))
         self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"&File", None))
         self.menuCalamares.setTitle(QCoreApplication.translate("MainWindow", u"&Calamares", None))
         self.menu_Edit.setTitle(QCoreApplication.translate("MainWindow", u"&Edit", None))

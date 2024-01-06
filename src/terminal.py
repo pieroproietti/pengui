@@ -13,10 +13,10 @@ class Terminal(QProcess):
         sudo = False
         if os.geteuid() != 0:
             
-            if ("eggs mom" in command and
-                'eggs status' in command and
-                'eggs wardrobe get' in command and 
-                'eggs wardrobe list' in command and
+            if not ("eggs mom" in command or
+                'eggs status' in command or
+                'eggs wardrobe get' in command or
+                'eggs wardrobe list' in command or
                 'eggs wardrobe show' in command):
 
                 command='sudo ' + command
