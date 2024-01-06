@@ -12,7 +12,8 @@ class Terminal(QProcess):
     def execute(self, command):
         sudo = False
         if os.geteuid() != 0:
-            
+
+            # sudo for all except:
             if not ("eggs mom" in command or
                 'eggs status' in command or
                 'eggs wardrobe get' in command or
