@@ -23,7 +23,6 @@ class TextEditor(Ui_DialogTextEditor, QDialog):
 
     def open(self):
         if self.filename!='':
-            print (self.filename)
             f = open(self.filename, 'r')
             with f:
                 data = f.read()

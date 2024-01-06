@@ -50,13 +50,13 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
     ##
     #    
     def show(self):
-        dialog=TextEditor(self)
-        dialog.setWindowTitle("View")
         file_path=filename=self.path_costumes + '/' + self.comboBoxCostumes.currentText() + '/'
         file_name=self.comboBoxDistros.currentText()+ '.yml'
         filename=file_path + file_name
         print(filename)
         if os.path.isfile(filename):
+            dialog=TextEditor(self)
+            dialog.setWindowTitle(filename)
             dialog.setFilename(filename)
             dialog.open()
             dialog.exec()
