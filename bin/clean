@@ -1,0 +1,2 @@
+cd ~/pengui
+rm build dist pengui* -rf

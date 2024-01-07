@@ -8,7 +8,7 @@ input_file = src/pengui.py
 # directory where exec is stored
 exec_directory = .
 # path to .pyproject project file
-project_file = ./pyproject.toml
+project_file = 
 
 [python]
 # python path
