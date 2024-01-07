@@ -1,5 +1,5 @@
 from PySide6 import QtCore
-from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBox, QDialog
+from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBox, QDialog, QMainWindow
 from PySide6.QtGui import QClipboard
 
 from ui.ui_text_editor import Ui_DialogTextEditor
@@ -9,7 +9,7 @@ from utilies import U
 
 ##
 #
-class TextEditor(Ui_DialogTextEditor, QDialog):
+class TextEditor( Ui_DialogTextEditor, QDialog):
 
     filename=''
 
