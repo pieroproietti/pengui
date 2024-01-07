@@ -1,1 +1,1 @@
-pyinstaller -F src/pengui.py -n 
+pyinstaller --clean -yF src/pengui.py -n pengui.bin
