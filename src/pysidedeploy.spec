@@ -8,7 +8,7 @@ input_file = src/pengui.py
 # directory where exec is stored
 exec_directory = .
 # path to .pyproject project file
-project_file = 
+project_file = ./pyproject.toml
 
 [python]
 # python path
@@ -16,8 +16,7 @@ python_path = /home/artisan/pengui/venv_pengui/bin/python3
 # python packages to install
 # ordered-set = increase compile time performance of nuitka packaging
 # zstandard = provides final executable size optimization
-#packages = nuitka==1.5.4,ordered_set,zstandard
-packages = nuitka==1.9.6,ordered_set,zstandard
+packages = nuitka==1.5.4,ordered_set,zstandard
 # buildozer = for deploying Android application
 android_packages = buildozer==1.5.0,cython==0.29.33
 
@@ -60,5 +59,5 @@ modules =
 local_libs = plugins_platforms_qtforandroid
 # architecture of deployed platform
 # possible values = ["aarch64", "armv7a", "i686", "x86_64"]
-arch = ["i686"]
+arch = ["x86_64"]
 
