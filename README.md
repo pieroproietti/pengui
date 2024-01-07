@@ -44,6 +44,12 @@ It is recommended, however to create yourself a [fork](https://github.com/pierop
 # start to develop
 Just run `bin/create_venv` from the root of the project and and follow the instructions. Under `bin`, there are usefull scripts to `run`, `create-bin`, `create-deb`, etc. They must always be run from the root of the project and have a self-explanatory name.
 
+
+# nuitka
+`sudo apt install ccache`
+
+
+
 # future plan
 
 ## poetry

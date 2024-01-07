@@ -51,8 +51,6 @@ class U():
         if "Status: install ok installed" in result.stdout:
             installed=True
 
-        print("packags: " + package )
-        print(installed)
         return installed
     
 # develop 

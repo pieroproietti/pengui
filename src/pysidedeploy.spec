@@ -1,5 +1,4 @@
 [app]
-# title of your application
 title = pengui
 # project directory. the general assumption is that project_dir is the parent directory
 # of input_file
@@ -17,7 +16,8 @@ python_path = /home/artisan/pengui/venv_pengui/bin/python3
 # python packages to install
 # ordered-set = increase compile time performance of nuitka packaging
 # zstandard = provides final executable size optimization
-packages = nuitka==1.5.4,ordered_set,zstandard
+#packages = nuitka==1.5.4,ordered_set,zstandard
+packages = nuitka==1.9.6,ordered_set,zstandard
 # buildozer = for deploying Android application
 android_packages = buildozer==1.5.0,cython==0.29.33
 
