@@ -3,6 +3,14 @@ source bin/version
 #VERSION come from version
 PENGUI_NAME="pengui"
 PENGUI_VERSION=${PENGUI_NAME}-${VERSION}
+arch=$(uname -m)
+if [[ $arch == x86_64* ]]; then
+    ARCHITECTURE="_amd64"
+elif [[ $arch == i*86 ]]; then
+    ARCHITECTURE="_i386"
+elif  [[ $arch == arm* ]]; then
+    ARCHITECTURE="_arm64"
+fi
 echo "penGUI take cure about the eggs"
 # clean
 rm pengui-*.deb pengui-*.bin fakeroot -rf
@@ -21,6 +29,6 @@ find fakeroot/opt/pengui -type f -exec chmod 644 -- {} +
 find fakeroot/opt/pengui -type d -exec chmod 755 -- {} +
 find fakeroot/usr/share -type f -exec chmod 644 -- {} +
 chmod +x fakeroot/opt/pengui/pengui.bin
-fpm -C fakeroot -s dir -t deb -n "pengui" -v ${VERSION} -p ${PENGUI_VERSION}.deb
-cp pengui.bin pengui-${VERSION}.bin
+fpm -C fakeroot -s dir -t deb -n "pengui" -v ${VERSION} -p ${PENGUI_VERSION}${ARCHITECTURE}.deb
+cp pengui.bin pengui-${VERSION}${ARCHITECTURE}.bin
 rm fakeroot -rf
