@@ -24,7 +24,7 @@ from PySide6.QtWidgets import (
 from produce import Produce
 from config import Config
 from config_tools import Config_Tools
-#from wardrobe_show import WardrobeShow
+from wardrobe_show import WardrobeShow
 from terminal import Terminal
 from utilies import U
 
