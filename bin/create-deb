@@ -8,7 +8,7 @@ if [[ $arch == x86_64* ]]; then
     ARCHITECTURE="_amd64"
 elif [[ $arch == i*86 ]]; then
     ARCHITECTURE="_i386"
-elif  [[ $arch == arm* ]]; then
+elif  [[ $arch == aarch64 ]]; then
     ARCHITECTURE="_arm64"
 fi
 echo "penGUI take cure about the eggs"
