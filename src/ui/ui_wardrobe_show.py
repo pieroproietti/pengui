@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'wardrobe_showmDLAjH.ui'
+## Form generated from reading UI file 'wardrobe_showoJbNTS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -16,8 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractButton, QApplication, QComboBox, QDialog,
-    QDialogButtonBox, QFormLayout, QLabel, QPushButton,
-    QSizePolicy, QWidget)
+    QDialogButtonBox, QLabel, QPushButton, QSizePolicy,
+    QWidget)
 
 class Ui_DialogWardrobeShow(object):
     def setupUi(self, DialogWardrobeShow):
@@ -31,46 +31,37 @@ class Ui_DialogWardrobeShow(object):
         self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
         self.pushButtonShowCostume = QPushButton(DialogWardrobeShow)
         self.pushButtonShowCostume.setObjectName(u"pushButtonShowCostume")
-        self.pushButtonShowCostume.setGeometry(QRect(100, 250, 261, 71))
+        self.pushButtonShowCostume.setGeometry(QRect(563, 80, 71, 21))
         self.pushButtonShowAccessory = QPushButton(DialogWardrobeShow)
         self.pushButtonShowAccessory.setObjectName(u"pushButtonShowAccessory")
-        self.pushButtonShowAccessory.setGeometry(QRect(370, 250, 261, 71))
-        self.layoutWidget = QWidget(DialogWardrobeShow)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(0, 30, 621, 181))
-        self.formLayout = QFormLayout(self.layoutWidget)
-        self.formLayout.setObjectName(u"formLayout")
-        self.formLayout.setContentsMargins(0, 0, 0, 0)
-        self.labelCostumes = QLabel(self.layoutWidget)
-        self.labelCostumes.setObjectName(u"labelCostumes")
-
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.labelCostumes)
-
-        self.comboBoxCostumes = QComboBox(self.layoutWidget)
-        self.comboBoxCostumes.setObjectName(u"comboBoxCostumes")
-
-        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.comboBoxCostumes)
-
-        self.labelAccessories = QLabel(self.layoutWidget)
-        self.labelAccessories.setObjectName(u"labelAccessories")
-
-        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.labelAccessories)
-
-        self.comboBoxAccessories = QComboBox(self.layoutWidget)
+        self.pushButtonShowAccessory.setGeometry(QRect(563, 120, 61, 31))
+        self.labelServers = QLabel(DialogWardrobeShow)
+        self.labelServers.setObjectName(u"labelServers")
+        self.labelServers.setGeometry(QRect(3, 170, 131, 25))
+        self.pushButtonShowServer = QPushButton(DialogWardrobeShow)
+        self.pushButtonShowServer.setObjectName(u"pushButtonShowServer")
+        self.pushButtonShowServer.setGeometry(QRect(562, 170, 61, 31))
+        self.comboBoxServers = QComboBox(DialogWardrobeShow)
+        self.comboBoxServers.setObjectName(u"comboBoxServers")
+        self.comboBoxServers.setGeometry(QRect(140, 170, 401, 33))
+        self.comboBoxAccessories = QComboBox(DialogWardrobeShow)
         self.comboBoxAccessories.setObjectName(u"comboBoxAccessories")
-
-        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.comboBoxAccessories)
-
-        self.labelDistro = QLabel(self.layoutWidget)
-        self.labelDistro.setObjectName(u"labelDistro")
-
-        self.formLayout.setWidget(2, QFormLayout.LabelRole, self.labelDistro)
-
-        self.comboBoxDistros = QComboBox(self.layoutWidget)
+        self.comboBoxAccessories.setGeometry(QRect(141, 120, 401, 33))
+        self.labelCostumes = QLabel(DialogWardrobeShow)
+        self.labelCostumes.setObjectName(u"labelCostumes")
+        self.labelCostumes.setGeometry(QRect(4, 71, 112, 25))
+        self.comboBoxDistros = QComboBox(DialogWardrobeShow)
         self.comboBoxDistros.setObjectName(u"comboBoxDistros")
-
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.comboBoxDistros)
-
+        self.comboBoxDistros.setGeometry(QRect(137, 20, 114, 33))
+        self.comboBoxCostumes = QComboBox(DialogWardrobeShow)
+        self.comboBoxCostumes.setObjectName(u"comboBoxCostumes")
+        self.comboBoxCostumes.setGeometry(QRect(141, 71, 401, 33))
+        self.labelAccessories = QLabel(DialogWardrobeShow)
+        self.labelAccessories.setObjectName(u"labelAccessories")
+        self.labelAccessories.setGeometry(QRect(4, 120, 131, 25))
+        self.labelDistro = QLabel(DialogWardrobeShow)
+        self.labelDistro.setObjectName(u"labelDistro")
+        self.labelDistro.setGeometry(QRect(0, 20, 81, 25))
 
         self.retranslateUi(DialogWardrobeShow)
         self.buttonBox.accepted.connect(DialogWardrobeShow.accept)
@@ -84,15 +75,32 @@ class Ui_DialogWardrobeShow(object):
 #if QT_CONFIG(tooltip)
         self.pushButtonShowCostume.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"show selected costume", None))
 #endif // QT_CONFIG(tooltip)
-        self.pushButtonShowCostume.setText(QCoreApplication.translate("DialogWardrobeShow", u"&Costume", None))
+        self.pushButtonShowCostume.setText(QCoreApplication.translate("DialogWardrobeShow", u"Show", None))
 #if QT_CONFIG(tooltip)
         self.pushButtonShowAccessory.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"show selected accessory", None))
 #endif // QT_CONFIG(tooltip)
-        self.pushButtonShowAccessory.setText(QCoreApplication.translate("DialogWardrobeShow", u"&Accessory", None))
+        self.pushButtonShowAccessory.setText(QCoreApplication.translate("DialogWardrobeShow", u"Show", None))
+#if QT_CONFIG(tooltip)
+        self.labelServers.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"Servers", None))
+#endif // QT_CONFIG(tooltip)
+        self.labelServers.setText(QCoreApplication.translate("DialogWardrobeShow", u"Servers", None))
+#if QT_CONFIG(tooltip)
+        self.pushButtonShowServer.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"show selected server", None))
+#endif // QT_CONFIG(tooltip)
+        self.pushButtonShowServer.setText(QCoreApplication.translate("DialogWardrobeShow", u"Show", None))
+#if QT_CONFIG(tooltip)
+        self.comboBoxServers.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"Select server to show", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.comboBoxAccessories.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"Select accessory to show", None))
+#endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.labelCostumes.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"Costumes", None))
 #endif // QT_CONFIG(tooltip)
         self.labelCostumes.setText(QCoreApplication.translate("DialogWardrobeShow", u"Costumes:", None))
+#if QT_CONFIG(tooltip)
+        self.comboBoxDistros.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"select distribution ", None))
+#endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.comboBoxCostumes.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"Select the costume to wear", None))
 #endif // QT_CONFIG(tooltip)
@@ -101,14 +109,8 @@ class Ui_DialogWardrobeShow(object):
 #endif // QT_CONFIG(tooltip)
         self.labelAccessories.setText(QCoreApplication.translate("DialogWardrobeShow", u"Accessories:", None))
 #if QT_CONFIG(tooltip)
-        self.comboBoxAccessories.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"Select the accessories to wear", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
         self.labelDistro.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"distros", None))
 #endif // QT_CONFIG(tooltip)
         self.labelDistro.setText(QCoreApplication.translate("DialogWardrobeShow", u"Distros:", None))
-#if QT_CONFIG(tooltip)
-        self.comboBoxDistros.setToolTip(QCoreApplication.translate("DialogWardrobeShow", u"select distribution ", None))
-#endif // QT_CONFIG(tooltip)
     # retranslateUi
 

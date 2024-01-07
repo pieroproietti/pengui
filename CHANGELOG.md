@@ -7,9 +7,11 @@ This project started near the end of the 2023, due my necessity to improve my ab
 I tried - same time ago - to use electron, but at last eventually I decided to try it again in python, and I am seeing good results in terms of lightness and practicality of development.
 
 # Versions
+## pengui-0.2.6
+* wardrobe show now have costumes, accessories and servers;
 
 ## pengui-0.2.5
-* wardrobe shon now have a text viewer
+* wardrobe show now have a text viewer;
 
 ## pengui-0.2.4
 * added tools-ppa-install, tools-ppa-remove;

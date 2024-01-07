@@ -32,97 +32,166 @@
   <widget class="QPushButton" name="pushButtonShowCostume">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>250</y>
-     <width>261</width>
-     <height>71</height>
+     <x>563</x>
+     <y>80</y>
+     <width>71</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="toolTip">
     <string>show selected costume</string>
    </property>
    <property name="text">
-    <string>&amp;Costume</string>
+    <string>Show</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButtonShowAccessory">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>250</y>
-     <width>261</width>
-     <height>71</height>
+     <x>563</x>
+     <y>120</y>
+     <width>61</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="toolTip">
     <string>show selected accessory</string>
    </property>
    <property name="text">
-    <string>&amp;Accessory</string>
+    <string>Show</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QLabel" name="labelServers">
+   <property name="geometry">
+    <rect>
+     <x>3</x>
+     <y>170</y>
+     <width>131</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Servers</string>
+   </property>
+   <property name="text">
+    <string>Servers</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonShowServer">
+   <property name="geometry">
+    <rect>
+     <x>562</x>
+     <y>170</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>show selected server</string>
+   </property>
+   <property name="text">
+    <string>Show</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxServers">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>170</y>
+     <width>401</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select server to show</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxAccessories">
+   <property name="geometry">
+    <rect>
+     <x>141</x>
+     <y>120</y>
+     <width>401</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select accessory to show</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelCostumes">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>71</y>
+     <width>112</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Costumes</string>
+   </property>
+   <property name="text">
+    <string>Costumes:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxDistros">
+   <property name="geometry">
+    <rect>
+     <x>137</x>
+     <y>20</y>
+     <width>114</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>select distribution </string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxCostumes">
+   <property name="geometry">
+    <rect>
+     <x>141</x>
+     <y>71</y>
+     <width>401</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select the costume to wear</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelAccessories">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>120</y>
+     <width>131</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Accessories: applied to costumes </string>
+   </property>
+   <property name="text">
+    <string>Accessories:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelDistro">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>30</y>
-     <width>621</width>
-     <height>181</height>
+     <y>20</y>
+     <width>81</width>
+     <height>25</height>
     </rect>
    </property>
-   <layout class="QFormLayout" name="formLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="labelCostumes">
-      <property name="toolTip">
-       <string>Costumes</string>
-      </property>
-      <property name="text">
-       <string>Costumes:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QComboBox" name="comboBoxCostumes">
-      <property name="toolTip">
-       <string>Select the costume to wear</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="labelAccessories">
-      <property name="toolTip">
-       <string>Accessories: applied to costumes </string>
-      </property>
-      <property name="text">
-       <string>Accessories:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QComboBox" name="comboBoxAccessories">
-      <property name="toolTip">
-       <string>Select the accessories to wear</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="labelDistro">
-      <property name="toolTip">
-       <string>distros</string>
-      </property>
-      <property name="text">
-       <string>Distros:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QComboBox" name="comboBoxDistros">
-      <property name="toolTip">
-       <string>select distribution </string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <property name="toolTip">
+    <string>distros</string>
+   </property>
+   <property name="text">
+    <string>Distros:</string>
+   </property>
   </widget>
  </widget>
  <resources/>
