@@ -5,8 +5,7 @@ import yaml
 import webbrowser
 
 from PySide6 import QtCore
-from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBox, QDialog
-from PySide6.QtGui import QClipboard
+from PySide6.QtWidgets import QApplication, QMessageBox, QDialog
 
 from ui.ui_produce import Ui_DialogProduce
 from terminal import Terminal

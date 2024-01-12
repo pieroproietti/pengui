@@ -13,12 +13,7 @@ from PySide6.QtWidgets import (
     QPushButton, 
     QMessageBox, 
     QToolBar, 
-    QStatusBar,
-    # Dialog
-    QDialog,
-    QDialogButtonBox,
-    QVBoxLayout,
-    QLabel
+    QStatusBar
 )
 
 from produce import Produce
@@ -39,8 +34,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     def __init__ (self):
         super().__init__() # inizializza
 
-        # don't use as root
-        # I choose that becouse of Terminal
+        # don't use penGUI as root
         if os.geteuid() == 0:
             print("Please use penGUI as regular user")
             sys.exit(0)
@@ -127,7 +121,6 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
             ret=msgBox.exec()
             if ret == QMessageBox.Help:
                 webbrowser.open('https://sourceforge.net/projects/penguins-eggs/files/DEBS/')
-
         
         # check exists /etc/penguins-eggs.d/eggs.yaml
         file_eggs='/etc/penguins-eggs.d/eggs.yaml'
