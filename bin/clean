@@ -6,4 +6,4 @@ rm __pycache__ -rf
 cd ~/${PROGRAM}/src/ui
 rm __pycache__ -rf
 cd ~/${PROGRAM}
-rm venv_${PROGRAM} -rf
+#rm venv_${PROGRAM} -rf
