@@ -71,7 +71,7 @@ class Produce(Ui_DialogProduce, QDialog):
 
         self.comboBoxTheme.addItems(themes)
 
-        self.show()
+        self.showMaximized()
 
     def onClipboardChanged(self):
         text = QApplication.clipboard().text()

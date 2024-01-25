@@ -112,7 +112,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         
         # in init prima di show, inizializziamo tutto
-        self.show()
+        self.showMaximized()
+        
         if not U.package_is_installed("eggs"):
             msgBox = QMessageBox(self)
             msgBox.setText("You MUST install penguins-eggs, before to continue.")

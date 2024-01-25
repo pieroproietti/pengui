@@ -50,7 +50,7 @@ class Config(Ui_DialogConfig, QDialog):
         self.buttonBox.accepted.connect(self.close_me)
         self.buttonBox.rejected.connect(self.close_me)
         
-        self.show()
+        self.showMaximized()
 
 
     def help(self):
