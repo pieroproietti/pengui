@@ -1,1 +1,2 @@
+source bin/program
 pyside6-deploy -c src/pysidedeploy.spec -v

@@ -1,2 +1,9 @@
-cd ~/pengui
-rm build dist pengui* -rf
+source bin/program
+cd ~/${PROGRAM}
+rm build dist ${PROGRAM}* __pycache__ -rf
+cd ~/${PROGRAM}/src
+rm __pycache__ -rf
+cd ~/${PROGRAM}/src/ui
+rm __pycache__ -rf
+cd ~/${PROGRAM}
+rm venv_${PROGRAM} -rf

@@ -1,1 +1,2 @@
-pyinstaller --clean -yF src/pengui.py -n pengui.bin
+source bin/program
+pyinstaller --clean -yF src/smartcheck.py -n ${PROGRAM}.bin

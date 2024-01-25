@@ -1,10 +1,11 @@
-VENV=pengui
+source bin/program
 rm venv_* -rf
-python3 -m venv venv_${VENV}
-echo "insert:"
-echo "source venv_${VENV}/bin/activate"
-echo "pip install pyside6 pyyaml"   # QT6 development
-echo "pip install wheel"  # nuitka
-echo "pip install pyinstall"
+python3 -m venv venv_${PROGRAM}
+echo "copy and past:"
+echo "source venv_${PROGRAM}/bin/activate"
+echo "pip install pyinstaller"
+echo "pip install pyside6"
+echo "pip install pyyaml"
+echo "pip install requests"
 echo "pip install stickytape"
-echo "NOTE: deactive to exit venv"
+echo "pip install wheel"

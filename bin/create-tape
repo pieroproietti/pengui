@@ -1,1 +1,2 @@
-stickytape src/pengui.py --output-file pengui-tape.py
+source bin/program
+stickytape src/${PROGRAM}.py --output-file ${PROGRAM}-tape.py

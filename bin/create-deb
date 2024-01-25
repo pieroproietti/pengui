@@ -1,8 +1,7 @@
 #!/bin/bash
+source bin/program
 source bin/version
-#VERSION come from version
-PENGUI_NAME="pengui"
-PENGUI_VERSION=${PENGUI_NAME}-${VERSION}
+PROGRAM_VERSION=${PROGRAM}-${VERSION}
 arch=$(uname -m)
 if [[ $arch == x86_64* ]]; then
     ARCHITECTURE="_amd64"
@@ -11,24 +10,24 @@ elif [[ $arch == i*86 ]]; then
 elif  [[ $arch == aarch64 ]]; then
     ARCHITECTURE="_arm64"
 fi
-echo "penGUI take cure about the eggs"
+echo "smartcheck packaging..."
 # clean
-rm pengui-*.deb pengui-*.bin fakeroot -rf
+rm ${PROGRAM}-*.deb ${PROGRAM}-*.bin fakeroot -rf
 # create fakeroot scructure
-mkdir -p fakeroot/opt/pengui
+mkdir -p fakeroot/opt/${PROGRAM}
 mkdir -p fakeroot/usr/share/applications
 mkdir -p fakeroot/usr/share/icons/hicolor/scalable/apps/
 mkdir -p fakeroot/usr/bin
 # copy files in fakeroot
-cp assets/pengui.svg fakeroot/usr/share/icons/hicolor/scalable/apps/
-cp assets/pengui.desktop fakeroot/usr/share/applications
+cp assets/${PROGRAM}.svg fakeroot/usr/share/icons/hicolor/scalable/apps/
+cp assets/${PROGRAM}.desktop fakeroot/usr/share/applications
 # here we are copying the link
-cp -P assets/pengui.link fakeroot/usr/bin/pengui 
-cp -r pengui.bin fakeroot/opt/pengui
-find fakeroot/opt/pengui -type f -exec chmod 644 -- {} +
-find fakeroot/opt/pengui -type d -exec chmod 755 -- {} +
+cp -P assets/${PROGRAM}.link fakeroot/usr/bin/${PROGRAM}
+cp -r ${PROGRAM}.bin fakeroot/opt/${PROGRAM}
+find fakeroot/opt/${PROGRAM} -type f -exec chmod 644 -- {} +
+find fakeroot/opt/${PROGRAM} -type d -exec chmod 755 -- {} +
 find fakeroot/usr/share -type f -exec chmod 644 -- {} +
-chmod +x fakeroot/opt/pengui/pengui.bin
-fpm -C fakeroot -s dir -t deb -n "pengui" -v ${VERSION} -p ${PENGUI_VERSION}${ARCHITECTURE}.deb
-cp pengui.bin pengui-${VERSION}${ARCHITECTURE}.bin
+chmod +x fakeroot/opt/${PROGRAM}/${PROGRAM}.bin
+fpm -C fakeroot -s dir -t deb -n "${PROGRAM}" -v ${VERSION} -p ${PROGRAM_VERSION}${ARCHITECTURE}.deb
+cp ${PROGRAM}.bin ${PROGRAM}-${VERSION}${ARCHITECTURE}.bin
 rm fakeroot -rf

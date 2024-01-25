@@ -1,1 +1,2 @@
-python src/pengui.py
+source bin/program
+python src/${PROGRAM}.py
