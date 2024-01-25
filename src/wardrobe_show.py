@@ -7,6 +7,7 @@ from PySide6.QtGui import QClipboard
 
 from utilies import U
 from text_editor import TextEditor
+from terminal import Terminal
 
 from ui.ui_wardrobe_show import Ui_DialogWardrobeShow
 
@@ -23,9 +24,9 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
 
         if not U.wardrobe_exists():
             msgBox = QMessageBox(self)
-            msgBox.setText("Import wardrobe before.\nUse:\n\neggs wardrobe get\n")
+            msgBox.setText("I will import wardrobe before.\nUse:\n\neggs wardrobe get\n")
             msgBox.exec()
-            sys.exit()
+            Terminal.execute(self, 'eggs wardrobe get')
         
         # recupero i costumes da .wardrobe/costumes/
         #self.path_costumes=os.path.expanduser('~')+"/.wardrobe/costumes"
