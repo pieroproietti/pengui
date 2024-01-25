@@ -12,11 +12,13 @@ from utilies import U
 class TextEditor( Ui_DialogTextEditor, QDialog):
 
     filename=''
+   
 
     def __init__(self, parent=None):
         super().__init__(parent) # parent
         self.setupUi(self) # mandatory
-
+        self.show()
+        
     #
     def setFilename(self, filename=""):
         self.filename=filename
@@ -31,3 +33,4 @@ class TextEditor( Ui_DialogTextEditor, QDialog):
             with f:
                 data = f.read()
                 self.plainTextEdit.setPlainText(data)
+

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>1024</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>440</y>
-     <width>621</width>
+     <y>230</y>
+     <width>991</width>
      <height>32</height>
     </rect>
    </property>
@@ -27,38 +27,6 @@
    </property>
    <property name="standardButtons">
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonShowCostume">
-   <property name="geometry">
-    <rect>
-     <x>563</x>
-     <y>80</y>
-     <width>71</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>show selected costume</string>
-   </property>
-   <property name="text">
-    <string>Show</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonShowAccessory">
-   <property name="geometry">
-    <rect>
-     <x>563</x>
-     <y>120</y>
-     <width>61</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>show selected accessory</string>
-   </property>
-   <property name="text">
-    <string>Show</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelServers">
@@ -75,48 +43,6 @@
    </property>
    <property name="text">
     <string>Servers</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonShowServer">
-   <property name="geometry">
-    <rect>
-     <x>562</x>
-     <y>170</y>
-     <width>61</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>show selected server</string>
-   </property>
-   <property name="text">
-    <string>Show</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBoxServers">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>170</y>
-     <width>401</width>
-     <height>33</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>Select server to show</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBoxAccessories">
-   <property name="geometry">
-    <rect>
-     <x>141</x>
-     <y>120</y>
-     <width>401</width>
-     <height>33</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>Select accessory to show</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelCostumes">
@@ -140,25 +66,12 @@
     <rect>
      <x>137</x>
      <y>20</y>
-     <width>114</width>
+     <width>771</width>
      <height>33</height>
     </rect>
    </property>
    <property name="toolTip">
     <string>select distribution </string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBoxCostumes">
-   <property name="geometry">
-    <rect>
-     <x>141</x>
-     <y>71</y>
-     <width>401</width>
-     <height>33</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>Select the costume to wear</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelAccessories">
@@ -192,6 +105,85 @@
    <property name="text">
     <string>Distros:</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>71</y>
+     <width>771</width>
+     <height>113</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QComboBox" name="comboBoxCostumes">
+      <property name="toolTip">
+       <string>Select the costume to wear</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBoxAccessories">
+      <property name="toolTip">
+       <string>Select accessory to show</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBoxServers">
+      <property name="toolTip">
+       <string>Select server to show</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>70</y>
+     <width>84</width>
+     <height>115</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QPushButton" name="pushButtonShowCostume">
+      <property name="toolTip">
+       <string>show selected costume</string>
+      </property>
+      <property name="text">
+       <string>Show</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="pushButtonShowAccessory">
+        <property name="toolTip">
+         <string>show selected accessory</string>
+        </property>
+        <property name="text">
+         <string>Show</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonShowServer">
+        <property name="toolTip">
+         <string>show selected server</string>
+        </property>
+        <property name="text">
+         <string>Show</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

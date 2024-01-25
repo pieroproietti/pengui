@@ -1,9 +1,9 @@
 import sys
 import os
 
-from PySide6 import QtCore
+from PySide6 import QtCore, QtGui
 from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBox, QDialog
-from PySide6.QtGui import QClipboard
+from PySide6.QtGui import QClipboard, QScreen
 
 from utilies import U
 from text_editor import TextEditor
@@ -65,6 +65,7 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
         self.pushButtonShowAccessory.clicked.connect(self.accessory_show)
         self.pushButtonShowServer.clicked.connect(self.server_show)
 
+        self.show()
 
     ##
     @QtCore.Slot()
@@ -78,7 +79,8 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
             dialog.setWindowTitle(filename)
             dialog.setFilename(filename)
             dialog.openFilename()
-            dialog.exec()
+            dialog.exec(self)
+
         else:
             msgBox = QMessageBox(self)
             msgBox.setText("There is no version for " + self.comboBoxCostumes.currentText())
@@ -96,7 +98,7 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
             dialog.setWindowTitle(filename)
             dialog.setFilename(filename)
             dialog.openFilename()
-            dialog.exec()
+            dialog.exec(self)
         else:
             msgBox = QMessageBox(self)
             msgBox.setText("There is no version for " + self.comboBoxAccessories.currentText())
@@ -115,7 +117,7 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
             dialog.setWindowTitle(filename)
             dialog.setFilename(filename)
             dialog.openFilename()
-            dialog.exec()
+            dialog.exec(self)
         else:
             msgBox = QMessageBox(self)
             msgBox.setText("There is no version for " + self.comboBoxAccessories.currentText())
