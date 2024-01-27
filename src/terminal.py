@@ -24,6 +24,7 @@ class Terminal(QProcess):
                 sudo = True
 
         msgBox = QMessageBox(self)
+        msgBox.setWindowTitle("PenGUI")
         msgBox.setStandardButtons(QMessageBox.Cancel|QMessageBox.Apply)
         msgBox.setText("PenGUI will open a terminal and run:\n\n" + command + "\n")
         ret=msgBox.exec()

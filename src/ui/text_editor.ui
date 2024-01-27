@@ -6,15 +6,9 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1600</width>
-    <height>1200</height>
+    <width>1024</width>
+    <height>768</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>800</width>
-    <height>600</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -23,8 +17,8 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>1100</y>
-     <width>1600</width>
+     <y>668</y>
+     <width>1024</width>
      <height>100</height>
     </rect>
    </property>
@@ -38,10 +32,10 @@
   <widget class="QPlainTextEdit" name="plainTextEdit">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>0</x>
      <y>0</y>
-     <width>1600</width>
-     <height>1000</height>
+     <width>1024</width>
+     <height>668</height>
     </rect>
    </property>
   </widget>

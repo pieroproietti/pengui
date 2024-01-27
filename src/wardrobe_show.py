@@ -24,6 +24,7 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
 
         if not U.wardrobe_exists():
             msgBox = QMessageBox(self)
+            msgBox.setWindowTitle("PenGUI")
             msgBox.setText("I will import wardrobe before.\nUse:\n\neggs wardrobe get\n")
             msgBox.exec()
             Terminal.execute(self, 'eggs wardrobe get')
@@ -76,13 +77,14 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
         print(filename)
         if os.path.isfile(filename):
             dialog=TextEditor()
-            # dialog.setWindowTitle(filename)
+            dialog.setWindowTitle("PenGUI")
             dialog.setFilename(filename)
             dialog.openFilename()
             dialog.exec(self)
 
         else:
             msgBox = QMessageBox(self)
+            msgBox.setWindowTitle("PenGUI")
             msgBox.setText("There is no version for " + self.comboBoxCostumes.currentText())
             msgBox.exec()
 
@@ -95,12 +97,13 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
         print(filename)
         if os.path.isfile(filename):
             dialog=TextEditor()
-            #dialog.setWindowTitle(filename)
+            dialog.setWindowTitle("PenGUI")
             dialog.setFilename(filename)
             dialog.openFilename()
             dialog.exec(self)
         else:
             msgBox = QMessageBox(self)
+            msgBox.setWindowTitle("PenGUI")
             msgBox.setText("There is no version for " + self.comboBoxAccessories.currentText())
             msgBox.exec()
 
@@ -114,11 +117,12 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
         print(filename)
         if os.path.isfile(filename):
             dialog=TextEditor()
-            #dialog.setWindowTitle(filename)
+            dialog.setWindowTitle("PenGUI")
             dialog.setFilename(filename)
             dialog.openFilename()
             dialog.exec(self)
         else:
             msgBox = QMessageBox(self)
+            msgBox.setWindowTitle("PenGUI")
             msgBox.setText("There is no version for " + self.comboBoxAccessories.currentText())
             msgBox.exec()

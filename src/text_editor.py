@@ -12,7 +12,6 @@ from utilies import U
 class TextEditor( Ui_DialogTextEditor, QDialog):
 
     filename=''
-   
 
     def __init__(self, parent=None):
         super().__init__(parent) # parent

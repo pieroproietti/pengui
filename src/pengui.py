@@ -72,6 +72,15 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         toolbar.addAction(kill_action)
         self.addToolBar(toolbar)
 
+        ## readme
+        readme_icon = QIcon(":/pengui/icons/readme.svg")
+        readme_action = QAction(readme_icon, "", self)
+        readme_action.setToolTip("read me first!")
+        readme_action.triggered.connect(self.readme)
+        toolbar.addAction(readme_action)
+        self.addToolBar(toolbar)
+
+
         # statusBar
         self.setStatusBar(QStatusBar(self))
         self.statusBar().showMessage('Ready', 5000)
@@ -116,8 +125,9 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         
         if not U.package_is_installed("eggs"):
             msgBox = QMessageBox(self)
-            msgBox.setText("You MUST install penguins-eggs, before to continue.")
-            msgBox.setInformativeText("""Download it, then install with sudo dpkg -i eggs-9.6.xx.deb""")
+            msgBox.setWindowTitle("PenGUI")
+            msgBox.setText("Install penguins-eggs before to continue.")
+            msgBox.setInformativeText("Download it, then install with:\n\n sudo dpkg -i eggs-9.6.xx.deb")
             msgBox.setStandardButtons(QMessageBox.Ok|QMessageBox.Help)
             ret=msgBox.exec()
             if ret == QMessageBox.Help:
@@ -139,6 +149,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     @QtCore.Slot()
     def about(self):
         msgBox = QMessageBox(self)
+        msgBox.setWindowTitle("PenGUI")
         msgBox.setText("penGUI take cure about eggs!")
         msgBox.exec()
         self.statusBar().showMessage('dad', 5000)
@@ -147,7 +158,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     ##
     #
     @QtCore.Slot()
-    def read_me(self):
+    def readme(self):
         webbrowser.open('https://github.com/pieroproietti/pengui?tab=readme-ov-file#pengui-take-cure-of-eggs')
         self.statusBar().showMessage('read me', 5000)
 
@@ -186,14 +197,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         dialog.setWindowTitle("Produce")
         dialog.setSizeGripEnabled(True)
         answer=dialog.exec()
-        print(answer)
         if answer== dialog.accept:
-            print("produce") 
-        
-        if answer ==dialog.reject:
-            print("non produce")
-
-        self.statusBar().showMessage('produce', 5000)
+            self.statusBar().showMessage('produce', 5000)
 
     ##
     #

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'text_editorSdDGAc.ui'
+## Form generated from reading UI file 'text_editorWDADIr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -22,17 +22,15 @@ class Ui_DialogTextEditor(object):
     def setupUi(self, DialogTextEditor):
         if not DialogTextEditor.objectName():
             DialogTextEditor.setObjectName(u"DialogTextEditor")
-        DialogTextEditor.resize(1600, 1200)
-        DialogTextEditor.setMinimumSize(QSize(800, 600))
-        DialogTextEditor.setMaximumSize(QSize(1600, 1200))
+        DialogTextEditor.resize(1024, 768)
         self.buttonBox = QDialogButtonBox(DialogTextEditor)
         self.buttonBox.setObjectName(u"buttonBox")
-        self.buttonBox.setGeometry(QRect(0, 1100, 1600, 100))
+        self.buttonBox.setGeometry(QRect(0, 668, 1024, 100))
         self.buttonBox.setOrientation(Qt.Horizontal)
         self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
         self.plainTextEdit = QPlainTextEdit(DialogTextEditor)
         self.plainTextEdit.setObjectName(u"plainTextEdit")
-        self.plainTextEdit.setGeometry(QRect(100, 0, 1600, 1000))
+        self.plainTextEdit.setGeometry(QRect(0, 0, 1024, 668))
 
         self.retranslateUi(DialogTextEditor)
         self.buttonBox.accepted.connect(DialogTextEditor.accept)

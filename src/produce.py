@@ -24,6 +24,7 @@ class Produce(Ui_DialogProduce, QDialog):
         # load eggs.yaml 
         if not U.conf_exists():
             msgBox = QMessageBox(self)
+            msgBox.setWindowTitle("PenGUI")
             msgBox.setText("Can't find /etc/penguins-eggs.d/eggs.yaml")
             msgBox.exec()
             quit()
@@ -137,6 +138,7 @@ class Produce(Ui_DialogProduce, QDialog):
             self.close()
         else:
             msgBox = QMessageBox(self)
+            msgBox.setWindowTitle("PenGUI")
             msgBox.setText("You must generate the command before, plase click on generate button")
             msgBox.exec()
 
