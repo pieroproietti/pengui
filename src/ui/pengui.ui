@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>768</height>
+    <width>1600</width>
+    <height>1200</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,13 +17,30 @@
    <iconset resource="resources.qrc">
     <normaloff>:/pengui/icons/pengui.svg</normaloff>:/pengui/icons/pengui.svg</iconset>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="labelLogo">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>50</y>
+      <width>1024</width>
+      <height>1024</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/pengui/logo/penguin-dad-2.jpeg</pixmap>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1024</width>
+     <width>1600</width>
      <height>30</height>
     </rect>
    </property>

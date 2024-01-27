@@ -3,6 +3,7 @@ import sys
 import os
 import webbrowser
 
+from PySide6.QtCore import Qt
 from PySide6 import QtGui
 from PySide6.QtGui import QAction, QIcon, QPixmap, QImage
 from PySide6 import QtCore
@@ -42,10 +43,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.setupUi(self) # mandatory
         
         self.setWindowTitle('penGUI') 
-
-        button = QPushButton("README")
-        button.clicked.connect(self.read_me)
-        self.setCentralWidget(button)
+        self.labelLogo.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.setCentralWidget(self.labelLogo)
 
         # toolbar
         toolbar = QToolBar()

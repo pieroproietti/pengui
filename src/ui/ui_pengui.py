@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'penguiwPBlcs.ui'
+## Form generated from reading UI file 'penguiZqDvns.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -16,15 +16,15 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QMainWindow, QMenu, QMenuBar,
-    QSizePolicy, QStatusBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QMenu,
+    QMenuBar, QSizePolicy, QStatusBar, QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1024, 768)
+        MainWindow.resize(1600, 1200)
         icon = QIcon()
         icon.addFile(u":/pengui/icons/pengui.svg", QSize(), QIcon.Normal, QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -76,10 +76,14 @@ class Ui_MainWindow(object):
         self.actionPpaRemove.setObjectName(u"actionPpaRemove")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.labelLogo = QLabel(self.centralwidget)
+        self.labelLogo.setObjectName(u"labelLogo")
+        self.labelLogo.setGeometry(QRect(260, 50, 1024, 1024))
+        self.labelLogo.setPixmap(QPixmap(u":/pengui/logo/penguin-dad-2.jpeg"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1024, 30))
+        self.menubar.setGeometry(QRect(0, 0, 1600, 30))
         self.menu_File = QMenu(self.menubar)
         self.menu_File.setObjectName(u"menu_File")
         self.menuCalamares = QMenu(self.menu_File)
@@ -161,6 +165,7 @@ class Ui_MainWindow(object):
         self.actionCalamaresRemove.setText(QCoreApplication.translate("MainWindow", u"Remove", None))
         self.actionIPpaAdd.setText(QCoreApplication.translate("MainWindow", u"&Add", None))
         self.actionPpaRemove.setText(QCoreApplication.translate("MainWindow", u"&Remove", None))
+        self.labelLogo.setText("")
         self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"&File", None))
         self.menuCalamares.setTitle(QCoreApplication.translate("MainWindow", u"&Calamares", None))
         self.menu_Edit.setTitle(QCoreApplication.translate("MainWindow", u"&Edit", None))

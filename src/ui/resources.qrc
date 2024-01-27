@@ -5,6 +5,6 @@
     <file>icons/kill.svg</file>
     <file>icons/krill.svg</file>
     <file>icons/pengui.svg</file>
+    <file>logo/penguin-dad-2.jpeg</file>
   </qresource>
-  <qresource prefix="newPrefix"/>
 </RCC>
