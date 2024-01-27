@@ -1,0 +1,2 @@
+source bin/program
+scp ${PROGRAM}*.deb root@192.168.1.2:/eggs

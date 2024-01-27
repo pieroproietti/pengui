@@ -33,5 +33,6 @@ class Terminal(QProcess):
             process.setProgram("/usr/bin/x-terminal-emulator")
             process.setArguments(['-e', command])
             process.start()
-            process.waitForFinished(100000)
+            quindici_minuti=900000
+            process.waitForFinished(quindici_minuti)
       
