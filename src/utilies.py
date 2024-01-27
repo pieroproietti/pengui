@@ -47,7 +47,7 @@ class U():
     def package_is_installed(package="eggs")->bool:
         installed=False
         result = subprocess.run(["dpkg -s " + package +" |grep Status"], shell=True, capture_output=True, text=True)
-        print(result.stdout)
+        #print(result.stdout)
         if "Status: install ok installed" in result.stdout:
             installed=True
 

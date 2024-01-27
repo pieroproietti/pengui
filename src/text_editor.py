@@ -33,4 +33,3 @@ class TextEditor( Ui_DialogTextEditor, QDialog):
             with f:
                 data = f.read()
                 self.plainTextEdit.setPlainText(data)
-

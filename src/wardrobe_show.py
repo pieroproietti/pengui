@@ -76,7 +76,7 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
         print(filename)
         if os.path.isfile(filename):
             dialog=TextEditor()
-            dialog.setWindowTitle(filename)
+            # dialog.setWindowTitle(filename)
             dialog.setFilename(filename)
             dialog.openFilename()
             dialog.exec(self)
@@ -95,7 +95,7 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
         print(filename)
         if os.path.isfile(filename):
             dialog=TextEditor()
-            dialog.setWindowTitle(filename)
+            #dialog.setWindowTitle(filename)
             dialog.setFilename(filename)
             dialog.openFilename()
             dialog.exec(self)
@@ -114,7 +114,7 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
         print(filename)
         if os.path.isfile(filename):
             dialog=TextEditor()
-            dialog.setWindowTitle(filename)
+            #dialog.setWindowTitle(filename)
             dialog.setFilename(filename)
             dialog.openFilename()
             dialog.exec(self)

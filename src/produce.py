@@ -79,7 +79,7 @@ class Produce(Ui_DialogProduce, QDialog):
 
     def generate(self):
         command='eggs produce'
-        if (self.comboBoxAddons!=''):
+        if self.comboBoxAddons.currentText() !='':
             command += ' --addons ' + self.comboBoxAddons.currentText()
 
         if self.checkBoxPrefix.isChecked():
@@ -134,6 +134,7 @@ class Produce(Ui_DialogProduce, QDialog):
         command=self.lineEditCommand.text()
         if command.strip!='':
             Terminal.execute(self, command)
+            self.close()
         else:
             msgBox = QMessageBox(self)
             msgBox.setText("You must generate the command before, plase click on generate button")

@@ -80,6 +80,7 @@ class Config(Ui_DialogConfig, QDialog):
             with open('/tmp/eggs.yaml', 'w') as object_file:
                 yaml.dump(eggs, object_file)
                 Terminal.execute(self, 'cp /tmp/eggs.yaml /etc/penguins-eggs.d/eggs.yaml')
+                self.close()
         else:
             with open(self.eggs_yaml_path, 'w') as object_file:
                 yaml.dump(eggs, object_file)

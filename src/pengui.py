@@ -43,6 +43,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.setupUi(self) # mandatory
         
         self.setWindowTitle('penGUI') 
+        
         self.labelLogo.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.setCentralWidget(self.labelLogo)
 
@@ -183,6 +184,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     def produce(self):
         dialog = Produce(self)
         dialog.setWindowTitle("Produce")
+        dialog.setSizeGripEnabled(True)
         answer=dialog.exec()
         print(answer)
         if answer== dialog.accept:

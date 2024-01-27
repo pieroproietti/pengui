@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'produceKEJAMb.ui'
+## Form generated from reading UI file 'produceDdFvZs.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -16,7 +16,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractButton, QApplication, QCheckBox, QComboBox,
-    QDialog, QDialogButtonBox, QFormLayout, QGridLayout,
+    QDialog, QDialogButtonBox, QGridLayout, QHBoxLayout,
     QLabel, QLineEdit, QPushButton, QSizePolicy,
     QWidget)
 import resources_rc
@@ -27,7 +27,6 @@ class Ui_DialogProduce(object):
             DialogProduce.setObjectName(u"DialogProduce")
         DialogProduce.resize(640, 480)
         DialogProduce.setMinimumSize(QSize(640, 480))
-        DialogProduce.setMaximumSize(QSize(640, 480))
         icon = QIcon()
         icon.addFile(u":/pengui/icons/pengui.svg", QSize(), QIcon.Normal, QIcon.Off)
         DialogProduce.setWindowIcon(icon)
@@ -37,127 +36,109 @@ class Ui_DialogProduce(object):
         self.buttonBox.setGeometry(QRect(10, 440, 621, 32))
         self.buttonBox.setOrientation(Qt.Horizontal)
         self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
-        self.label = QLabel(DialogProduce)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(30, 360, 81, 16))
         self.lineEditCommand = QLineEdit(DialogProduce)
         self.lineEditCommand.setObjectName(u"lineEditCommand")
-        self.lineEditCommand.setGeometry(QRect(110, 360, 521, 23))
+        self.lineEditCommand.setGeometry(QRect(20, 320, 611, 21))
         self.pushButtonRun = QPushButton(DialogProduce)
         self.pushButtonRun.setObjectName(u"pushButtonRun")
-        self.pushButtonRun.setGeometry(QRect(300, 390, 151, 71))
+        self.pushButtonRun.setGeometry(QRect(300, 360, 151, 101))
         self.pushButtonGenerate = QPushButton(DialogProduce)
         self.pushButtonGenerate.setObjectName(u"pushButtonGenerate")
-        self.pushButtonGenerate.setGeometry(QRect(160, 390, 131, 71))
+        self.pushButtonGenerate.setGeometry(QRect(160, 360, 131, 101))
         self.pushButtonHelp = QPushButton(DialogProduce)
         self.pushButtonHelp.setObjectName(u"pushButtonHelp")
-        self.pushButtonHelp.setGeometry(QRect(10, 390, 141, 71))
+        self.pushButtonHelp.setGeometry(QRect(10, 360, 141, 101))
+        self.labelTheme = QLabel(DialogProduce)
+        self.labelTheme.setObjectName(u"labelTheme")
+        self.labelTheme.setGeometry(QRect(21, 206, 73, 25))
+        self.labelFilters = QLabel(DialogProduce)
+        self.labelFilters.setObjectName(u"labelFilters")
+        self.labelFilters.setGeometry(QRect(21, 128, 63, 25))
+        self.lineEditPrefix = QLineEdit(DialogProduce)
+        self.lineEditPrefix.setObjectName(u"lineEditPrefix")
+        self.lineEditPrefix.setGeometry(QRect(164, 50, 451, 33))
+        self.comboBoxAddons = QComboBox(DialogProduce)
+        self.comboBoxAddons.setObjectName(u"comboBoxAddons")
+        self.comboBoxAddons.setGeometry(QRect(164, 11, 461, 33))
+        self.labelCompression = QLabel(DialogProduce)
+        self.labelCompression.setObjectName(u"labelCompression")
+        self.labelCompression.setGeometry(QRect(21, 167, 137, 25))
+        self.comboBoxCompression = QComboBox(DialogProduce)
+        self.comboBoxCompression.setObjectName(u"comboBoxCompression")
+        self.comboBoxCompression.setGeometry(QRect(164, 167, 461, 33))
         self.layoutWidget = QWidget(DialogProduce)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(11, 22, 611, 314))
-        self.formLayout = QFormLayout(self.layoutWidget)
-        self.formLayout.setObjectName(u"formLayout")
-        self.formLayout.setContentsMargins(0, 0, 0, 0)
-        self.labelAddons = QLabel(self.layoutWidget)
-        self.labelAddons.setObjectName(u"labelAddons")
-
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.labelAddons)
-
-        self.comboBoxAddons = QComboBox(self.layoutWidget)
-        self.comboBoxAddons.setObjectName(u"comboBoxAddons")
-
-        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.comboBoxAddons)
-
-        self.checkBoxPrefix = QCheckBox(self.layoutWidget)
-        self.checkBoxPrefix.setObjectName(u"checkBoxPrefix")
-
-        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.checkBoxPrefix)
-
-        self.lineEditPrefix = QLineEdit(self.layoutWidget)
-        self.lineEditPrefix.setObjectName(u"lineEditPrefix")
-
-        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lineEditPrefix)
-
-        self.checkBoxBasename = QCheckBox(self.layoutWidget)
-        self.checkBoxBasename.setObjectName(u"checkBoxBasename")
-
-        self.formLayout.setWidget(2, QFormLayout.LabelRole, self.checkBoxBasename)
-
-        self.lineEditBasename = QLineEdit(self.layoutWidget)
-        self.lineEditBasename.setObjectName(u"lineEditBasename")
-
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.lineEditBasename)
-
-        self.labelFilters = QLabel(self.layoutWidget)
-        self.labelFilters.setObjectName(u"labelFilters")
-
-        self.formLayout.setWidget(3, QFormLayout.LabelRole, self.labelFilters)
-
-        self.gridLayout = QGridLayout()
+        self.layoutWidget.setGeometry(QRect(0, 0, 271, 33))
+        self.gridLayout = QGridLayout(self.layoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.checkBoxCustom = QCheckBox(self.layoutWidget)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.checkBoxBasename = QCheckBox(DialogProduce)
+        self.checkBoxBasename.setObjectName(u"checkBoxBasename")
+        self.checkBoxBasename.setGeometry(QRect(21, 89, 136, 31))
+        self.checkBoxPrefix = QCheckBox(DialogProduce)
+        self.checkBoxPrefix.setObjectName(u"checkBoxPrefix")
+        self.checkBoxPrefix.setGeometry(QRect(21, 50, 84, 31))
+        self.comboBoxTheme = QComboBox(DialogProduce)
+        self.comboBoxTheme.setObjectName(u"comboBoxTheme")
+        self.comboBoxTheme.setGeometry(QRect(164, 206, 461, 33))
+        self.lineEditBasename = QLineEdit(DialogProduce)
+        self.lineEditBasename.setObjectName(u"lineEditBasename")
+        self.lineEditBasename.setGeometry(QRect(164, 89, 210, 33))
+        self.labelAddons = QLabel(DialogProduce)
+        self.labelAddons.setObjectName(u"labelAddons")
+        self.labelAddons.setGeometry(QRect(20, 10, 269, 31))
+        self.layoutWidget1 = QWidget(DialogProduce)
+        self.layoutWidget1.setObjectName(u"layoutWidget1")
+        self.layoutWidget1.setGeometry(QRect(160, 120, 271, 33))
+        self.gridLayout_2 = QGridLayout(self.layoutWidget1)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.checkBoxCustom = QCheckBox(self.layoutWidget1)
         self.checkBoxCustom.setObjectName(u"checkBoxCustom")
 
-        self.gridLayout.addWidget(self.checkBoxCustom, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.checkBoxCustom, 0, 0, 1, 1)
 
-        self.checkBoxHomes = QCheckBox(self.layoutWidget)
+        self.checkBoxHomes = QCheckBox(self.layoutWidget1)
         self.checkBoxHomes.setObjectName(u"checkBoxHomes")
 
-        self.gridLayout.addWidget(self.checkBoxHomes, 0, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.checkBoxHomes, 0, 1, 1, 1)
 
-        self.checkBoxUsr = QCheckBox(self.layoutWidget)
+        self.checkBoxUsr = QCheckBox(self.layoutWidget1)
         self.checkBoxUsr.setObjectName(u"checkBoxUsr")
 
-        self.gridLayout.addWidget(self.checkBoxUsr, 0, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.checkBoxUsr, 0, 2, 1, 1)
 
-
-        self.formLayout.setLayout(3, QFormLayout.FieldRole, self.gridLayout)
-
-        self.labelCompression = QLabel(self.layoutWidget)
-        self.labelCompression.setObjectName(u"labelCompression")
-
-        self.formLayout.setWidget(4, QFormLayout.LabelRole, self.labelCompression)
-
-        self.comboBoxCompression = QComboBox(self.layoutWidget)
-        self.comboBoxCompression.setObjectName(u"comboBoxCompression")
-
-        self.formLayout.setWidget(4, QFormLayout.FieldRole, self.comboBoxCompression)
-
-        self.labelTheme = QLabel(self.layoutWidget)
-        self.labelTheme.setObjectName(u"labelTheme")
-
-        self.formLayout.setWidget(5, QFormLayout.LabelRole, self.labelTheme)
-
-        self.comboBoxTheme = QComboBox(self.layoutWidget)
-        self.comboBoxTheme.setObjectName(u"comboBoxTheme")
-
-        self.formLayout.setWidget(5, QFormLayout.FieldRole, self.comboBoxTheme)
-
-        self.checkBoxClone = QCheckBox(self.layoutWidget)
-        self.checkBoxClone.setObjectName(u"checkBoxClone")
-
-        self.formLayout.setWidget(6, QFormLayout.LabelRole, self.checkBoxClone)
-
-        self.checkBoxCryptedClone = QCheckBox(self.layoutWidget)
-        self.checkBoxCryptedClone.setObjectName(u"checkBoxCryptedClone")
-
-        self.formLayout.setWidget(7, QFormLayout.LabelRole, self.checkBoxCryptedClone)
-
-        self.checkBoxScript = QCheckBox(self.layoutWidget)
+        self.layoutWidget2 = QWidget(DialogProduce)
+        self.layoutWidget2.setObjectName(u"layoutWidget2")
+        self.layoutWidget2.setGeometry(QRect(70, 260, 563, 33))
+        self.horizontalLayout = QHBoxLayout(self.layoutWidget2)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.checkBoxScript = QCheckBox(self.layoutWidget2)
         self.checkBoxScript.setObjectName(u"checkBoxScript")
 
-        self.formLayout.setWidget(8, QFormLayout.LabelRole, self.checkBoxScript)
+        self.horizontalLayout.addWidget(self.checkBoxScript)
 
-        self.checkBoxUnsecure = QCheckBox(self.layoutWidget)
+        self.checkBoxClone = QCheckBox(self.layoutWidget2)
+        self.checkBoxClone.setObjectName(u"checkBoxClone")
+
+        self.horizontalLayout.addWidget(self.checkBoxClone)
+
+        self.checkBoxUnsecure = QCheckBox(self.layoutWidget2)
         self.checkBoxUnsecure.setObjectName(u"checkBoxUnsecure")
         self.checkBoxUnsecure.setTristate(False)
 
-        self.formLayout.setWidget(9, QFormLayout.LabelRole, self.checkBoxUnsecure)
+        self.horizontalLayout.addWidget(self.checkBoxUnsecure)
 
-        self.checkBoxYolk = QCheckBox(self.layoutWidget)
+        self.checkBoxCryptedClone = QCheckBox(self.layoutWidget2)
+        self.checkBoxCryptedClone.setObjectName(u"checkBoxCryptedClone")
+
+        self.horizontalLayout.addWidget(self.checkBoxCryptedClone)
+
+        self.checkBoxYolk = QCheckBox(self.layoutWidget2)
         self.checkBoxYolk.setObjectName(u"checkBoxYolk")
 
-        self.formLayout.setWidget(10, QFormLayout.LabelRole, self.checkBoxYolk)
+        self.horizontalLayout.addWidget(self.checkBoxYolk)
 
 
         self.retranslateUi(DialogProduce)
@@ -170,9 +151,8 @@ class Ui_DialogProduce(object):
     def retranslateUi(self, DialogProduce):
         DialogProduce.setWindowTitle(QCoreApplication.translate("DialogProduce", u"Dialog", None))
 #if QT_CONFIG(tooltip)
-        self.label.setToolTip(QCoreApplication.translate("DialogProduce", u"Command to run", None))
+        self.lineEditCommand.setToolTip(QCoreApplication.translate("DialogProduce", u"generated command to produce ISO", None))
 #endif // QT_CONFIG(tooltip)
-        self.label.setText(QCoreApplication.translate("DialogProduce", u"Command", None))
 #if QT_CONFIG(tooltip)
         self.pushButtonRun.setToolTip(QCoreApplication.translate("DialogProduce", u"run or copy ib ckuobiard the generated command", None))
 #endif // QT_CONFIG(tooltip)
@@ -186,30 +166,44 @@ class Ui_DialogProduce(object):
 #endif // QT_CONFIG(tooltip)
         self.pushButtonHelp.setText(QCoreApplication.translate("DialogProduce", u"&Help", None))
 #if QT_CONFIG(tooltip)
-        self.labelAddons.setToolTip(QCoreApplication.translate("DialogProduce", u"configures the addon and creates a link to the selected one on the desktop", None))
+        self.labelTheme.setToolTip(QCoreApplication.translate("DialogProduce", u"Select the desired theme. To download themes: eggs wardrobe get", None))
 #endif // QT_CONFIG(tooltip)
-        self.labelAddons.setText(QCoreApplication.translate("DialogProduce", u"Addons", None))
+        self.labelTheme.setText(QCoreApplication.translate("DialogProduce", u"Theme", None))
+#if QT_CONFIG(tooltip)
+        self.labelFilters.setToolTip(QCoreApplication.translate("DialogProduce", u"Filters are used to remove private or unnecessaries informations from the image, note exclude.list.template is always applied", None))
+#endif // QT_CONFIG(tooltip)
+        self.labelFilters.setText(QCoreApplication.translate("DialogProduce", u"Filters", None))
+#if QT_CONFIG(tooltip)
+        self.lineEditPrefix.setToolTip(QCoreApplication.translate("DialogProduce", u"prefix", None))
+#endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.comboBoxAddons.setToolTip(QCoreApplication.translate("DialogProduce", u"Select addons to insert", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
-        self.checkBoxPrefix.setToolTip(QCoreApplication.translate("DialogProduce", u"Prefix eg: egg-of_DISTRONAME-CODENAME-", None))
+        self.labelCompression.setToolTip(QCoreApplication.translate("DialogProduce", u"You can choose from three types of compression: fast (default), standart and max", None))
 #endif // QT_CONFIG(tooltip)
-        self.checkBoxPrefix.setText(QCoreApplication.translate("DialogProduce", u"Prefix", None))
+        self.labelCompression.setText(QCoreApplication.translate("DialogProduce", u"Compression", None))
 #if QT_CONFIG(tooltip)
-        self.lineEditPrefix.setToolTip(QCoreApplication.translate("DialogProduce", u"prefix", None))
+        self.comboBoxCompression.setToolTip(QCoreApplication.translate("DialogProduce", u"Select compression", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.checkBoxBasename.setToolTip(QCoreApplication.translate("DialogProduce", u"Basename (usually hostname)", None))
 #endif // QT_CONFIG(tooltip)
         self.checkBoxBasename.setText(QCoreApplication.translate("DialogProduce", u"Basename", None))
 #if QT_CONFIG(tooltip)
+        self.checkBoxPrefix.setToolTip(QCoreApplication.translate("DialogProduce", u"Prefix eg: egg-of_DISTRONAME-CODENAME-", None))
+#endif // QT_CONFIG(tooltip)
+        self.checkBoxPrefix.setText(QCoreApplication.translate("DialogProduce", u"Prefix", None))
+#if QT_CONFIG(tooltip)
+        self.comboBoxTheme.setToolTip(QCoreApplication.translate("DialogProduce", u"Select theme", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
         self.lineEditBasename.setToolTip(QCoreApplication.translate("DialogProduce", u"basename", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
-        self.labelFilters.setToolTip(QCoreApplication.translate("DialogProduce", u"Filters are used to remove private or unnecessaries informations from the image, note exclude.list.template is always applied", None))
+        self.labelAddons.setToolTip(QCoreApplication.translate("DialogProduce", u"configures the addon and creates a link to the selected one on the desktop", None))
 #endif // QT_CONFIG(tooltip)
-        self.labelFilters.setText(QCoreApplication.translate("DialogProduce", u"Filters", None))
+        self.labelAddons.setText(QCoreApplication.translate("DialogProduce", u"Addons", None))
 #if QT_CONFIG(tooltip)
         self.checkBoxCustom.setToolTip(QCoreApplication.translate("DialogProduce", u"Add exclude.list.custom to the /etc/penguins-eggs.d/exclude.list", None))
 #endif // QT_CONFIG(tooltip)
@@ -223,35 +217,21 @@ class Ui_DialogProduce(object):
 #endif // QT_CONFIG(tooltip)
         self.checkBoxUsr.setText(QCoreApplication.translate("DialogProduce", u"usr", None))
 #if QT_CONFIG(tooltip)
-        self.labelCompression.setToolTip(QCoreApplication.translate("DialogProduce", u"You can choose from three types of compression: fast (default), standart and max", None))
+        self.checkBoxScript.setToolTip(QCoreApplication.translate("DialogProduce", u"It only creates the scripts necessary to create the ISO, but does not create it.", None))
 #endif // QT_CONFIG(tooltip)
-        self.labelCompression.setText(QCoreApplication.translate("DialogProduce", u"Compression", None))
-#if QT_CONFIG(tooltip)
-        self.comboBoxCompression.setToolTip(QCoreApplication.translate("DialogProduce", u"Select compression", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
-        self.labelTheme.setToolTip(QCoreApplication.translate("DialogProduce", u"Select the desired theme. To download themes: eggs wardrobe get", None))
-#endif // QT_CONFIG(tooltip)
-        self.labelTheme.setText(QCoreApplication.translate("DialogProduce", u"Theme", None))
-#if QT_CONFIG(tooltip)
-        self.comboBoxTheme.setToolTip(QCoreApplication.translate("DialogProduce", u"Select theme", None))
-#endif // QT_CONFIG(tooltip)
+        self.checkBoxScript.setText(QCoreApplication.translate("DialogProduce", u"Script", None))
 #if QT_CONFIG(tooltip)
         self.checkBoxClone.setToolTip(QCoreApplication.translate("DialogProduce", u"Performs a complete clone of the system by also copying users and their data", None))
 #endif // QT_CONFIG(tooltip)
         self.checkBoxClone.setText(QCoreApplication.translate("DialogProduce", u"Clone", None))
 #if QT_CONFIG(tooltip)
-        self.checkBoxCryptedClone.setToolTip(QCoreApplication.translate("DialogProduce", u"Performs a complete clone of the system by also copying the users and their data that will be encrypted in a LUKS volume inside the ISO ", None))
-#endif // QT_CONFIG(tooltip)
-        self.checkBoxCryptedClone.setText(QCoreApplication.translate("DialogProduce", u"Crypted Clone", None))
-#if QT_CONFIG(tooltip)
-        self.checkBoxScript.setToolTip(QCoreApplication.translate("DialogProduce", u"It only creates the scripts necessary to create the ISO, but does not create it.", None))
-#endif // QT_CONFIG(tooltip)
-        self.checkBoxScript.setText(QCoreApplication.translate("DialogProduce", u"Script", None))
-#if QT_CONFIG(tooltip)
         self.checkBoxUnsecure.setToolTip(QCoreApplication.translate("DialogProduce", u"Selecting unsecure will also copy the data in /root to the ISO", None))
 #endif // QT_CONFIG(tooltip)
         self.checkBoxUnsecure.setText(QCoreApplication.translate("DialogProduce", u"Unsecure", None))
+#if QT_CONFIG(tooltip)
+        self.checkBoxCryptedClone.setToolTip(QCoreApplication.translate("DialogProduce", u"Performs a complete clone of the system by also copying the users and their data that will be encrypted in a LUKS volume inside the ISO ", None))
+#endif // QT_CONFIG(tooltip)
+        self.checkBoxCryptedClone.setText(QCoreApplication.translate("DialogProduce", u"Crypted Clone", None))
 #if QT_CONFIG(tooltip)
         self.checkBoxYolk.setToolTip(QCoreApplication.translate("DialogProduce", u"Generates or regenerates a local repository /var/local/yolk to allow installation even in the absence of the Internet.", None))
 #endif // QT_CONFIG(tooltip)
