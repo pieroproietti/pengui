@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'produceDdFvZs.ui'
+## Form generated from reading UI file 'produceRBviwe.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -110,7 +110,7 @@ class Ui_DialogProduce(object):
 
         self.layoutWidget2 = QWidget(DialogProduce)
         self.layoutWidget2.setObjectName(u"layoutWidget2")
-        self.layoutWidget2.setGeometry(QRect(70, 260, 563, 33))
+        self.layoutWidget2.setGeometry(QRect(0, 260, 563, 33))
         self.horizontalLayout = QHBoxLayout(self.layoutWidget2)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
