@@ -195,7 +195,6 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     def produce(self):
         dialog = Produce(self)
         dialog.setWindowTitle("Produce")
-        dialog.setSizeGripEnabled(True)
         answer=dialog.exec()
         if answer== dialog.accept:
             self.statusBar().showMessage('produce', 5000)
