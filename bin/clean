@@ -1,9 +1,24 @@
+#!/bin/bash 
 source bin/program
 cd ~/${PROGRAM}
-rm build dist ${PROGRAM}* __pycache__ -rf
-cd ~/${PROGRAM}/src
-rm __pycache__ -rf
-cd ~/${PROGRAM}/src/ui
-rm __pycache__ -rf
-cd ~/${PROGRAM}
-#rm venv_${PROGRAM} -rf
+DIRS_TO_DELETE=(build dist ${PROGRAM}* __pycache__)
+rm "${DIRS_TO_DELETE[@]}" -rf || { echo "Error deleting files"; exit 1; }
+find ~/${PROGRAM} -type d -name __pycache__ -exec rm -rf {} +
+
+# Remove virtual environment
+rm -rf venv_${PROGRAM}
+
+# Create virtual environment
+python3 -m venv venv_${PROGRAM}
+
+# Install dependencies
+source venv_${PROGRAM}/bin/activate
+
+pip install pyinstaller
+pip install pyside6
+pip install pyyaml
+pip install requests
+pip install stickytape
+pip install wheel
+
+

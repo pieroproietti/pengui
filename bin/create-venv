@@ -1,11 +1,18 @@
+#!/bin/bash 
 source bin/program
-rm venv_* -rf
+cd ~/${PROGRAM}
+
+# Create virtual environment
 python3 -m venv venv_${PROGRAM}
-echo "copy and past:"
-echo "source venv_${PROGRAM}/bin/activate"
-echo "pip install pyinstaller"
-echo "pip install pyside6"
-echo "pip install pyyaml"
-echo "pip install requests"
-echo "pip install stickytape"
-echo "pip install wheel"
+
+# Install dependencies
+source venv_${PROGRAM}/bin/activate
+
+# install packages
+pip install pyinstaller
+pip install pyside6
+pip install pyyaml
+pip install requests
+pip install stickytape
+pip install wheel
+deactivate
