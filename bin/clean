@@ -7,18 +7,3 @@ find ~/${PROGRAM} -type d -name __pycache__ -exec rm -rf {} +
 
 # Remove virtual environment
 rm -rf venv_${PROGRAM}
-
-# Create virtual environment
-python3 -m venv venv_${PROGRAM}
-
-# Install dependencies
-source venv_${PROGRAM}/bin/activate
-
-pip install pyinstaller
-pip install pyside6
-pip install pyyaml
-pip install requests
-pip install stickytape
-pip install wheel
-
-

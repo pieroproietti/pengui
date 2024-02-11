@@ -1,2 +1,4 @@
+#!/bin/bash 
 source bin/program
+cd ~/${PROGRAM}
 stickytape src/${PROGRAM}.py --output-file ${PROGRAM}-tape.py

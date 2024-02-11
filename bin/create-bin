@@ -1,2 +1,5 @@
+#!/bin/bash 
 source bin/program
+cd ~/${PROGRAM}
+
 pyside6-deploy -c src/pysidedeploy.spec -v

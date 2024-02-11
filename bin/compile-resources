@@ -1,1 +1,5 @@
+#!/bin/bash 
+source bin/program
+cd ~/${PROGRAM}
+
 pyside6-rcc src/ui/resources.qrc -o src/resources_rc.py

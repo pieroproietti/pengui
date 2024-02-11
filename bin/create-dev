@@ -1,33 +1,56 @@
 #!/bin/bash
+
+# Source the program and version files
 source bin/program
 source bin/version
-PROGRAM_VERSION=${PROGRAM}-${VERSION}
+
+# Set the program version
+PROGRAM_VERSION="${PROGRAM}-${VERSION}"
+
+# Get the architecture
 arch=$(uname -m)
-if [[ $arch == x86_64* ]]; then
-    ARCHITECTURE="_amd64"
-elif [[ $arch == i*86 ]]; then
-    ARCHITECTURE="_i386"
-elif  [[ $arch == aarch64 ]]; then
-    ARCHITECTURE="_arm64"
-fi
-echo "smartcheck packaging..."
-# clean
-rm ${PROGRAM}-*.deb ${PROGRAM}-*.bin fakeroot -rf
-# create fakeroot scructure
+
+# Set the architecture suffix based on the architecture
+case $arch in
+    x86_64*)
+        ARCHITECTURE="_amd64"
+        ;;
+    i*86)
+        ARCHITECTURE="_i386"
+        ;;
+    aarch64)
+        ARCHITECTURE="_arm64"
+        ;;
+    *)
+        echo "Unsupported architecture: $arch"
+        exit 1
+        ;;
+esac
+
+# Clean up any existing packages and fakeroot directory
+rm -f ${PROGRAM}-*.deb ${PROGRAM}-*.bin fakeroot -rf
+
+# Create the fakeroot directory structure
 mkdir -p fakeroot/opt/${PROGRAM}
 mkdir -p fakeroot/usr/share/applications
 mkdir -p fakeroot/usr/share/icons/hicolor/scalable/apps/
 mkdir -p fakeroot/usr/bin
-# copy files in fakeroot
+
+# Copy the files into the fakeroot directory
 cp assets/${PROGRAM}.svg fakeroot/usr/share/icons/hicolor/scalable/apps/
 cp assets/${PROGRAM}.desktop fakeroot/usr/share/applications
-# here we are copying the link
 cp -P assets/${PROGRAM}.link fakeroot/usr/bin/${PROGRAM}
 cp -r ${PROGRAM}.bin fakeroot/opt/${PROGRAM}
+
+# Set the permissions for the copied files
 find fakeroot/opt/${PROGRAM} -type f -exec chmod 644 -- {} +
 find fakeroot/opt/${PROGRAM} -type d -exec chmod 755 -- {} +
 find fakeroot/usr/share -type f -exec chmod 644 -- {} +
 chmod +x fakeroot/opt/${PROGRAM}/${PROGRAM}.bin
+
+# Create the deb package
 fpm -C fakeroot -s dir -t deb -n "${PROGRAM}" -v ${VERSION} -p ${PROGRAM_VERSION}${ARCHITECTURE}.deb
+
+# Copy the binary file and clean up
 cp ${PROGRAM}.bin ${PROGRAM}-${VERSION}${ARCHITECTURE}.bin
 rm fakeroot -rf

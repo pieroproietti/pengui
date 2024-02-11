@@ -1,2 +1,5 @@
+#!/bin/bash 
 source bin/program
+cd ~/${PROGRAM}
+
 pyinstaller --clean -yF src/smartcheck.py -n ${PROGRAM}.bin
