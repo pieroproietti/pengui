@@ -1,2 +1,5 @@
+#!/bin/bash 
 source bin/program
+cd ~/${PROGRAM}
+
 rm ~/.${PROGRAM} -rf
