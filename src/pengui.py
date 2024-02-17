@@ -21,6 +21,7 @@ from produce import Produce
 from config import Config
 from config_tools import Config_Tools
 from wardrobe_show import WardrobeShow
+from dialog_format import DialogFormat
 from terminal import Terminal
 from utilies import U
 
@@ -98,6 +99,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         # Edif
         self.action_Configure.triggered.connect(self.configure)
         self.actionConfigureTools.triggered.connect(self.configure_tools)
+        self.actionFormatUSB.triggered.connect(self.formatUSB)
 
         # Tools
         self.action_Clean.triggered.connect(self.tools_clean)
@@ -105,6 +107,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.actionPpaRemove.triggered.connect(self.tools_ppa_remove)
         self.action_Skel.triggered.connect(self.tools_skel)
         self.action_Yolk.triggered.connect(self.tools_yolk)
+
 
         # Wardrobe
         self.actionGet.triggered.connect(self.wardrobe_get)
@@ -154,6 +157,13 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         msgBox.exec()
         self.statusBar().showMessage('dad', 5000)
 
+
+##
+    #
+    @QtCore.Slot()
+    def formatUSB(self):
+        dialog=DialogFormat(self)
+        result=dialog.exec_()
 
     ##
     #

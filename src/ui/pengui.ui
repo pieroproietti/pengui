@@ -68,6 +68,7 @@
     </property>
     <addaction name="action_Configure"/>
     <addaction name="actionConfigureTools"/>
+    <addaction name="actionFormatUSB"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -225,6 +226,11 @@
   <action name="actionPpaRemove">
    <property name="text">
     <string>&amp;Remove</string>
+   </property>
+  </action>
+  <action name="actionFormatUSB">
+   <property name="text">
+    <string>Format USB</string>
    </property>
   </action>
  </widget>

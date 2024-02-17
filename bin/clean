@@ -6,5 +6,11 @@ DIRS_TO_DELETE=(build dist ${PROGRAM}* __pycache__)
 rm "${DIRS_TO_DELETE[@]}" -rf || { echo "Error deleting files"; exit 1; }
 find ~/${PROGRAM} -type d -name __pycache__ -exec rm -rf {} +
 
-# Remove virtual environment
-rm -rf venv_${PROGRAM}
+if [[ "$1" == "--full" ]]; then
+    if [ -d "venv_${PROGRAM}" ]; then
+        rm -rf venv_${PROGRAM}
+    else
+        echo "La directory venv_${PROGRAM} non esiste."
+    fi
+fi
+

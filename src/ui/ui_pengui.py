@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'penguiZqDvns.ui'
+## Form generated from reading UI file 'penguiYhaiNn.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -74,6 +74,8 @@ class Ui_MainWindow(object):
         self.actionIPpaAdd.setObjectName(u"actionIPpaAdd")
         self.actionPpaRemove = QAction(MainWindow)
         self.actionPpaRemove.setObjectName(u"actionPpaRemove")
+        self.actionFormatUSB = QAction(MainWindow)
+        self.actionFormatUSB.setObjectName(u"actionFormatUSB")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.labelLogo = QLabel(self.centralwidget)
@@ -118,6 +120,7 @@ class Ui_MainWindow(object):
         self.menuCalamares.addAction(self.actionCalamaresRemove)
         self.menu_Edit.addAction(self.action_Configure)
         self.menu_Edit.addAction(self.actionConfigureTools)
+        self.menu_Edit.addAction(self.actionFormatUSB)
         self.menu_Help.addAction(self.actionUsersGuide)
         self.menu_Help.addAction(self.actionBlog)
         self.menu_Help.addSeparator()
@@ -165,6 +168,7 @@ class Ui_MainWindow(object):
         self.actionCalamaresRemove.setText(QCoreApplication.translate("MainWindow", u"Remove", None))
         self.actionIPpaAdd.setText(QCoreApplication.translate("MainWindow", u"&Add", None))
         self.actionPpaRemove.setText(QCoreApplication.translate("MainWindow", u"&Remove", None))
+        self.actionFormatUSB.setText(QCoreApplication.translate("MainWindow", u"Format USB", None))
         self.labelLogo.setText("")
         self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"&File", None))
         self.menuCalamares.setTitle(QCoreApplication.translate("MainWindow", u"&Calamares", None))
