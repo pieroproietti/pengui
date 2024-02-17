@@ -8,7 +8,8 @@ from PySide6 import QtCore
 from PySide6.QtWidgets import QApplication, QMessageBox, QDialog
 
 from ui.ui_produce import Ui_DialogProduce
-from terminal import Terminal
+#from terminal import Terminal
+from qterminal import Terminal
 from utilies import U
 
 
@@ -77,7 +78,7 @@ class Produce(Ui_DialogProduce, QDialog):
 
 
     def generate(self):
-        command='eggs produce'
+        command='sudo eggs produce'
         if self.comboBoxAddons.currentText() !='':
             command += ' --addons ' + self.comboBoxAddons.currentText()
 
@@ -132,8 +133,9 @@ class Produce(Ui_DialogProduce, QDialog):
     def run(self):
         command=self.lineEditCommand.text()
         if command.strip!='':
-            Terminal.execute(self, command)
-            self.close()
+            self.terminal = Terminal(command, self)
+            self.terminal.show()
+
         else:
             msgBox = QMessageBox(self)
             msgBox.setWindowTitle("PenGUI")

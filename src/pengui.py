@@ -22,7 +22,7 @@ from config import Config
 from config_tools import Config_Tools
 from wardrobe_show import WardrobeShow
 from dialog_format import DialogFormat
-from terminal import Terminal
+from qterminal import Terminal
 from utilies import U
 
 import resources_rc
@@ -140,12 +140,15 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         file_eggs='/etc/penguins-eggs.d/eggs.yaml'
         dirname_eggs=os.path.dirname(file_eggs)
         if not U.conf_exists():
-            Terminal('eggs dad --default')
-            if not U.eggs_yaml_exists():
+            self.terminal = Terminal('sudo eggs dad --default', self)
+            self.terminal.run_command()
+            self.terminal.show()
+
+            if not U.eggs_yaml_exists(self):
                 msgBox = QMessageBox(self)
                 msgBox.setText("I was unable to reconfigure eggs, the process ends")
                 msgBox.exec()
-                self.exit()
+                #self.exit()
 
     ##
     #
@@ -163,8 +166,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     @QtCore.Slot()
     def formatUSB(self):
         dialog=DialogFormat(self)
-        dialog.show()
-        #self.statusBar().showMessage('format USB', 5000)
+        dialog.showMaximized()
+        self.statusBar().showMessage('format USB', 5000)
 
     ##
     #
