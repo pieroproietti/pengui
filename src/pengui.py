@@ -163,7 +163,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     @QtCore.Slot()
     def formatUSB(self):
         dialog=DialogFormat(self)
-        result=dialog.exec_()
+        dialog.show()
+        #self.statusBar().showMessage('format USB', 5000)
 
     ##
     #

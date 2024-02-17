@@ -22,7 +22,8 @@ class DialogFormat(QDialog):
         self.layout.addWidget(self.format_button)
 
     def get_usb_drives(self):
-        drives = subprocess.check_output(['lsblk', '-d', '-n', '-o', 'NAME,TYPE,MOUNTPOINT']).decode().split('\n')
+        drives = subprocess.check_output(['lsblk', '-S', '-d', '-n', '-o', 'NAME,TYPE,TRAN']).decode().split('\n')
+        print (drives)
         usb_drives = []
         for drive in drives:
             if 'usb' in drive.lower() and not drive.endswith(')'):
@@ -43,6 +44,6 @@ class DialogFormat(QDialog):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    dialog = FormatDialog()
+    dialog = DialogFormat()
     dialog.show()
     sys.exit(app.exec())
