@@ -95,8 +95,10 @@ class PseudoTerminal(QDialog):
             args = command_parts[1:]
 
         # Richiesta password
-        password = ""
+        password = "evolution"
         if command == 'sudo':
+            # Add the -S flag to the sudo command to read the password from stdin
+            args.insert(0, '-S')
             if not self.is_sudo_password_cached():
                 password_dialog=QInputDialog()
                 password_dialog.setTextValue("evolution")
