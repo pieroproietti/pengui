@@ -66,20 +66,20 @@ class Terminal(QDialog):
             command = command_parts[0]
             args = command_parts[1:]
 
-        print("command: ", command)
-        print("args: ", args)
+        self.process.setProgram(command)
+        self.process.setArguments(args)
+        self.process.start()
 
-        # Start the process
-        self.process.start(command, args)
-
-        # Richiede la password di sudo dall'utente
+        # Richiede la password per sudo
         if command == 'sudo':
             password, ok = QInputDialog.getText(self, "Password di sudo", "Inserisci la password di sudo:", QLineEdit.Password)
             if ok:
                 print("password: ", password)
-                self.process.write(password.encode() + b'\n')
-                #self.process.write(password.encode() + b'\n')
+                self.process.write(password.encode())
 
+        self.process.closeWriteChannel()
+        self.process.waitForFinished(-1)
+        
 
     ## Clear the terminal
     def clear_terminal(self):
