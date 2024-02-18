@@ -1,4 +1,14 @@
-from PySide6.QtWidgets import QApplication, QDialog, QHBoxLayout, QVBoxLayout, QPushButton, QMessageBox, QLineEdit, QTextEdit, QInputDialog
+from PySide6.QtWidgets import (
+    QApplication, 
+    QDialog, 
+    QHBoxLayout, 
+    QInputDialog,
+    QLineEdit, 
+    QMessageBox, 
+    QPushButton, 
+    QTextEdit, 
+    QVBoxLayout
+)
 from PySide6.QtCore import QProcess
 from PySide6.QtGui import QFont, QFontMetrics
 
@@ -56,6 +66,13 @@ class Terminal(QDialog):
         self.process.readyReadStandardOutput.connect(self.handle_stdout)
         self.process.readyReadStandardError.connect(self.handle_stderr)
 
+    ## Check if the sudo password is cached
+    def is_sudo_password_cached(self):
+        check_process = QProcess()
+        check_process.start("sudo", ["-n", "true"])
+        check_process.waitForFinished()
+        return check_process.exitCode() == 0
+    
     ## Run the command
     def run_command(self):
         command_line = self.command_line.text()
@@ -70,21 +87,21 @@ class Terminal(QDialog):
         self.process.setArguments(args)
         self.process.start()
 
-        # Richiede la password per sudo
+        # Richiesta password
         if command == 'sudo':
-            password, ok = QInputDialog.getText(self, "Password di sudo", "Inserisci la password di sudo:", QLineEdit.Password)
-            if ok:
-                print("password: ", password)
-                self.process.write(password.encode())
+            if not self.is_sudo_password_cached():
+                password, ok = QInputDialog.getText(self, "Password di sudo", "Inserisci la password di sudo:", QLineEdit.Password)
+                if ok:
+                    self.process.write(password.encode() + b'\n\n')
 
         self.process.closeWriteChannel()
         self.process.waitForFinished(-1)
-        
 
     ## Clear the terminal
     def clear_terminal(self):
         self.terminal.clear()
         self.command_line.clear()
+        self.command_line.setFocus()
 
     ## Handle the standard output
     def handle_stdout(self):
