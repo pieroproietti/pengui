@@ -38,7 +38,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         # don't use penGUI as root
         if os.geteuid() == 0:
-            print("Please use penGUI as regular user")
+            print("Please use penGUI as a normal user.")
             sys.exit(0)
 
         self.setupUi(self) # mandatory
@@ -140,7 +140,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         file_eggs='/etc/penguins-eggs.d/eggs.yaml'
         dirname_eggs=os.path.dirname(file_eggs)
         if not U.conf_exists():
-            Terminal.execute(self, 'eggs dad --default')                             ')
+            Terminal.execute(self, 'eggs dad --default')
             if not U.eggs_yaml_exists(self):
                 msgBox = QMessageBox(self)
                 msgBox.setText("I was unable to reconfigure eggs, the process ends")

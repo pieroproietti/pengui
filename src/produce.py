@@ -9,7 +9,7 @@ from PySide6.QtWidgets import QApplication, QMessageBox, QDialog
 
 from ui.ui_produce import Ui_DialogProduce
 #from terminal import Terminal
-from qterminal import Terminal
+from pseudo_terminal import PseudoTerminal
 from utilies import U
 
 
@@ -133,8 +133,8 @@ class Produce(Ui_DialogProduce, QDialog):
     def run(self):
         command=self.lineEditCommand.text()
         if command.strip!='':
-            self.terminal = Terminal(command, self)
-            self.terminal.show()
+            self.pseudo_terminal = PseudoTerminal(command, self)
+            self.pseudo_terminal.show()
 
         else:
             msgBox = QMessageBox(self)

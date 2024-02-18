@@ -1,3 +1,5 @@
+import pexpect
+
 from PySide6.QtWidgets import (
     QApplication, 
     QDialog, 
@@ -13,7 +15,7 @@ from PySide6.QtCore import QProcess
 from PySide6.QtGui import QFont, QFontMetrics
 
 ## Terminal class
-class Terminal(QDialog):
+class PseudoTerminal(QDialog):
 
     def __init__(self, command_passed, parent=None):
         super().__init__(parent)
@@ -83,17 +85,21 @@ class Terminal(QDialog):
             command = command_parts[0]
             args = command_parts[1:]
 
-        self.process.setProgram(command)
-        self.process.setArguments(args)
-        self.process.start()
 
         # Richiesta password
         if command == 'sudo':
             if not self.is_sudo_password_cached():
                 password, ok = QInputDialog.getText(self, "Password di sudo", "Inserisci la password di sudo:", QLineEdit.Password)
                 if ok:
-                    self.process.write(password.encode() + b'\n\n')
+                    child = pexpect.spawn(command, args)
+                    child.expect('Password:')
+                    child.sendline(password)
+                    child.interact()  # Pass control to the user
+                    #return
 
+        self.process.setProgram(command)
+        self.process.setArguments(args)
+        self.process.start()
         self.process.closeWriteChannel()
         self.process.waitForFinished(-1)
 
@@ -116,6 +122,6 @@ class Terminal(QDialog):
 ## Run the application
 if __name__ == '__main__':
     app = QApplication([])
-    terminal = Terminal("ls -l /")
-    terminal.show()
+    pseudo_terminal = PseudoTerminal("sudo ls -l /")
+    pseudo_terminal.show()
     app.exec()
