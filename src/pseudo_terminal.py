@@ -69,9 +69,10 @@ class PseudoTerminal(QDialog):
         self.process.readyReadStandardError.connect(self.handle_stderr)
 
     ## Check if the sudo password is cached
-    def is_sudo_password_cached(self):
+    def sudo_password_cached(self, password):
         check_process = QProcess()
         check_process.start("sudo", ["-n", "true"])
+        check_process.write(password.encode())        
         check_process.waitForFinished()
         return check_process.exitCode() == 0
     
@@ -85,17 +86,16 @@ class PseudoTerminal(QDialog):
             command = command_parts[0]
             args = command_parts[1:]
 
-
+        # Richiesta password
+        if command == 'sudo':
+            password, ok = QInputDialog.getText(self, "Password di sudo", "Inserisci la password di sudo:", QLineEdit.Password)
+            if ok:
+                self.sudo_password_cached(password)
+    
         self.process.setProgram(command)
         self.process.setArguments(args)
         self.process.start()
-
-        # Richiesta password
-        if command == 'sudo':
-            if not self.is_sudo_password_cached():
-                password, ok = QInputDialog.getText(self, "Password di sudo", "Inserisci la password di sudo:", QLineEdit.Password)
-                if ok:
-                    self.process.write(self.password.encode())
+        self.process.write(self.password.encode())
 
         self.process.closeWriteChannel()
         self.process.waitForFinished(-1)
