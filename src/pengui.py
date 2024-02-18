@@ -43,7 +43,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         self.setupUi(self) # mandatory
         
-        self.setWindowTitle('penGUI') 
+        self.setWindowTitle('penGUI')
         
         self.labelLogo.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.setCentralWidget(self.labelLogo)

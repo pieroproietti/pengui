@@ -1,30 +1,25 @@
 import sys
 import psutil
 from  PySide6.QtCore import QCoreApplication, QProcess, QThread, Signal
-from PySide6.QtWidgets import QApplication, QDialog, QVBoxLayout, QLabel, QComboBox, QPushButton, QMessageBox, QInputDialog, QLineEdit, QProgressBar
+from PySide6.QtWidgets import QApplication, QDialog, QHBoxLayout, QVBoxLayout, QLabel, QComboBox, QPushButton, QMessageBox, QInputDialog, QLineEdit, QProgressBar
 
 ##
 #
 class FormatThread(QThread):
     format_done = Signal(int, str)
 
-    def __init__(self, drive, password):
+    def __init__(self, drive, partition_label, password):
         super().__init__()
         self.drive = drive
+        self.partition_label = partition_label
         self.password = password
 
-    def run(self):
-        # Esegui il comando di formattazione con sudo
-        if not self.drive[-1].isnumeric():            
-            device_to_format=self.drive
-        else: 
-            device_to_format=self.drive[:-1]
 
-        label="USB_DRIVE"
-        print ("formatting device:{} label: {} ".format(device_to_format, label))
+    def run(self):
+        print ("formatting device:{} label: {} ".format(self.drive, self.partition_label))
         format_process = QProcess()
         format_process.setProgram("sudo")
-        format_process.setArguments(["-S", "mkfs.vfat", "-F", "32", "-n", label, self.drive])
+        format_process.setArguments(["-S", "mkfs.vfat", "-F", "32", "-n", self.partition_label, self.drive])
         format_process.start()
         format_process.write(self.password.encode())
         format_process.closeWriteChannel()
@@ -41,7 +36,7 @@ class DialogFormat(QDialog):
         self.setWindowTitle('Format USB Drive')
         self.layout = QVBoxLayout(self)
 
-        self.label = QLabel('Select USB Drive:')
+        self.label = QLabel('Select USB drive to format:')
         self.layout.addWidget(self.label)
 
         self.usb_drives = self.get_usb_drives()
@@ -49,14 +44,23 @@ class DialogFormat(QDialog):
         self.combo_box.addItems(self.usb_drives)
         self.layout.addWidget(self.combo_box)
 
+        self.usb_partition_label  = QLineEdit(self)
+        self.usb_partition_label.setPlaceholderText("insert partition label")
+        self.layout.addWidget(self.usb_partition_label)
+
+        # add button_layout to the main layout
+        button_layout = QHBoxLayout()
+
         self.format_button = QPushButton('Format', self)
         self.format_button.clicked.connect(self.format_drive)
-        self.layout.addWidget(self.format_button)
+        button_layout.addWidget(self.format_button)
 
         # add button to close the dialog
         self.close_button = QPushButton('Close', self)
         self.close_button.clicked.connect(self.close)
-        self.layout.addWidget(self.close_button)
+        button_layout.addWidget(self.close_button)
+
+        self.layout.addLayout(button_layout)
         
         self.progress_bar = QProgressBar(self)
         self.layout.addWidget(self.progress_bar)
@@ -65,7 +69,8 @@ class DialogFormat(QDialog):
     # fine della formattazione    
     def on_format_done(self, exit_code, stderr):
         self.progress_bar.setRange(0, 1)  # Set the progress bar back to determinate mode
-        self.progress_bar.setRange(0, 1)  # Set the progress bar back to determinate mode
+        self.close_button.setEnabled(True)
+        self.format_button.setEnabled(True)
         if exit_code == 0:
             QMessageBox.information(self, "Success", "Disk was formatted successfully.")
         else:
@@ -94,6 +99,8 @@ class DialogFormat(QDialog):
     ##
     #
     def format_drive(self):
+        self.close_button.setEnabled(False)
+        self.format_button.setEnabled(False)
         drive = self.combo_box.currentText()
         if drive:
             drive='/dev/' + drive
@@ -129,7 +136,7 @@ class DialogFormat(QDialog):
                 return
 
         # Avvia il thread di formattazione
-        self.format_thread = FormatThread(drive, password)
+        self.format_thread = FormatThread(drive, self.usb_partition_label.text(), password)
         self.format_thread.format_done.connect(self.on_format_done)
         self.format_thread.start()
         self.progress_bar.setRange(0, 0)  # Set the progress bar to indeterminate mode

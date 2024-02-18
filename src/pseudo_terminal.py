@@ -86,20 +86,17 @@ class PseudoTerminal(QDialog):
             args = command_parts[1:]
 
 
+        self.process.setProgram(command)
+        self.process.setArguments(args)
+        self.process.start()
+
         # Richiesta password
         if command == 'sudo':
             if not self.is_sudo_password_cached():
                 password, ok = QInputDialog.getText(self, "Password di sudo", "Inserisci la password di sudo:", QLineEdit.Password)
                 if ok:
-                    child = pexpect.spawn(command, args)
-                    child.expect('Password:')
-                    child.sendline(password)
-                    child.interact()  # Pass control to the user
-                    #return
+                    self.process.write(self.password.encode())
 
-        self.process.setProgram(command)
-        self.process.setArguments(args)
-        self.process.start()
         self.process.closeWriteChannel()
         self.process.waitForFinished(-1)
 
