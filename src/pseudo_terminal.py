@@ -1,5 +1,4 @@
-import pexpect
-
+import subprocess
 from PySide6.QtWidgets import (
     QApplication, 
     QDialog, 
@@ -14,8 +13,8 @@ from PySide6.QtWidgets import (
 from PySide6.QtCore import QProcess
 from PySide6.QtGui import QFont, QFontMetrics
 
-## Terminal class
 class PseudoTerminal(QDialog):
+    process = QProcess() # Create a QProcess object to handle the command
 
     def __init__(self, command_passed, parent=None):
         super().__init__(parent)
@@ -56,6 +55,11 @@ class PseudoTerminal(QDialog):
         self.clear_button.clicked.connect(self.clear_terminal)
         self.button_layout.addWidget(self.clear_button)
 
+        # add button to remove the sudo password cache
+        self.remove_sudo_cached_password_button = QPushButton('Remove cached password', self)
+        self.remove_sudo_cached_password_button.clicked.connect(self.remove_sudo_cached_password)
+        self.button_layout.addWidget(self.remove_sudo_cached_password_button)
+
         # add button to close the terminal
         self.close_button = QPushButton('Close', self)
         self.close_button.clicked.connect(self.close)
@@ -68,14 +72,18 @@ class PseudoTerminal(QDialog):
         self.process.readyReadStandardOutput.connect(self.handle_stdout)
         self.process.readyReadStandardError.connect(self.handle_stderr)
 
-    ## Check if the sudo password is cached
-    def sudo_password_cached(self, password):
-        check_process = QProcess()
-        check_process.start("sudo", ["-n", "true"])
-        check_process.write(password.encode())        
-        check_process.waitForFinished()
-        return check_process.exitCode() == 0
-    
+    ## Clear the sudo password cache
+    def remove_sudo_cached_password(self):
+        subprocess.run(['sudo', '-k'])
+          
+    ## Check if the sudo password is cached 
+    def is_sudo_password_cached(self):
+        try:
+            subprocess.check_output('sudo -n true', shell=True, stderr=subprocess.STDOUT)
+            return True
+        except subprocess.CalledProcessError:
+            return False
+        
     ## Run the command
     def run_command(self):
         command_line = self.command_line.text()
@@ -87,16 +95,23 @@ class PseudoTerminal(QDialog):
             args = command_parts[1:]
 
         # Richiesta password
+        password = ""
         if command == 'sudo':
-            password, ok = QInputDialog.getText(self, "Password di sudo", "Inserisci la password di sudo:", QLineEdit.Password)
-            if ok:
-                self.sudo_password_cached(password)
-    
+            if not self.is_sudo_password_cached():
+                password_dialog=QInputDialog()
+                password_dialog.setTextValue("evolution")
+                password, ok = password_dialog.getText(self, "sudo", "Inserisci la password di sudo:", QLineEdit.Password)
+                if not ok:
+                    print ("password non inserita")
+                    return
+                else:
+                    print ("password {}".format(password))
+                   
+
         self.process.setProgram(command)
         self.process.setArguments(args)
         self.process.start()
-        self.process.write(self.password.encode())
-
+        self.process.write(password.encode())
         self.process.closeWriteChannel()
         self.process.waitForFinished(-1)
 

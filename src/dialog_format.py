@@ -1,7 +1,19 @@
 import sys
 import psutil
 from  PySide6.QtCore import QCoreApplication, QProcess, QThread, Signal
-from PySide6.QtWidgets import QApplication, QDialog, QHBoxLayout, QVBoxLayout, QLabel, QComboBox, QPushButton, QMessageBox, QInputDialog, QLineEdit, QProgressBar
+from PySide6.QtWidgets import (
+    QApplication, 
+    QDialog, 
+    QHBoxLayout, 
+    QVBoxLayout, 
+    QLabel, 
+    QComboBox, 
+    QPushButton, 
+    QMessageBox, 
+    QInputDialog, 
+    QLineEdit, 
+    QProgressBar
+)
 
 ##
 #
