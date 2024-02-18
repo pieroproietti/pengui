@@ -22,6 +22,7 @@ from config import Config
 from config_tools import Config_Tools
 from wardrobe_show import WardrobeShow
 from dialog_format import DialogFormat
+from pseudo_terminal import PseudoTerminal
 from terminal import Terminal
 from utilies import U
 
@@ -199,9 +200,9 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @QtCore.Slot()
     def kill(self):
-        Terminal.execute(self, 'eggs kill')
-        self.statusBar().showMessage('kill', 5000)
-        
+        pseudo_terminal = PseudoTerminal('sudo eggs kill --nointeractive', self)
+        pseudo_terminal.show()
+
     @Slot()
     def produce(self):
         dialog = Produce(self)
@@ -214,21 +215,26 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @Slot()
     def calamares_install(self):
-        Terminal.execute(self, 'eggs calamares --install')
+        pseudo_terminal = PseudoTerminal('sudo eggs calamares --install --nointeractive', self)
+        pseudo_terminal.show()
+        #Terminal.execute(self, 'eggs calamares --install')
         self.statusBar().showMessage('calamares --install', 5000)
 
     ##
     #
     @Slot()
     def calamares_remove(self):
-        Terminal.execute(self, 'eggs calamares --remove')
+        pseudo_terminal = PseudoTerminal('sudo eggs calamares --remove --nointeractive', self)
+        pseudo_terminal.show()
         self.statusBar().showMessage('calamares --remove', 5000)
 
     ##
     #
     @Slot()
     def status(self):
-        Terminal.execute(self, 'eggs status')
+        pseudo_terminal = PseudoTerminal('eggs status', self)
+        pseudo_terminal.show()
+        #Terminal.execute(self, 'eggs status')
         self.statusBar().showMessage('status', 5000)
 
     ##
@@ -243,7 +249,9 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     ## tools
     @QtCore.Slot()
     def tools_clean(self):
-        Terminal.execute(self, 'eggs tools clean')
+        pseudo_terminal = PseudoTerminal('sudo eggs tools clean --nointeractive', self)
+        pseudo_terminal.show()
+        #Terminal.execute(self, 'eggs tools clean')
         self.statusBar().showMessage('cleaning cache, logs, etc', 5000)
 
 
@@ -251,38 +259,44 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @QtCore.Slot()
     def tools_ppa_add(self):
-        Terminal.execute(self, 'eggs tools ppa --add')
+        pseudo_terminal = PseudoTerminal('sudo eggs tools ppa --add --nointeractive', self)
+        pseudo_terminal.show()
         self.statusBar().showMessage('adding penguins-eggs-ppa to yours /etc/apt/sources.list.d', 5000)
     
     ##
     #
     @QtCore.Slot()
     def tools_ppa_remove(self):
-        Terminal.execute(self, 'eggs tools ppa --remove')
+        pseudo_terminal = PseudoTerminal('sudo eggs tools ppa --remove --nointeractive', self)
+        pseudo_terminal.show()
         self.statusBar().showMessage('removing penguins-eggs-ppa form yours /etc/apt/sources.list.d', 5000)
     ##
     #
     @QtCore.Slot()
     def tools_skel(self):
-        Terminal.execute(self, 'eggs tools skel')
+        pseudo_terminal = PseudoTerminal('sudo eggs tools skel --nointeractive', self)
+        pseudo_terminal.show()
         self.statusBar().showMessage('copyng your home configuration to /etc/skel', 5000)
 
     ##
     #
     @QtCore.Slot()
     def tools_yolk(self):
-        Terminal.execute(self, 'eggs tools yolk')
+        pseudo_terminal = PseudoTerminal('sudo eggs yolk skel --nointeractive', self)
+        pseudo_terminal.show()
         self.statusBar().showMessage('creating a local repository /var/local/yolk', 5000)
 
     ## wardrobe
     @QtCore.Slot()
     def wardrobe_get(self):
-        Terminal.execute(self, 'eggs wardrobe get')
+        pseudo_terminal = PseudoTerminal('eggs wardrobe get --nointeractive', self)
+        pseudo_terminal.show()
         self.statusBar().showMessage('get a copy of wardrobe on ~/.wardrobe', 5000)
 
     @QtCore.Slot()
     def wardrobe_list(self):
-        Terminal.execute(self, 'eggs wardrobe list')
+        pseudo_terminal = PseudoTerminal('eggs wardrobe list', self)
+        pseudo_terminal.show()
         self.statusBar().showMessage('listing wardrobe contents', 5000)
 
     @QtCore.Slot()
@@ -294,7 +308,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
     @QtCore.Slot()
     def wardrobe_wear(self):
-        Terminal.execute(self, 'eggs wardrobe wear')
+        pseudo_terminal = PseudoTerminal('sudo eggs wardrobe wear', self)
+        pseudo_terminal.show()
         self.statusBar().showMessage('wardrobe wear', 5000)
 
     @QtCore.Slot()

@@ -11,6 +11,7 @@ import os
 import yaml
 import subprocess 
 from  utilies import U
+from pseudo_terminal import PseudoTerminal
 
 ##
 #
@@ -80,7 +81,9 @@ class Config(Ui_DialogConfig, QDialog):
         if os.geteuid() != 0:
             with open('/tmp/eggs.yaml', 'w') as object_file:
                 yaml.dump(eggs, object_file)
-                Terminal.execute(self, 'cp /tmp/eggs.yaml /etc/penguins-eggs.d/eggs.yaml')
+                pseudo_terminal = PseudoTerminal('sudo cp /tmp/eggs.yaml /etc/penguins-eggs.d/eggs.yaml', self)
+                pseudo_terminal.show()
+
                 self.close()
         else:
             with open(self.eggs_yaml_path, 'w') as object_file:
