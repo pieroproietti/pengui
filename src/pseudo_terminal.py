@@ -106,9 +106,6 @@ class PseudoTerminal(QDialog):
                 if not ok:
                     print ("password non inserita")
                     return
-                else:
-                    print ("password {}".format(password))
-                   
 
         self.process.setProgram(command)
         self.process.setArguments(args)
@@ -116,6 +113,14 @@ class PseudoTerminal(QDialog):
         self.process.write(password.encode())
         self.process.closeWriteChannel()
         self.process.waitForFinished(-1)
+
+        # Show a message box to inform the user that the command has been executed
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Pseudo Terminal")
+        msg.setText("Command:\n\n{}\n\nexecuted".format(self.command_line.text()))
+        msg.setStandardButtons(QMessageBox.Ok)
+        msg.exec()
 
     ## Clear the terminal
     def clear_terminal(self):

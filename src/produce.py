@@ -8,7 +8,7 @@ from PySide6 import QtCore
 from PySide6.QtWidgets import QApplication, QMessageBox, QDialog
 
 from ui.ui_produce import Ui_DialogProduce
-#from terminal import Terminal
+from terminal import Terminal
 from pseudo_terminal import PseudoTerminal
 from utilies import U
 
@@ -132,15 +132,12 @@ class Produce(Ui_DialogProduce, QDialog):
     ##
     def run(self):
         command=self.lineEditCommand.text()
-        if command.strip!='':
-            self.pseudo_terminal = PseudoTerminal(command, self)
-            self.pseudo_terminal.show()
-
-        else:
-            msgBox = QMessageBox(self)
-            msgBox.setWindowTitle("PenGUI")
-            msgBox.setText("You must generate the command before, plase click on generate button")
-            msgBox.exec()
+        if command.strip=='':
+            self.generate()
+        
+        Terminal.execute(self, command)
+        #self.pseudo_terminal = PseudoTerminal(command, self)
+        #self.pseudo_terminal.show()
 
 
     def help(self):

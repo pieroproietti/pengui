@@ -1,9 +1,6 @@
 from PySide6.QtCore import QProcess
 from PySide6.QtWidgets import (QMessageBox)
-
-import sys
 import os
-import subprocess
 
 ##
 #
@@ -23,7 +20,7 @@ class Terminal(QProcess):
                 command='sudo ' + command
                 sudo = True
 
-        msgBox = QMessageBox(self)
+        msgBox = QMessageBox()
         msgBox.setWindowTitle("PenGUI")
         msgBox.setStandardButtons(QMessageBox.Cancel|QMessageBox.Apply)
         msgBox.setText("PenGUI will open a terminal and run:\n\n" + command + "\n")

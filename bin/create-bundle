@@ -2,4 +2,4 @@
 source bin/program
 cd ~/${PROGRAM}
 
-pyinstaller --clean -yF src/smartcheck.py -n ${PROGRAM}.bin
+pyinstaller --clean -yF src/${PROGRAM}.py -n ${PROGRAM}.bin

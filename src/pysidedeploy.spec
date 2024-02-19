@@ -9,6 +9,7 @@ input_file = src/pengui.py
 exec_directory = .
 # path to .pyproject project file
 project_file = 
+icon = /home/artisan/pengui/venv_pengui/lib/python3.11/site-packages/PySide6/scripts/deploy_lib/pyside_icon.jpg
 
 [python]
 # python path

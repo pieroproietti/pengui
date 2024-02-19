@@ -2,7 +2,7 @@
 source bin/program
 cd ~/${PROGRAM}
 
-DIRS_TO_DELETE=(build dist ${PROGRAM}* __pycache__)
+DIRS_TO_DELETE=(build dist src/deployment)
 rm "${DIRS_TO_DELETE[@]}" -rf || { echo "Error deleting files"; exit 1; }
 find ~/${PROGRAM} -type d -name __pycache__ -exec rm -rf {} +
 
