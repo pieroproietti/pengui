@@ -34,6 +34,10 @@ class DialogGetEggs(QProgressDialog):
     def finish_download(self):
         self.download_finished.emit()
 
+    def close(self):
+        self.process.close()
+        super().close()
+
 
 # Example usage
 if __name__ == '__main__':
