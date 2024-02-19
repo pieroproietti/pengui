@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'penguiYhaiNn.ui'
+## Form generated from reading UI file 'penguidCbnRZ.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.6.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -76,6 +76,8 @@ class Ui_MainWindow(object):
         self.actionPpaRemove.setObjectName(u"actionPpaRemove")
         self.actionFormatUSB = QAction(MainWindow)
         self.actionFormatUSB.setObjectName(u"actionFormatUSB")
+        self.actionGetEggs = QAction(MainWindow)
+        self.actionGetEggs.setObjectName(u"actionGetEggs")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.labelLogo = QLabel(self.centralwidget)
@@ -121,6 +123,7 @@ class Ui_MainWindow(object):
         self.menu_Edit.addAction(self.action_Configure)
         self.menu_Edit.addAction(self.actionConfigureTools)
         self.menu_Edit.addAction(self.actionFormatUSB)
+        self.menu_Edit.addAction(self.actionGetEggs)
         self.menu_Help.addAction(self.actionUsersGuide)
         self.menu_Help.addAction(self.actionBlog)
         self.menu_Help.addSeparator()
@@ -169,6 +172,7 @@ class Ui_MainWindow(object):
         self.actionIPpaAdd.setText(QCoreApplication.translate("MainWindow", u"&Add", None))
         self.actionPpaRemove.setText(QCoreApplication.translate("MainWindow", u"&Remove", None))
         self.actionFormatUSB.setText(QCoreApplication.translate("MainWindow", u"Format USB", None))
+        self.actionGetEggs.setText(QCoreApplication.translate("MainWindow", u"Get eggs", None))
         self.labelLogo.setText("")
         self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"&File", None))
         self.menuCalamares.setTitle(QCoreApplication.translate("MainWindow", u"&Calamares", None))

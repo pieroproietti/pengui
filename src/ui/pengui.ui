@@ -69,6 +69,7 @@
     <addaction name="action_Configure"/>
     <addaction name="actionConfigureTools"/>
     <addaction name="actionFormatUSB"/>
+    <addaction name="actionGetEggs"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -231,6 +232,11 @@
   <action name="actionFormatUSB">
    <property name="text">
     <string>Format USB</string>
+   </property>
+  </action>
+  <action name="actionGetEggs">
+   <property name="text">
+    <string>Get eggs</string>
    </property>
   </action>
  </widget>

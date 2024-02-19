@@ -97,7 +97,6 @@ class DialogFormat(QDialog):
         output = process.readAllStandardOutput().data().decode()
         drives = output.split('\n')
         print(drives)
-        #drives = subprocess.check_output(['lsblk', '-S', '-d', '-n', '-o', 'NAME,TYPE,TRAN']).decode().split('\n')
         usb_drives = []
         for drive in drives:
             if 'usb' in drive.lower() and not drive.endswith(')'):

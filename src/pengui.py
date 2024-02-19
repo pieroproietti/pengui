@@ -1,4 +1,3 @@
-#!/bin/python
 import sys
 import os
 import webbrowser
@@ -11,7 +10,6 @@ from PySide6.QtCore import Slot
 from PySide6.QtWidgets import (
     QMainWindow, 
     QApplication, 
-    QPushButton, 
     QMessageBox, 
     QToolBar, 
     QStatusBar
@@ -22,6 +20,7 @@ from config import Config
 from config_tools import Config_Tools
 from wardrobe_show import WardrobeShow
 from dialog_format import DialogFormat
+from dialog_get_eggs import DialogGetEggs
 from pseudo_terminal import PseudoTerminal
 from terminal import Terminal
 from utilies import U
@@ -101,6 +100,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.action_Configure.triggered.connect(self.configure)
         self.actionConfigureTools.triggered.connect(self.configure_tools)
         self.actionFormatUSB.triggered.connect(self.formatUSB)
+        self.actionGetEggs.triggered.connect(self.getEggs)
 
         # Tools
         self.action_Clean.triggered.connect(self.tools_clean)
@@ -108,7 +108,6 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.actionPpaRemove.triggered.connect(self.tools_ppa_remove)
         self.action_Skel.triggered.connect(self.tools_skel)
         self.action_Yolk.triggered.connect(self.tools_yolk)
-
 
         # Wardrobe
         self.actionGet.triggered.connect(self.wardrobe_get)
@@ -159,13 +158,23 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.statusBar().showMessage('dad', 5000)
 
 
-##
+    ##
     #
     @QtCore.Slot()
     def formatUSB(self):
         dialog=DialogFormat(self)
         dialog.showMaximized()
         self.statusBar().showMessage('format USB', 5000)
+
+    ##
+    #
+    @QtCore.Slot()
+    def getEggs(self):
+        eggs_version="eggs_9.6.30_amd64.deb"
+        self.dialogGetEggs = DialogGetEggs("https://sourceforge.net/projects/penguins-eggs/files/DEBS/{}".format(eggs_version), "/tmp/{}".format(eggs_version))
+        self.dialogGetEggs.start_download()
+        self.dialogGetEggs.showMaximized()
+        self.statusBar().showMessage('get eggs', 5000)
 
     ##
     #
@@ -215,9 +224,9 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @Slot()
     def calamares_install(self):
-        pseudo_terminal = PseudoTerminal('sudo eggs calamares --install --nointeractive', self)
-        pseudo_terminal.show()
-        #Terminal.execute(self, 'eggs calamares --install')
+        #pseudo_terminal = PseudoTerminal('sudo eggs calamares --install --nointeractive', self)
+        #pseudo_terminal.show()
+        Terminal.execute(self, 'sudo eggs calamares --install')
         self.statusBar().showMessage('calamares --install', 5000)
 
     ##

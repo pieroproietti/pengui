@@ -23,7 +23,7 @@ class Terminal(QProcess):
         msgBox = QMessageBox()
         msgBox.setWindowTitle("PenGUI")
         msgBox.setStandardButtons(QMessageBox.Cancel|QMessageBox.Apply)
-        msgBox.setText("PenGUI will open a terminal and run:\n\n" + command + "\n")
+        msgBox.setText("PenGUI will open a terminal and run the command:\n\n" + command + "\n")
         ret=msgBox.exec()
         if ret == QMessageBox.Apply:
             # Run the command in the terminal
@@ -33,4 +33,3 @@ class Terminal(QProcess):
             process.start()
             quindici_minuti=900000
             process.waitForFinished(quindici_minuti)
-      
