@@ -1,3 +1,6 @@
+#https://pypi.org/project/pyxtermjs/
+#https://github.com/cs01/pyxtermjs
+
 import subprocess
 from PySide6.QtWidgets import (
     QApplication, 
