@@ -3,10 +3,11 @@ source bin/program
 source src/version.py
 cd ~/${PROGRAM}
 
+# Set the program version
 PACKAGE_NAME=${PROGRAM}-${VERSION}_amd64.deb
-echo $NAME
+BIN_NAME=${PROGRAM}.bin
 
-DIRS_TO_DELETE=(build dist src/deployment "${PACKAGE_NAME}" "${PROGRAM}.bin")
+DIRS_TO_DELETE=(build dist src/deployment "${PACKAGE_NAME}" "${BIN_NAME}")
 rm "${DIRS_TO_DELETE[@]}" -rf || { echo "Error deleting files"; exit 1; }
 find ~/${PROGRAM} -type d -name __pycache__ -exec rm -rf {} +
 
