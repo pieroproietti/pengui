@@ -118,12 +118,12 @@ class PseudoTerminal(QDialog):
         self.process.waitForFinished(-1)
 
         # Show a message box to inform the user that the command has been executed
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Pseudo Terminal")
-        msg.setText("Command:\n\n{}\n\nexecuted".format(self.command_line.text()))
-        msg.setStandardButtons(QMessageBox.Ok)
-        msg.exec()
+        # msg = QMessageBox()
+        # msg.setIcon(QMessageBox.Information)
+        # msg.setWindowTitle("Pseudo Terminal")
+        # msg.setText("Command:\n\n{}\n\nexecuted".format(self.command_line.text()))
+        # msg.setStandardButtons(QMessageBox.Ok)
+        # msg.exec()
 
     ## Clear the terminal
     def clear_terminal(self):
