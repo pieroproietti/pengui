@@ -9,11 +9,11 @@ python3 -m venv venv_${PROGRAM}
 source venv_${PROGRAM}/bin/activate
 
 # install packages
+pip install nuitka
 pip install psutil
 pip install pyinstaller
 pip install pyside6
 pip install pyyaml
-#pip install pyudev
 pip install requests
 pip install stickytape
 pip install wheel

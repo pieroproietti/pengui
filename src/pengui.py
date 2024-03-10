@@ -1,6 +1,7 @@
 import sys
 import os
 import webbrowser
+import version
 
 from PySide6.QtCore import Qt
 from PySide6 import QtGui
@@ -32,7 +33,8 @@ from ui.ui_pengui import Ui_MainWindow
 
 ##
 # 
-class MyMainWindow(Ui_MainWindow, QMainWindow):    
+class MyMainWindow(Ui_MainWindow, QMainWindow):
+    version=version.APP + "-" + version.VERSION
     def __init__ (self):
         super().__init__() # inizializza
 
@@ -153,7 +155,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     def about(self):
         msgBox = QMessageBox(self)
         msgBox.setWindowTitle("PenGUI")
-        msgBox.setText("penGUI take cure about eggs!")
+        msgBox.setText(self.version + " take cure about your eggs!")
         msgBox.exec()
         self.statusBar().showMessage('dad', 5000)
 

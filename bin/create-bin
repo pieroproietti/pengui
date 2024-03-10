@@ -1,5 +1,5 @@
 #!/bin/bash 
 source bin/program
-cd ~/${PROGRAM}
+python -m nuitka --follow-imports src/${PROGRAM}.py
+rm "${PROGRAM}.build" -rf
 
-pyside6-deploy -c src/pysidedeploy.spec -v
