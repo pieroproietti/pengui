@@ -52,5 +52,5 @@ chmod +x fakeroot/opt/${PROGRAM}/${PROGRAM}.bin
 fpm -C fakeroot -s dir -t deb -n "${PROGRAM}" -v ${VERSION} -p ${PROGRAM_VERSION}${ARCHITECTURE}.deb
 
 # Copy the binary file and clean up
-cp ${PROGRAM}.bin ${PROGRAM}-${VERSION}${ARCHITECTURE}.bin
+mv ${PROGRAM}.bin ${PROGRAM}-${VERSION}${ARCHITECTURE}.bin
 rm fakeroot -rf
