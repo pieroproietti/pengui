@@ -18,9 +18,7 @@ class Config_Tools(QtWidgets.QDialog, Ui_Dialog):
 
         self.tools_yaml_path = os.path.join(U.conf_path, 'tools.yaml')
         if not os.path.exists(self.tools_yaml_path):
-            msg_box = QMessageBox(self)
-            msg_box.setText(f"Can't find {self.tools_yaml_path}")
-            msg_box.exec()
+            QMessageBox.warning(self, 'Warning', f"Can't find {self.tools_yaml_path}")
             return
 
         with open(self.tools_yaml_path, 'r') as file:

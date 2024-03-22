@@ -23,10 +23,7 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
         self.setupUi(self) # mandatory
 
         if not U.wardrobe_exists():
-            msgBox = QMessageBox(self)
-            msgBox.setWindowTitle("PenGUI")
-            msgBox.setText("I will import wardrobe before.\nUse:\n\neggs wardrobe get\n")
-            msgBox.exec()
+            QMessageBox.information(self, 'PenGUI', "I will import wardrobe before.\nUse:\n\neggs wardrobe get")
             Terminal.execute(self, 'eggs wardrobe get')
         
         # recupero i costumes da .wardrobe/costumes/
@@ -83,10 +80,7 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
             dialog.exec(self)
 
         else:
-            msgBox = QMessageBox(self)
-            msgBox.setWindowTitle("PenGUI")
-            msgBox.setText("There is no version for " + self.comboBoxCostumes.currentText())
-            msgBox.exec()
+            QMessageBox.information(self, 'PenGUI', "There is no version for " + self.comboBoxCostumes.currentText())
 
     ##
     @QtCore.Slot()
@@ -102,10 +96,7 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
             dialog.openFilename()
             dialog.exec(self)
         else:
-            msgBox = QMessageBox(self)
-            msgBox.setWindowTitle("PenGUI")
-            msgBox.setText("There is no version for " + self.comboBoxAccessories.currentText())
-            msgBox.exec()
+            QMessageBox.information(self, 'PenGUI', "There is no version for " + self.comboBoxAccessories.currentText())
 
 
     ##
@@ -122,7 +113,4 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
             dialog.openFilename()
             dialog.exec(self)
         else:
-            msgBox = QMessageBox(self)
-            msgBox.setWindowTitle("PenGUI")
-            msgBox.setText("There is no version for " + self.comboBoxAccessories.currentText())
-            msgBox.exec()
+            QMessageBox.information(self, 'PenGUI', "There is no version for " + self.comboBoxAccessories.currentText())

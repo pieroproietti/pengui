@@ -20,12 +20,8 @@ class Terminal(QProcess):
                 command='sudo ' + command
                 sudo = True
 
-        msgBox = QMessageBox()
-        msgBox.setWindowTitle("PenGUI")
-        msgBox.setStandardButtons(QMessageBox.Cancel|QMessageBox.Apply)
-        msgBox.setText("PenGUI will open a terminal and run the command:\n\n" + command + "\n")
-        ret=msgBox.exec()
-        if ret == QMessageBox.Apply:
+        answer=QMessageBox.question(self, 'PenGUI', 'PenGUI will open a terminal and run the command:\n\n' + command + '\n', QMessageBox.Cancel|QMessageBox.Apply)
+        if answer == QMessageBox.Apply:
             # Run the command in the terminal
             process = QProcess(self)
             process.setProgram("/usr/bin/x-terminal-emulator")

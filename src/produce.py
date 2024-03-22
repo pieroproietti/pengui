@@ -24,10 +24,7 @@ class Produce(Ui_DialogProduce, QDialog):
 
         # load eggs.yaml 
         if not U.conf_exists():
-            msgBox = QMessageBox(self)
-            msgBox.setWindowTitle("PenGUI")
-            msgBox.setText("Can't find /etc/penguins-eggs.d/eggs.yaml")
-            msgBox.exec()
+            QMessageBox.critical(self, 'Error', f"Can't find {U.conf_path}")
             quit()
 
         with open(U.conf_path+'/eggs.yaml', 'r') as file:

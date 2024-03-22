@@ -23,10 +23,7 @@ class Config(Ui_DialogConfig, QDialog):
 
         self.eggs_yaml_path=U.conf_path+'/eggs.yaml'
         if not os.path.isfile(self.eggs_yaml_path):
-            msgBox = QMessageBox(self)
-            msgBox.setWindowTitle("PenGUI")
-            msgBox.setText("Can't find /etc/penguins-eggs.d/eggs.yaml")
-            msgBox.exec()
+            QMessageBox.critical(self, 'Error', f"Can't find {self.eggs_yaml_path}")
             quit()
         
         # now we read eggs.yaml

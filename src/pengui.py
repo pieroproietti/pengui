@@ -129,13 +129,8 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.showMaximized()
         
         if not U.package_is_installed("eggs"):
-            msgBox = QMessageBox(self)
-            msgBox.setWindowTitle("PenGUI")
-            msgBox.setText("Install penguins-eggs before to continue.")
-            msgBox.setInformativeText("Download it, then install with:\n\n sudo dpkg -i eggs-9.6.xx.deb")
-            msgBox.setStandardButtons(QMessageBox.Ok|QMessageBox.Help)
-            ret=msgBox.exec()
-            if ret == QMessageBox.Help:
+            answer=QMessageBox.question(self, 'PenGUI', "Install penguins-eggs before to continue.", QMessageBox.Yes | QMessageBox.Help)
+            if answer == QMessageBox.Help:
                 webbrowser.open('https://sourceforge.net/projects/penguins-eggs/files/DEBS/')
         
         # check exists /etc/penguins-eggs.d/eggs.yaml
@@ -144,21 +139,14 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         if not U.conf_exists():
             Terminal.execute(self, 'eggs dad --default')
             if not U.eggs_yaml_exists(self):
-                msgBox = QMessageBox(self)
-                msgBox.setText("I was unable to reconfigure eggs, the process ends")
-                msgBox.exec()
-                #self.exit()
+                QMessageBox.critical(self, "PenGUI", "I was unable to create the configuration file /etc/penguins-eggs.d/eggs.yaml, the process ends")
+                self.exit()
 
     ##
     #
     @QtCore.Slot()
     def about(self):
-        msgBox = QMessageBox(self)
-        msgBox.setWindowTitle("PenGUI")
-        msgBox.setText(self.version + " take cure about your eggs!")
-        msgBox.exec()
-        self.statusBar().showMessage('dad', 5000)
-
+        QMessageBox.about(self, "PenGUI", "PenGUI is a GUI for penguins-eggs\n\nVersion: " + self.version)
 
     ##
     #
