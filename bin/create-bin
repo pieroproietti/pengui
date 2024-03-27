@@ -1,5 +1,19 @@
 #!/bin/bash 
 source bin/program
-python -m nuitka --follow-imports src/${PROGRAM}.py
-rm "${PROGRAM}.build" -rf
+cd ~/${PROGRAM}
 
+# Pulizia
+rm ${PROGRAM}-0* -rf
+
+# build
+python -m nuitka \
+        --enable-plugins=pyside6 \
+        --include-qt-plugins=sensible \
+        --onefile \
+        --standalone \
+        src/${PROGRAM}.py 
+
+# pulizia
+rm ${PROGRAM}.build -rf
+rm ${PROGRAM}.dist -rf
+rm ${PROGRAM}.onefile-build -rf
