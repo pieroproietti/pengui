@@ -1,3 +1,3 @@
 #!/bin/bash
-VERSION="0.3.04"
+VERSION="0.4.00"
 APP="penGUI"
