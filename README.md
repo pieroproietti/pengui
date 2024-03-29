@@ -48,6 +48,8 @@ This is the repository of pengui, to get this sources just:
 It is recommended, however to create yourself a [fork](https://github.com/pieroproietti/pengui/fork) of the repository, so that you can manage the project yourself and possibly create some [Pull Requests](https://github.com/pieroproietti/pengui/pulls).
 
 # start to develop
+You need to install `sudo apt install python3-pip python3-venv` 
+
 Just run `bin/create_venv` from the root of the project and and follow the instructions. Under `bin`, there are usefull scripts to `run`, `create-bin`, `create-deb`, etc. They must always be run from the root of the project and have a self-explanatory name.
 
 
