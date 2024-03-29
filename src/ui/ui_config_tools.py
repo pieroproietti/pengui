@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'config_toolsQzBiqC.ui'
+## Form generated from reading UI file 'config_toolslUWaqv.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.6.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -31,16 +31,16 @@ class Ui_Dialog(object):
         self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
         self.pushButtonHelp = QPushButton(Dialog)
         self.pushButtonHelp.setObjectName(u"pushButtonHelp")
-        self.pushButtonHelp.setGeometry(QRect(380, 270, 80, 61))
+        self.pushButtonHelp.setGeometry(QRect(350, 330, 80, 61))
         self.pushButtonDiscard = QPushButton(Dialog)
         self.pushButtonDiscard.setObjectName(u"pushButtonDiscard")
-        self.pushButtonDiscard.setGeometry(QRect(466, 270, 80, 61))
+        self.pushButtonDiscard.setGeometry(QRect(440, 330, 80, 61))
         self.pushButtonSave = QPushButton(Dialog)
         self.pushButtonSave.setObjectName(u"pushButtonSave")
-        self.pushButtonSave.setGeometry(QRect(552, 270, 80, 61))
+        self.pushButtonSave.setGeometry(QRect(540, 330, 80, 61))
         self.layoutWidget = QWidget(Dialog)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 31, 621, 199))
+        self.layoutWidget.setGeometry(QRect(10, 31, 621, 269))
         self.gridLayout = QGridLayout(self.layoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)

@@ -46,29 +46,29 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         
         self.setWindowTitle('penGUI')
         
-        self.labelLogo.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.setCentralWidget(self.labelLogo)
+        #self.labelLogo.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        #self.setCentralWidget(self.labelLogo)
 
         # toolbar
         toolbar = QToolBar()
 
         ## dad
         dad_icon=QtGui.QIcon(":/pengui/icons/dad.svg")
-        dad_action = QAction(dad_icon , "", self)
+        dad_action = QAction(dad_icon , "dad", self)
         dad_action.setToolTip("Dad configure eggs")
         dad_action.triggered.connect(self.configure)
         toolbar.addAction(dad_action)
 
         ## produce
         produce_icon = QIcon(":/pengui/icons/produce.svg")
-        produce_action = QAction(produce_icon, "", self)
+        produce_action = QAction(produce_icon, "produce", self)
         produce_action.setToolTip("Produce a new ISO")
         produce_action.triggered.connect(self.produce)
         toolbar.addAction(produce_action)
 
         ## kill
         kill_icon = QIcon(":/pengui/icons/kill.svg")
-        kill_action = QAction(kill_icon, "", self)
+        kill_action = QAction(kill_icon, "kill", self)
         kill_action.setToolTip("Kill generated ISOs")
         kill_action.triggered.connect(self.kill)
         toolbar.addAction(kill_action)
@@ -76,7 +76,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         ## readme
         readme_icon = QIcon(":/pengui/icons/readme.svg")
-        readme_action = QAction(readme_icon, "", self)
+        readme_action = QAction(readme_icon, "readme", self)
         readme_action.setToolTip("read me first!")
         readme_action.triggered.connect(self.readme)
         toolbar.addAction(readme_action)
@@ -96,12 +96,6 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         #self.actionCUckoo.triggered.connect(self.cuckoo)
         self.actionCUckoo.setDisabled(True)
         self.action_Exit.triggered.connect(self.exit)
-
-        # Edif
-        self.action_Configure.triggered.connect(self.configure)
-        self.actionConfigureTools.triggered.connect(self.configure_tools)
-        self.actionFormatUSB.triggered.connect(self.formatUSB)
-        self.actionGetEggs.triggered.connect(self.getEggs)
 
         # Tools
         self.action_Clean.triggered.connect(self.tools_clean)

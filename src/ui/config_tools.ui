@@ -32,8 +32,8 @@
   <widget class="QPushButton" name="pushButtonHelp">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>270</y>
+     <x>350</x>
+     <y>330</y>
      <width>80</width>
      <height>61</height>
     </rect>
@@ -45,8 +45,8 @@
   <widget class="QPushButton" name="pushButtonDiscard">
    <property name="geometry">
     <rect>
-     <x>466</x>
-     <y>270</y>
+     <x>440</x>
+     <y>330</y>
      <width>80</width>
      <height>61</height>
     </rect>
@@ -58,8 +58,8 @@
   <widget class="QPushButton" name="pushButtonSave">
    <property name="geometry">
     <rect>
-     <x>552</x>
-     <y>270</y>
+     <x>540</x>
+     <y>330</y>
      <width>80</width>
      <height>61</height>
     </rect>
@@ -74,7 +74,7 @@
      <x>10</x>
      <y>31</y>
      <width>621</width>
-     <height>199</height>
+     <height>269</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">

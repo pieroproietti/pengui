@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'penguidCbnRZ.ui'
+## Form generated from reading UI file 'penguiEQSulI.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.2
+## Created by: Qt User Interface Compiler version 6.6.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -16,8 +16,8 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QMenu,
-    QMenuBar, QSizePolicy, QStatusBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QMainWindow, QMenu, QMenuBar,
+    QSizePolicy, QStatusBar, QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
@@ -80,10 +80,6 @@ class Ui_MainWindow(object):
         self.actionGetEggs.setObjectName(u"actionGetEggs")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.labelLogo = QLabel(self.centralwidget)
-        self.labelLogo.setObjectName(u"labelLogo")
-        self.labelLogo.setGeometry(QRect(260, 50, 1024, 1024))
-        self.labelLogo.setPixmap(QPixmap(u":/pengui/logo/penguin-dad-2.jpeg"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -122,7 +118,6 @@ class Ui_MainWindow(object):
         self.menuCalamares.addAction(self.actionCalamaresRemove)
         self.menu_Edit.addAction(self.action_Configure)
         self.menu_Edit.addAction(self.actionConfigureTools)
-        self.menu_Edit.addAction(self.actionFormatUSB)
         self.menu_Edit.addAction(self.actionGetEggs)
         self.menu_Help.addAction(self.actionUsersGuide)
         self.menu_Help.addAction(self.actionBlog)
@@ -173,7 +168,6 @@ class Ui_MainWindow(object):
         self.actionPpaRemove.setText(QCoreApplication.translate("MainWindow", u"&Remove", None))
         self.actionFormatUSB.setText(QCoreApplication.translate("MainWindow", u"Format USB", None))
         self.actionGetEggs.setText(QCoreApplication.translate("MainWindow", u"Get eggs", None))
-        self.labelLogo.setText("")
         self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"&File", None))
         self.menuCalamares.setTitle(QCoreApplication.translate("MainWindow", u"&Calamares", None))
         self.menu_Edit.setTitle(QCoreApplication.translate("MainWindow", u"&Edit", None))
