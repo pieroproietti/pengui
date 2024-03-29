@@ -51,7 +51,7 @@ chmod +x fakeroot/opt/${PROGRAM}/${PROGRAM}.bin
 # Create the deb package
 fpm -C fakeroot -s dir \
     -t deb \
-    --deb-field 'Depends: libxcb-cursor' \
+    --deb-field 'Depends: libxcb-cursor0' \
     -n "${PROGRAM}" \
     -v ${VERSION} \
     -p ${PROGRAM_VERSION}${ARCHITECTURE}.deb
