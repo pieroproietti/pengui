@@ -20,7 +20,6 @@ from produce import Produce
 from config import Config
 from config_tools import Config_Tools
 from wardrobe_show import WardrobeShow
-from dialog_format import DialogFormat
 from dialog_get_eggs import DialogGetEggs
 from pseudo_terminal import PseudoTerminal
 from terminal import Terminal
@@ -151,11 +150,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     ##
     #
     @QtCore.Slot()
-    def formatUSB(self):
-        dialog=DialogFormat(self)
-        dialog.showMaximized()
-        self.statusBar().showMessage('format USB', 5000)
-
+    
     ##
     #
     @QtCore.Slot()
