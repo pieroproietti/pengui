@@ -52,21 +52,13 @@ You need to install `sudo apt install python3-pip python3-venv`
 
 Just run `bin/create_venv` from the root of the project and and follow the instructions. Under `bin`, there are usefull scripts to `run`, `create-bin`, `create-deb`, etc. They must always be run from the root of the project and have a self-explanatory name.
 
-
 # nuitka
-`sudo apt install ccache`
+We are using nuitka 2.1.4 on python 3.11. 
 
+`sudo apt install ccache patchelf`
 
+# fpm
+To create debian packages we use fpm. 
 
-# future plan
+First install ruby `sudo apt install ruby`, them with gem install fpm.
 
-## poetry
-I will like to manage the package with `poetry`, perhaps simply for love of poetry!
-
-* `sudo apt install pipx`
-* `pipx ensurepath`
-* `pipx install poetry`
-* `poetry completions bash >> ~/.bash_completion`
-
-## pydantic
-I come from typescript and love to declare variables and get help from editors. Probably pydantic will offer something.
