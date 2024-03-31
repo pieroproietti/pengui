@@ -110,9 +110,6 @@ class Produce(Ui_DialogProduce, QDialog):
             command += ' --clone'
 
         if self.checkBoxCryptedClone.isChecked():
-            command += ' --cryptedclone'
-
-        if self.checkBoxCryptedClone.isChecked():
             command += ' --cryptedclone 2G'
 
         if self.checkBoxScript.isChecked():
