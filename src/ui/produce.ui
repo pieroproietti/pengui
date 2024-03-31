@@ -20,7 +20,7 @@
    <string>Dialog</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset>
     <normaloff>:/pengui/icons/pengui.svg</normaloff>:/pengui/icons/pengui.svg</iconset>
   </property>
   <property name="locale">
@@ -29,85 +29,37 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>540</y>
-     <width>621</width>
-     <height>32</height>
+     <x>401</x>
+     <y>550</y>
+     <width>371</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
    <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+    <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok</set>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEditCommand">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>320</y>
+     <x>30</x>
+     <y>440</y>
      <width>761</width>
-     <height>21</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="toolTip">
-    <string>generated command to produce ISO</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonRun">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>360</y>
-     <width>151</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>run or copy ib ckuobiard the generated command</string>
-   </property>
-   <property name="text">
-    <string>&amp;Run</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonGenerate">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>360</y>
-     <width>131</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>generate the command</string>
-   </property>
-   <property name="text">
-    <string>&amp;Generate</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonHelp">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>360</y>
-     <width>141</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>run or copy ib ckuobiard the generated command</string>
-   </property>
-   <property name="text">
-    <string>&amp;Help</string>
+    <string>command to produce ISO</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelTheme">
    <property name="geometry">
     <rect>
-     <x>21</x>
-     <y>206</y>
+     <x>30</x>
+     <y>310</y>
      <width>73</width>
      <height>25</height>
     </rect>
@@ -119,12 +71,12 @@
     <string>Theme</string>
    </property>
   </widget>
-  <widget class="QLabel" name="labelFilters">
+  <widget class="QLabel" name="labelExclude">
    <property name="geometry">
     <rect>
-     <x>21</x>
-     <y>128</y>
-     <width>63</width>
+     <x>20</x>
+     <y>150</y>
+     <width>141</width>
      <height>25</height>
     </rect>
    </property>
@@ -132,14 +84,14 @@
     <string>Filters are used to remove private or unnecessaries informations from the image, note exclude.list.template is always applied</string>
    </property>
    <property name="text">
-    <string>Filters</string>
+    <string>Exclude list:</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelCompression">
    <property name="geometry">
     <rect>
-     <x>21</x>
-     <y>167</y>
+     <x>30</x>
+     <y>240</y>
      <width>137</width>
      <height>25</height>
     </rect>
@@ -154,8 +106,8 @@
   <widget class="QComboBox" name="comboBoxCompression">
    <property name="geometry">
     <rect>
-     <x>164</x>
-     <y>167</y>
+     <x>170</x>
+     <y>240</y>
      <width>621</width>
      <height>33</height>
     </rect>
@@ -178,9 +130,9 @@
   <widget class="QComboBox" name="comboBoxTheme">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>210</y>
-     <width>581</width>
+     <x>170</x>
+     <y>310</y>
+     <width>621</width>
      <height>33</height>
     </rect>
    </property>
@@ -191,50 +143,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>120</y>
-     <width>271</width>
-     <height>33</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
-     <widget class="QCheckBox" name="checkBoxCustom">
-      <property name="toolTip">
-       <string>Add exclude.list.custom to the /etc/penguins-eggs.d/exclude.list</string>
-      </property>
-      <property name="text">
-       <string>custom</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QCheckBox" name="checkBoxHomes">
-      <property name="toolTip">
-       <string>Add exclude.list.homes to the /etc/penguins-eggs.d/exclude.list</string>
-      </property>
-      <property name="text">
-       <string>homes</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QCheckBox" name="checkBoxUsr">
-      <property name="toolTip">
-       <string>Add exclude.list.usr to the /etc/penguins-eggs.d/exclude.list</string>
-      </property>
-      <property name="text">
-       <string>usr</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>260</y>
+     <x>20</x>
+     <y>370</y>
      <width>563</width>
      <height>33</height>
     </rect>
@@ -253,10 +163,30 @@
     <item>
      <widget class="QCheckBox" name="checkBoxClone">
       <property name="toolTip">
-       <string>Performs a complete clone of the system by also copying users and their data</string>
+       <string>Performs a complete clone of the system, will include users and users' data</string>
       </property>
       <property name="text">
        <string>Clone</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="checkBoxCryptedClone">
+      <property name="toolTip">
+       <string>Performs a complete clone of the system, users and users' data will be encrypted in a LUKS Volume inside the ISO </string>
+      </property>
+      <property name="text">
+       <string>Cryptedclone</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="checkBoxYolk">
+      <property name="toolTip">
+       <string>Generates or regenerates a local repository /var/local/yolk to allow installation even in the absence of the Internet.</string>
+      </property>
+      <property name="text">
+       <string>Yolk</string>
       </property>
      </widget>
     </item>
@@ -273,26 +203,6 @@
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QCheckBox" name="checkBoxCryptedClone">
-      <property name="toolTip">
-       <string>Performs a complete clone of the system by also copying the users and their data that will be encrypted in a LUKS volume inside the ISO </string>
-      </property>
-      <property name="text">
-       <string>Crypted Clone</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="checkBoxYolk">
-      <property name="toolTip">
-       <string>Generates or regenerates a local repository /var/local/yolk to allow installation even in the absence of the Internet.</string>
-      </property>
-      <property name="text">
-       <string>Yolk</string>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QLabel" name="labelAddons">
@@ -305,7 +215,7 @@
     </rect>
    </property>
    <property name="toolTip">
-    <string>configures the addon and creates a link to the selected one on the desktop</string>
+    <string>configures the addons and creates a link to the selected one on the desktop</string>
    </property>
    <property name="text">
     <string>Addons</string>
@@ -327,7 +237,7 @@
   <widget class="QLineEdit" name="lineEditPrefix">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>170</x>
      <y>50</y>
      <width>641</width>
      <height>33</height>
@@ -372,7 +282,7 @@
   <widget class="QLineEdit" name="lineEditBasename">
    <property name="geometry">
     <rect>
-     <x>164</x>
+     <x>170</x>
      <y>90</y>
      <width>621</width>
      <height>33</height>
@@ -381,6 +291,48 @@
    <property name="toolTip">
     <string>basename</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>187</x>
+     <y>141</y>
+     <width>571</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QCheckBox" name="checkBoxCryptedclone">
+      <property name="toolTip">
+       <string>Add exclude.list.d/clone.list</string>
+      </property>
+      <property name="text">
+       <string>clone</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="checkBoxCustom">
+      <property name="toolTip">
+       <string>Add exclude.list.d/custom</string>
+      </property>
+      <property name="text">
+       <string>custom</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="checkBoxUsr">
+      <property name="toolTip">
+       <string>Add exclude.list.d/usr to the /etc/penguins-eggs.d/exclude.list</string>
+      </property>
+      <property name="text">
+       <string>usr</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources>

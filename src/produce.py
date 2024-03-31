@@ -5,11 +5,10 @@ import yaml
 import webbrowser
 
 from PySide6 import QtCore
-from PySide6.QtWidgets import QApplication, QMessageBox, QDialog
+from PySide6.QtWidgets import QApplication, QMessageBox, QDialog, QDialogButtonBox
 
 from ui.ui_produce import Ui_DialogProduce
 from terminal import Terminal
-from pseudo_terminal import PseudoTerminal
 from utilies import U
 
 
@@ -47,12 +46,13 @@ class Produce(Ui_DialogProduce, QDialog):
         self.checkBoxScript.stateChanged.connect(self.script)
         self.checkBoxUnsecure.stateChanged.connect(self.unsecure)
 
-        # buttons connect
-        self.pushButtonGenerate.clicked.connect(self.generate)
-        self.pushButtonRun.clicked.connect(self.run)
-        self.pushButtonHelp.clicked.connect(self.help)
+        # buttonBox connect
+        self.buttonBox.helpRequested.connect(self.help)
+        self.buttonBox.rejected.connect(self.close_me)
+        self.buttonBox.button(QDialogButtonBox.Apply).clicked.connect(self.generate)
+        self.buttonBox.accepted.connect(self.run)
 
-        # recupero i themi da .wardrobe/vendors/
+        # recupero i temi da .wardrobe/vendors/
         if os.geteuid() == 0:
             path_themes='/home/' + os.getenv('SUDO_USER')
         else:
@@ -89,8 +89,8 @@ class Produce(Ui_DialogProduce, QDialog):
         if self.checkBoxCustom.isChecked():
             filters_applied+= "custom "
 
-        if self.checkBoxHomes.isChecked():
-            filters_applied+= "homes "
+        if self.checkBoxClone.isChecked():
+            filters_applied+= "clone "
 
         if self.checkBoxUsr.isChecked():
             filters_applied+= "usr "
@@ -113,7 +113,7 @@ class Produce(Ui_DialogProduce, QDialog):
             command += ' --cryptedclone'
 
         if self.checkBoxCryptedClone.isChecked():
-            command += ' --cryptedclone'
+            command += ' --cryptedclone 2G'
 
         if self.checkBoxScript.isChecked():
             command += ' --script'
@@ -133,8 +133,6 @@ class Produce(Ui_DialogProduce, QDialog):
             self.generate()
         
         Terminal.execute(self, command)
-        #self.pseudo_terminal = PseudoTerminal(command, self)
-        #self.pseudo_terminal.show()
 
 
     def help(self):
