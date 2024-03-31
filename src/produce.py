@@ -11,7 +11,6 @@ from ui.ui_produce import Ui_DialogProduce
 from terminal import Terminal
 from utilies import U
 
-
 ##
 #
 class Produce(Ui_DialogProduce, QDialog):
@@ -46,12 +45,6 @@ class Produce(Ui_DialogProduce, QDialog):
         self.checkBoxScript.stateChanged.connect(self.script)
         self.checkBoxUnsecure.stateChanged.connect(self.unsecure)
 
-        # buttonBox connect
-        self.buttonBox.helpRequested.connect(self.help)
-        self.buttonBox.rejected.connect(self.close_me)
-        self.buttonBox.button(QDialogButtonBox.Apply).clicked.connect(self.generate)
-        self.buttonBox.accepted.connect(self.run)
-
         # recupero i temi da .wardrobe/vendors/
         if os.geteuid() == 0:
             path_themes='/home/' + os.getenv('SUDO_USER')
@@ -67,13 +60,23 @@ class Produce(Ui_DialogProduce, QDialog):
         
         themes=['eggs']
         themes.extend(sorted_themes)
-
         self.comboBoxTheme.addItems(themes)
 
+        # buttonBox connect
+        self.buttonBox.helpRequested.connect(self.help)
+        self.buttonBox.rejected.connect(self.close_me)
+        self.buttonBox.button(QDialogButtonBox.Apply).clicked.connect(self.generate)
+        self.buttonBox.accepted.connect(self.run)
+
+    
+    ##
+    #    
     def onClipboardChanged(self):
         text = QApplication.clipboard().text()
 
 
+    ##
+    #    
     def generate(self):
         command='sudo eggs produce'
         if self.comboBoxAddons.currentText() !='':
@@ -124,6 +127,7 @@ class Produce(Ui_DialogProduce, QDialog):
         self.lineEditCommand.setText(command)
 
     ##
+    #    
     def run(self):
         command=self.lineEditCommand.text()
         if command.strip=='':
@@ -131,7 +135,8 @@ class Produce(Ui_DialogProduce, QDialog):
         
         Terminal.execute(self, command)
 
-
+    ##
+    #    
     def help(self):
         webbrowser.open('https://github.com/pieroproietti/penguins-eggs#eggs-produce')
 
@@ -181,6 +186,8 @@ class Produce(Ui_DialogProduce, QDialog):
             self.checkBoxClone.setChecked(False)
             self.checkBoxCryptedClone.setChecked(False)
 
+    ##
+    #    
     @QtCore.Slot()
     def close_me(self):
         self.close()

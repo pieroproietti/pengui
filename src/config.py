@@ -42,16 +42,16 @@ class Config(Ui_DialogConfig, QDialog):
         self.checkBoxMakeMd5sum.setEnabled(True) 
         self.checkBoxMakeMd5sum.setChecked(eggs['make_md5sum'])
 
-        self.pushButtonHelp.clicked.connect(self.help)
-        self.pushButtonSave.clicked.connect(self.save)
-        self.pushButtonDiscard.clicked.connect(self.close_me)
-
-        self.buttonBox.accepted.connect(self.close_me)
+       
+        # buttonBox connect
+        self.buttonBox.helpRequested.connect(self.help)
+        self.buttonBox.button(QDialogButtonBox.Apply).clicked.connect(self.save)
         self.buttonBox.rejected.connect(self.close_me)
-        
+        self.buttonBox.accepted.connect(self.close_me)
         self.showMaximized()
 
-
+    ##
+    #
     def help(self):
         webbrowser.open('https://github.com/pieroproietti/penguins-eggs?tab=readme-ov-file#eggs-dad')
 
@@ -74,7 +74,8 @@ class Config(Ui_DialogConfig, QDialog):
         eggs['make_md5sum']=self.checkBoxMakeMd5sum.isChecked()
 
         
-        # check root
+        ##
+        #
         if os.geteuid() != 0:
             with open('/tmp/eggs.yaml', 'w') as object_file:
                 yaml.dump(eggs, object_file)
@@ -88,6 +89,8 @@ class Config(Ui_DialogConfig, QDialog):
 
 
 
+    ##
+    #
     @QtCore.Slot()
     def close_me(self):
         self.close()

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'configOWUfsL.ui'
+## Form generated from reading UI file 'configlboXVN.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.6.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractButton, QApplication, QCheckBox, QDialog,
     QDialogButtonBox, QFormLayout, QHBoxLayout, QLabel,
-    QLineEdit, QPushButton, QSizePolicy, QWidget)
+    QLineEdit, QSizePolicy, QWidget)
 import resources_rc
 
 class Ui_DialogConfig(object):
@@ -36,92 +36,83 @@ class Ui_DialogConfig(object):
         DialogConfig.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.buttonBox = QDialogButtonBox(DialogConfig)
         self.buttonBox.setObjectName(u"buttonBox")
-        self.buttonBox.setGeometry(QRect(620, 560, 171, 24))
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
-        self.pushButtonSave = QPushButton(DialogConfig)
-        self.pushButtonSave.setObjectName(u"pushButtonSave")
-        self.pushButtonSave.setGeometry(QRect(300, 420, 121, 111))
-        self.pushButtonDiscard = QPushButton(DialogConfig)
-        self.pushButtonDiscard.setObjectName(u"pushButtonDiscard")
-        self.pushButtonDiscard.setGeometry(QRect(160, 420, 131, 111))
+        self.buttonBox.setGeometry(QRect(420, 560, 371, 24))
+        self.buttonBox.setStandardButtons(QDialogButtonBox.Apply|QDialogButtonBox.Cancel|QDialogButtonBox.Help|QDialogButtonBox.Ok)
         self.checkBoxMakeIsohybrid = QCheckBox(DialogConfig)
         self.checkBoxMakeIsohybrid.setObjectName(u"checkBoxMakeIsohybrid")
         self.checkBoxMakeIsohybrid.setGeometry(QRect(-20, 260, 122, 31))
         self.checkBoxMakeMd5sum = QCheckBox(DialogConfig)
         self.checkBoxMakeMd5sum.setObjectName(u"checkBoxMakeMd5sum")
         self.checkBoxMakeMd5sum.setGeometry(QRect(-10, 300, 245, 31))
-        self.pushButtonHelp = QPushButton(DialogConfig)
-        self.pushButtonHelp.setObjectName(u"pushButtonHelp")
-        self.pushButtonHelp.setGeometry(QRect(30, 420, 121, 111))
-        self.widget = QWidget(DialogConfig)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(150, 230, 247, 33))
-        self.horizontalLayout = QHBoxLayout(self.widget)
+        self.layoutWidget = QWidget(DialogConfig)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(150, 230, 247, 33))
+        self.horizontalLayout = QHBoxLayout(self.layoutWidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.widget1 = QWidget(DialogConfig)
-        self.widget1.setObjectName(u"widget1")
-        self.widget1.setGeometry(QRect(1, 16, 771, 230))
-        self.formLayout = QFormLayout(self.widget1)
+        self.layoutWidget1 = QWidget(DialogConfig)
+        self.layoutWidget1.setObjectName(u"layoutWidget1")
+        self.layoutWidget1.setGeometry(QRect(1, 16, 771, 230))
+        self.formLayout = QFormLayout(self.layoutWidget1)
         self.formLayout.setObjectName(u"formLayout")
         self.formLayout.setContentsMargins(0, 0, 0, 0)
-        self.label_snapshot_dir = QLabel(self.widget1)
+        self.label_snapshot_dir = QLabel(self.layoutWidget1)
         self.label_snapshot_dir.setObjectName(u"label_snapshot_dir")
 
         self.formLayout.setWidget(0, QFormLayout.LabelRole, self.label_snapshot_dir)
 
-        self.lineEditSnapshotDir = QLineEdit(self.widget1)
+        self.lineEditSnapshotDir = QLineEdit(self.layoutWidget1)
         self.lineEditSnapshotDir.setObjectName(u"lineEditSnapshotDir")
 
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.lineEditSnapshotDir)
 
-        self.label_snashot_prefix = QLabel(self.widget1)
+        self.label_snashot_prefix = QLabel(self.layoutWidget1)
         self.label_snashot_prefix.setObjectName(u"label_snashot_prefix")
 
         self.formLayout.setWidget(1, QFormLayout.LabelRole, self.label_snashot_prefix)
 
-        self.lineEditSnapshotPrefix = QLineEdit(self.widget1)
+        self.lineEditSnapshotPrefix = QLineEdit(self.layoutWidget1)
         self.lineEditSnapshotPrefix.setObjectName(u"lineEditSnapshotPrefix")
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lineEditSnapshotPrefix)
 
-        self.label_snapshot_basename = QLabel(self.widget1)
+        self.label_snapshot_basename = QLabel(self.layoutWidget1)
         self.label_snapshot_basename.setObjectName(u"label_snapshot_basename")
 
         self.formLayout.setWidget(2, QFormLayout.LabelRole, self.label_snapshot_basename)
 
-        self.lineEditSnapshotBasename = QLineEdit(self.widget1)
+        self.lineEditSnapshotBasename = QLineEdit(self.layoutWidget1)
         self.lineEditSnapshotBasename.setObjectName(u"lineEditSnapshotBasename")
 
         self.formLayout.setWidget(2, QFormLayout.FieldRole, self.lineEditSnapshotBasename)
 
-        self.label_user_opt = QLabel(self.widget1)
+        self.label_user_opt = QLabel(self.layoutWidget1)
         self.label_user_opt.setObjectName(u"label_user_opt")
 
         self.formLayout.setWidget(3, QFormLayout.LabelRole, self.label_user_opt)
 
-        self.lineEditUserOpt = QLineEdit(self.widget1)
+        self.lineEditUserOpt = QLineEdit(self.layoutWidget1)
         self.lineEditUserOpt.setObjectName(u"lineEditUserOpt")
 
         self.formLayout.setWidget(3, QFormLayout.FieldRole, self.lineEditUserOpt)
 
-        self.label_user_opt_passwd = QLabel(self.widget1)
+        self.label_user_opt_passwd = QLabel(self.layoutWidget1)
         self.label_user_opt_passwd.setObjectName(u"label_user_opt_passwd")
 
         self.formLayout.setWidget(4, QFormLayout.LabelRole, self.label_user_opt_passwd)
 
-        self.lineEditUserOptPasswd = QLineEdit(self.widget1)
+        self.lineEditUserOptPasswd = QLineEdit(self.layoutWidget1)
         self.lineEditUserOptPasswd.setObjectName(u"lineEditUserOptPasswd")
         self.lineEditUserOptPasswd.setEchoMode(QLineEdit.PasswordEchoOnEdit)
 
         self.formLayout.setWidget(4, QFormLayout.FieldRole, self.lineEditUserOptPasswd)
 
-        self.label_root_passwd = QLabel(self.widget1)
+        self.label_root_passwd = QLabel(self.layoutWidget1)
         self.label_root_passwd.setObjectName(u"label_root_passwd")
 
         self.formLayout.setWidget(5, QFormLayout.LabelRole, self.label_root_passwd)
 
-        self.lineEditRootPasswd = QLineEdit(self.widget1)
+        self.lineEditRootPasswd = QLineEdit(self.layoutWidget1)
         self.lineEditRootPasswd.setObjectName(u"lineEditRootPasswd")
         self.lineEditRootPasswd.setEchoMode(QLineEdit.PasswordEchoOnEdit)
 
@@ -138,8 +129,6 @@ class Ui_DialogConfig(object):
 #if QT_CONFIG(tooltip)
         DialogConfig.setToolTip("")
 #endif // QT_CONFIG(tooltip)
-        self.pushButtonSave.setText(QCoreApplication.translate("DialogConfig", u"&Save", None))
-        self.pushButtonDiscard.setText(QCoreApplication.translate("DialogConfig", u"&Discard", None))
 #if QT_CONFIG(tooltip)
         self.checkBoxMakeIsohybrid.setToolTip(QCoreApplication.translate("DialogConfig", u"Create isohybrid ISO image", None))
 #endif // QT_CONFIG(tooltip)
@@ -148,7 +137,6 @@ class Ui_DialogConfig(object):
         self.checkBoxMakeMd5sum.setToolTip(QCoreApplication.translate("DialogConfig", u"Create MD5/SHA256 Checksum of the live ISO", None))
 #endif // QT_CONFIG(tooltip)
         self.checkBoxMakeMd5sum.setText(QCoreApplication.translate("DialogConfig", u"md5sum", None))
-        self.pushButtonHelp.setText(QCoreApplication.translate("DialogConfig", u"&Help", None))
 #if QT_CONFIG(tooltip)
         self.label_snapshot_dir.setToolTip(QCoreApplication.translate("DialogConfig", u"The place were we make eggs, usually /home/eggs", None))
 #endif // QT_CONFIG(tooltip)
