@@ -32,18 +32,21 @@ class Config_Tools(QtWidgets.QDialog, Ui_Dialog):
         self.lineEditRemotePathDeb.setText(tools["remotePathDeb"])
         self.lineEditFilterDeb.setText(tools["filterDeb"])
 
-        self.pushButtonHelp.clicked.connect(self.help)
-        self.pushButtonSave.clicked.connect(self.save)
-        self.pushButtonDiscard.clicked.connect(self.close)
-
-        self.buttonBox.accepted.connect(self.save)
-        self.buttonBox.rejected.connect(self.close)
+        # buttonBox connect
+        self.buttonBox.helpRequested.connect(self.help)
+        self.buttonBox.button(QDialogButtonBox.Apply).clicked.connect(self.save)
+        self.buttonBox.rejected.connect(self.close_me)
+        self.buttonBox.accepted.connect(self.close_me)
 
         self.show()
 
+    ##
+    #
     def help(self):
         webbrowser.open('https://github.com/pieroproietti/penguins-eggs?tab=readme-ov-file#eggs-dad')
 
+    ##
+    #
     def save(self):
         tools = {
             "localPathIso": self.lineEditLocalPathIso.text(),
@@ -58,6 +61,7 @@ class Config_Tools(QtWidgets.QDialog, Ui_Dialog):
         if os.geteuid() != 0:
             with open('/tmp/tools.yaml', 'w') as object_file:
                 yaml.dump(tools, object_file)
+                # cp /tmp/tools.yaml /etc/penguins-eggs.d/tools.yaml
                 pseudo_terminal = PseudoTerminal('sudo cp /tmp/tools.yaml /etc/penguins-eggs.d/tools.yaml', self)
                 pseudo_terminal.show()
         else:

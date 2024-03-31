@@ -19,53 +19,20 @@
      <x>10</x>
      <y>440</y>
      <width>621</width>
-     <height>32</height>
+     <height>33</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>621</width>
+     <height>0</height>
+    </size>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
    <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonHelp">
-   <property name="geometry">
-    <rect>
-     <x>350</x>
-     <y>330</y>
-     <width>80</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&amp;Help</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonDiscard">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>330</y>
-     <width>80</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&amp;Discard</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonSave">
-   <property name="geometry">
-    <rect>
-     <x>540</x>
-     <y>330</y>
-     <width>80</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&amp;Save</string>
+    <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok</set>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">

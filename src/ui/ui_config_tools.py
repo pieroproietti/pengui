@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'config_toolslUWaqv.ui'
+## Form generated from reading UI file 'config_toolsBTtzQb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.3
 ##
@@ -16,8 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractButton, QApplication, QDialog, QDialogButtonBox,
-    QGridLayout, QLabel, QLineEdit, QPushButton,
-    QSizePolicy, QWidget)
+    QGridLayout, QLabel, QLineEdit, QSizePolicy,
+    QWidget)
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -26,18 +26,10 @@ class Ui_Dialog(object):
         Dialog.resize(640, 480)
         self.buttonBox = QDialogButtonBox(Dialog)
         self.buttonBox.setObjectName(u"buttonBox")
-        self.buttonBox.setGeometry(QRect(10, 440, 621, 32))
+        self.buttonBox.setGeometry(QRect(10, 440, 621, 33))
+        self.buttonBox.setMinimumSize(QSize(621, 0))
         self.buttonBox.setOrientation(Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
-        self.pushButtonHelp = QPushButton(Dialog)
-        self.pushButtonHelp.setObjectName(u"pushButtonHelp")
-        self.pushButtonHelp.setGeometry(QRect(350, 330, 80, 61))
-        self.pushButtonDiscard = QPushButton(Dialog)
-        self.pushButtonDiscard.setObjectName(u"pushButtonDiscard")
-        self.pushButtonDiscard.setGeometry(QRect(440, 330, 80, 61))
-        self.pushButtonSave = QPushButton(Dialog)
-        self.pushButtonSave.setObjectName(u"pushButtonSave")
-        self.pushButtonSave.setGeometry(QRect(540, 330, 80, 61))
+        self.buttonBox.setStandardButtons(QDialogButtonBox.Apply|QDialogButtonBox.Cancel|QDialogButtonBox.Help|QDialogButtonBox.Ok)
         self.layoutWidget = QWidget(Dialog)
         self.layoutWidget.setObjectName(u"layoutWidget")
         self.layoutWidget.setGeometry(QRect(10, 31, 621, 269))
@@ -124,9 +116,6 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.pushButtonHelp.setText(QCoreApplication.translate("Dialog", u"&Help", None))
-        self.pushButtonDiscard.setText(QCoreApplication.translate("Dialog", u"&Discard", None))
-        self.pushButtonSave.setText(QCoreApplication.translate("Dialog", u"&Save", None))
 #if QT_CONFIG(tooltip)
         self.labelLocalPathIso.setToolTip(QCoreApplication.translate("Dialog", u"local path of our ISOs images", None))
 #endif // QT_CONFIG(tooltip)
