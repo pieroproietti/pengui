@@ -1,14 +1,22 @@
-from PySide6.QtCore import QProcess, QByteArray
+from PySide6.QtCore import QProcess
 from PySide6.QtWidgets import QWidget, QMessageBox, QInputDialog, QLineEdit
 
+##
+#
 class Peasy(QWidget):
     password = ""
 
-    def __init__(self, parent=None):
-        super().__init__(parent)
-
+    def __init__(self):
+        super().__init__() # inizializza  
+        
+        
     def run(self, cmd: str): 
         QMessageBox.information(self, "PenGUI", "Pengui will run:\n\n" + cmd)
+
+        cmdArgs = cmd.split()
+        if cmdArgs[0] == "sudo":
+            # insert -S option to sudo command
+            cmdArgs.insert(1, "-S")
 
         if not self.is_sudo_password_cached():
             password_dialog=QInputDialog()
@@ -18,29 +26,42 @@ class Peasy(QWidget):
                 return
             else:
                 self.password=password
-
-        print(cmd)
-        cmd = "echo " + self.password + " | sudo -S " + cmd
-
+        
         process = QProcess()
-        process.readyReadStandardError.connect(self.handle_stderr)
-        process.start(cmd)
-        process.waitForFinished()
-
+        process.setProgram(cmdArgs[0])
+        process.setArguments( cmdArgs[1:] )
+        process.readyReadStandardError.connect(self.handle_stderr())
+        process.start()
+        process.waitForStarted()
+        process.write(self.password.encode())
+        process.closeWriteChannel()
+        process.waitForFinished(-1)
         if process.exitStatus() == QProcess.ExitStatus.NormalExit:
             return True
         else:
             QMessageBox.warning(self, "PenGUI", "Error: " + process.errorString())
             return False
 
+    ##
+    # Handle stderr
     def handle_stderr(self):
-        error = self.sender().readAllStandardError().data().decode()
-        QMessageBox().warning(self, "Warning", error)
-
+        pass
+        #QMessageBox().warning(self, "Warning", self.readAllStandardError().data().decode())
+        
+    ##
+    # Check if the sudo password is cached 
     def is_sudo_password_cached(self):
-        cmd="echo " + self.password + " | sudo -S -n true"
+        cmd = "sudo -n echo 1"
+        cmdArgs = cmd.split()
         process = QProcess()
-        process.readyReadStandardError.connect(self.handle_stderr)
-        process.start(cmd)
-        process.waitForFinished()
-        return process.exitStatus() == QProcess.ExitStatus.NormalExit
+        process.setProgram(cmdArgs[0])
+        process.setArguments(cmdArgs[1:])
+        process.start()
+        process.waitForStarted()
+        process.waitForFinished(-1)
+
+        stdOut = process.readAllStandardOutput().data().decode().strip()  # Rimuovi spazi vuoti all'inizio e alla fine
+        if stdOut == "1":
+            return True
+        else:
+            return False
