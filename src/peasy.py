@@ -25,11 +25,12 @@ class Peasy(QWidget):
 
 
         # spit cmd to use as arguments
-        cmd = cmd.split()
+        print(cmd)
 
+        cmdArgs = cmd.split()
         process = QProcess()
-        process.setProgram(cmd[0])
-        process.setArguments( cmd[1:] )
+        process.setProgram(cmdArgs[0])
+        process.setArguments( cmdArgs[1:] )
         process.readyReadStandardError.connect(self.handle_stderr())
         process.start()
         process.write(self.password.encode())
