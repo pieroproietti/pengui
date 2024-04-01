@@ -1,16 +1,12 @@
-from PySide6.QtCore import QProcess
+from PySide6.QtCore import QProcess, QByteArray
 from PySide6.QtWidgets import QWidget, QMessageBox, QInputDialog, QLineEdit
-import subprocess
 
-##
-#
 class Peasy(QWidget):
     password = ""
 
-    def __init__(self):
-        super().__init__() # inizializza  
-        
-        
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
     def run(self, cmd: str): 
         QMessageBox.information(self, "PenGUI", "Pengui will run:\n\n" + cmd)
 
@@ -23,20 +19,12 @@ class Peasy(QWidget):
             else:
                 self.password=password
 
-
-        # spit cmd to use as arguments
         print(cmd)
+        cmd = "echo " + self.password + " | sudo -S " + cmd
 
-        cmdArgs = cmd.split()
         process = QProcess()
-        process.setProgram(cmdArgs[0])
-        process.setArguments( cmdArgs[1:] )
-        process.readyReadStandardError.connect(self.handle_stderr())
-        process.start()
-        process.write(self.password.encode())
-        process.closeWriteChannel()
-        process.waitForFinished(-1)
-        process.waitForStarted()
+        process.readyReadStandardError.connect(self.handle_stderr)
+        process.start(cmd)
         process.waitForFinished()
 
         if process.exitStatus() == QProcess.ExitStatus.NormalExit:
@@ -45,17 +33,14 @@ class Peasy(QWidget):
             QMessageBox.warning(self, "PenGUI", "Error: " + process.errorString())
             return False
 
-    ##
-    # Handle stderr
     def handle_stderr(self):
-        pass
-        #QMessageBox().warning(self, "Warning", self.readAllStandardError().data().decode())
-        
-    ##
-    # Check if the sudo password is cached 
+        error = self.sender().readAllStandardError().data().decode()
+        QMessageBox().warning(self, "Warning", error)
+
     def is_sudo_password_cached(self):
-        try:
-            subprocess.check_output('sudo -n true', shell=True, stderr=subprocess.STDOUT)
-            return True
-        except subprocess.CalledProcessError:
-            return False
+        cmd="echo " + self.password + " | sudo -S -n true"
+        process = QProcess()
+        process.readyReadStandardError.connect(self.handle_stderr)
+        process.start(cmd)
+        process.waitForFinished()
+        return process.exitStatus() == QProcess.ExitStatus.NormalExit
