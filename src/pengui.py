@@ -4,8 +4,6 @@ import webbrowser
 import version
 
 from PySide6.QtCore import QProcess
-from PySide6.QtCore import Qt
-from PySide6 import QtGui
 from PySide6.QtGui import QAction
 from PySide6 import QtCore
 from PySide6.QtCore import Slot
@@ -23,7 +21,8 @@ from config_tools import Config_Tools
 from wardrobe_show import WardrobeShow
 from dialog_get_eggs import DialogGetEggs
 from terminal import Terminal
-from utilies import U
+from utilities import U
+from peasy import Peasy
 
 import resources_rc
 
@@ -51,21 +50,21 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         ## dad
         #dad_icon=QtGui.QIcon(":/pengui/icons/dad.svg")
-        dad_action = QAction("dad", self)
+        dad_action = QAction("DAD", self)
         dad_action.setToolTip("Dad configure eggs")
         dad_action.triggered.connect(self.configure)
         toolbar.addAction(dad_action)
 
         ## produce
         #produce_icon = QIcon(":/pengui/icons/produce.svg")
-        produce_action = QAction("produce", self)
+        produce_action = QAction("PRODUCE", self)
         produce_action.setToolTip("Produce a new ISO")
         produce_action.triggered.connect(self.produce)
         toolbar.addAction(produce_action)
 
         ## kill
         #kill_icon = QIcon(":/pengui/icons/kill.svg")
-        kill_action = QAction("kill", self)
+        kill_action = QAction("KILL", self)
         kill_action.setToolTip("Kill generated ISOs")
         kill_action.triggered.connect(self.kill)
         toolbar.addAction(kill_action)
@@ -73,7 +72,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         ## readme
         #readme_icon = QIcon(":/pengui/icons/readme.svg")
-        readme_action = QAction("readme", self)
+        readme_action = QAction("README", self)
         readme_action.setToolTip("read me first!")
         readme_action.triggered.connect(self.readme)
         toolbar.addAction(readme_action)
@@ -185,12 +184,9 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @QtCore.Slot()
     def kill(self):
-        self.process = QProcess()
-        self.process.setProgram("sudo")
-        self.process.setArguments(["eggs", "kill", "--nointeractive"])
-        self.process.readyReadStandardError.connect(self.handle_stderr)
-        self.process.start()
-        self.process.waitForFinished()
+        peasy = Peasy()
+        if peasy.run("sudo eggs kill --nointeractive"):
+            QMessageBox.information(self, "PenGUI", "ISOs killed")
 
     @Slot()
     def produce(self):
@@ -211,146 +207,118 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @Slot()
     def calamares_remove(self):
-        self.process = QProcess()
-        self.process.setProgram("sudo")
-        self.process.setArguments(["eggs", "calamares", "--remove", "--nointeractive"])
-        self.process.readyReadStandardError.connect(self.handle_stderr)
-        self.process.start()
-        self.process.waitForFinished()
-        self.statusBar().showMessage('calamares --remove', 5000)
+        self.statusBar().showMessage('Removing calamares', 5000)
+        peasy=Peasy()
+        if peasy.run("sudo eggs calamares --remove --nointeractive"):
+            QMessageBox.information(self, "PenGUI", "Calamares removed")
 
     ##
     #
     @Slot()
     def status(self):
-        Terminal.execute(self, 'eggs status')
         self.statusBar().showMessage('status', 5000)
+        Terminal.execute(self, 'eggs status')
 
     ##
     #
     @Slot()
     def cuckoo(self):
-        Terminal.execute(self, 'sudo eggs cuckoo')
         self.statusBar().showMessage('cuckoo', 5000)
-
-
+        Terminal.execute(self, 'sudo eggs cuckoo')
 
     ## tools
     @QtCore.Slot()
     def tools_clean(self):
-        self.process = QProcess()
-        self.process.setProgram("sudo")
-        self.process.setArguments(["eggs", "tools", "clean", "--nointeractive"])
-        self.process.readyReadStandardError.connect(self.handle_stderr)
-        self.process.start()
-        self.process.waitForFinished()
-        self.statusBar().showMessage('cleaning cache, logs, etc', 5000)
-
+        self.statusBar().showMessage('cleaning', 5000)
+        peasy=Peasy()
+        if peasy.run("sudo eggs tools clean --nointeractive"):
+            QMessageBox.information(self, "PenGUI", "Cleaned")
 
     ##
     #
     @QtCore.Slot()
     def tools_ppa_add(self):
-        self.process = QProcess()
-        self.process.setProgram("sudo")
-        self.process.setArguments(["eggs", "tools", "ppa", "--add", "--nointeractive"])
-        self.process.readyReadStandardError.connect(self.handle_stderr)
-        self.process.start()
-        self.process.waitForFinished()
         self.statusBar().showMessage('adding penguins-eggs-ppa to yours /etc/apt/sources.list.d', 5000)
+        peasy=Peasy()
+        if peasy.run("sudo eggs tools ppa --add --nointeractive"):
+            QMessageBox.information(self, "PenGUI", "Added penguins-eggs-ppa")
     
     ##
     #
     @QtCore.Slot()
     def tools_ppa_remove(self):
-        self.process = QProcess()
-        self.process.setProgram("sudo")
-        self.process.setArguments(["eggs", "tools", "ppa", "--remove", "--nointeractive"])
-        self.process.readyReadStandardError.connect(self.handle_stderr)
-        self.process.start()
-        self.process.waitForFinished()
         self.statusBar().showMessage('removing penguins-eggs-ppa form yours /etc/apt/sources.list.d', 5000)
+        peasy=Peasy()
+        if peasy.run("sudo eggs tools ppa --remove --nointeractive"):
+            QMessageBox.information(self, "PenGUI", "Removed penguins-eggs-ppa")
+
     ##
     #
     @QtCore.Slot()
     def tools_skel(self):
-        self.process = QProcess()
-        self.process.setProgram("sudo")
-        self.process.setArguments(["eggs", "tools", "skel", "--nointeractive"])
-        self.process.readyReadStandardError.connect(self.handle_stderr)
-        self.process.start()
-        self.process.waitForFinished()
         self.statusBar().showMessage('copyng your home configuration to /etc/skel', 5000)
+        peasy=Peasy()
+        if peasy.run("sudo eggs tools skel --nointeractive"):
+            QMessageBox.information(self, "PenGUI", "Skel done")
 
     ##
     #
     @QtCore.Slot()
     def tools_yolk(self):
-        self.process = QProcess()
-        self.process.setProgram("sudo")
-        self.process.setArguments(["eggs", "tools", "yolk", "--nointeractive"])
-        self.process.readyReadStandardError.connect(self.handle_stderr)
-        self.process.start()
-        self.process.waitForFinished()
         self.statusBar().showMessage('creating a local repository /var/local/yolk', 5000)
+        peasy=Peasy()
+        if peasy.run("sudo eggs tools yolk --nointeractive"):
+            QMessageBox.information(self, "PenGUI", "Yolk done")
 
     ## wardrobe
     @QtCore.Slot()
     def wardrobe_get(self):
-        self.process = QProcess()
-        self.process.setProgram("sudo")
-        self.process.setArguments(["eggs", "wardrobe", "get", "--nointeractive"])
-        self.process.readyReadStandardError.connect(self.handle_stderr)
-        self.process.start()
-        self.process.waitForFinished()
         self.statusBar().showMessage('get a copy of wardrobe on ~/.wardrobe', 5000)
+        peasy=Peasy()
+        if peasy.run("sudo eggs wardrobe get --nointeractive"):
+            QMessageBox.information(self, "PenGUI", "Wardrobe get finished")
 
     @QtCore.Slot()
     def wardrobe_list(self):
-        self.process = QProcess()
-        self.process.setProgram("sudo")
-        self.process.setArguments(["eggs", "wardrobe", "list", "--nointeractive"])
-        self.process.readyReadStandardError.connect(self.handle_stderr)
-        self.process.start()
-        self.process.waitForFinished()
         self.statusBar().showMessage('listing wardrobe contents', 5000)
+        Terminal.execute(self, 'sudo eggs cuckoo')        
 
     @QtCore.Slot()
     def wardrobe_show(self):
+        self.statusBar().showMessage('wardrobe show', 5000)
         dialog = WardrobeShow(self)
         dialog.setWindowTitle("wardrobe show")
         dialog.exec()
-        self.statusBar().showMessage('wardrobe show', 5000)
 
     @QtCore.Slot()
     def wardrobe_wear(self):
-        Terminal.execute(self, 'sudo eggs wardrobe wear')
         self.statusBar().showMessage('wardrobe wear', 5000)
+        Terminal.execute(self, 'sudo eggs wardrobe wear')
 
     @QtCore.Slot()
     def help(self):
-        webbrowser.open('https://penguins-eggs.net/docs/Tutorial/eggs-users-guide')
         self.statusBar().showMessage('help', 5000)
+        webbrowser.open('https://penguins-eggs.net/docs/Tutorial/eggs-users-guide')
 
     @QtCore.Slot()
     def help_users_guide(self):
-        webbrowser.open('https://penguins-eggs.net/docs/Tutorial/eggs-users-guide')
         self.statusBar().showMessage('help user', 5000)
+        webbrowser.open('https://penguins-eggs.net/docs/Tutorial/eggs-users-guide')
 
     @QtCore.Slot()
     def help_blog(self):
-        webbrowser.open('https://penguins-eggs.net')
         self.statusBar().showMessage('help blog', 5000)
+        webbrowser.open('https://penguins-eggs.net')
 
     @QtCore.Slot()
     def help_repository(self):
-        webbrowser.open('https://github.com/pieroproietti/penguins-eggs')
         self.statusBar().showMessage('repository', 5000)
+        webbrowser.open('https://github.com/pieroproietti/penguins-eggs')
 
     @QtCore.Slot()
     def help_telegram(self):
-        webbrowser.open('https://t.me/penguins_eggs')
         self.statusBar().showMessage('help telegram', 5000)
+        webbrowser.open('https://t.me/penguins_eggs')
 
 ##
 # real main

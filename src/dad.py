@@ -10,7 +10,7 @@ import sys
 import os
 import yaml
 import subprocess 
-from  utilies import U
+from  utilities import U
 
 ##
 #

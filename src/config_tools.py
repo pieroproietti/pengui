@@ -8,7 +8,7 @@ from ui.ui_config_tools import Ui_Dialog
 
 import os
 import yaml
-from utilies import U
+from utilities import U
 
 class Config_Tools(QtWidgets.QDialog, Ui_Dialog):
     def __init__(self, parent=None):

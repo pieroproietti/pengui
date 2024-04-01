@@ -5,7 +5,7 @@ from PySide6 import QtCore, QtGui
 from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBox, QDialog
 from PySide6.QtGui import QClipboard, QScreen
 
-from utilies import U
+from utilities import U
 from text_editor import TextEditor
 from terminal import Terminal
 

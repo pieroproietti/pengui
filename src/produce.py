@@ -9,7 +9,7 @@ from PySide6.QtWidgets import QApplication, QMessageBox, QDialog, QDialogButtonB
 
 from ui.ui_produce import Ui_DialogProduce
 from terminal import Terminal
-from utilies import U
+from utilities import U
 
 ##
 #
