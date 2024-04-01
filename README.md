@@ -3,11 +3,17 @@
 
 **Notice:** penGUI is not yet a finished software, it is still in embryo and is deciding how to grow. However, it is already useful for both experts and novices to set up eggs and also to get-at a glance-a complete picture. You can find and run all the eggs commands from the menu; on the toolbar we have just the most used commands: `dad`, `produce` and `kill`.
 
-**Notice:** In case penGUI does not start, try installing `libxcb-cursor`. eg:
+**Notice:** In case penGUI does not start, you can try installing `libxcb-cursor`. eg:
 
 ```
 sudo apt-get install libxcb-cursor
 ```
+
+I tried pengui on Debian and Arch, on arch I used the .bin version, there is not a PKGBUILD for now.
+
+On Debian and Arch is working, start and - on Debian can produce ISOs - on Arch I don't know why refuse.
+
+# Download
 
 You can download [penGUI](https://sourceforge.net/projects/penguins-eggs/files/penGUI/) and install it with `dpkg -i pengui-0.2.x.deb` and start from the terminal giving: `pengui` as normal user or from the the usual desktop link. There is not yet a package for Arch, Manjaro and derivatives but you can directly use the [pengui-x-x-x.bin](https://sourceforge.net/projects/penguins-eggs/files/penGUI/) which is an executable.
 

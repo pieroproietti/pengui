@@ -57,6 +57,6 @@ fpm -C fakeroot -s dir \
     -p ${PROGRAM_VERSION}${ARCHITECTURE}.deb
 
 
-# Copy the binary file and clean up
-#mv ${PROGRAM}.bin ${PROGRAM}-${VERSION}${ARCHITECTURE}.bin
 rm fakeroot -rf
+
+cp pengui.bin pengui-${VERSION}${ARCHITECTURE}.bin
