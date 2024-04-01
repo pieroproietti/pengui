@@ -93,6 +93,10 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.actionCUckoo.setDisabled(True)
         self.action_Exit.triggered.connect(self.exit)
 
+        # Edit
+        self.action_Tools.triggered.connect(self.configure_tools)
+        self.action_Eggs.triggered.connect(self.getEggs)
+
         # Tools
         self.action_Clean.triggered.connect(self.tools_clean)
         self.actionIPpaAdd.triggered.connect(self.tools_ppa_add)

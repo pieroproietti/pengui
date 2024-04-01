@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'penguiEQSulI.ui'
+## Form generated from reading UI file 'penguiYPoOpz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.3
 ##
@@ -78,12 +78,16 @@ class Ui_MainWindow(object):
         self.actionFormatUSB.setObjectName(u"actionFormatUSB")
         self.actionGetEggs = QAction(MainWindow)
         self.actionGetEggs.setObjectName(u"actionGetEggs")
+        self.action_Tools = QAction(MainWindow)
+        self.action_Tools.setObjectName(u"action_Tools")
+        self.action_Eggs = QAction(MainWindow)
+        self.action_Eggs.setObjectName(u"action_Eggs")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1600, 30))
+        self.menubar.setGeometry(QRect(0, 0, 1600, 21))
         self.menu_File = QMenu(self.menubar)
         self.menu_File.setObjectName(u"menu_File")
         self.menuCalamares = QMenu(self.menu_File)
@@ -116,9 +120,8 @@ class Ui_MainWindow(object):
         self.menu_File.addAction(self.action_Exit)
         self.menuCalamares.addAction(self.actionCalamaresInstall)
         self.menuCalamares.addAction(self.actionCalamaresRemove)
-        self.menu_Edit.addAction(self.action_Configure)
-        self.menu_Edit.addAction(self.actionConfigureTools)
-        self.menu_Edit.addAction(self.actionGetEggs)
+        self.menu_Edit.addAction(self.action_Tools)
+        self.menu_Edit.addAction(self.action_Eggs)
         self.menu_Help.addAction(self.actionUsersGuide)
         self.menu_Help.addAction(self.actionBlog)
         self.menu_Help.addSeparator()
@@ -146,7 +149,7 @@ class Ui_MainWindow(object):
         self.action_Produce.setText(QCoreApplication.translate("MainWindow", u"&Produce", None))
         self.action_Kill.setText(QCoreApplication.translate("MainWindow", u"&Kill", None))
         self.action_Exit.setText(QCoreApplication.translate("MainWindow", u"E&xit", None))
-        self.action_Configure.setText(QCoreApplication.translate("MainWindow", u"&eggs,yaml", None))
+        self.action_Configure.setText(QCoreApplication.translate("MainWindow", u"&Dad", None))
         self.action_About.setText(QCoreApplication.translate("MainWindow", u"&About", None))
         self.action_Skel.setText(QCoreApplication.translate("MainWindow", u"&Skel", None))
         self.action_Clean.setText(QCoreApplication.translate("MainWindow", u"&Clean", None))
@@ -159,7 +162,7 @@ class Ui_MainWindow(object):
         self.actionBlog.setText(QCoreApplication.translate("MainWindow", u"&Blog", None))
         self.actionUsersGuide.setText(QCoreApplication.translate("MainWindow", u"&Users' guide", None))
         self.actionTelegram.setText(QCoreApplication.translate("MainWindow", u"&Telegram", None))
-        self.actionConfigureTools.setText(QCoreApplication.translate("MainWindow", u"&tools.yaml", None))
+        self.actionConfigureTools.setText(QCoreApplication.translate("MainWindow", u"&Tools", None))
         self.actionCUckoo.setText(QCoreApplication.translate("MainWindow", u"C&uckoo", None))
         self.actionStatus.setText(QCoreApplication.translate("MainWindow", u"&Status", None))
         self.actionCalamaresInstall.setText(QCoreApplication.translate("MainWindow", u"Install", None))
@@ -167,7 +170,9 @@ class Ui_MainWindow(object):
         self.actionIPpaAdd.setText(QCoreApplication.translate("MainWindow", u"&Add", None))
         self.actionPpaRemove.setText(QCoreApplication.translate("MainWindow", u"&Remove", None))
         self.actionFormatUSB.setText(QCoreApplication.translate("MainWindow", u"Format USB", None))
-        self.actionGetEggs.setText(QCoreApplication.translate("MainWindow", u"Get eggs", None))
+        self.actionGetEggs.setText(QCoreApplication.translate("MainWindow", u"&Eggs", None))
+        self.action_Tools.setText(QCoreApplication.translate("MainWindow", u"&Tools", None))
+        self.action_Eggs.setText(QCoreApplication.translate("MainWindow", u"&Eggs", None))
         self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"&File", None))
         self.menuCalamares.setTitle(QCoreApplication.translate("MainWindow", u"&Calamares", None))
         self.menu_Edit.setTitle(QCoreApplication.translate("MainWindow", u"&Edit", None))

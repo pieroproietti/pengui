@@ -1,6 +1,8 @@
 from PySide6.QtCore import QProcess
 from PySide6 import QtCore, QtWidgets
 from PySide6.QtWidgets import *
+from peasy import Peasy
+
 import webbrowser
 
 # import ui section
@@ -60,10 +62,10 @@ class Config_Tools(QtWidgets.QDialog, Ui_Dialog):
         if os.geteuid() != 0:
             with open('/tmp/tools.yaml', 'w') as object_file:
                 yaml.dump(tools, object_file)
-                self.process = QProcess()
-                self.process.setProgram("sudo")
-                self.process.setArguments(["cp", "/tmp/tools.yaml", "/etc/penguins-eggs.d/"])
-                self.process.readyReadStandardError.connect(self.handle_stderr)
-                self.process.start()
-                self.process.waitForFinished()
+                peasy=Peasy()
+                peasy.run("sudo cp /tmp/tools.yaml /etc/penguins-eggs.d/")
                 os.remove('/tmp/tools.yaml')
+
+    def close_me(self):
+        self.close()
+        

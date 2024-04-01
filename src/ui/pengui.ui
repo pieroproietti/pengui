@@ -24,7 +24,7 @@
      <x>0</x>
      <y>0</y>
      <width>1600</width>
-     <height>30</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -49,9 +49,8 @@
     <property name="title">
      <string>&amp;Edit</string>
     </property>
-    <addaction name="action_Configure"/>
-    <addaction name="actionConfigureTools"/>
-    <addaction name="actionGetEggs"/>
+    <addaction name="action_Tools"/>
+    <addaction name="action_Eggs"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -113,7 +112,7 @@
   </action>
   <action name="action_Configure">
    <property name="text">
-    <string>&amp;eggs,yaml</string>
+    <string>&amp;Dad</string>
    </property>
   </action>
   <action name="action_About">
@@ -178,7 +177,7 @@
   </action>
   <action name="actionConfigureTools">
    <property name="text">
-    <string>&amp;tools.yaml</string>
+    <string>&amp;Tools</string>
    </property>
   </action>
   <action name="actionCUckoo">
@@ -218,7 +217,17 @@
   </action>
   <action name="actionGetEggs">
    <property name="text">
-    <string>Get eggs</string>
+    <string>&amp;Eggs</string>
+   </property>
+  </action>
+  <action name="action_Tools">
+   <property name="text">
+    <string>&amp;Tools</string>
+   </property>
+  </action>
+  <action name="action_Eggs">
+   <property name="text">
+    <string>&amp;Eggs</string>
    </property>
   </action>
  </widget>
