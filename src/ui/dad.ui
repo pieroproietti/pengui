@@ -2,7 +2,7 @@
 <ui version="4.0">
  <author>Piero Proietti</author>
  <class>DialogConfig</class>
- <widget class="QDialog" name="DialogConfig">
+ <widget class="QDialog" name="DialogDad">
   <property name="geometry">
    <rect>
     <x>0</x>

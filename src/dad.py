@@ -1,21 +1,20 @@
-from PySide6 import QtCore, QtWidgets
+from PySide6.QtCore import QProcess
+from PySide6 import QtCore
 from PySide6.QtWidgets import *
 import webbrowser
-from terminal import Terminal
 
 # import ui section
-from ui.ui_config import Ui_DialogConfig
+from ui.ui_dad import Ui_DialogDad
 
 import sys
 import os
 import yaml
 import subprocess 
 from  utilies import U
-from pseudo_terminal import PseudoTerminal
 
 ##
 #
-class Config(Ui_DialogConfig, QDialog):    
+class Dad(Ui_DialogDad, QDialog):    
 
     def __init__(self, parent=None):
         super().__init__(parent) # parent
@@ -79,15 +78,13 @@ class Config(Ui_DialogConfig, QDialog):
         if os.geteuid() != 0:
             with open('/tmp/eggs.yaml', 'w') as object_file:
                 yaml.dump(eggs, object_file)
-                pseudo_terminal = PseudoTerminal('sudo cp /tmp/eggs.yaml /etc/penguins-eggs.d/eggs.yaml', self)
-                pseudo_terminal.show()
-
+                self.process = QProcess()
+                self.process.setProgram("sudo")
+                self.process.setArguments(["cp", "/tmp/eggs.yaml", "/etc/penguins-eggs.d/"])
+                self.process.readyReadStandardError.connect(self.handle_stderr)
+                self.process.start()
+                self.process.waitForFinished()
                 self.close()
-        else:
-            with open(self.eggs_yaml_path, 'w') as object_file:
-                yaml.dump(eggs, object_file)
-
-
 
     ##
     #
