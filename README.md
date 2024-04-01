@@ -28,6 +28,14 @@ penGUI uses `x-terminal-emulator` to open a terminal window and launch eggs comm
 
 On my development machine, I feelme confortable with `xfce4-terminal`.
 
+
+## Arch
+On Arch I just created a link:
+
+`sudo ln -sf /usr/bin/xfce4-terminal /usr/bin/x-terminal-emulator`
+
+
+
 # penGUI
 penGUI makes it easier to learn Eggs commands; once you learn them, you will probably use it less, but a GUI for penguins-eggs was needed and is now there.
 
