@@ -1,5 +1,0 @@
-#!/bin/bash 
-source bin/program
-cd ~/${PROGRAM}
-
-pyinstaller --clean -yF src/${PROGRAM}.py -n ${PROGRAM}.bin
