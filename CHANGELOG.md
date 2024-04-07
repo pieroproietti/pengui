@@ -7,6 +7,12 @@ This project started near the end of the 2023, due my necessity to improve my ab
 I tried - same time ago - to use electron, but at last eventually I decided to try it again in python, and I am seeing good results in terms of lightness and practicality of development.
 
 # Versions
+## pengui-0-4-06
+* filter clone now working. I think to chanche it's name back to home.
+
+## pengui-0-4-05
+* just upload v9.6.41 version of penguins-eggs.
+
 ## pengui-0-4-04
 * cleaning, it seem to work all, for now is OK in this way.
 

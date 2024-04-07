@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'producejJALbS.ui'
+## Form generated from reading UI file 'produceRVyqJa.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.3
 ##
@@ -115,20 +115,20 @@ class Ui_DialogProduce(object):
         self.horizontalLayout_2 = QHBoxLayout(self.layoutWidget2)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.checkBoxCryptedclone = QCheckBox(self.layoutWidget2)
-        self.checkBoxCryptedclone.setObjectName(u"checkBoxCryptedclone")
+        self.checkBoxFilterClone = QCheckBox(self.layoutWidget2)
+        self.checkBoxFilterClone.setObjectName(u"checkBoxFilterClone")
 
-        self.horizontalLayout_2.addWidget(self.checkBoxCryptedclone)
+        self.horizontalLayout_2.addWidget(self.checkBoxFilterClone)
 
-        self.checkBoxCustom = QCheckBox(self.layoutWidget2)
-        self.checkBoxCustom.setObjectName(u"checkBoxCustom")
+        self.checkBoxFilterCustom = QCheckBox(self.layoutWidget2)
+        self.checkBoxFilterCustom.setObjectName(u"checkBoxFilterCustom")
 
-        self.horizontalLayout_2.addWidget(self.checkBoxCustom)
+        self.horizontalLayout_2.addWidget(self.checkBoxFilterCustom)
 
-        self.checkBoxUsr = QCheckBox(self.layoutWidget2)
-        self.checkBoxUsr.setObjectName(u"checkBoxUsr")
+        self.checkBoxFilterUsr = QCheckBox(self.layoutWidget2)
+        self.checkBoxFilterUsr.setObjectName(u"checkBoxFilterUsr")
 
-        self.horizontalLayout_2.addWidget(self.checkBoxUsr)
+        self.horizontalLayout_2.addWidget(self.checkBoxFilterUsr)
 
 
         self.retranslateUi(DialogProduce)
@@ -203,16 +203,16 @@ class Ui_DialogProduce(object):
         self.lineEditBasename.setToolTip(QCoreApplication.translate("DialogProduce", u"basename", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
-        self.checkBoxCryptedclone.setToolTip(QCoreApplication.translate("DialogProduce", u"Add exclude.list.d/clone.list", None))
+        self.checkBoxFilterClone.setToolTip(QCoreApplication.translate("DialogProduce", u"Add exclude.list.d/clone.list", None))
 #endif // QT_CONFIG(tooltip)
-        self.checkBoxCryptedclone.setText(QCoreApplication.translate("DialogProduce", u"clone", None))
+        self.checkBoxFilterClone.setText(QCoreApplication.translate("DialogProduce", u"clone", None))
 #if QT_CONFIG(tooltip)
-        self.checkBoxCustom.setToolTip(QCoreApplication.translate("DialogProduce", u"Add exclude.list.d/custom", None))
+        self.checkBoxFilterCustom.setToolTip(QCoreApplication.translate("DialogProduce", u"Add exclude.list.d/custom", None))
 #endif // QT_CONFIG(tooltip)
-        self.checkBoxCustom.setText(QCoreApplication.translate("DialogProduce", u"custom", None))
+        self.checkBoxFilterCustom.setText(QCoreApplication.translate("DialogProduce", u"custom", None))
 #if QT_CONFIG(tooltip)
-        self.checkBoxUsr.setToolTip(QCoreApplication.translate("DialogProduce", u"Add exclude.list.d/usr to the /etc/penguins-eggs.d/exclude.list", None))
+        self.checkBoxFilterUsr.setToolTip(QCoreApplication.translate("DialogProduce", u"Add exclude.list.d/usr to the /etc/penguins-eggs.d/exclude.list", None))
 #endif // QT_CONFIG(tooltip)
-        self.checkBoxUsr.setText(QCoreApplication.translate("DialogProduce", u"usr", None))
+        self.checkBoxFilterUsr.setText(QCoreApplication.translate("DialogProduce", u"usr", None))
     # retranslateUi
 

@@ -20,7 +20,7 @@
    <string>Dialog</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="resources.qrc">
     <normaloff>:/pengui/icons/pengui.svg</normaloff>:/pengui/icons/pengui.svg</iconset>
   </property>
   <property name="locale">
@@ -303,7 +303,7 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QCheckBox" name="checkBoxCryptedclone">
+     <widget class="QCheckBox" name="checkBoxFilterClone">
       <property name="toolTip">
        <string>Add exclude.list.d/clone.list</string>
       </property>
@@ -313,7 +313,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBoxCustom">
+     <widget class="QCheckBox" name="checkBoxFilterCustom">
       <property name="toolTip">
        <string>Add exclude.list.d/custom</string>
       </property>
@@ -323,7 +323,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBoxUsr">
+     <widget class="QCheckBox" name="checkBoxFilterUsr">
       <property name="toolTip">
        <string>Add exclude.list.d/usr to the /etc/penguins-eggs.d/exclude.list</string>
       </property>

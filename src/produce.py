@@ -89,13 +89,13 @@ class Produce(Ui_DialogProduce, QDialog):
             command += ' --basename ' + self.lineEditBasename.text()
 
         filters_applied=''
-        if self.checkBoxCustom.isChecked():
+        if self.checkBoxFilterCustom.isChecked():
             filters_applied+= "custom "
 
-        if self.checkBoxClone.isChecked():
+        if self.checkBoxFilterClone.isChecked():
             filters_applied+= "clone "
 
-        if self.checkBoxUsr.isChecked():
+        if self.checkBoxFilterUsr.isChecked():
             filters_applied+= "usr "
 
         if filters_applied!="":
@@ -113,7 +113,7 @@ class Produce(Ui_DialogProduce, QDialog):
             command += ' --clone'
 
         if self.checkBoxCryptedClone.isChecked():
-            command += ' --cryptedclone 2G'
+            command += ' --cryptedclone'
 
         if self.checkBoxScript.isChecked():
             command += ' --script'

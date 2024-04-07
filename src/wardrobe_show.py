@@ -26,18 +26,12 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
             QMessageBox.information(self, 'PenGUI', "I will import wardrobe before.\nUse:\n\neggs wardrobe get")
             Terminal.execute(self, 'eggs wardrobe get')
         
-        # recupero i costumes da .wardrobe/costumes/
-        #self.path_costumes=os.path.expanduser('~')+"/.wardrobe/costumes"
-
         costumes=[]
         if os.path.exists(self.path_costumes):
             if os.path.exists(self.path_costumes):    
                 found_costumes= os.listdir(self.path_costumes)
                 costumes=sorted(found_costumes)
         
-        # recupero gli accessories da .wardrobe/accessories/
-        #self.path_accessories=os.path.expanduser('~')+"/.wardrobe/accessories"
-
         accessories=[]
         if os.path.exists(self.path_accessories):
             if os.path.exists(self.path_accessories):    

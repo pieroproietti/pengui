@@ -6,7 +6,7 @@ from PySide6.QtCore import QProcess, Signal, Slot, Qt
 class DialogGetEggs(QProgressDialog):
     download_started = Signal()
     download_finished = Signal()
-    eggs_version="eggs_9.6.40_" + os.uname().machine + ".deb"
+    eggs_version="eggs_9.6.41_" + os.uname().machine + ".deb"
 
     def __init__(self, url, destination):
         super().__init__()
