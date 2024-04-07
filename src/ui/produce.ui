@@ -74,17 +74,17 @@
   <widget class="QLabel" name="labelExclude">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>150</y>
+     <x>10</x>
+     <y>154</y>
      <width>141</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="toolTip">
     <string>Filters are used to remove private or unnecessaries informations from the image, note exclude.list.template is always applied</string>
    </property>
    <property name="text">
-    <string>Exclude list:</string>
+    <string>Exclude lists:</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelCompression">
@@ -303,29 +303,49 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QCheckBox" name="checkBoxFilterClone">
+     <widget class="QCheckBox" name="checkBoxExcludesStatic">
       <property name="toolTip">
-       <string>Add exclude.list.d/clone.list</string>
+       <string>include var.list</string>
       </property>
       <property name="text">
-       <string>clone</string>
+       <string>static</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBoxFilterCustom">
+     <widget class="QCheckBox" name="checkBoxExcludesMine">
       <property name="toolTip">
-       <string>Add exclude.list.d/custom</string>
+       <string>include var.list</string>
       </property>
       <property name="text">
-       <string>custom</string>
+       <string>mine</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBoxFilterUsr">
+     <widget class="QCheckBox" name="checkBoxExcludesHome">
       <property name="toolTip">
-       <string>Add exclude.list.d/usr to the /etc/penguins-eggs.d/exclude.list</string>
+       <string>Include /etc/penguins-eggs.d/exclude.list.d/home.list</string>
+      </property>
+      <property name="text">
+       <string>home</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="checkBoxExcludesVar">
+      <property name="toolTip">
+       <string>include /etc/penguins-eggs.d/exclude.list.d/var.list</string>
+      </property>
+      <property name="text">
+       <string>var</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="checkBoxExcludesUsr">
+      <property name="toolTip">
+       <string>Add /etc/penguins-eggs.d/exclude.list.d/usr.list</string>
       </property>
       <property name="text">
        <string>usr</string>

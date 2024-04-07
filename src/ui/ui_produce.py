@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'produceRVyqJa.ui'
+## Form generated from reading UI file 'producekrXDLI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.3
 ##
@@ -43,7 +43,7 @@ class Ui_DialogProduce(object):
         self.labelTheme.setGeometry(QRect(30, 310, 73, 25))
         self.labelExclude = QLabel(DialogProduce)
         self.labelExclude.setObjectName(u"labelExclude")
-        self.labelExclude.setGeometry(QRect(20, 150, 141, 25))
+        self.labelExclude.setGeometry(QRect(10, 154, 141, 21))
         self.labelCompression = QLabel(DialogProduce)
         self.labelCompression.setObjectName(u"labelCompression")
         self.labelCompression.setGeometry(QRect(30, 240, 137, 25))
@@ -115,20 +115,30 @@ class Ui_DialogProduce(object):
         self.horizontalLayout_2 = QHBoxLayout(self.layoutWidget2)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.checkBoxFilterClone = QCheckBox(self.layoutWidget2)
-        self.checkBoxFilterClone.setObjectName(u"checkBoxFilterClone")
+        self.checkBoxExcludesStatic = QCheckBox(self.layoutWidget2)
+        self.checkBoxExcludesStatic.setObjectName(u"checkBoxExcludesStatic")
 
-        self.horizontalLayout_2.addWidget(self.checkBoxFilterClone)
+        self.horizontalLayout_2.addWidget(self.checkBoxExcludesStatic)
 
-        self.checkBoxFilterCustom = QCheckBox(self.layoutWidget2)
-        self.checkBoxFilterCustom.setObjectName(u"checkBoxFilterCustom")
+        self.checkBoxExcludesMine = QCheckBox(self.layoutWidget2)
+        self.checkBoxExcludesMine.setObjectName(u"checkBoxExcludesMine")
 
-        self.horizontalLayout_2.addWidget(self.checkBoxFilterCustom)
+        self.horizontalLayout_2.addWidget(self.checkBoxExcludesMine)
 
-        self.checkBoxFilterUsr = QCheckBox(self.layoutWidget2)
-        self.checkBoxFilterUsr.setObjectName(u"checkBoxFilterUsr")
+        self.checkBoxExcludesHome = QCheckBox(self.layoutWidget2)
+        self.checkBoxExcludesHome.setObjectName(u"checkBoxExcludesHome")
 
-        self.horizontalLayout_2.addWidget(self.checkBoxFilterUsr)
+        self.horizontalLayout_2.addWidget(self.checkBoxExcludesHome)
+
+        self.checkBoxExcludesVar = QCheckBox(self.layoutWidget2)
+        self.checkBoxExcludesVar.setObjectName(u"checkBoxExcludesVar")
+
+        self.horizontalLayout_2.addWidget(self.checkBoxExcludesVar)
+
+        self.checkBoxExcludesUsr = QCheckBox(self.layoutWidget2)
+        self.checkBoxExcludesUsr.setObjectName(u"checkBoxExcludesUsr")
+
+        self.horizontalLayout_2.addWidget(self.checkBoxExcludesUsr)
 
 
         self.retranslateUi(DialogProduce)
@@ -150,7 +160,7 @@ class Ui_DialogProduce(object):
 #if QT_CONFIG(tooltip)
         self.labelExclude.setToolTip(QCoreApplication.translate("DialogProduce", u"Filters are used to remove private or unnecessaries informations from the image, note exclude.list.template is always applied", None))
 #endif // QT_CONFIG(tooltip)
-        self.labelExclude.setText(QCoreApplication.translate("DialogProduce", u"Exclude list:", None))
+        self.labelExclude.setText(QCoreApplication.translate("DialogProduce", u"Exclude lists:", None))
 #if QT_CONFIG(tooltip)
         self.labelCompression.setToolTip(QCoreApplication.translate("DialogProduce", u"You can choose from three types of compression: fast (default), standart and max", None))
 #endif // QT_CONFIG(tooltip)
@@ -203,16 +213,24 @@ class Ui_DialogProduce(object):
         self.lineEditBasename.setToolTip(QCoreApplication.translate("DialogProduce", u"basename", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
-        self.checkBoxFilterClone.setToolTip(QCoreApplication.translate("DialogProduce", u"Add exclude.list.d/clone.list", None))
+        self.checkBoxExcludesStatic.setToolTip(QCoreApplication.translate("DialogProduce", u"include var.list", None))
 #endif // QT_CONFIG(tooltip)
-        self.checkBoxFilterClone.setText(QCoreApplication.translate("DialogProduce", u"clone", None))
+        self.checkBoxExcludesStatic.setText(QCoreApplication.translate("DialogProduce", u"static", None))
 #if QT_CONFIG(tooltip)
-        self.checkBoxFilterCustom.setToolTip(QCoreApplication.translate("DialogProduce", u"Add exclude.list.d/custom", None))
+        self.checkBoxExcludesMine.setToolTip(QCoreApplication.translate("DialogProduce", u"include var.list", None))
 #endif // QT_CONFIG(tooltip)
-        self.checkBoxFilterCustom.setText(QCoreApplication.translate("DialogProduce", u"custom", None))
+        self.checkBoxExcludesMine.setText(QCoreApplication.translate("DialogProduce", u"mine", None))
 #if QT_CONFIG(tooltip)
-        self.checkBoxFilterUsr.setToolTip(QCoreApplication.translate("DialogProduce", u"Add exclude.list.d/usr to the /etc/penguins-eggs.d/exclude.list", None))
+        self.checkBoxExcludesHome.setToolTip(QCoreApplication.translate("DialogProduce", u"Include /etc/penguins-eggs.d/exclude.list.d/home.list", None))
 #endif // QT_CONFIG(tooltip)
-        self.checkBoxFilterUsr.setText(QCoreApplication.translate("DialogProduce", u"usr", None))
+        self.checkBoxExcludesHome.setText(QCoreApplication.translate("DialogProduce", u"home", None))
+#if QT_CONFIG(tooltip)
+        self.checkBoxExcludesVar.setToolTip(QCoreApplication.translate("DialogProduce", u"include /etc/penguins-eggs.d/exclude.list.d/var.list", None))
+#endif // QT_CONFIG(tooltip)
+        self.checkBoxExcludesVar.setText(QCoreApplication.translate("DialogProduce", u"var", None))
+#if QT_CONFIG(tooltip)
+        self.checkBoxExcludesUsr.setToolTip(QCoreApplication.translate("DialogProduce", u"Add /etc/penguins-eggs.d/exclude.list.d/usr.list", None))
+#endif // QT_CONFIG(tooltip)
+        self.checkBoxExcludesUsr.setText(QCoreApplication.translate("DialogProduce", u"usr", None))
     # retranslateUi
 

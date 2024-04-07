@@ -44,6 +44,7 @@ class Produce(Ui_DialogProduce, QDialog):
         self.checkBoxCryptedClone.stateChanged.connect(self.crypted_clone)
         self.checkBoxScript.stateChanged.connect(self.script)
         self.checkBoxUnsecure.stateChanged.connect(self.unsecure)
+        self.checkBoxExcludesStatic.stateChanged.connect(self.static)
 
         # recupero i temi da .wardrobe/vendors/
         if os.geteuid() == 0:
@@ -88,18 +89,24 @@ class Produce(Ui_DialogProduce, QDialog):
         if self.checkBoxBasename.isChecked():
             command += ' --basename ' + self.lineEditBasename.text()
 
-        filters_applied=''
-        if self.checkBoxFilterCustom.isChecked():
-            filters_applied+= "custom "
+        excludes_applied=''
+        if self.checkBoxExcludesStatic.isChecked():
+            excludes_applied+= "static "
 
-        if self.checkBoxFilterClone.isChecked():
-            filters_applied+= "clone "
+        if self.checkBoxExcludesMine.isChecked():
+            excludes_applied+= "mine "
 
-        if self.checkBoxFilterUsr.isChecked():
-            filters_applied+= "usr "
+        if self.checkBoxExcludesHome.isChecked():
+            excludes_applied+= "home "
 
-        if filters_applied!="":
-            command += ' --filters ' + filters_applied
+        if self.checkBoxExcludesUsr.isChecked():
+            excludes_applied+= "usr "
+
+        if self.checkBoxExcludesVar.isChecked():
+            excludes_applied+= "var "
+
+        if excludes_applied!="":
+            command += ' --excludes ' + excludes_applied
 
         if (self.comboBoxCompression.currentText() !=''):
             if (self.comboBoxCompression.currentText() !='fast'):
@@ -156,6 +163,11 @@ class Produce(Ui_DialogProduce, QDialog):
         else:
             self.lineEditPrefix.setEnabled(False)
 
+    def static(self):
+        if self.checkBoxExcludesStatic.isChecked():
+            self.checkBoxExcludesMine.setChecked(False)
+            self.checkBoxExcludesUsr.setChecked(False)
+            self.checkBoxExcludesVar.setChecked(False)
 
     ##
     # azzerra cryptedClone, script e setta unsecure
