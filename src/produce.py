@@ -165,6 +165,7 @@ class Produce(Ui_DialogProduce, QDialog):
 
     def static(self):
         if self.checkBoxExcludesStatic.isChecked():
+            self.checkBoxExcludesHome.setChecked(False)
             self.checkBoxExcludesMine.setChecked(False)
             self.checkBoxExcludesUsr.setChecked(False)
             self.checkBoxExcludesVar.setChecked(False)
