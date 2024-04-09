@@ -19,8 +19,6 @@ from produce import Produce
 from dad import Dad
 from config_tools import Config_Tools
 from wardrobe_show import WardrobeShow
-from dialog_get_eggs import DialogGetEggs
-from terminal import Terminal
 from utilities import U
 from peasy import Peasy
 
@@ -95,7 +93,6 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
 
         # Edit
         self.action_Tools.triggered.connect(self.configure_tools)
-        self.action_Eggs.triggered.connect(self.getEggs)
 
         # Tools
         self.action_Clean.triggered.connect(self.tools_clean)
@@ -122,15 +119,19 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         self.showMaximized()
         
         if not U.package_is_installed("eggs"):
-            answer=QMessageBox.question(self, 'PenGUI', "Install penguins-eggs before to continue.", QMessageBox.Yes | QMessageBox.Help)
-            if answer == QMessageBox.Help:
-                webbrowser.open('https://sourceforge.net/projects/penguins-eggs/files/DEBS/')
+            answer=QMessageBox.critical(self, 'PenGUI', 
+                                        "Install penguins-eggs before to continue.", 
+                                        QMessageBox.Ok)
+            webbrowser.open('https://sourceforge.net/projects/penguins-eggs/files/DEBS/')
+            self.exit()
         
-        # check exists /etc/penguins-eggs.d/eggs.yaml
+        # check exists /etc/penguins-eggs.d/
         file_eggs='/etc/penguins-eggs.d/eggs.yaml'
         dirname_eggs=os.path.dirname(file_eggs)
         if not U.conf_exists():
-            Terminal.execute(self, 'eggs dad --default')
+            peasy = Peasy()
+            peasy.run('sudo eggs dad --default')
+
             if not U.eggs_yaml_exists(self):
                 QMessageBox.critical(self, "PenGUI", "I was unable to create the configuration file /etc/penguins-eggs.d/eggs.yaml, the process ends")
                 self.exit()
@@ -145,16 +146,6 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @QtCore.Slot()
     
-    ##
-    #
-    @QtCore.Slot()
-    def getEggs(self):
-        eggs_version="eggs_9.6.30_amd64.deb"
-        self.dialogGetEggs = DialogGetEggs("https://sourceforge.net/projects/penguins-eggs/files/DEBS/{}".format(eggs_version), "/tmp/{}".format(eggs_version))
-        self.dialogGetEggs.start_download()
-        self.dialogGetEggs.showMaximized()
-        self.statusBar().showMessage('get eggs', 5000)
-
     ##
     #
     @QtCore.Slot()
@@ -188,9 +179,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @QtCore.Slot()
     def kill(self):
-        peasy = Peasy()
-        if peasy.run("sudo eggs kill --nointeractive"):
-            QMessageBox.information(self, "PenGUI", "ISOs killed")
+        Peasy().run("sudo eggs kill")
 
     @Slot()
     def produce(self):
@@ -204,16 +193,16 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     #
     @Slot()
     def calamares_install(self):
-        Terminal.execute(self, 'sudo eggs calamares --install')
-        self.statusBar().showMessage('calamares --install', 5000)
+        if Peasy().run('sudo eggs calamares --install'):
+            QMessageBox.information(self, "PenGUI", "Calamares installed")
+            self.statusBar().showMessage('calamares --install', 5000)
 
     ##
     #
     @Slot()
     def calamares_remove(self):
         self.statusBar().showMessage('Removing calamares', 5000)
-        peasy=Peasy()
-        if peasy.run("sudo eggs calamares --remove --nointeractive"):
+        if Peasy().run("sudo eggs calamares --remove --nointeractive"):
             QMessageBox.information(self, "PenGUI", "Calamares removed")
 
     ##
@@ -221,21 +210,20 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     @Slot()
     def status(self):
         self.statusBar().showMessage('status', 5000)
-        Terminal.execute(self, 'eggs status')
+        Peasy().run("eggs status")
 
     ##
     #
     @Slot()
     def cuckoo(self):
         self.statusBar().showMessage('cuckoo', 5000)
-        Terminal.execute(self, 'sudo eggs cuckoo')
+        Peasy().run('sudo eggs cuckoo')
 
     ## tools
     @QtCore.Slot()
     def tools_clean(self):
         self.statusBar().showMessage('cleaning', 5000)
-        peasy=Peasy()
-        if peasy.run("sudo eggs tools clean --nointeractive"):
+        if Peasy().run("sudo eggs tools clean"):
             QMessageBox.information(self, "PenGUI", "Cleaned")
 
     ##
@@ -243,8 +231,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     @QtCore.Slot()
     def tools_ppa_add(self):
         self.statusBar().showMessage('adding penguins-eggs-ppa to yours /etc/apt/sources.list.d', 5000)
-        peasy=Peasy()
-        if peasy.run("sudo eggs tools ppa --add --nointeractive"):
+        if Peasy().run("sudo eggs tools ppa --add --nointeractive"):
             QMessageBox.information(self, "PenGUI", "Added penguins-eggs-ppa")
     
     ##
@@ -252,8 +239,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     @QtCore.Slot()
     def tools_ppa_remove(self):
         self.statusBar().showMessage('removing penguins-eggs-ppa form yours /etc/apt/sources.list.d', 5000)
-        peasy=Peasy()
-        if peasy.run("sudo eggs tools ppa --remove --nointeractive"):
+        if Peasy().run("sudo eggs tools ppa --remove --nointeractive"):
             QMessageBox.information(self, "PenGUI", "Removed penguins-eggs-ppa")
 
     ##
@@ -261,8 +247,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     @QtCore.Slot()
     def tools_skel(self):
         self.statusBar().showMessage('copyng your home configuration to /etc/skel', 5000)
-        peasy=Peasy()
-        if peasy.run("sudo eggs tools skel --nointeractive"):
+        if Peasy().run("sudo eggs tools skel --nointeractive"):
             QMessageBox.information(self, "PenGUI", "Skel done")
 
     ##
@@ -270,22 +255,20 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     @QtCore.Slot()
     def tools_yolk(self):
         self.statusBar().showMessage('creating a local repository /var/local/yolk', 5000)
-        peasy=Peasy()
-        if peasy.run("sudo eggs tools yolk --nointeractive"):
+        if Peasy().run("sudo eggs tools yolk --nointeractive"):
             QMessageBox.information(self, "PenGUI", "Yolk done")
 
     ## wardrobe
     @QtCore.Slot()
     def wardrobe_get(self):
         self.statusBar().showMessage('get a copy of wardrobe on ~/.wardrobe', 5000)
-        peasy=Peasy()
-        if peasy.run("sudo eggs wardrobe get --nointeractive"):
+        if Peasy().run("sudo eggs wardrobe get --nointeractive"):
             QMessageBox.information(self, "PenGUI", "Wardrobe get finished")
 
     @QtCore.Slot()
     def wardrobe_list(self):
         self.statusBar().showMessage('listing wardrobe contents', 5000)
-        Terminal.execute(self, 'sudo eggs cuckoo')        
+        Peasy().run('eggs wardrobe list')        
 
     @QtCore.Slot()
     def wardrobe_show(self):
@@ -297,7 +280,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
     @QtCore.Slot()
     def wardrobe_wear(self):
         self.statusBar().showMessage('wardrobe wear', 5000)
-        Terminal.execute(self, 'sudo eggs wardrobe wear')
+        Peasy().run('sudo eggs wardrobe wear')
 
     @QtCore.Slot()
     def help(self):

@@ -4,12 +4,13 @@ import yaml
 
 import webbrowser
 
+
 from PySide6 import QtCore
 from PySide6.QtWidgets import QApplication, QMessageBox, QDialog, QDialogButtonBox
 
 from ui.ui_produce import Ui_DialogProduce
-from terminal import Terminal
 from utilities import U
+from peasy import Peasy
 
 ##
 #
@@ -136,11 +137,12 @@ class Produce(Ui_DialogProduce, QDialog):
     ##
     #    
     def run(self):
+        self.generate()
         command=self.lineEditCommand.text()
-        if command.strip=='':
-            self.generate()
-        
-        Terminal.execute(self, command)
+        if command.strip() != '':
+            Peasy().run(command)
+        else:
+            QMessageBox.critical(self, 'Error', 'No command to run')
 
     ##
     #    

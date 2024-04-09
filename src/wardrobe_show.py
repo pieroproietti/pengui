@@ -5,9 +5,10 @@ from PySide6 import QtCore, QtGui
 from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBox, QDialog
 from PySide6.QtGui import QClipboard, QScreen
 
+from peasy import Peasy
 from utilities import U
 from text_editor import TextEditor
-from terminal import Terminal
+import peasy
 
 from ui.ui_wardrobe_show import Ui_DialogWardrobeShow
 
@@ -24,7 +25,7 @@ class WardrobeShow(Ui_DialogWardrobeShow, QDialog):
 
         if not U.wardrobe_exists():
             QMessageBox.information(self, 'PenGUI', "I will import wardrobe before.\nUse:\n\neggs wardrobe get")
-            Terminal.execute(self, 'eggs wardrobe get')
+            Peasy().run(self, 'eggs wardrobe get')
         
         costumes=[]
         if os.path.exists(self.path_costumes):

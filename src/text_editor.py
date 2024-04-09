@@ -3,7 +3,6 @@ from PySide6.QtWidgets import QPushButton, QVBoxLayout, QApplication, QMessageBo
 from PySide6.QtGui import QClipboard
 
 from ui.ui_text_editor import Ui_DialogTextEditor
-from terminal import Terminal
 from utilities import U
 
 
