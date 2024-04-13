@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dadRhkGWl.ui'
+## Form generated from reading UI file 'dadHRPAlv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.3
 ##
@@ -36,8 +36,8 @@ class Ui_DialogDad(object):
         DialogDad.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.buttonBox = QDialogButtonBox(DialogDad)
         self.buttonBox.setObjectName(u"buttonBox")
-        self.buttonBox.setGeometry(QRect(420, 560, 371, 24))
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Apply|QDialogButtonBox.Cancel|QDialogButtonBox.Help|QDialogButtonBox.Ok)
+        self.buttonBox.setGeometry(QRect(540, 560, 251, 24))
+        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Help|QDialogButtonBox.Ok)
         self.checkBoxMakeIsohybrid = QCheckBox(DialogDad)
         self.checkBoxMakeIsohybrid.setObjectName(u"checkBoxMakeIsohybrid")
         self.checkBoxMakeIsohybrid.setGeometry(QRect(-20, 260, 122, 31))

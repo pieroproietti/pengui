@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <author>Piero Proietti</author>
- <class>DialogConfig</class>
+ <class>DialogDad</class>
  <widget class="QDialog" name="DialogDad">
   <property name="geometry">
    <rect>
@@ -27,7 +27,7 @@
    <string>Form</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="resources.qrc">
     <normaloff>:/pengui/icons/pengui.svg</normaloff>:/pengui/icons/pengui.svg</iconset>
   </property>
   <property name="toolTip">
@@ -42,14 +42,14 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>420</x>
+     <x>540</x>
      <y>560</y>
-     <width>371</width>
+     <width>251</width>
      <height>24</height>
     </rect>
    </property>
    <property name="standardButtons">
-    <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok</set>
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok</set>
    </property>
   </widget>
   <widget class="QCheckBox" name="checkBoxMakeIsohybrid">

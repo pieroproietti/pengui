@@ -11,6 +11,7 @@ import os
 import yaml
 import subprocess 
 from  utilities import U
+from peasy import Peasy
 
 ##
 #
@@ -44,9 +45,8 @@ class Dad(Ui_DialogDad, QDialog):
        
         # buttonBox connect
         self.buttonBox.helpRequested.connect(self.help)
-        self.buttonBox.button(QDialogButtonBox.Apply).clicked.connect(self.save)
-        self.buttonBox.rejected.connect(self.close_me)
-        self.buttonBox.accepted.connect(self.close_me)
+        self.buttonBox.rejected.connect(self.close)
+        self.buttonBox.accepted.connect(self.save)
         self.showMaximized()
 
     ##
@@ -71,23 +71,13 @@ class Dad(Ui_DialogDad, QDialog):
 
         eggs['make_isohybrid']=self.checkBoxMakeIsohybrid.isChecked()
         eggs['make_md5sum']=self.checkBoxMakeMd5sum.isChecked()
-
+        self.close()
         
         ##
         #
-        if os.geteuid() != 0:
-            with open('/tmp/eggs.yaml', 'w') as object_file:
-                yaml.dump(eggs, object_file)
-                self.process = QProcess()
-                self.process.setProgram("sudo")
-                self.process.setArguments(["cp", "/tmp/eggs.yaml", "/etc/penguins-eggs.d/"])
-                self.process.readyReadStandardError.connect(self.handle_stderr)
-                self.process.start()
-                self.process.waitForFinished()
-                self.close()
+        with open('/tmp/eggs.yaml', 'w') as object_file:
+            yaml.dump(eggs, object_file)
 
-    ##
-    #
-    @QtCore.Slot()
-    def close_me(self):
+            Peasy().run("sudo mv /tmp/eggs.yaml /etc/penguins-eggs.d/eggs.yaml")
+
         self.close()
