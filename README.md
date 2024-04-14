@@ -1,5 +1,5 @@
 # penGUI take cure of eggs!
-penGUI makes it easier to learn rggs commands: once you learn them, you will probably use it less, but a GUI for penguins-eggs was needed and is now there is.
+penGUI makes it easier to learn eggs commands: once you learn them, you will probably use it less, but a GUI for penguins-eggs was needed and is now there is.
 
 ![icon](https://github.com/pieroproietti/pengui/raw/main/assets/pengui.png?raw=true)
 
@@ -56,12 +56,12 @@ It is recommended, however to create yourself a [fork](https://github.com/pierop
 Just run `bin/create_venv` from the root of the project and and follow the instructions. Under `bin`, there are usefull scripts to `run`, `create-bin`, `create-deb`, etc. They must always be run from the root of the project and have a self-explanatory name.
 
 ## nuitka
-We are using nuitka 2.1.4 on python 3.11. 
+We are using **nuitka 2.1.5** on **python 3.11.2**. To create bin, we need to install:
 
 `sudo apt install ccache patchelf`
 
 ## fpm
-To create Debian packages we use fpm. 
+To create Debian packages we need to install fpm. 
 
 First install ruby `sudo apt install ruby`, then with gem, install fpm.
 
