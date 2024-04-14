@@ -46,9 +46,16 @@ class U():
 
     def package_is_installed(package="eggs")->bool:
         installed=False
-        result = subprocess.run(["dpkg -s " + package +" |grep Status"], shell=True, capture_output=True, text=True)
-        if "Status: install ok installed" in result.stdout:
-            installed=True
+
+        # Arch
+        if os.path.exists('/usr/bin/pacman'):
+            if os.system('/usr/bin/pacman -Q penguins-eggs'):
+                installed=True
+        else:
+            # Debian                
+            result = subprocess.run(["dpkg -s " + package +" |grep Status"], shell=True, capture_output=True, text=True)
+            if "Status: install ok installed" in result.stdout:
+                installed=True
 
         return installed
     
