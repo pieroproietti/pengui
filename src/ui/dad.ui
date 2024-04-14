@@ -48,8 +48,17 @@
      <height>24</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string extracomment="Apply is used for: eggs dad -d"/>
+   </property>
+   <property name="statusTip">
+    <string/>
+   </property>
    <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok</set>
+    <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok</set>
+   </property>
+   <property name="centerButtons">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QCheckBox" name="checkBoxMakeIsohybrid">

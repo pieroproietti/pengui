@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'config_toolsBTtzQb.ui'
+## Form generated from reading UI file 'config_toolshVoGdp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.3
 ##
@@ -29,7 +29,7 @@ class Ui_Dialog(object):
         self.buttonBox.setGeometry(QRect(10, 440, 621, 33))
         self.buttonBox.setMinimumSize(QSize(621, 0))
         self.buttonBox.setOrientation(Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Apply|QDialogButtonBox.Cancel|QDialogButtonBox.Help|QDialogButtonBox.Ok)
+        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Help|QDialogButtonBox.Ok)
         self.layoutWidget = QWidget(Dialog)
         self.layoutWidget.setObjectName(u"layoutWidget")
         self.layoutWidget.setGeometry(QRect(10, 31, 621, 269))

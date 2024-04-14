@@ -45,6 +45,7 @@ class Dad(Ui_DialogDad, QDialog):
        
         # buttonBox connect
         self.buttonBox.helpRequested.connect(self.help)
+        self.buttonBox.button(QDialogButtonBox.Apply).clicked.connect(self.dad_d)
         self.buttonBox.rejected.connect(self.close)
         self.buttonBox.accepted.connect(self.save)
         self.showMaximized()
@@ -71,7 +72,6 @@ class Dad(Ui_DialogDad, QDialog):
 
         eggs['make_isohybrid']=self.checkBoxMakeIsohybrid.isChecked()
         eggs['make_md5sum']=self.checkBoxMakeMd5sum.isChecked()
-        self.close()
         
         ##
         #
@@ -80,4 +80,9 @@ class Dad(Ui_DialogDad, QDialog):
 
             Peasy().run("sudo mv /tmp/eggs.yaml /etc/penguins-eggs.d/eggs.yaml")
 
+        self.close()
+
+    @QtCore.Slot()
+    def dad_d(self):
+        Peasy().run("sudo eggs dad -d")
         self.close()

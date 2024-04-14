@@ -35,9 +35,8 @@ class Config_Tools(QtWidgets.QDialog, Ui_Dialog):
 
         # buttonBox connect
         self.buttonBox.helpRequested.connect(self.help)
-        self.buttonBox.button(QDialogButtonBox.Apply).clicked.connect(self.save)
-        self.buttonBox.rejected.connect(self.close_me)
-        self.buttonBox.accepted.connect(self.close_me)
+        self.buttonBox.rejected.connect(self.close)
+        self.buttonBox.accepted.connect(self.save)
 
         self.show()
 
@@ -59,13 +58,12 @@ class Config_Tools(QtWidgets.QDialog, Ui_Dialog):
             "filterDeb": self.lineEditFilterDeb.text(),
         }
 
-        if os.geteuid() != 0:
-            with open('/tmp/tools.yaml', 'w') as object_file:
-                yaml.dump(tools, object_file)
-                peasy=Peasy()
-                peasy.run("sudo cp /tmp/tools.yaml /etc/penguins-eggs.d/")
-                os.remove('/tmp/tools.yaml')
+        ##
+        #
+        with open('/tmp/eggs.yaml', 'w') as object_file:
+            yaml.dump(eggs, object_file)
 
-    def close_me(self):
+            Peasy().run("sudo mv /tmp/eggs.yaml /etc/penguins-eggs.d/eggs.yaml")
+
         self.close()
         

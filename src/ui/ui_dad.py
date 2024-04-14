@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dadHRPAlv.ui'
+## Form generated from reading UI file 'dadutOiBA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.3
 ##
@@ -37,7 +37,8 @@ class Ui_DialogDad(object):
         self.buttonBox = QDialogButtonBox(DialogDad)
         self.buttonBox.setObjectName(u"buttonBox")
         self.buttonBox.setGeometry(QRect(540, 560, 251, 24))
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Help|QDialogButtonBox.Ok)
+        self.buttonBox.setStandardButtons(QDialogButtonBox.Apply|QDialogButtonBox.Cancel|QDialogButtonBox.Help|QDialogButtonBox.Ok)
+        self.buttonBox.setCenterButtons(True)
         self.checkBoxMakeIsohybrid = QCheckBox(DialogDad)
         self.checkBoxMakeIsohybrid.setObjectName(u"checkBoxMakeIsohybrid")
         self.checkBoxMakeIsohybrid.setGeometry(QRect(-20, 260, 122, 31))
@@ -129,6 +130,12 @@ class Ui_DialogDad(object):
 #if QT_CONFIG(tooltip)
         DialogDad.setToolTip("")
 #endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.buttonBox.setToolTip("")
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        self.buttonBox.setStatusTip("")
+#endif // QT_CONFIG(statustip)
 #if QT_CONFIG(tooltip)
         self.checkBoxMakeIsohybrid.setToolTip(QCoreApplication.translate("DialogDad", u"Create isohybrid ISO image", None))
 #endif // QT_CONFIG(tooltip)
