@@ -23,15 +23,13 @@ class Peasy(QWidget):
         # Make the script executable
         os.system(f"chmod +x {scriptFile}")
 
-        term=""
-        if os.path.exists("/usr/bin/x-terminal-emulator"):
-            term="/usr/bin/x-terminal-emulator"
-        elif os.path.exists("/usr/bin/xfce4-terminal"):
-            term="/usr/bin/xfce4-terminal"
-        elif os.path.exists("/usr/bin/gnome-terminal"):
-            term="/usr/bin/xfce4-terminal"
-        elif os.path.exists("/usr/bin/konsole"):
-            term="/usr/bin/xfce4-terminal"
+        term="/usr/bin/x-terminal-emulator"
+        if not os.path.exists(term):
+            # download the script from https:
+
+            os.system("wget https://raw.githubusercontent.com/penguintutor/peasy/master/peasy -O /tmp/peasy")
+
+            print("term:", term)
         
         print("term:", term)
 
