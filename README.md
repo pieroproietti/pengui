@@ -31,7 +31,6 @@ On Arch I just created a link:
 
 `sudo ln -sf /usr/bin/xfce4-terminal /usr/bin/x-terminal-emulator`
 
-
 # Development prerequisites
 For penGUI development I am using python 3.11.2 and PySide6 on a common Debian bookworm, in my case the classic [colibri](https://sourceforge.net/projects/penguins-eggs/files/ISOS/debian/bookworm/amd64/). 
 

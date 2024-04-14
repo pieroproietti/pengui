@@ -22,13 +22,25 @@ class Peasy(QWidget):
 
         # Make the script executable
         os.system(f"chmod +x {scriptFile}")
+
+        term=""
+        if os.path.exists("/usr/bin/x-terminal-emulator"):
+            term="/usr/bin/x-terminal-emulator"
+        elif os.path.exists("/usr/bin/xfce4-terminal"):
+            term="/usr/bin/xfce4-terminal"
+        elif os.path.exists("/usr/bin/gnome-terminal"):
+            term="/usr/bin/xfce4-terminal"
+        elif os.path.exists("/usr/bin/konsole"):
+            term="/usr/bin/xfce4-terminal"
         
+        print("term:", term)
+
         # Run the script using the terminal emulator
         # The -H option is used to open a new terminal window
         # The -T option is used to set the title of the terminal window
         # The -e option is used to execute the command
         self.process = QProcess()
-        self.process.setProgram("/usr/bin/x-terminal-emulator")
+        self.process.setProgram(term)
         self.process.setArguments(['-H','-T', f"{cmd}",'-e', 'bash', scriptFile])
 
         self.process.start()
@@ -38,8 +50,3 @@ class Peasy(QWidget):
 
         # remove the script file
         os.system(f"rm {scriptFile}")
-
-
-        
-
-    
