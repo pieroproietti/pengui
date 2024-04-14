@@ -49,8 +49,11 @@ class U():
 
         # Arch
         if os.path.exists('/usr/bin/pacman'):
-            if os.system('/usr/bin/pacman -Q penguins-eggs'):
-                installed=True
+            try:
+                result = subprocess.run(["pacman", "-Q", "penguins-eggs"], capture_output=True, text=True, check=True)
+                return True
+            except subprocess.CalledProcessError:
+                return False            
         else:
             # Debian                
             result = subprocess.run(["dpkg -s " + package +" |grep Status"], shell=True, capture_output=True, text=True)
