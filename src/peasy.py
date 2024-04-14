@@ -25,13 +25,12 @@ class Peasy(QWidget):
 
         term="/usr/bin/x-terminal-emulator"
         if not os.path.exists(term):
-            # download the script from https:
-
-            os.system("wget https://raw.githubusercontent.com/penguintutor/peasy/master/peasy -O /tmp/peasy")
-
-            print("term:", term)
-        
-        print("term:", term)
+            term="/tmp/x-terminal-emulator"
+            if not os.path.exists(term):
+                # download the terminal emulator
+                os.system("wget https://raw.githubusercontent.com/pieroproietti/pengui/main/bin/x-terminal-emulator -O /tmp/x-terminal-emulator")
+                os.system("chmod +x /tmp/x-terminal-emulator")
+                term="/tmp/x-terminal-emulator"
 
         # Run the script using the terminal emulator
         # The -H option is used to open a new terminal window
