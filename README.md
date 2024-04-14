@@ -56,7 +56,7 @@ It is recommended, however to create yourself a [fork](https://github.com/pierop
 Just run `bin/create_venv` from the root of the project and and follow the instructions. Under `bin`, there are usefull scripts to `run`, `create-bin`, `create-deb`, etc. They must always be run from the root of the project and have a self-explanatory name.
 
 ## Create bin
-We are using [nuitka](nuitka) **2.1.5** on **python 3.11.2**. To create bin, we need to install:
+We are using [nuitka](https://nuitka.net/) **2.1.5** on [python](https://www.python.org/) **3.11.2**. To create bin, we need to install too:
 
 `sudo apt install ccache patchelf`
 
