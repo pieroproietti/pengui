@@ -1,7 +1,7 @@
 # penGUI take cure of eggs!
 penGUI makes it easier to learn rggs commands: once you learn them, you will probably use it less, but a GUI for penguins-eggs was needed and is now there is.
 
-![icon](https://github.com/pieroproietti/pengui/blob/main/assets/penGUI.png?raw=true)
+![icon](https://github.com/pieroproietti/pengui/raw/main/assets/pengui.png?raw=true)
 
 **Status:** starting from **0.7.x** series penGUI, is again a little wild, but usable and I recommend it, expecially for new users.
 
@@ -11,7 +11,7 @@ penGUI makes it easier to learn rggs commands: once you learn them, you will pro
 sudo apt-get install libxcb-cursor
 ```
 
-I tried penGUI on Debian and Arch, on Arch I used the .bin version. There is not yet a package for Arch, Manjaro and derivatives but you can directly use the [pengui-0-7-x.bin](https://sourceforge.net/projects/penguins-eggs/files/DEBS/) which is an executable.
+I tried penGUI on Debian and Arch. There is not yet a package for Arch, Manjaro and derivatives but you can directly use the [pengui-0-7-x.bin](https://sourceforge.net/projects/penguins-eggs/files/DEBS/) which is an executable.
 
 # Download
 
