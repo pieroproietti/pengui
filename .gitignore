@@ -3,7 +3,7 @@ package
 *.deb
 pengui*.bin
 pengui.dist
-
+pengui.onefile-build
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
