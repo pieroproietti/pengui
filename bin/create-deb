@@ -51,6 +51,6 @@ chmod +x fakeroot/opt/${PROGRAM}/${PROGRAM}.bin
 # Create the deb package
 fpm -C fakeroot -s dir -t deb -n "${PROGRAM}" -v ${VERSION} -p ${PROGRAM_VERSION}${ARCHITECTURE}.deb
 
-# Copy the binary file and clean up
-#mv ${PROGRAM}.bin ${PROGRAM}-${VERSION}${ARCHITECTURE}.bin
+# Clean up the fakeroot directory
+rm "${PROGRAM}.dist" -rf
 rm fakeroot -rf

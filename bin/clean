@@ -8,7 +8,13 @@ PACKAGE_NAME=${PROGRAM}-${VERSION}_amd64.deb
 BIN_NAME=${PROGRAM}.bin
 BIN_VERSION=${PROGRAM}-${VERSION}_amd64.bin
 
-DIRS_TO_DELETE=(build dist src/deployment "${PACKAGE_NAME}" "${BIN_NAME}" "${BIN_VERSION}")
+DIRS_TO_DELETE=(build \
+                dist \
+                src/deployment \
+                "${BIN_NAME}" \
+                "${BIN_VERSION}" \
+                "${PACKAGE_NAME}")
+
 rm "${DIRS_TO_DELETE[@]}" -rf || { echo "Error deleting files"; exit 1; }
 find ~/${PROGRAM} -type d -name __pycache__ -exec rm -rf {} +
 
