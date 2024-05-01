@@ -2,6 +2,7 @@ venv*/*
 package
 *.deb
 pengui*.bin
+pengui.dist
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

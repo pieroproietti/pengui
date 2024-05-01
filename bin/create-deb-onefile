@@ -40,17 +40,23 @@ mkdir -p fakeroot/usr/bin
 cp assets/${PROGRAM}.svg fakeroot/usr/share/icons/hicolor/scalable/apps/
 cp assets/${PROGRAM}.desktop fakeroot/usr/share/applications
 cp -P assets/${PROGRAM}.link fakeroot/usr/bin/${PROGRAM}
-cp -r ${PROGRAM}.dist/* fakeroot/opt/${PROGRAM}
+cp -r ${PROGRAM}.bin fakeroot/opt/${PROGRAM}
 
 # Set the permissions for the copied files
-find fakeroot/opt/${PROGRAM}/${PROGRAM}.bin -type f -exec chmod 644 -- {} +
-find fakeroot/opt/${PROGRAM}/${PROGRAM}.bin -type d -exec chmod 755 -- {} +
+find fakeroot/opt/${PROGRAM} -type f -exec chmod 644 -- {} +
+find fakeroot/opt/${PROGRAM} -type d -exec chmod 755 -- {} +
 find fakeroot/usr/share -type f -exec chmod 644 -- {} +
 chmod +x fakeroot/opt/${PROGRAM}/${PROGRAM}.bin
 
 # Create the deb package
-fpm -C fakeroot -s dir -t deb -n "${PROGRAM}" -v ${VERSION} -p ${PROGRAM_VERSION}${ARCHITECTURE}.deb
+fpm -C fakeroot -s dir \
+    -t deb \
+    --deb-field 'Depends: libxcb-cursor0' \
+    -n "${PROGRAM}" \
+    -v ${VERSION} \
+    -p ${PROGRAM_VERSION}${ARCHITECTURE}.deb
 
-# Copy the binary file and clean up
-#mv ${PROGRAM}.bin ${PROGRAM}-${VERSION}${ARCHITECTURE}.bin
+
 rm fakeroot -rf
+
+cp pengui.bin pengui-${VERSION}${ARCHITECTURE}.bin

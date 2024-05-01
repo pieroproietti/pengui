@@ -5,15 +5,27 @@ cd ~/${PROGRAM}
 # Pulizia
 rm ${PROGRAM}-0* -rf
 
+LOW_MEMORY=""
+if [ -f /sys/firmware/devicetree/base/model ]; then
+    MODEL=$(tr -d '\0' </sys/firmware/devicetree/base/model)
+    if [[ "$MODEL" == *"Raspberry Pi"* ]]; then
+        #LOW_MEMORY="--low-memory"
+        LOW_MEMORY=""
+    fi
+fi
+
+
 # build
+echo building ${PROGRAM}
+#--onefile \
 python -m nuitka \
-        --enable-plugins=pyside6 \
-        --include-qt-plugins=sensible \
-        --onefile \
-        --standalone \
-        src/${PROGRAM}.py 
+  --enable-plugins=pyside6 \
+  --include-qt-plugins=sensible \
+  --standalone \
+  ${LOW_MEMORY} \
+  src/${PROGRAM}.py 
 
 # pulizia
 rm ${PROGRAM}.build -rf
-rm ${PROGRAM}.dist -rf
-rm ${PROGRAM}.onefile-build -rf
+#rm ${PROGRAM}.dist -rf
+#rm ${PROGRAM}.onefile-build -rf
