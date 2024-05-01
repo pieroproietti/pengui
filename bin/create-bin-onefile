@@ -2,6 +2,31 @@
 source bin/program
 cd ~/${PROGRAM}
 
+# Set the program version
+source src/version.py
+PROGRAM_VERSION="${PROGRAM}-${VERSION}"
+
+# Get the architecture
+arch=$(uname -m)
+
+# Set the architecture suffix based on the architecture
+case $arch in
+    x86_64*)
+        ARCHITECTURE="_amd64"
+        ;;
+    i*86)
+        ARCHITECTURE="_i386"
+        ;;
+    aarch64)
+        ARCHITECTURE="_arm64"
+        ;;
+    *)
+        echo "Unsupported architecture: $arch"
+        exit 1
+        ;;
+esac
+
+
 # Pulizia
 rm ${PROGRAM}-0* -rf
 
@@ -13,9 +38,10 @@ python -m nuitka \
         --standalone \
         src/${PROGRAM}.py 
 
-# pulizia
+# clean
 rm ${PROGRAM}.build -rf
 rm ${PROGRAM}.dist -rf
-#rm ${PROGRAM}.onefile-build -rf
+rm ${PROGRAM}.onefile-build -rf
 
-cp ${PROGRAM}.bin ${PROGRAM}-${VERSION}${ARCHITECTURE}.bin
+# versioning
+mv ${PROGRAM}.bin ${PROGRAM_VERSION}${ARCHITECTURE}.bin
