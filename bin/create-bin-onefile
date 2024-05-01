@@ -17,3 +17,5 @@ python -m nuitka \
 rm ${PROGRAM}.build -rf
 rm ${PROGRAM}.dist -rf
 #rm ${PROGRAM}.onefile-build -rf
+
+cp ${PROGRAM}.bin ${PROGRAM}-${VERSION}${ARCHITECTURE}.bin
