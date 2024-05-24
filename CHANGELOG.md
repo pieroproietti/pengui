@@ -7,6 +7,9 @@ This project started near the end of the 2023, due my necessity to improve my ab
 I tried - same time ago - to use electron, but at last eventually I decided to try it again in python, and I am seeing good results in terms of lightness and practicality of development.
 
 # Versions
+## pengui-0.7.8
+* included new icons from Charlie Martinez [Quirinux](https://www.quirinux.org/).
+
 ## pengui-0.7.4
 * removed option onefile in nuika for deb package.
 

@@ -4,7 +4,7 @@ import webbrowser
 import version
 
 from PySide6.QtCore import QProcess
-from PySide6.QtGui import QAction
+from PySide6.QtGui import QAction, QIcon
 from PySide6 import QtCore
 from PySide6.QtCore import Slot
 from PySide6.QtWidgets import (
@@ -47,31 +47,31 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         toolbar = QToolBar()
 
         ## dad
-        #dad_icon=QtGui.QIcon(":/pengui/icons/dad.svg")
-        dad_action = QAction("DAD", self)
+        dad_icon=QIcon(":/pengui/icons/pengui.svg")
+        dad_action = QAction(dad_icon, "DAD", self)
         dad_action.setToolTip("Dad configure eggs")
         dad_action.triggered.connect(self.configure)
         toolbar.addAction(dad_action)
 
         ## produce
-        #produce_icon = QIcon(":/pengui/icons/produce.svg")
-        produce_action = QAction("PRODUCE", self)
+        produce_icon = QIcon(":/pengui/icons/produce.svg")
+        produce_action = QAction(produce_icon, "PRODUCE", self)
         produce_action.setToolTip("Produce a new ISO")
         produce_action.triggered.connect(self.produce)
         toolbar.addAction(produce_action)
 
         ## kill
-        #kill_icon = QIcon(":/pengui/icons/kill.svg")
-        kill_action = QAction("KILL", self)
+        kill_icon = QIcon(":/pengui/icons/kill.svg")
+        kill_action = QAction(kill_icon, "KILL", self)
         kill_action.setToolTip("Kill generated ISOs")
         kill_action.triggered.connect(self.kill)
         toolbar.addAction(kill_action)
         self.addToolBar(toolbar)
 
         ## readme
-        #readme_icon = QIcon(":/pengui/icons/readme.svg")
-        readme_action = QAction("README", self)
-        readme_action.setToolTip("read me first!")
+        readme_icon = QIcon(":/pengui/icons/readme.svg")
+        readme_action = QAction(readme_icon, "README", self)
+        readme_action.setToolTip("Read me first!")
         readme_action.triggered.connect(self.readme)
         toolbar.addAction(readme_action)
         self.addToolBar(toolbar)

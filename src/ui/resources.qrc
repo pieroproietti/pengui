@@ -1,7 +1,10 @@
 <RCC>
   <qresource prefix="pengui">
-    <file>icons/pengui.svg</file>
     <file>icons/egg.svg</file>
+    <file>icons/kill.svg</file>
     <file>icons/krill.svg</file>
+    <file>icons/pengui.svg</file>
+    <file>icons/produce.svg</file>
+    <file>icons/readme.svg</file>
   </qresource>
 </RCC>
