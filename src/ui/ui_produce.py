@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'producekrXDLI.ui'
+## Form generated from reading UI file 'produceWWTlkk.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.3
+## Created by: Qt User Interface Compiler version 6.7.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -27,14 +27,14 @@ class Ui_DialogProduce(object):
         DialogProduce.resize(800, 600)
         DialogProduce.setMinimumSize(QSize(640, 480))
         icon = QIcon()
-        icon.addFile(u":/pengui/icons/pengui.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/pengui/icons/produce.svg", QSize(), QIcon.Normal, QIcon.Off)
         DialogProduce.setWindowIcon(icon)
         DialogProduce.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.buttonBox = QDialogButtonBox(DialogProduce)
         self.buttonBox.setObjectName(u"buttonBox")
         self.buttonBox.setGeometry(QRect(401, 550, 371, 31))
-        self.buttonBox.setOrientation(Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Apply|QDialogButtonBox.Cancel|QDialogButtonBox.Help|QDialogButtonBox.Ok)
+        self.buttonBox.setOrientation(Qt.Orientation.Horizontal)
+        self.buttonBox.setStandardButtons(QDialogButtonBox.StandardButton.Apply|QDialogButtonBox.StandardButton.Cancel|QDialogButtonBox.StandardButton.Help|QDialogButtonBox.StandardButton.Ok)
         self.lineEditCommand = QLineEdit(DialogProduce)
         self.lineEditCommand.setObjectName(u"lineEditCommand")
         self.lineEditCommand.setGeometry(QRect(30, 440, 761, 61))
