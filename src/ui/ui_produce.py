@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'produceWWTlkk.ui'
+## Form generated from reading UI file 'produceLEQcBL.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.7.0
+## Created by: Qt User Interface Compiler version 6.7.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -140,6 +140,12 @@ class Ui_DialogProduce(object):
 
         self.horizontalLayout_2.addWidget(self.checkBoxExcludesUsr)
 
+        self.comboBoxLinks = QComboBox(DialogProduce)
+        self.comboBoxLinks.setObjectName(u"comboBoxLinks")
+        self.comboBoxLinks.setGeometry(QRect(170, 190, 621, 33))
+        self.labelLinks = QLabel(DialogProduce)
+        self.labelLinks.setObjectName(u"labelLinks")
+        self.labelLinks.setGeometry(QRect(40, 190, 137, 25))
 
         self.retranslateUi(DialogProduce)
         self.buttonBox.accepted.connect(DialogProduce.accept)
@@ -232,5 +238,12 @@ class Ui_DialogProduce(object):
         self.checkBoxExcludesUsr.setToolTip(QCoreApplication.translate("DialogProduce", u"Add /etc/penguins-eggs.d/exclude.list.d/usr.list", None))
 #endif // QT_CONFIG(tooltip)
         self.checkBoxExcludesUsr.setText(QCoreApplication.translate("DialogProduce", u"usr", None))
+#if QT_CONFIG(tooltip)
+        self.comboBoxLinks.setToolTip(QCoreApplication.translate("DialogProduce", u"Select compression", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.labelLinks.setToolTip(QCoreApplication.translate("DialogProduce", u"You can choose from three types of compression: fast (default), standart and max", None))
+#endif // QT_CONFIG(tooltip)
+        self.labelLinks.setText(QCoreApplication.translate("DialogProduce", u"Links", None))
     # retranslateUi
 

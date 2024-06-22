@@ -118,7 +118,7 @@ class MyMainWindow(Ui_MainWindow, QMainWindow):
         # in init prima di show, inizializziamo tutto
         self.showMaximized()
         
-        if not U.package_is_installed("eggs"):
+        if not U.package_is_installed("eggs") and not U.package_is_installed("penguins-eggs"):
             answer=QMessageBox.critical(self, 'PenGUI', 
                                         "Install penguins-eggs before to continue.", 
                                         QMessageBox.Ok)

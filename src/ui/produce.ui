@@ -354,6 +354,35 @@
     </item>
    </layout>
   </widget>
+  <widget class="QComboBox" name="comboBoxLinks">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>190</y>
+     <width>621</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select compression</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelLinks">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>190</y>
+     <width>137</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>You can choose from three types of compression: fast (default), standart and max</string>
+   </property>
+   <property name="text">
+    <string>Links</string>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="resources.qrc"/>

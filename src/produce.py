@@ -32,7 +32,11 @@ class Produce(Ui_DialogProduce, QDialog):
         self.lineEditPrefix.setText(eggs['snapshot_prefix'])
         self.lineEditBasename.setText(eggs['snapshot_basename'])
         self.comboBoxAddons.addItems(['', 'adapt', 'ichoice', 'pve', 'rsupport'])
-        self.comboBoxCompression.addItems(['fast', 'standard', 'max'])
+        links = ['']
+        filesDesktop= os.listdir('/usr/share/applications/')
+        links = links + [file[:-8] for file in filesDesktop if file.endswith('.desktop')]
+        self.comboBoxLinks.addItems(links)
+        self.comboBoxCompression.addItems(['','pendrive', 'max'])
 
         # disable and fill basename and prefix
         self.lineEditBasename.setEnabled(False)
@@ -108,6 +112,9 @@ class Produce(Ui_DialogProduce, QDialog):
 
         if excludes_applied!="":
             command += ' --excludes ' + excludes_applied
+
+        if self.comboBoxLinks.currentText() !='':
+            command += ' --links ' + self.comboBoxLinks.currentText()
 
         if (self.comboBoxCompression.currentText() !=''):
             if (self.comboBoxCompression.currentText() !='fast'):
